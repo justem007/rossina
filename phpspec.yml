@@ -1,0 +1,5 @@
+suites:
+    main:
+        namespace: Rossina
+        psr4_prefix: Rossina
+        src_path: app

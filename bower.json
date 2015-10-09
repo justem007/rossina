@@ -1,0 +1,41 @@
+{
+  "name": "Plataforma Rossina",
+  "version": "0.0.1",
+  "description": "plataformaecommerce rossina estamparia",
+  "main": "",
+  "moduleType": [],
+  "keywords": [
+    "estamparia",
+    "digital",
+    "camisetas",
+    "tecidos",
+    "tintas",
+    "serviços",
+    "em",
+    "estamparia"
+  ],
+  "authors": [
+    "Ricardo Justem"
+  ],
+  "license": "MIT",
+  "homepage": "rossinaestamparia.com.br",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "vendor/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.5",
+    "angular": "~1.4.7",
+    "angular-route": "~1.4.7",
+    "angular-resource": "~1.4.7",
+    "font-awesome": "fontawesome#~4.4.0",
+    "bootswatch": "~3.3.5+4",
+    "html5shiv": "~3.7.3",
+    "respond": "~1.4.2",
+    "blueimp-file-upload": "jquery-file-upload#~9.11.2"
+  }
+}
