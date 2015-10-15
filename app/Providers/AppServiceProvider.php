@@ -2,6 +2,7 @@
 
 namespace Rossina\Providers;
 
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -23,6 +24,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        $this->app->bind('League\Fractal\Serializer\SerializerAbstract', 'League\Fractal\Serializer\ArraySerializer');
+        $this->app->bind('Sorskod\Larasponse\Larasponse', 'Sorskod\Larasponse\Providers\Fractal');
     }
 }

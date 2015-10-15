@@ -4,32 +4,33 @@ namespace Rossina\Http\Controllers;
 
 use Illuminate\Support\Facades\Input;
 use Rossina\Http\Requests;
-use Rossina\Repositories\Repository\PostRepositoryEloquent;
+use Rossina\Post;
+use Rossina\Repositories\Interfaces\Larasponse;
+use Rossina\Repositories\Transformers\PostTransformer;
 
 
-class PostsController extends Controller
+class PostsController extends ApiController
 {
-    protected $repository;
+    protected $model;
+    protected $fractal;
+    protected $apiController;
 
-    public function __construct(PostRepositoryEloquent $repository){
-        $this->repository = $repository;
+    public function __construct(Post $model, Larasponse $fractal, ApiController $apiController){
+        $this->model = $model;
+        $this->fractal = $fractal;
+        $this->apiController = $apiController;
     }
 
     public function all($columns = array('*')){
 
-        $post = $this->repository->all($columns = array('id', 'title', 'text'));
+        $post = $this->model->all();
 
-        return $post;
+        return $this->apiController->respondWithCollection($post, new PostTransformer());
     }
 
     public function find($id, $columns = array('*')){
 
-        $posts = $this->repository->find($id, $columns = array('id', 'title', 'text'));
-
-        if(!$posts){
-
-            return  ['reponse'=> 'Post não encontrado'];
-        }
+        $posts = $this->model->find($id, $columns = array('id', 'title', 'text'));
 
         return $posts;
 
@@ -37,14 +38,14 @@ class PostsController extends Controller
 
     public function create(){
 
-        $post = $this->repository->create( Input::all() );
+        $post = $this->model->create( Input::all() );
 
         return $post;
     }
 
     public function update($id){
 
-        $post = $this->repository->update( Input::all(), $id );
+        $post = $this->model->update( Input::all(), $id );
 
         return $post;
 
@@ -52,7 +53,7 @@ class PostsController extends Controller
 
     public function delete($id){
 
-       $post = $this->repository->find($id)->delete();
+       $post = $this->model->find($id)->delete();
 
         return redirect()->route('posts');
 
@@ -60,6 +61,6 @@ class PostsController extends Controller
 
     public function contar(){
 
-        return $this->repository->contar();
+        return $this->model->contar();
     }
 }

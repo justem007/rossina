@@ -4,11 +4,12 @@ namespace Rossina\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Reponse;
+use Rossina\Comment;
 use Rossina\Http\Requests;
-use Rossina\Repositories\Criteria\CommentCriteria;
-use Rossina\Repositories\Repository\CommentRepositoryEloquent as Comment;
+use Rossina\Repositories\Interfaces\Larasponse;
+use Rossina\Repositories\Transformers\CommentTransformer;
 
-class CommentController extends Controller
+class CommentController extends ApiController
 {
     /**
      * Display a listing of the resource.
@@ -16,21 +17,28 @@ class CommentController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    protected $repository;
+    protected $model;
+    /**
+     * @var ApiController
+     */
+    protected $apiController;
+    /**
+     * @var CommentTransformer
+     */
+    protected $larasponse;
 
-    public function __construct(Comment $repository){
-        $this->repository = $repository;
+    public function __construct(Comment $model, ApiController $apiController, Larasponse $larasponse){
+        $this->model = $model;
+        $this->apiController = $apiController;
+        $this->larasponse = $larasponse;
     }
 
-    public function index(){
-
-      return $comments = $this->repository->skipCriteria(CommentCriteria::class)->all();
-
-    }
 
     public function all()
     {
-        return $comment = $this->repository->all();
+        $model = $this->model->all();
+
+        return $this->apiController->respondWithCollection($model, new CommentTransformer());
     }
 
     /**

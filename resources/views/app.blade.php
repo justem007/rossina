@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="rossina">
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,10 +7,11 @@
 	<title>Laravel</title>
 
 	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/app.css" rel="stylesheet">
 
 	<!-- Fonts -->
 	<link href='//fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="/bower_components/blueimp-file-upload/css/jquery.fileupload.css">
+    {{--<link rel="stylesheet" href="/bower_components/blueimp-file-upload/css/jquery.fileupload.css">--}}
 
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -61,9 +62,13 @@
 	@yield('content')
 
 	<!-- Scripts -->
+    <script src="/bower_components/angular/angular.min.js"></script>
+    <script src="/bower_components/angular-animate/angular-animate.min.js"></script>
+    <script src="/bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="/js/upload.js"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.min.js"></script>
-    <script src="/bower_components/blueimp-file-upload/js/vendor/jquery.ui.widget.js"></script>
-    <script src="/bower_components/blueimp-file-upload/js/jquery.fileupload.js"></script>
+    {{--<script src="/bower_components/blueimp-file-upload/js/vendor/jquery.ui.widget.js"></script>--}}
+    {{--<script src="/bower_components/blueimp-file-upload/js/jquery.fileupload.js"></script>--}}
 </body>
 </html>

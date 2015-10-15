@@ -36,6 +36,11 @@
     "bootswatch": "~3.3.5+4",
     "html5shiv": "~3.7.3",
     "respond": "~1.4.2",
-    "blueimp-file-upload": "jquery-file-upload#~9.11.2"
+    "blueimp-file-upload": "jquery-file-upload#~9.11.2",
+    "angular-bootstrap": "~0.14.1",
+    "angular-animate": "~1.4.7",
+    "angular-file-upload": "~2.1.4",
+    "ng-file-upload": "~9.0.9",
+    "codemirror": "~5.7.0"
   }
 }

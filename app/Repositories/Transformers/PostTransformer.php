@@ -22,9 +22,10 @@ class PostTransformer extends TransformerAbstract
     {
         return [
             'id'         => (int) $model->id,
-
-            /* place your other model properties here */
-
+            'title'      => $model->title,
+            'text'       => $model->text,
+            'active'     => (int) $model->active,
+            'user_id'    => (int) $model->user_id,
             'created_at' => $model->created_at,
             'updated_at' => $model->updated_at
         ];

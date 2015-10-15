@@ -1,9 +1,9 @@
 <?php
 
-namespace Rossina\Repositories/Transformers;
+namespace Rossina\Repositories\Transformers;
 
 use League\Fractal\TransformerAbstract;
-use Rossina\\Comment;
+use Rossina\Comment;
 
 /**
  * Class CommentTransformer
@@ -22,9 +22,10 @@ class CommentTransformer extends TransformerAbstract
     {
         return [
             'id'         => (int) $model->id,
-
-            /* place your other model properties here */
-
+            'text'       => $model->text,
+            'email'      => $model->email,
+            'active'     => (int) $model->active,
+            'post_id'    => (int) $model->post_id,
             'created_at' => $model->created_at,
             'updated_at' => $model->updated_at
         ];

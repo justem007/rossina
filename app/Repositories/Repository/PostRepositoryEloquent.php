@@ -13,6 +13,7 @@ use Rossina\Repositories\Interfaces\PostRepository;
  */
 class PostRepositoryEloquent extends BaseRepository implements PostRepository
 {
+
     /**
      * Specify Model class name
      *

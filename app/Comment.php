@@ -10,9 +10,13 @@ class Comment extends Model implements Transformable
 {
     use TransformableTrait;
 
-    protected $fillable = ['text', 'email', 'post_id'];
+    protected $fillable = [
+        'text',
+        'email',
+        'post_id'];
 
     protected $hidden = [
-        'created_at', 'updated_at'
+        'created_at',
+        'updated_at'
     ];
 }
