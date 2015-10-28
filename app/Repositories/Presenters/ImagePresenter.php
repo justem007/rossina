@@ -2,8 +2,8 @@
 
 namespace Rossina\Repositories\Presenters;
 
-use Rossina\Repositories\ImageTransformer;
 use Prettus\Repository\Presenter\FractalPresenter;
+use Rossina\Repositories\Transformers\ImageTransformer;
 
 /**
  * Class ImagePresenter
@@ -17,6 +17,7 @@ class ImagePresenter extends FractalPresenter
      *
      * @return \League\Fractal\TransformerAbstract
      */
+
     public function getTransformer()
     {
         return new ImageTransformer();

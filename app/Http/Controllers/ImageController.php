@@ -3,26 +3,33 @@
 namespace Rossina\Http\Controllers;
 
 use Illuminate\Http\Request;
+use League\Fractal\Manager;
+use League\Fractal\Resource\Collection;
 use Rossina\Http\Requests;
-use Rossina\Repositories\Repository\ImageRepositoryEloquent;
+use Rossina\Repositories\Repository\ImageRepositoryEloquent as ImageRE;
+use Rossina\Repositories\Transformers\ImageTransformer;
 
-class ImageController extends Controller
+class ImageController extends ApiController
 {
-    /**
-     * @var
-     */
     protected $repository;
 
-    public function __construct(ImageRepositoryEloquent $repository){
+    protected $apiController;
 
+    public function __construct(ImageRE $repository, ApiController $apiController)
+    {
         $this->repository = $repository;
+        $this->apiController = $apiController;
     }
 
-    public function all()
+    public function index(Manager $fractal, ImageTransformer $projectTransformer)
     {
-        $image = $this->repository->all();
+        $projects = $this->repository->with(['posts'])->all();
 
-        return $image;
+        $collection = new Collection($projects, $projectTransformer);
+
+        $data = $fractal->createData($collection)->toArray();
+
+        return $this->respondWithCORS($data);
     }
 
     /**
@@ -30,6 +37,7 @@ class ImageController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
     public function create()
     {
         //
@@ -41,6 +49,7 @@ class ImageController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+
     public function store(Request $request)
     {
         //
@@ -52,6 +61,7 @@ class ImageController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
     public function show($id)
     {
         //
@@ -63,6 +73,7 @@ class ImageController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
     public function edit($id)
     {
         //
@@ -75,6 +86,7 @@ class ImageController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
     public function update(Request $request, $id)
     {
         //
@@ -86,6 +98,7 @@ class ImageController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
     public function destroy($id)
     {
         //

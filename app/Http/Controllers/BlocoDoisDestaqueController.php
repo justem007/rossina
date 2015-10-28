@@ -3,29 +3,25 @@
 namespace Rossina\Http\Controllers;
 
 use Illuminate\Http\Request;
+use League\Fractal\Manager;
 use League\Fractal\Pagination\IlluminatePaginatorAdapter;
 use League\Fractal\Resource\Collection;
-use Rossina\BlocoDoisDestaque;
 use Rossina\Http\Requests;
-use Rossina\Repositories\Interfaces\Larasponse;
+use Rossina\Repositories\Repository\BlocoDoisDestaqueRepositoryEloquent;
 use Rossina\Repositories\Transformers\BlocoDoisDestaqueTransformer;
-
 
 class BlocoDoisDestaqueController extends ApiController
 {
-    protected $fractal ;
     protected $apiController;
     protected $bloco;
 
-    public function __construct(Larasponse $fractal, ApiController $apiController, BlocoDoisDestaque $bloco){
-        $this->fractal = $fractal;
+    public function __construct(ApiController $apiController, BlocoDoisDestaqueRepositoryEloquent $bloco){
         $this->apiController = $apiController;
         $this->bloco = $bloco;
     }
 
-    public function all($columns = array('*'))
+    public function index()
     {
-
         $bloco = $this->bloco->all();
 
         return $this->apiController->respondWithCollection($bloco, new BlocoDoisDestaqueTransformer());
@@ -37,16 +33,16 @@ class BlocoDoisDestaqueController extends ApiController
      * @return \Illuminate\Http\Response
      */
 
-    public function status($limit = null, $columns = ['*'])
+    public function status()
     {
 
         $paginator = $this->bloco->paginate(3);
 
-        $bloco = $paginator->getCollection();
-
-        $resource = new Collection($bloco, new BlocoDoisDestaqueTransformer);
-
-         $resource->setPaginator(new IlluminatePaginatorAdapter($paginator));
+//        $bloco = $paginator->getCollection();
+//
+//        $resource = new Collection($bloco, new BlocoDoisDestaqueTransformer);
+//
+//         $resource->setPaginator(new IlluminatePaginatorAdapter($paginator));
 
         return $paginator;
 

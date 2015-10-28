@@ -13,23 +13,23 @@ class PostTagTableSeeder extends Seeder
     public function run()
     {
         DB::table('post_tag')->insert([
-            'post_id' => 1,
+            'post_id' => 5,
             'tag_id' => 1
         ]);
 
         DB::table('post_tag')->insert([
-            'post_id' => 1,
-            'tag_id' => 2
+            'post_id' => 5,
+            'tag_id' => 6
         ]);
 
         DB::table('post_tag')->insert([
-            'post_id' => 2,
-            'tag_id' => 1
+            'post_id' => 5,
+            'tag_id' => 9
         ]);
 
         DB::table('post_tag')->insert([
-            'post_id' => 2,
-            'tag_id' => 2
+            'post_id' => 5,
+            'tag_id' => 11
         ]);
     }
 }

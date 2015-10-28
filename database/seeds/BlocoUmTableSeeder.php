@@ -17,7 +17,7 @@ class BlocoUmTableSeeder extends Seeder
             'title'       => 'ROSSINA ESTAMPARIA',
             'sub_title'   => 'Veja o que podemos te oferecer na área de estamparia digital. Faça com quem ja conhece do ramo.',
             'alt'         => 'estamparia digital, camisetas. tecidos, estampas, camisetas personalizadas',
-            'user_id'     => '1'
+            'user_id'     => 1
 
         ]);
     }

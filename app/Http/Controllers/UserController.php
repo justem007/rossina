@@ -3,15 +3,26 @@
 namespace Rossina\Http\Controllers;
 
 use Illuminate\Http\Request;
+use League\Fractal\Manager;
+use League\Fractal\Pagination\IlluminatePaginatorAdapter;
+use League\Fractal\Resource\Collection;
 use Rossina\Http\Requests;
+use Rossina\Repositories\Transformers;
+use Rossina\Repositories\Transformers\UserTransformer;
+use Rossina\User;
 
-class UserController extends Controller
+class UserController extends ApiController
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    protected $apiController;
+
+    protected $user;
+
+    public function __construct(ApiController $apiController, User $user)
+    {
+        $this->apiController = $apiController;
+        $this->user = $user;
+    }
+
     public function index()
     {
         $array = array('foo', 'bar');
@@ -19,11 +30,30 @@ class UserController extends Controller
         return $array;
     }
 
+    public function all(Manager $fractal, UserTransformer $projectTransformer)
+    {
+        $projects = $this->user->with(['posts'])->get();
+
+        $collection = new Collection($projects, $projectTransformer);
+
+        $data = $fractal->createData($collection)->toArray();
+
+        return $this->respondWithCORS($data);
+    }
+
+    public function paginate()
+    {
+        $paginator = $this->user->paginate();
+
+        return $paginator;
+    }
+
     /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
      */
+
     public function create()
     {
         //
@@ -35,6 +65,7 @@ class UserController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+
     public function store(Request $request)
     {
         //
@@ -46,6 +77,7 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
     public function show($id)
     {
         //
@@ -57,6 +89,7 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
     public function edit($id)
     {
         //
@@ -69,6 +102,7 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
     public function update(Request $request, $id)
     {
         //
@@ -80,6 +114,7 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
     public function destroy($id)
     {
         //

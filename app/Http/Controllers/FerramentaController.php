@@ -3,26 +3,40 @@
 namespace Rossina\Http\Controllers;
 
 use Illuminate\Http\Request;
+use League\Fractal\Manager;
+use League\Fractal\Resource\Collection;
 use Rossina\Http\Requests;
 use Rossina\Repositories\Repository\FerramentaRepositoryEloquent;
+use Rossina\Repositories\Transformers\FerramentaTransformer;
 
-class FerramentaController extends Controller
+class FerramentaController extends ApiController
 {
-
-    /**
-     * @var FerramentaRepositoryEloquent
-     */
     protected $repository;
 
-    public function __construct(FerramentaRepositoryEloquent $repository){
+    protected $apiController;
+
+    protected $fractal;
+
+    protected $ferramentaTransformer;
+
+    public function __construct(FerramentaRepositoryEloquent $repository, ApiController $apiController,
+                                Manager $fractal, FerramentaTransformer $ferramentaTransformer)
+    {
         $this->repository = $repository;
+        $this->apiController = $apiController;
+        $this->fractal = $fractal;
+        $this->ferramentaTransformer = $ferramentaTransformer;
     }
 
-    public function all()
+    public function index()
     {
-        $ferramentas = $this->repository->all();
+        $repository = $this->repository->with(['images'])->all();
 
-        return $ferramentas;
+        $collection = new Collection($repository, $this->ferramentaTransformer);
+
+        $data = $this->fractal->createData($collection)->toArray();
+
+        return $this->respondWithCORS($data);
     }
 
     /**
@@ -30,6 +44,7 @@ class FerramentaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
     public function create()
     {
         //
@@ -52,6 +67,7 @@ class FerramentaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
     public function show($id)
     {
         //
@@ -63,6 +79,7 @@ class FerramentaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
     public function edit($id)
     {
         //
@@ -75,6 +92,7 @@ class FerramentaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
     public function update(Request $request, $id)
     {
         //
@@ -86,6 +104,7 @@ class FerramentaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
     public function destroy($id)
     {
         //

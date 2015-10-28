@@ -3,35 +3,42 @@
 namespace Rossina\Http\Controllers;
 
 use Illuminate\Http\Request;
+use League\Fractal\Pagination\IlluminatePaginatorAdapter;
+use League\Fractal\Resource\Collection;
 use Rossina\Http\Requests;
-use Rossina\Repositories\Repository\BlocoUmRepositoryEloquent as BlocoUm;
+use Rossina\Repositories\Repository\BlocoUmRepositoryEloquent;
+use Rossina\Repositories\Transformers\BlocoUmTransformer;
 
-class BlocoUmController extends Controller
+class BlocoUmController extends ApiController
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-
     protected $repository;
 
-    public function __construct(BlocoUm $repository){
+    protected $apiController;
 
-        $this->repository = $repository;
-    }
-
-    public function all()
+    public function __construct(BlocoUmRepositoryEloquent $repository, ApiController $apiController)
     {
-        $blocoum = $this->repository->all();
-
-        return $blocoum;
+        $this->repository = $repository;
+        $this->apiController = $apiController;
     }
 
-    public function find($id){
+    public function index()
+    {
+        $repository = $this->repository->all();
 
-        return $blocoum = $this->repository->find($id);
+        return $this->apiController->respondWithCollection($repository, new BlocoUmTransformer());
+    }
 
+    public function find(){
+
+        $paginator = $this->repository->skipPresenter()->paginate(4);
+
+        $bloco = $paginator->getCollection();
+
+        $resource = new Collection($bloco, new BlocoUmTransformer());
+
+        $resource->setPaginator(new IlluminatePaginatorAdapter($paginator));
+
+        return $paginator;
     }
 
     /**

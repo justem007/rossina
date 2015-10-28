@@ -2,10 +2,10 @@
 
 namespace Rossina\Repositories\Repository;
 
-use Prettus\Repository\Eloquent\BaseRepository;
 use Prettus\Repository\Criteria\RequestCriteria;
-use Rossina\Repositories\Interfaces\BlocoUmRepository;
+use Prettus\Repository\Eloquent\BaseRepository;
 use Rossina\BlocoUm;
+use Rossina\Repositories\Interfaces\BlocoUmRepository;
 
 /**
  * Class BlocoUmRepositoryEloquent
@@ -30,4 +30,13 @@ class BlocoUmRepositoryEloquent extends BaseRepository implements BlocoUmReposit
     {
         $this->pushCriteria(app(RequestCriteria::class));
     }
+
+    protected $skipPresenter = true;
+
+    public function presenter(){
+
+        return "Prettus\\Repository\\Presenter\\ModelFractalPresenter";
+
+    }
+
 }

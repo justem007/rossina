@@ -23,11 +23,12 @@ class CommentTransformer extends TransformerAbstract
         return [
             'id'         => (int) $model->id,
             'text'       => $model->text,
+            'name'       => $model->name,
             'email'      => $model->email,
-            'active'     => (int) $model->active,
+            'active'     => (boolean) $model->active,
             'post_id'    => (int) $model->post_id,
-            'created_at' => $model->created_at,
-            'updated_at' => $model->updated_at
+            'created_at' => (string) $model->created_at,
+//            'updated_at' => (string) $model->updated_at,
         ];
     }
 }

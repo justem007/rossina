@@ -15,10 +15,19 @@ class TagTableSeeder extends Seeder
     public function run()
     {
         DB::table('tags')->insert([
-            ['title' => "php"],
-            ['title' => "laravel"],
-            ['title' => "angular"],
-            ['title' => "book"]
+            'title' => "camiseta"
+        ]);
+
+        DB::table('tags')->insert([
+            'title' => "preta"
+        ]);
+
+        DB::table('tags')->insert([
+            'title' => "branca"
+        ]);
+
+        DB::table('tags')->insert([
+            'title' => "amarela"
         ]);
     }
 }

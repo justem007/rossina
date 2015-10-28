@@ -12,21 +12,28 @@ use Rossina\Ferramenta;
 class FerramentaTransformer extends TransformerAbstract
 {
 
-    /**
-     * Transform the \Ferramenta entity
-     * @param \Ferramenta $model
-     *
-     * @return array
-     */
+    protected $defaultIncludes = [
+        'images'
+    ];
+
     public function transform(Ferramenta $model)
     {
         return [
             'id'         => (int) $model->id,
-
-            /* place your other model properties here */
-
-            'created_at' => $model->created_at,
-            'updated_at' => $model->updated_at
+            'title'      => $model->title,
+            'description'=> $model->description,
+            'alt'        => $model->alt,
+            'image_id'   => (int) $model->image_id,
+            'user_id'    => (int) $model->user_id,
+            'created_at' => (string) $model->created_at,
+            'updated_at' => (string) $model->updated_at
         ];
+    }
+
+    public function includeImages(Ferramenta $images)
+    {
+        $images = $images->images;
+
+        return $this->collection($images, new ImageTransformer);
     }
 }

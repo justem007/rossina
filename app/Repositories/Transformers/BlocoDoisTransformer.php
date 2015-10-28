@@ -12,21 +12,16 @@ use Rossina\BlocoDois;
 class BlocoDoisTransformer extends TransformerAbstract
 {
 
-    /**
-     * Transform the \BlocoDois entity
-     * @param \BlocoDois $model
-     *
-     * @return array
-     */
     public function transform(BlocoDois $model)
     {
         return [
             'id'         => (int) $model->id,
-
-            /* place your other model properties here */
-
-            'created_at' => $model->created_at,
-            'updated_at' => $model->updated_at
+            'title'      => $model->title,
+            'sub_title'  => $model->sub_title,
+            'alt'        => $model->alt,
+            'user_id'    => $model->user_id,
+            'created_at' => (string) $model->created_at,
+            'updated_at' => (string) $model->updated_at
         ];
     }
 }

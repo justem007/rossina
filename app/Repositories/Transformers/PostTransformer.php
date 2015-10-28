@@ -2,8 +2,8 @@
 
 namespace Rossina\Repositories\Transformers;
 
-use League\Fractal\TransformerAbstract;
 use Rossina\Post;
+use League\Fractal\TransformerAbstract;
 
 /**
  * Class PostTransformer
@@ -11,23 +11,49 @@ use Rossina\Post;
  */
 class PostTransformer extends TransformerAbstract
 {
-
     /**
      * Transform the \Post entity
-     * @param \Post $model
+     * @param \Post $post
      *
      * @return array
      */
-    public function transform(Post $model)
+    protected $defaultIncludes = [
+        'images',
+        'comments',
+        'tags',
+    ];
+
+    public function transform(Post $post)
     {
         return [
-            'id'         => (int) $model->id,
-            'title'      => $model->title,
-            'text'       => $model->text,
-            'active'     => (int) $model->active,
-            'user_id'    => (int) $model->user_id,
-            'created_at' => $model->created_at,
-            'updated_at' => $model->updated_at
+            'id'         => (int) $post->id,
+            'title'      => $post->title,
+            'text'       => $post->text,
+            'active'     => (boolean) $post->active,
+            'user_id'    => (int) $post->user_id,
+            'created_at' => (string) $post->created_at,
+            'updated_at' => (string) $post->updated_at,
         ];
+    }
+
+    public function includeImages(Post $images)
+    {
+        $images = $images->images;
+
+        return $this->collection($images, new ImageTransformer);
+    }
+
+    public function includeTags(Post $tags)
+    {
+        $tags = $tags->tags;
+
+        return $this->collection($tags, new TagTransformer);
+    }
+
+    public function includeComments(Post $post)
+    {
+        $comments = $post->comments;
+
+        return $this->collection($comments, new CommentTransformer);
     }
 }

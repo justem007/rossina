@@ -12,21 +12,20 @@ use Rossina\Image;
 class ImageTransformer extends TransformerAbstract
 {
 
-    /**
-     * Transform the \Image entity
-     * @param \Image $model
-     *
-     * @return array
-     */
     public function transform(Image $model)
     {
         return [
             'id'         => (int) $model->id,
-
-            /* place your other model properties here */
-
-            'created_at' => $model->created_at,
-            'updated_at' => $model->updated_at
+            'name'       => $model->name,
+            'description'=> $model->description,
+            'alt'        => $model->alt,
+            'title'      => $model->title,
+            'extension'  => $model->extension,
+            'url'        => $model->url,
+            'user_id'    => (int) $model->user_id,
+            'created_at' => (string) $model->created_at,
+            'updated_at' => (string) $model->updated_at,
         ];
     }
+
 }

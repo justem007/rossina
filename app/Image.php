@@ -12,4 +12,13 @@ class Image extends Model implements Transformable
 
     protected $fillable = ['name', 'description', 'alt', 'title', 'extension', 'user_id'];
 
+    public function posts()
+    {
+        return $this->belongsToMany('Rossina\Post');
+    }
+
+    public function ferramentas()
+    {
+        return $this->belongsToMany('Rossina\Ferramenta');
+    }
 }

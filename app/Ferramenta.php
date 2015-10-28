@@ -12,4 +12,9 @@ class Ferramenta extends Model implements Transformable
 
     protected $fillable = ['title', 'description', 'alt', 'image_id', 'user_id'];
 
+    public function images()
+    {
+        return $this->belongsToMany('Rossina\Image');
+    }
+
 }

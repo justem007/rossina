@@ -2,8 +2,9 @@
 
 namespace Rossina\Repositories\Presenters;
 
-use Rossina\Repositories\BlocoUmTransformer;
+
 use Prettus\Repository\Presenter\FractalPresenter;
+use Rossina\Repositories\Transformers\BlocoUmTransformer;
 
 /**
  * Class BlocoUmPresenter

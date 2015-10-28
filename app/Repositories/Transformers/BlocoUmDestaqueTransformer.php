@@ -11,7 +11,6 @@ use Rossina\BlocoUmDestaque;
  */
 class BlocoUmDestaqueTransformer extends TransformerAbstract
 {
-
     /**
      * Transform the \BlocoUmDestaque entity
      * @param \BlocoUmDestaque $model
@@ -22,11 +21,12 @@ class BlocoUmDestaqueTransformer extends TransformerAbstract
     {
         return [
             'id'         => (int) $model->id,
-
-            /* place your other model properties here */
-
-            'created_at' => $model->created_at,
-            'updated_at' => $model->updated_at
+            'title'      => $model->title,
+            'sub_title'  => $model->sub_title,
+            'image_id'   => (int) $model->image_id,
+            'user_id'    => (int) $model->user_id,
+            'created_at' => (string) $model->created_at,
+            'updated_at' => (string) $model->updated_at,
         ];
     }
 }

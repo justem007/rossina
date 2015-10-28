@@ -4,32 +4,33 @@ namespace Rossina\Repositories\Repository;
 
 use Prettus\Repository\Criteria\RequestCriteria;
 use Prettus\Repository\Eloquent\BaseRepository;
+use Prettus\Repository\Presenter\ModelFractalPresenter;
 use Rossina\Ferramenta;
 use Rossina\Repositories;
 use Rossina\Repositories\Interfaces\FerramentaRepository;
+use Rossina\Repositories\Presenters\FerramentaPresenter;
 
-
-/**
- * Class FerramentaRepositoryEloquent
- * @package namespace Rossina\Repositories/Repository;
- */
 class FerramentaRepositoryEloquent extends BaseRepository implements FerramentaRepository
 {
-    /**
-     * Specify Model class name
-     *
-     * @return string
-     */
+
+    protected $presenter = FerramentaPresenter::class;
+
+    protected $skipPresenter = true;
+
+    protected $setPresenter = true;
+
     public function model()
     {
         return Ferramenta::class;
     }
 
-    /**
-     * Boot up the repository, pushing criteria
-     */
     public function boot()
     {
         $this->pushCriteria(app(RequestCriteria::class));
+    }
+
+    public function presenter()
+    {
+        return ModelFractalPresenter::class;
     }
 }

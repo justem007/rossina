@@ -2,14 +2,15 @@
 
 namespace Rossina\Repositories\Presenters;
 
-use Rossina\Repositories\BlocoUmDestaqueTransformer;
 use Prettus\Repository\Presenter\FractalPresenter;
+use Rossina\Repositories\Transformers\BlocoUmDestaqueTransformer;
 
 /**
  * Class BlocoUmDestaquePresenter
  *
  * @package namespace Rossina\Repositories/Presenters;
  */
+
 class BlocoUmDestaquePresenter extends FractalPresenter
 {
     /**

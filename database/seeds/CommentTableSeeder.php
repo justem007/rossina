@@ -14,18 +14,28 @@ class CommentTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('comments')->truncate();
-
         $faker = Faker::create();
 
-        foreach(range(1, 10) as $i)
-        {
-            Comment::create([
-                'email'       => $faker->email(),
-                'text'        => $faker->sentence(),
-                'active'      => true,
-                'post_id'     => 1
-            ]);
-        }
+        DB::table('comments')->insert([
+            'email'       => $faker->email(),
+            'text'        => $faker->sentence(),
+            'name'        => $faker->word(),
+            'active'      => true,
+            'post_id'     => 1
+        ]);
+
+//        DB::table('comments')->insert();
+//
+//        $faker = Faker::create();
+//
+//        foreach(range(6, 10) as $i)
+//        {
+//            Comment::create([
+//                'email'       => $faker->email(),
+//                'text'        => $faker->sentence(),
+//                'active'      => true,
+//                'post_id'     => 1
+//            ]);
+//        }
     }
 }

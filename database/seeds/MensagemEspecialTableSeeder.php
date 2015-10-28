@@ -11,7 +11,7 @@ class MensagemEspecialTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('mensagem_especiais')->insert([
+        DB::table('mensagens_especiais')->insert([
             'title' => 'Mensagem de promoção',
             'text'  => 'Estamos cadastrnado vendedores para vender camisetas on-line, tenha sua loja própria'
     ]);

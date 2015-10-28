@@ -41,6 +41,10 @@
     "angular-animate": "~1.4.7",
     "angular-file-upload": "~2.1.4",
     "ng-file-upload": "~9.0.9",
-    "codemirror": "~5.7.0"
+    "codemirror": "~5.7.0",
+    "angular-touch": "~1.4.7",
+    "angular-sanitize": "~1.4.7",
+    "jszip": "Stuk/jszip#~2.5.0",
+    "angular-material": "~0.11.4"
   }
 }

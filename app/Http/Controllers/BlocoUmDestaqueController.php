@@ -4,28 +4,26 @@ namespace Rossina\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Rossina\Http\Requests;
-use Rossina\Repositories\Repository\BlocoUmDestaqueRepositoryEloquent;
+use Rossina\Repositories\Repository\BlocoUmDestaqueRepositoryEloquent as BlocoUDRE;
+use Rossina\Repositories\Transformers\BlocoUmDestaqueTransformer;
 
-class BlocoUmDestaqueController extends Controller
+class BlocoUmDestaqueController extends ApiController
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     protected $repository;
 
-    public function __construct(BlocoUmDestaqueRepositoryEloquent $repository){
+    protected $apiController;
 
-
+    public function __construct(BlocoUDRE $repository, ApiController $apiController)
+    {
         $this->repository = $repository;
+        $this->apiController = $apiController;
     }
 
-    public function all()
+    public function index()
     {
-        $blocoumdestaque = $this->repository->all();
+        $repository = $this->repository->all();
 
-        return $blocoumdestaque;
+        return $this->apiController->respondWithCollection($repository, new BlocoUmDestaqueTransformer());
     }
 
     /**
@@ -33,6 +31,7 @@ class BlocoUmDestaqueController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
     public function create()
     {
         //
@@ -44,6 +43,7 @@ class BlocoUmDestaqueController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+
     public function store(Request $request)
     {
         //
@@ -55,6 +55,7 @@ class BlocoUmDestaqueController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
     public function show($id)
     {
         //
@@ -66,6 +67,7 @@ class BlocoUmDestaqueController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
     public function edit($id)
     {
         //
@@ -78,6 +80,7 @@ class BlocoUmDestaqueController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
     public function update(Request $request, $id)
     {
         //
@@ -89,6 +92,7 @@ class BlocoUmDestaqueController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
     public function destroy($id)
     {
         //

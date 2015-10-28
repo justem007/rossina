@@ -8,6 +8,7 @@
 
 namespace Rossina\Http\Controllers;
 
+use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Response;
 use League\Fractal\Resource\Collection;
 use League\Fractal\Resource\Item;
@@ -24,6 +25,8 @@ class ApiController extends Controller {
     public function __construct(Manager $fractal)
     {
         $this->fractal = $fractal;
+
+        $this->fractal->setRequestedScopes(explode(',', Input::get('embed')));
     }
     /**
      * Getter for statusCode
@@ -129,6 +132,24 @@ class ApiController extends Controller {
     {
         return $this->setStatusCode(400)
             ->respondWithError($message, self::CODE_WRONG_ARGS);
+    }
+
+    public function respond($data, $headers = [])
+    {
+        return response()->json($data, $this->getStatusCode(), $headers);
+    }
+
+    public function respondWithCORS($data)
+    {
+        return $this->respond($data, $this->setCORSHeaders());
+    }
+    private function setCORSHeaders()
+    {
+        $header['Access-Control-Allow-Origin'] = '*';
+        $header['Allow'] = 'GET, POST, OPTIONS, DELETE, PUT';
+        $header['Access-Control-Allow-Headers'] = 'Origin, Content-Type, Accept, Authorization, X-Request-With';
+        $header['Access-Control-Allow-Credentials'] = 'true';
+        return $header;
     }
 
 }

@@ -3,26 +3,35 @@
 namespace Rossina\Http\Controllers;
 
 use Illuminate\Http\Request;
+use League\Fractal\Manager;
+use League\Fractal\Resource\Collection;
 use Rossina\Http\Requests;
 use Rossina\Repositories\Repository\BlocoDoisRepositoryEloquent;
+use Rossina\Repositories\Transformers\BlocoDoisTransformer;
 
-class BlocoDoisController extends Controller
+class BlocoDoisController extends ApiController
 {
 
     /**
      * @var BlocoDoisRepositoryEloquent
      */
     protected $repository;
+    /**
+     * @var ApiController
+     */
+    protected $apiController;
 
-    public function __construct(BlocoDoisRepositoryEloquent $repository){
+    public function __construct(BlocoDoisRepositoryEloquent $repository, ApiController $apiController)
+    {
         $this->repository = $repository;
+        $this->apiController = $apiController;
     }
 
-    public function all()
+    public function index()
     {
         $blocodois = $this->repository->all();
 
-        return $blocodois;
+        return $this->apiController->respondWithCollection($blocodois, new BlocoDoisTransformer);
     }
 
     /**

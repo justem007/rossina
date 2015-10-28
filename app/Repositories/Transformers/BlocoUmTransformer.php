@@ -22,11 +22,11 @@ class BlocoUmTransformer extends TransformerAbstract
     {
         return [
             'id'         => (int) $model->id,
-
-            /* place your other model properties here */
-
-            'created_at' => $model->created_at,
-            'updated_at' => $model->updated_at
+            'title'      => $model->title,
+            'sub_title'  => $model->sub_title,
+            'alt'        => $model->alt,
+            'created_at' => date_format($model->created_at, "d/m/Y H:m:s"),
+            'updated_at' => date_format($model->updated_at, "d/m/Y H:m:s")
         ];
     }
 }

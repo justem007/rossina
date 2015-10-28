@@ -6,35 +6,24 @@ use Illuminate\Http\Request;
 use Reponse;
 use Rossina\Comment;
 use Rossina\Http\Requests;
+use Rossina\Repositories\Criteria\CommentCriteria;
 use Rossina\Repositories\Interfaces\Larasponse;
+use Rossina\Repositories\Repository\CommentRepositoryEloquent as CommentRE;
 use Rossina\Repositories\Transformers\CommentTransformer;
 
 class CommentController extends ApiController
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-
     protected $model;
-    /**
-     * @var ApiController
-     */
-    protected $apiController;
-    /**
-     * @var CommentTransformer
-     */
-    protected $larasponse;
 
-    public function __construct(Comment $model, ApiController $apiController, Larasponse $larasponse){
+    protected $apiController;
+
+    public function __construct(CommentRE $model, ApiController $apiController)
+    {
         $this->model = $model;
         $this->apiController = $apiController;
-        $this->larasponse = $larasponse;
     }
 
-
-    public function all()
+    public function index()
     {
         $model = $this->model->all();
 
@@ -46,6 +35,7 @@ class CommentController extends ApiController
      *
      * @return \Illuminate\Http\Response
      */
+
     public function find()
     {
         //
@@ -57,6 +47,7 @@ class CommentController extends ApiController
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+
     public function create(Request $request)
     {
         //
@@ -68,6 +59,7 @@ class CommentController extends ApiController
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
     public function update($id)
     {
         //
@@ -79,6 +71,7 @@ class CommentController extends ApiController
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
     public function delete($id)
     {
         //

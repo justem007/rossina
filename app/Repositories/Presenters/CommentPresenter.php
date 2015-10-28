@@ -4,7 +4,7 @@ namespace Rossina\Repositories\Presenters;
 
 
 use Prettus\Repository\Presenter\FractalPresenter;
-use Rossina\Repositories\CommentTransformer;
+use Rossina\Repositories\Transformers\CommentTransformer;
 
 /**
  * Class CommentPresenter
