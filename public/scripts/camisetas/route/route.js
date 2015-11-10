@@ -1,0 +1,18 @@
+app.config(['$routeProvider',function($routeProvider){
+    $routeProvider.
+        when('/camisetas',{controller:'lojaCamisetaController',
+            templateUrl:'views/camisetas/pages/main.html'}).
+        when('/camisetas_detalhes',{controller:'camisetasDetalhesController',
+            templateUrl:'views/camisetas/pages/detalhes.html'}).
+        when('/estamparia_detalhes',{controller:'detalhesEstampariaController',
+            templateUrl:'views/site/pages/estamparia/detalhes.html'}).
+        when('/tags',{controller:'tagController',
+            templateUrl:'pages/tag.html'}).
+        when('/contatos',{controller:'contatoController',
+            templateUrl:'views/site/pages/contatos/contatos.html'}).
+        when('/faqs',{controller:'faqController',
+            templateUrl:'views/site/pages/faqs/faqs.html'}).
+        when('/login',{controller:'loginController',
+            templateUrl:'pages/login.html'}).
+        otherwise({redirectTo:'/'});
+}])

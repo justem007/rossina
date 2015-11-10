@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="pt-br" ng-app="app">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <title>Rossina Estamparia - Estamparia Digital - Impressão Digital</title>
+
+    <link rel="stylesheet" type="text/css" href="bower_components/bootswatch/spacelab/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="bower_components/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="styles/site/css/main-default.css">
+
+</head>
+<body>
+
+<header>
+    <div class="b-top-options-panel">
+        <div class="container" ng-controller="horarioController">
+            <div class="b-option-contacts f-option-contacts" ng-repeat="horario in horarios.data">
+                <a href="#/"><i class="fa fa-calendar"></i>{{ horario.atendimento }}</a>
+                <a href="#/"><i class="fa fa-phone"></i> {{ horario.telefone }} </a>
+                <a href="#/"><i class="fa fa-space-shuttle"></i> {{ horario.entrega }} |</a>
+                <a href="#/registrar"><i class="fa fa-user"></i>Cadastre-se</a>
+                <a href="#/login_site"><i class="fa fa-lock"></i> Login</a>
+                <a href="#/compras"><i class="fa fa-archive "></i> Minhas Compras </a>
+             </div>
+        </div>
+    </div>
+    <div class="container b-header__box b-relative">
+        <a href="#/" class="b-left b-logo "><img class="color-theme" data-retina src="../../images/site/img/homepage/logo.jpg" alt="Logo" /></a>
+        <div class="b-header-r b-right b-header-r--icon">
+            <div class="b-header-ico-group f-header-ico-group b-right">
+          <span class="b-search-box">
+              <i class="fa fa-search"></i>
+              <input type="text" placeholder="Digite sua pesquisa"/>
+          </span>
+          <span class="b-header-ico b-header-ico-cart-parent">
+              <a href="#" class="b-fa-shopping-cart"><i class="fa fa-shopping-cart"></i></a>
+              <div class="b-option-cart__items">
+                  <div class="b-option-cart__items__title f-option-cart__items__title f-default-l">Recently added item(s)</div>
+                  <ul>
+                      <li>
+                          <div class="b-option-cart__items__img">
+                              <div class="view view-sixth">
+                                  <img data-retina="" src="../../images/site/img/shop/cart_mini_pic.jpg" alt="">
+                                  <div class="b-item-hover-action f-center mask">
+                                      <div class="b-item-hover-action__inner">
+                                          <div class="b-item-hover-action__inner-btn_group">
+                                              <a href="#" class="b-btn f-btn b-btn-light f-btn-light info"><i class="fa fa-link"></i></a>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="b-option-cart__items__descr">
+                              <strong class="b-option-cart__descr__title f-option-cart__descr__title"><a href="#">Product Example</a></strong>
+                              <span class="b-option-cart__descr__cost f-option-cart__descr__cost">1 x $239</span>
+                          </div>
+                          <i class="fa fa-times b-icon--fa"></i>
+                      </li>
+                      <li>
+                          <div class="b-option-cart__items__img">
+                              <div class="view view-sixth">
+                                  <img data-retina="" src="../../images/site/img/shop/cart_mini_pic.jpg" alt="">
+                                  <div class="b-item-hover-action f-center mask">
+                                      <div class="b-item-hover-action__inner">
+                                          <div class="b-item-hover-action__inner-btn_group">
+                                              <a href="#" class="b-btn f-btn b-btn-light f-btn-light info"><i class="fa fa-link"></i></a>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="b-option-cart__items__descr">
+                              <strong class="b-option-cart__descr__title f-option-cart__descr__title"><a href="#">Product Example</a></strong>
+                              <span class="b-option-cart__descr__cost f-option-cart__descr__cost">1 x $239</span>
+                          </div>
+                          <i class="fa fa-times b-icon--fa"></i>
+                      </li>
+                  </ul>
+                  <div class="b-option-cart__btn">
+                      <button class="button-xs button-gray-light">Cancel</button>
+                      <a href="#/check"> <button class="button-xs">Check out  </button></a>
+                  </div>
+              </div>
+               </span>
+            </div>
+            <div class="b-top-nav-show-slide f-top-nav-show-slide b-right j-top-nav-show-slide"><i class="fa fa-align-justify"></i></div>
+         <div ng-controller="menuController">
+            <nav class="b-top-nav f-top-nav b-right j-top-nav " >
+                <ul class="b-top-nav__1level_wrap" >
+
+                    <li class="b-top-nav__1level f-top-nav__1level is-active-top-nav__1level">
+                        <a href="#/" tooltip-popup-close-delay='500' uib-tooltip='Qualidade Digital'><i class="fa fa-home "></i> Home<span class="b-ico-dropdown"><i class="fa fa-arrow-circle-down"></i></span></a>
+                    </li>
+
+                    <li class="b-top-nav__1level f-top-nav__1level f-primary-b" ng-repeat="menu in menus.data">
+                        <a href="#/{{ menu.url }}" tooltip-popup-close-delay='500' uib-tooltip='{{ menu.description }}'><i class="{{ menu.fafa }} "></i> {{ menu.title }} <span class="b-ico-dropdown"><i class="fa fa-arrow-circle-down"></i></span></a>
+                    </li>
+                </ul>
+            </nav>
+             </div>
+        </div>
+    </div>
+</header>
+
+<div ng-view>
+<!--carrega as páginas aqui-->
+</div>
+
+<!--container site-->
+
+<footer>
+    <div class="b-footer-primary">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4 col-xs-12 f-copyright b-copyright">Copyright © 2015 - Todos os Direitos Reservados.</div>
+                <div class="col-sm-8 col-xs-12">
+                    <div class="b-btn f-btn b-btn-default b-right b-footer__btn_up f-footer__btn_up j-footer__btn_up">
+                        <i class="fa fa-chevron-up"></i>
+                    </div>
+                    <nav class="b-bottom-nav f-bottom-nav b-right hidden-xs">
+                        <ul>
+                            <li><a href="../../views/site/index.html">Página Incial</a></li>
+                            <li class="is-active-bottom-nav"><a href="../../html/page_header_1.html">Destaques</a></li>
+                            <li><a href="../../html/portfolio_our_portfolio_1_colums.html">Portifólio</a></li>
+                            <li><a href="../../html/our_blog_1_columns.html">Blog</a></li>
+                            <li><a href="../../html/page_search_result.html">Pesquisas</a></li>
+                            <li><a href="../../html/shortcode_typography.html">FAQs</a></li>
+                            <li><a href="../../html/shop_listing_col.html">Loja</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="b-footer-secondary row">
+            <div class="col-md-3 col-sm-12 col-xs-12 f-center b-footer-logo-containter">
+                <a href=""><img data-retina class="b-footer-logo color-theme" src="../../images/site/img/logo-vertical-default.jpg" alt="Logo"/></a>
+                <div class="b-footer-logo-text f-footer-logo-text">
+                    <p>Técnicas modernas para estampar.</p>
+                    <div class="b-btn-group-hor f-btn-group-hor">
+                        <a href="#" class="b-btn-group-hor__item f-btn-group-hor__item">
+                            <i class="fa fa-twitter"></i>
+                        </a>
+                        <a href="#" class="b-btn-group-hor__item f-btn-group-hor__item">
+                            <i class="fa fa-facebook"></i>
+                        </a>
+                        <a href="#" class="b-btn-group-hor__item f-btn-group-hor__item">
+                            <i class="fa fa-dribbble"></i>
+                        </a>
+                        <a href="#" class="b-btn-group-hor__item f-btn-group-hor__item">
+                            <i class="fa fa-behance"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-12 col-xs-12">
+                <h4 class="f-primary-b">Ultimas de nosso blog.</h4>
+                <div class="b-blog-short-post row">
+                    <div class="b-blog-short-post__item col-md-12 col-sm-4 col-xs-12 f-primary-b">
+                        <div class="b-blog-short-post__item_text f-blog-short-post__item_text">
+                            <a href="../../views/site/pages/blog_detail_left_slidebar.html">O mercado de moda cresce 20% ao ano nas lojas virtuais brasileiras.</a>
+                        </div>
+                        <div class="b-blog-short-post__item_date f-blog-short-post__item_date">
+                            Agosto 21, 2015
+                        </div>
+                    </div>
+                    <div class="b-blog-short-post__item col-md-12 col-sm-4 col-xs-12 f-primary-b">
+                        <div class="b-blog-short-post__item_text f-blog-short-post__item_text">
+                            <a href="../../views/site/pages/blog_detail_left_slidebar.html">Ámazon investe pesado em roupas de moda em sua loja online.</a>
+                        </div>
+                        <div class="b-blog-short-post__item_date f-blog-short-post__item_date">
+                            Agosto 21, 2015
+                        </div>
+                    </div>
+                    <div class="b-blog-short-post__item col-md-12 col-sm-4 col-xs-12 f-primary-b">
+                        <div class="b-blog-short-post__item_text f-blog-short-post__item_text">
+                            <a href="../../views/site/pages/blog_detail_left_slidebar.html">Por que produzir fielmente as cores de uma estampa e tão importante ?</a>
+                        </div>
+                        <div class="b-blog-short-post__item_date f-blog-short-post__item_date">
+                            Agosto 21, 2015
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-12 col-xs-12">
+                <h4 class="f-primary-b">Nossos contatos</h4>
+                <div class="b-contacts-short-item-group">
+                    <div class="b-contacts-short-item col-md-12 col-sm-4 col-xs-12">
+                        <div class="b-contacts-short-item__icon f-contacts-short-item__icon b-left f-contacts-short-item__icon_md">
+                            <i class="fa fa-skype"></i>
+                        </div>
+                        <div class="b-remaining f-contacts-short-item__text f-contacts-short-item__text_phone">
+                            Skype: rossinaestamparia
+                        </div>
+                    </div>
+                    <div class="b-contacts-short-item col-md-12 col-sm-4 col-xs-12">
+                        <div class="b-contacts-short-item__icon f-contacts-short-item__icon b-left f-contacts-short-item__icon_xs">
+                            <i class="fa fa-envelope"></i>
+                        </div>
+                        <div class="b-remaining f-contacts-short-item__text f-contacts-short-item__text_email">
+                            <a href="mailto:frexystudio@gmail.com">contato@rossinaestamparia.com.br</a>
+                        </div>
+                    </div>
+
+                    <div class="b-contacts-short-item col-md-12 col-sm-4 col-xs-12">
+                        <div class="b-contacts-short-item__icon f-contacts-short-item__icon b-left f-contacts-short-item__icon_xs">
+                            <i class="fa fa-phone"></i>
+                        </div>
+                        <div class="b-remaining f-contacts-short-item__text f-contacts-short-item__text_email">
+                            <a href="#">+55 (21)3245-9607 / (21) 2602-7536 </a>
+                        </div>
+                    </div>
+                    <div class="b-contacts-short-item col-md-12 col-sm-4 col-xs-12">
+                        <div class="b-contacts-short-item__icon f-contacts-short-item__icon f-contacts-short-item__icon_lg b-left">
+                            <i class="fa fa-map-marker"></i>
+                        </div>
+                        <div class="b-remaining f-contacts-short-item__text">
+                            Rossina Estamparia<br/>
+                            Avenida Presidente Roosevelt, 130 parte,<br/>
+                            São Gonçalo - Rio de janeiro,<br />
+                            Brasil.<br/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-12 col-xs-12 ">
+                <h4 class="f-primary-b">fotos</h4>
+                <div class="b-short-photo-items-group">
+                    <div class="b-column">
+                        <a class="b-short-photo-item fancybox" href="../../images/site/img/gallery/big/gallery_1.jpg" title="photo stream" rel="footer-group"><img width="62" height="62" data-retina src="../../images/site/img/gallery/sm/gallery1_1.jpg" alt=""/></a>
+                    </div>
+                    <div class="b-column">
+                        <a class="b-short-photo-item fancybox" href="../../images/site/img/gallery/big/gallery_2.jpg" title="photo stream" rel="footer-group"><img width="62" height="62" data-retina src="../../images/site/img/gallery/sm/gallery1_1.jpg" alt=""/></a>
+                    </div>
+                    <div class="b-column">
+                        <a class="b-short-photo-item fancybox" href="../../images/site/img/gallery/big/gallery_3.jpg" title="photo stream" rel="footer-group"><img width="62" height="62" data-retina src="../../images/site/img/gallery/sm/gallery1_1.jpg" alt=""/></a>
+                    </div>
+                    <div class="b-column">
+                        <a class="b-short-photo-item fancybox" href="../../images/site/img/gallery/big/gallery_4.jpg" title="photo stream" rel="footer-group"><img width="62" height="62" data-retina src="../../images/site/img/gallery/sm/gallery1_1.jpg" alt=""/></a>
+                    </div>
+                    <div class="b-column">
+                        <a class="b-short-photo-item fancybox" href="../../images/site/img/gallery/big/gallery_5.jpg" title="photo stream" rel="footer-group"><img width="62" height="62" data-retina src="../../images/site/img/gallery/sm/gallery1_1.jpg" alt=""/></a>
+                    </div>
+                    <div class="b-column">
+                        <a class="b-short-photo-item fancybox" href="../../images/site/img/gallery/big/gallery_6.jpg" title="photo stream" rel="footer-group"><img width="62" height="62" data-retina src="../../images/site/img/gallery/sm/gallery1_1.jpg" alt=""/></a>
+                    </div>
+                    <div class="b-column">
+                        <a class="b-short-photo-item fancybox" href="../../images/site/img/gallery/big/gallery_7.jpg" title="photo stream" rel="footer-group"><img width="62" height="62" data-retina src="../../images/site/img/gallery/sm/gallery1_1.jpg" alt=""/></a>
+                    </div>
+                    <div class="b-column">
+                        <a class="b-short-photo-item fancybox" href="../../images/site/img/gallery/big/gallery_8.jpg" title="photo stream" rel="footer-group"><img width="62" height="62" data-retina src="../../images/site/img/gallery/sm/gallery1_1.jpg" alt=""/></a>
+                    </div>
+                    <div class="b-column hidden-xs">
+                        <a class="b-short-photo-item fancybox" href="../../images/site/img/gallery/big/gallery_9.jpg" title="photo stream" rel="footer-group"><img width="62" height="62" data-retina src="../../images/site/img/gallery/sm/gallery1_1.jpg" alt=""/></a>
+                    </div>
+                    <div class="b-column hidden-sm hidden-xs">
+                        <a class="b-short-photo-item fancybox" href="../../images/site/img/gallery/big/gallery_10.jpg" title="photo stream" rel="footer-group"><img width="62" height="62" data-retina src="../../images/site/img/gallery/sm/gallery1_1.jpg" alt=""/></a>
+                    </div>
+                    <div class="b-column hidden-sm hidden-xs">
+                        <a class="b-short-photo-item fancybox" href="../../images/site/img/gallery/big/gallery_11.jpg" title="photo stream" rel="footer-group"><img width="62" height="62" data-retina src="../../images/site/img/gallery/sm/gallery1_1.jpg" alt=""/></a>
+                    </div>
+                    <div class="b-column hidden-sm hidden-xs">
+                        <a class="b-short-photo-item fancybox" href="../../images/site/img/gallery/big/gallery_12.jpg" title="photo stream" rel="footer-group"><img width="62" height="62" data-retina src="../../images/site/img/gallery/sm/gallery1_1.jpg" alt=""/></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!--footer-->
+
+<script src="bower_components/angular/angular.min.js"></script>
+<script src="bower_components/angular-animate/angular-animate.min.js"></script>
+<script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.14.3.js"></script>
+<script src="bower_components/angular-route/angular-route.min.js"></script>
+<script src="bower_components/angular-resource/angular-resource.min.js"></script>
+<script src="bower_components/angular-messages/angular-messages.min.js"></script>
+<script src="bower_components/angular-touch/angular-touch.min.js"></script>
+<script src="bower_components/angular-sanitize/angular-sanitize.min.js"></script>
+<script src="bower_components/angular-aria/angular-aria.min.js"></script>
+<script src="bower_components/angular-material/angular-material.min.js"></script>
+
+<script src="scripts/site/app.js"></script>
+<script src="scripts/site/route/route.js"></script>
+<script src="scripts/site/controller/site.js"></script>
+<script src="scripts/site/controller/contato.js"></script>
+<script src="scripts/site/controller/faq.js"></script>
+<script src="scripts/site/controller/estamparia.js"></script>
+<script src="scripts/site/controller/detalhesEstamparia.js"></script>
+<script src="scripts/site/controller/sobre.js"></script>
+<script src="scripts/site/controller/registrar.js"></script>
+<script src="scripts/site/controller/loginSite.js"></script>
+<script src="scripts/site/controller/compras.js"></script>
+<script src="scripts/site/controller/check.js"></script>
+<script src="scripts/site/controller/tooltip.js"></script>
+<script src="scripts/site/controller/horario.js"></script>
+<script src="scripts/site/controller/menu.js"></script>
+<script src="scripts/site/controller/blocoUm.js"></script>
+<script src="scripts/site/controller/blocoUmDestaque.js"></script>
+<script src="scripts/site/controller/ferramentas.js"></script>
+<script src="scripts/site/controller/blocoDois.js"></script>
+<script src="scripts/site/controller/blocoDoisDestaques.js"></script>
+<script src="scripts/site/controller/blocoDoisDestaqueUm.js"></script>
+<script src="scripts/site/controller/blocoDoisDestaqueDois.js"></script>
+<script src="scripts/site/controller/blocoCamiseta.js"></script>
+<script src="scripts/site/controller/blocoCamisetaDestaque.js"></script>
+<script src="scripts/site/controller/blocoTecido.js"></script>
+<script src="scripts/site/controller/blocoTecidoDestaque.js"></script>
+
+
+<script src="scripts/blog/route/route.js"></script>
+<!--<script src="scripts/blog/controller/detalhe.js"></script>-->
+<script src="scripts/blog/controller/mainBlog.js"></script>
+
+<script src="scripts/camisetas/route/route.js"></script>
+<!--<script src="scripts/camisetas/controller/mainCamisetas.js"></script>-->
+<script src="scripts/camisetas/controller/detalhes.js"></script>
+<script src="scripts/camisetas/controller/lojaCamiseta.js"></script>
+<script src="scripts/camisetas/controller/categoriaCamiseta.js"></script>
+<script src="scripts/camisetas/controller/tagCamiseta.js"></script>
+
+<script src="scripts/tecidos/route/route.js"></script>
+<script src="scripts/tecidos/controller/mainTecidos.js"></script>
+<script src="scripts/tecidos/controller/detalhesTecidos.js"></script>
+<script src="scripts/tecidos/controller/lojaTecido.js"></script>
+
+</body>
+</html>

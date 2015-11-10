@@ -1,8 +1,8 @@
 <?php
 
-namespace Rossina\Repositories/Presenters;
+namespace Rossina\Repositories\Presenters;
 
-use Rossina\Transformers\TecidoTransformer;
+use Rossina\Repositories\Transformers\TecidoTransformer;
 use Prettus\Repository\Presenter\FractalPresenter;
 
 /**

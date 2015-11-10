@@ -39,11 +39,11 @@ class User extends Model implements AuthenticatableContract,
 
     public function images()
     {
-        return $this->hasMany('Rossina\Image');
+        return $this->hasMany(Image::class);
     }
 
     public function posts()
     {
-        return $this->hasMany('Rossina\Post');
+        return $this->hasMany(Post::class);
     }
 }

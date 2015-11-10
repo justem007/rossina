@@ -4,18 +4,32 @@ namespace Rossina\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Rossina\Http\Requests;
-use Rossina\Http\Controllers\Controller;
+use Rossina\Repositories\Repository\TecimageRepositoryEloquent;
+use Rossina\Repositories\Transformers\TecimageTransformer;
 
-class TecimageController extends Controller
+class TecimageController extends ApiController
 {
+
     /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
+     * @var TecimageRepositoryEloquent
      */
+    protected $repository;
+    /**
+     * @var ApiController
+     */
+    protected $apiController;
+
+    public function __construct(TecimageRepositoryEloquent $repository, ApiController $apiController)
+    {
+        $this->repository = $repository;
+        $this->apiController = $apiController;
+    }
+
     public function index()
     {
-        //
+        $tecimage = $this->repository->all();
+
+        return $this->apiController->respondWithCollection($tecimage, new TecimageTransformer);
     }
 
     /**

@@ -1,0 +1,165 @@
+<div class="b-inner-page-header f-inner-page-header">
+    <div class="b-inner-page-header__content">
+        <div class="container">
+            <h1 class="c-default" align="center">Personalizadas ou lisas</h1>
+            <img src="../../../images/site/img/shop/banner-camisetas-V2.jpg " class="center-block" style="margin: 10px 0;">
+        </div>
+    </div>
+</div>
+<div class="l-main-container">
+
+    <div class="b-breadcrumbs f-breadcrumbs">
+        <div class="container">
+            <ul>
+                <li><a href="#/"><i class="fa fa-home"></i>Home</a></li>
+                <li><i class="fa fa-angle-right"></i><a href="#/camisetas">Camisetas</a></li>
+                <li><i class="fa fa-angle-right"></i><span>Lista</span></li>
+            </ul>
+        </div>
+    </div>
+
+    <section class="b-infoblock">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9 ">
+                    <div class="b-sort-panel">
+                        <div class="b-sort-panel__inner">
+                            <form action="#">
+                                <div class="b-select b-left">
+                                    <select class="j-select" name="productAtPage" id="productAtPage">
+                                        <option>1 products/page</option>
+                                        <option>6 products/page</option>
+                                        <option selected="selected">9 products/page</option>
+                                    </select>
+                                </div>
+
+                                <div class="b-select b-left">
+                                    <select class="j-select">
+                                        <option>Order by price</option>
+                                        <option selected="selected">Order by name</option>
+                                    </select>
+                                </div>
+                                <div class="b-sort-panel__inner_icon-sort f-sort-panel__inner_icon-sort fa fa-sort-amount-desc"></div>
+
+                                <div class="b-view-switcher f-view-switcher b-right">
+                                    <div class="b-view-switcher_column is-view-switcher__item-active fa fa-th-list"></div>
+                                    <div class="b-view-switcher_table fa fa-th"></div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="b-col-default-indent" ng-controller="lojaCamisetaController">
+                            <div class="col-md-4 col-sm-4 col-xs-6 col-mini-12" ng-repeat="camiseta in camisetas.data">
+                                <div class="b-product-preview">
+                                    <div class="b-product-preview__img view view-sixth">
+                                        <img data-retina src="../../../images/site/img/shop/kawasaki-Mpt-para-web.jpg" alt=""/>
+                                        <div class="b-item-hover-action f-center mask">
+                                            <div class="b-item-hover-action__inner">
+                                                <div class="b-item-hover-action__inner-btn_group">
+                                                    <a href="#/camisetas_detalhes" class="b-btn f-btn b-btn-light f-btn-light info"><i class="fa fa-link"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="b-product-preview__content">
+                                        <div class="b-product-preview__content_col">
+                                            <span class="b-product-preview__content_price f-product-preview__content_price f-primary-b">R$:{{ camiseta.price_com }}0</span>
+                                        </div>
+                                        <div class="b-product-preview__content_col">
+                                            <a href="#/camisetas_detalhes" class="f-product-preview__content_title">{{ camiseta.name }}</a>
+
+
+                                                <div class="f-product-preview__content_category f-primary-b" ng-repeat="genero in camiseta.generos.data">
+                                                    <a href="#/camiseta_detalhes">{{ genero.name }}</a> /
+                                                    <a href="#/camiseta_detalhes">{{ camiseta.description }}</a></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="container">
+                            <div class="b-pagination f-pagination">
+                                <ul>
+                                    <li><a href="#">First</a></li>
+                                    <li><a class="prev" href="#"><i class="fa fa-angle-left"></i></a></li>
+                                    <li class="is-active-pagination"><a href="#">1</a></li>
+                                    <li><a href="#">2</a></li>
+                                    <li><a href="#">3</a></li>
+                                    <li><a class="next" href="#"><i class="fa fa-angle-right"></i></a></li>
+                                    <li><a href="#">Last</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <aside>
+                        <div class="row b-col-default-indent">
+                            <div class="col-md-12">
+                                <div class="b-categories-filter" ng-controller="categoriaCamisetaController">
+                                    <h4 class="f-primary-b b-h4-special f-h4-special c-primary"><i class="fa fa-folder-open fa-2x"></i> Categorias</h4>
+                                    <ul>
+                                        <li ng-repeat="categoria in categorias.data">
+                                            <a class="f-categories-filter_name" href="#"><i class="fa fa-plus"></i> {{ categoria.title }}</a>
+                                            <span class="b-categories-filter_count f-categories-filter_count">12</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <h4 class="f-primary-b b-h4-special f-h4-special c-primary"><i class="fa fa-file-image-o fa-2x"></i> Cores</h4>
+                                <div class="b-color-picker b-color-picker--alt">
+                                    <div class="b-color-picker__box">
+                                        <div class="b-color-picker_color_1"></div>
+                                        <div class="b-color-picker_color_2"></div>
+                                        <div class="b-color-picker_color_3"></div>
+                                        <div class="b-color-picker_color_4"></div>
+                                        <div class="b-color-picker_color_5 is-active"></div>
+                                        <div class="b-color-picker_color_6"></div>
+                                        <div class="b-color-picker_color_7"></div>
+                                        <div class="b-color-picker_color_8"></div>
+                                        <div class="b-color-picker_color_9"></div>
+                                        <div class="b-color-picker_color_10"></div>
+                                        <div class="b-color-picker_color_11"></div>
+                                        <div class="b-color-picker_color_12"></div>
+                                        <div class="b-color-picker_color_13"></div>
+                                        <div class="b-color-picker_color_14"></div>
+                                        <div class="b-color-picker_color_15"></div>
+                                        <div class="b-color-picker_color_16"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12" ng-controller="lojaCamisetaController">
+                                <h4 class="f-primary-b b-h4-special f-h4-special c-primary"><i class="fa fa-cart-arrow-down fa-2x"></i> Produtos + Vistos</h4>
+                                <div class="b-blog-short-post b-blog-short-post--popular b-blog-short-post--w-img b-blog-short-post--img-hover-bordered f-blog-short-post--w-img row f-blog-short-post--popular">
+                                    <div class="b-blog-short-post__item col-md-12 col-sm-6 col-xs-12" ng-repeat="camiseta in camisetas.data">
+                                        <div class="b-blog-short-post__item_img">
+                                            <a href="#"><img data-retina src="../../../images/site/img/shop/wedrive-Mpt-para-web.jpg" width="50" alt=""/></a>
+                                        </div>
+                                        <div class="b-remaining">
+                                            <div class="b-blog-short-post__item_text f-blog-short-post__item_text">
+                                                <a href="#">{{ camiseta.name}} </a>
+                                            </div>
+                                            <div class="f-blog-short-post__item_price  f-primary-b">
+                                                R$ {{ camiseta.price_sem }}0
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12" ng-controller="tagCamisetaController">
+                                <h4 class="f-primary-b b-h4-special f-h4-special c-primary"><i class="fa fa-tag fa-2x"></i> Tags </h4>
+                                <div>
+                                    <a class="f-tag b-tag" href="#" ng-repeat="tag in tags.data">{{ tag.title }}</a>
+                                </div>
+                            </div>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</div>

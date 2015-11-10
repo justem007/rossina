@@ -13,15 +13,21 @@ class CamisetaTableSeeder extends Seeder
     public function run()
     {
         DB::table('camisetas')->insert([
-            'name'        => 'Camiseta Branca',
-            'description' => 'nossas camisetas de qualidade.',
-            'quantidade'  => 0,
-            'info'        => ":: Camiseta 100% algodão; :: Malha soft, com algodão penteado, fibra natural e refinada; :: Silk à base d'água.",
-            'price'       => 29.90,
-            'price_sem'   => 29.90,
-            'active'      => true,
-            'image_id'    => 3,
-            'user_id'     => 1,
+            'name'                     => 'Vermelha',
+            'description'              => '100% algodão',
+            'quantidade'               => 180,
+            'info'                     => ":: Camiseta 100% algodão; :: Malha soft, com algodão penteado, fibra natural e refinada; :: Silk à base d'água.",
+            'price'                    => 25.90,
+            'price_sem'                => 29.90,
+            'active'                   => true,
+            'image_id'                 => 3,
+            'user_id'                  => 1,
+            'quantidade_tamanho_p'     => 10,
+            'quantidade_tamanho_m'     => 10,
+            'quantidade_tamanho_g'     => 10,
+            'quantidade_tamanho_gg'    => 10,
+            'quantidade_tamanho_2gg'   => 10,
+            'quantidade_tamanho_3gg'   => 10,
         ]);
     }
 }

@@ -1,0 +1,18 @@
+app.config(['$routeProvider',function($routeProvider){
+    $routeProvider.
+        when('/tecidos',{controller:'mainTecidosController',
+            templateUrl:'views/tecidos/pages/main.html'}).
+        when('/tecidos_detalhes',{controller:'tecidosDetalhesController',
+            templateUrl:'views/tecidos/pages/detalhes.html'}).
+        when('/estamparia_detalhes',{controller:'detalhesEstampariaController',
+            templateUrl:'views/site/pages/estamparia/detalhes.html'}).
+        when('/tags',{controller:'tagController',
+            templateUrl:'pages/tag.html'}).
+        when('/contatos',{controller:'contatoController',
+            templateUrl:'views/site/pages/contatos/contatos.html'}).
+        when('/faqs',{controller:'faqController',
+            templateUrl:'views/site/pages/faqs/faqs.html'}).
+        when('/login',{controller:'loginController',
+            templateUrl:'pages/login.html'}).
+        otherwise({redirectTo:'/'});
+}])

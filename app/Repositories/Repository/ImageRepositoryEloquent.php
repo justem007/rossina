@@ -15,29 +15,21 @@ use Rossina\Repositories\Presenters\ImagePresenter;
  */
 class ImageRepositoryEloquent extends BaseRepository implements ImageRepository
 {
-    /**
-     * Specify Model class name
-     *
-     * @return string
-     */
+    protected $presenter = ImagePresenter::class;
+
+    protected $setPresenter = true;
+
+    protected $skipPresenter = true;
+
     public function model()
     {
         return Image::class;
     }
 
-    protected $presenter = ImagePresenter::class;
-
-    /**
-     * Boot up the repository, pushing criteria
-     */
     public function boot()
     {
         $this->pushCriteria(app(RequestCriteria::class));
     }
-
-    protected $skipPresenter = true;
-
-    protected $setPresenter = true;
 
     public function presenter(){
 

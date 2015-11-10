@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class CamisetaGeneroTableSeeder extends Seeder
 {
@@ -12,7 +13,7 @@ class CamisetaGeneroTableSeeder extends Seeder
     public function run()
     {
         DB::table('camisetas_genero')->insert([
-            'camisetas_id' => 3,
+            'camisetas_id' => 34,
             'genero_id' => 1
         ]);
 

@@ -3,6 +3,11 @@
 namespace Rossina\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Input;
+use League\Fractal\Manager;
+use League\Fractal\Pagination\IlluminatePaginatorAdapter;
+use League\Fractal\Resource\Collection;
+use League\Fractal\Resource\Item;
 use Rossina\Http\Requests;
 use Rossina\Repositories\Repository\BlocoUmDestaqueRepositoryEloquent as BlocoUDRE;
 use Rossina\Repositories\Transformers\BlocoUmDestaqueTransformer;
@@ -26,75 +31,66 @@ class BlocoUmDestaqueController extends ApiController
         return $this->apiController->respondWithCollection($repository, new BlocoUmDestaqueTransformer());
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    public function paginate(){
+
+        $paginator = $this->repository->paginate();
+
+        $bloco = $paginator->getCollection();
+
+        $resource = new Collection($bloco, new BlocoUmDestaqueTransformer);
+
+        $resource->setPaginator(new IlluminatePaginatorAdapter($paginator));
+
+        return $paginator;
+    }
+
+    public function show($id, Manager $fractal, BlocoUmDestaqueTransformer $blocoUDT)
+    {
+        $project = $this->repository->find($id);
+
+        $item = new Item($project, $blocoUDT);
+
+        $data = $fractal->createData($item)->toArray();
+
+        if (!$data) {
+            return $this->errorNotFound('Você inventou um ID e tentou carregar um local? Idiota.');
+        }
+
+        return $this->respond($data);
+    }
+
+    public function find($id, $columns = array('*'))
+    {
+
+        $repository = $this->repository->find($id, $columns = array('id', 'title', 'text'));
+
+        return $repository;
+
+    }
 
     public function create()
     {
-        //
+
+        $repository = $this->repository->create( Input::all() );
+
+        return $repository;
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-
-    public function store(Request $request)
+    public function update($id)
     {
-        //
+
+        $repository = $this->repository->update( Input::all(), $id );
+
+        return $repository;
+
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-
-    public function show($id)
+    public function delete($id)
     {
-        //
-    }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+        $repository = $this->repository->find($id)->delete();
 
-    public function edit($id)
-    {
-        //
-    }
+        return redirect()->route('posts');
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-
-    public function destroy($id)
-    {
-        //
     }
 }

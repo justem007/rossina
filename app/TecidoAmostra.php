@@ -14,6 +14,6 @@ class TecidoAmostra extends Model implements Transformable
 
     public function tecidos()
     {
-        return $this->belongsToMany('Rossina\Tecido');
+        return $this->belongsToMany(Tecido::class);
     }
 }

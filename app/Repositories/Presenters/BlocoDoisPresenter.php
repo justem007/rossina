@@ -3,7 +3,7 @@
 namespace Rossina\Repositories\Presenters;
 
 use Prettus\Repository\Presenter\FractalPresenter;
-use Rossina\Repositories\BlocoDoisTransformer;
+use Rossina\Repositories\Transformers\BlocoDoisTransformer;
 
 /**
  * Class BlocoDoisPresenter

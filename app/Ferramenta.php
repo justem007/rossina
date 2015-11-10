@@ -14,7 +14,7 @@ class Ferramenta extends Model implements Transformable
 
     public function images()
     {
-        return $this->belongsToMany('Rossina\Image');
+        return $this->belongsToMany(Image::class);
     }
 
 }

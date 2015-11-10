@@ -16,16 +16,4 @@ class BlocoUm extends Model implements Transformable, Presentable
 
     protected $fillable = ['title', 'sub_title', 'alt', 'user_id'];
 
-    public function transform()
-    {
-        return [
-            'id'         => (int) $this->id,
-            'title'      =>$this->title,
-            'sub_title'  =>$this->sub_title,
-            'alt'        =>$this->alt,
-            'created_at' => $this->created_at,
-            'updated_at' => $this->updated_at
-        ];
-    }
-
 }

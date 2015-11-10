@@ -141,6 +141,7 @@ return [
         LucaDegasperi\OAuth2Server\OAuth2ServerServiceProvider::class,
         Rossina\Providers\LarasponseServiceProvider::class,
         Tymon\JWTAuth\Providers\JWTAuthServiceProvider::class,
+        GrahamCampbell\Flysystem\FlysystemServiceProvider::class,
         /*
          * Application Service Providers...
          */
@@ -199,7 +200,7 @@ return [
         'View'       => Illuminate\Support\Facades\View::class,
         'Authorizer' => LucaDegasperi\OAuth2Server\Facades\Authorizer::class,
         'JWTAuth'    => Tymon\JWTAuth\Facades\JWTAuth::class,
+        'Flysystem' =>  GrahamCampbell\Flysystem\Facades\Flysystem::class,
 
     ],
-
 ];

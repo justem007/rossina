@@ -12,12 +12,6 @@ use Rossina\BlocoUm;
 class BlocoUmTransformer extends TransformerAbstract
 {
 
-    /**
-     * Transform the \BlocoUm entity
-     * @param \BlocoUm $model
-     *
-     * @return array
-     */
     public function transform(BlocoUm $model)
     {
         return [
@@ -25,8 +19,8 @@ class BlocoUmTransformer extends TransformerAbstract
             'title'      => $model->title,
             'sub_title'  => $model->sub_title,
             'alt'        => $model->alt,
-            'created_at' => date_format($model->created_at, "d/m/Y H:m:s"),
-            'updated_at' => date_format($model->updated_at, "d/m/Y H:m:s")
+            'created_at' => (string) $model->created_at,
+            'updated_at' => (string) $model->updated_at,
         ];
     }
 }

@@ -10,20 +10,20 @@ class Tecido extends Model implements Transformable
 {
     use TransformableTrait;
 
-    protected $fillable = ['name', 'descriprion', 'info', 'price_com', 'price_sem', 'user_id'];
+    protected $fillable = ['name', 'description', 'info', 'price_com', 'price_sem', 'user_id'];
 
     public function tecimages()
     {
-        return $this->belongsToMany('Rossina\Tecimage');
+        return $this->belongsToMany(Tecimage::class);
     }
 
-    public function tecidoAmostras()
+    public function tecidoamostras()
     {
-        return $this->belongsToMany('Rossina\TecidoAmostra');
+        return $this->belongsToMany(TecidoAmostra::class);
     }
 
     public function tags()
     {
-        return $this->belongsToMany('Rossina\Tag');
+        return $this->belongsToMany(Tag::class);
     }
 }

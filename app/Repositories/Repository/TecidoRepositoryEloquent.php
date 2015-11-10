@@ -6,7 +6,7 @@ use Prettus\Repository\Eloquent\BaseRepository;
 use Prettus\Repository\Criteria\RequestCriteria;
 use Prettus\Repository\Presenter\ModelFractalPresenter;
 use Rossina\Repositories\Interfaces\TecidoRepository;
-use Rossina\Repositories\TecidoPresenter;
+use Rossina\Repositories\Presenters\TecidoPresenter;
 use Rossina\Tecido;
 
 /**

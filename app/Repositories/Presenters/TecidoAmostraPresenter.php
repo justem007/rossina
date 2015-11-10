@@ -2,8 +2,8 @@
 
 namespace Rossina\Repositories\Presenters;
 
-use Rossina\Repositories\TecidoAmostraTransformer;
 use Prettus\Repository\Presenter\FractalPresenter;
+use Rossina\Repositories\Transformers\TecidoAmostraTransformer;
 
 /**
  * Class TecidoAmostraPresenter

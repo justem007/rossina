@@ -1,0 +1,305 @@
+<div class="l-main-container">
+
+        <ul style="list-style: none; margin-top: 20px;">
+            <li>
+                <img src="../../../images/site/img/slider/banner-v6-para-web.jpg" class="img-responsive img-rounded center-block">
+            </li>
+        </ul>
+
+
+    <section class="b-infoblock f-center b-diagonal-line-bg-light">
+        <div class="container">
+
+            <div ng-controller="blocoUmController">
+            <div  ng-repeat="bloco_um in bloco_ums.data">
+            <h2 class="f-primary-l"> <strong class="f-primary-b">{{ bloco_um.title }}</strong></h2>
+            <p class="b-desc-section f-desc-section f-secondary-l f-small">{{ bloco_um.sub_title }}</p>
+            </div>
+            </div>
+
+            <div class="b-some-examples f-some-examples b-some-examples-secondary f-some-examples-secondary f-secondary row" ng-controller="blocoUmDestaqueController">
+                <div class="col-sm-4 col-xs-12" ng-repeat="bloco_um_destaque in bloco_um_destaques.data">
+                    <div class="b-some-examples__item b-bg-transparent f-some-examples__item">
+                        <div class="b-some-examples__item_img view view-sixth">
+                            <a href="#"><img data-retina src="../../../images/site/img/homepage/camisetas-pretas-brancas.png" alt="{{ bloco_um_destaque.alt }}"/></a>
+                            <div class="b-item-hover-action f-center mask">
+                                <div class="b-item-hover-action__inner">
+                                    <div class="b-item-hover-action__inner-btn_group">
+                                        <a href="../../../views/site/pages/blog_detail_right_slidebar.html" class="b-btn f-btn b-btn-light f-btn-light info"><i class="fa fa-link"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="b-some-examples__item_info">
+                            <div class="b-some-examples__item_info_level b-some-examples__item_name f-some-examples__item_name f-primary-b"><a href="#">{{ bloco_um_destaque.title }}</a></div>
+                            <div class="b-some-examples__item_info_level b-some-examples__item_description f-some-examples__item_description">
+                                {{ bloco_um_destaque.sub_title }}
+                            </div>
+                            <a href="#/estamparia_detalhes" class="f-primary-b f-more"><i class="fa fa-arrow-circle-right"></i> Leia mais</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+         <div ng-controller="ferramentaController">
+            <div class="col-sm-4 col-xs-12" ng-repeat="ferramenta in ferramentas.data">
+                <div class="b-app-with-img__item">
+                    <div class="b-app-with-img__item_img view view-sixth">
+                        <a href="#"><img data-retina src="../../../images/site/img/homepage/app3_3.jpg" alt=""/></a>
+                        <div class="b-item-hover-action f-center mask">
+                            <div class="b-item-hover-action__inner">
+                                <div class="b-item-hover-action__inner-btn_group">
+                                    <a href="../../../images/site/img/homepage/big/app_3.jpg" class="b-btn f-btn b-btn-light f-btn-light info fancybox" title="branding design" rel="group2"><i class="fa fa-arrows-alt"></i></a>
+                                    <a href="../../../views/site/pages/portfolio_our_portfolio_detail.html" class="b-btn f-btn b-btn-light f-btn-light info"><i class="fa fa-link"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="b-app-with-img__item_text f-center">
+                        <div class="b-app-with-img__item_name f-app-with-img__item_name f-primary-b"><a href="../../../views/site/pages/portfolio_our_portfolio_detail.html">{{ ferramenta.title }}</a></div>
+                        <div class="b-app-with-img__item_info f-app-with-img__item_info f-primary">{{ ferramenta.description }}</div>
+                    </div>
+                </div>
+            </div>
+         </div>
+        </div>
+    </section>
+
+    <section class="b-infoblock b-desc-section-container">
+        <div class="container">
+             <div ng-controller="blocoDoisController">
+             <div  ng-repeat="bloco_doi in bloco_dois.data">
+            <h2 class="f-primary-l f-center"> <span class="f-primary-b">{{ bloco_doi.title }}</span></h2>
+            <p class="b-desc-section f-desc-section f-secondary-l f-small f-center">{{ bloco_doi.sub_title }}</p>
+             </div>
+             </div>
+            <div class="b-infoblock-with-icon-group row b-infoblock-with-icon--circle-icon" ng-controller="blocoDoisDestaqueController">
+                <div class="col-md-4 col-sm-6 col-xs-12" ng-repeat="bloco_dois_destaque in bloco_dois_destaques.data">
+                    <div class="b-infoblock-with-icon">
+                        <a href="../../../views/site/pages/our_services_version_1.html" class="b-infoblock-with-icon__icon f-infoblock-with-icon__icon">
+                            <i class="fa fa-tint fa-1x"></i>
+                        </a>
+                        <div class="b-infoblock-with-icon__info">
+                            <a href="../../../views/site/pages/our_services_version_1.html" class="f-infoblock-with-icon__info_title b-infoblock-with-icon__info_title f-primary-sb "> {{ bloco_dois_destaque.title }}</a>
+                            <div class="f-infoblock-with-icon__info_text b-infoblock-with-icon__info_text">
+                                {{ bloco_dois_destaque.sub_title }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="b-infoblock-with-icon-group row b-infoblock-with-icon--circle-icon">
+                <div class="b-infoblock-with-icon-group row b-infoblock-with-icon--circle-icon" ng-controller="blocoDoisDestaqueUmController">
+                    <div class="col-md-4 col-sm-6 col-xs-12" ng-repeat="bloco_dois_destaque_um in bloco_dois_destaque_ums.data">
+                        <div class="b-infoblock-with-icon">
+                            <a href="../../../views/site/pages/our_services_version_1.html" class="b-infoblock-with-icon__icon f-infoblock-with-icon__icon">
+                                <i class="fa fa-tint fa-1x"></i>
+                            </a>
+                            <div class="b-infoblock-with-icon__info">
+                                <a href="../../../views/site/pages/our_services_version_1.html" class="f-infoblock-with-icon__info_title b-infoblock-with-icon__info_title f-primary-sb "> {{ bloco_dois_destaque_um.title }}</a>
+                                <div class="f-infoblock-with-icon__info_text b-infoblock-with-icon__info_text">
+                                    {{ bloco_dois_destaque_um.sub_title }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="b-infoblock-with-icon-group row b-infoblock-with-icon--circle-icon">
+                <div class="b-infoblock-with-icon-group row b-infoblock-with-icon--circle-icon"  ng-controller="blocoDoisDestaqueDoisController">
+                    <div class="col-md-4 col-sm-6 col-xs-12" ng-repeat="bloco_dois_destaque_doi in bloco_dois_destaque_dois.data">
+                        <div class="b-infoblock-with-icon">
+                            <a href="../../../views/site/pages/our_services_version_1.html" class="b-infoblock-with-icon__icon f-infoblock-with-icon__icon">
+                                <i class="fa fa-tint fa-1x"></i>
+                            </a>
+                            <div class="b-infoblock-with-icon__info">
+                                <a href="../../../views/site/pages/our_services_version_1.html" class="f-infoblock-with-icon__info_title b-infoblock-with-icon__info_title f-primary-sb "> {{ bloco_dois_destaque_doi.title }}</a>
+                                <div class="f-infoblock-with-icon__info_text b-infoblock-with-icon__info_text">
+                                    {{ bloco_dois_destaque_doi.sub_title }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="b-infoblock b-desc-section-container">
+        <div class="container">
+            <div ng-controller="blocoCamisetaController">
+                <div  ng-repeat="bloco_camiseta in bloco_camisetas.data">
+                    <h2 class="f-primary-l f-center"> <span class="f-primary-b">{{ bloco_camiseta.title }}</span></h2>
+                    <p class="b-desc-section f-desc-section f-secondary-l f-small f-center">{{ bloco_camiseta.sub_title }}</p>
+                </div>
+            </div>s
+            <div class="b-infoblock-with-icon-group row b-infoblock-with-icon--circle-icon" ng-controller="blocoCamisetaDestaqueController">
+                <div class="col-md-4 col-sm-6 col-xs-12" ng-repeat="bloco_camiseta_destaque in bloco_camiseta_destaques.data">
+                    <div class="b-infoblock-with-icon">
+                        <a href="../../../views/site/pages/our_services_version_1.html" class="b-infoblock-with-icon__icon f-infoblock-with-icon__icon">
+                            <i class="fa fa-shopping-cart"></i>
+                        </a>
+                        <div class="b-infoblock-with-icon__info">
+                            <a href="../../../views/site/pages/our_services_version_1.html" class="f-infoblock-with-icon__info_title b-infoblock-with-icon__info_title f-primary-sb">{{ bloco_camiseta_destaque.title }}</a>
+                            <div class="f-infoblock-with-icon__info_text b-infoblock-with-icon__info_text">
+                                {{ bloco_camiseta_destaque.sub_title }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="b-infoblock b-desc-section-container">
+        <div class="container">
+
+            <div ng-controller="blocoTecidoController">
+                <div  ng-repeat="bloco_tecido in bloco_tecidos.data">
+                    <h2 class="f-primary-l f-center"> <span class="f-primary-b">{{ bloco_tecido.title }}</span></h2>
+                    <p class="b-desc-section f-desc-section f-secondary-l f-small f-center">{{ bloco_tecido.sub_title }}</p>
+                </div>
+            </div>
+
+            <div class="b-infoblock-with-icon-group row b-infoblock-with-icon--circle-icon" ng-controller="blocoTecidoDestaqueController">
+                <div class="col-md-4 col-sm-6 col-xs-12" ng-repeat="bloco_tecido_destaque in bloco_tecido_destaques.data">
+                    <div class="b-infoblock-with-icon">
+                        <a href="../../../views/site/pages/our_services_version_1.html" class="b-infoblock-with-icon__icon f-infoblock-with-icon__icon ">
+                            <i class="fa fa-th-large"></i>
+                        </a>
+                        <div class="b-infoblock-with-icon__info">
+                            <a href="../../../views/site/pages/our_services_version_1.html" class="f-infoblock-with-icon__info_title b-infoblock-with-icon__info_title f-primary-sb">{{ bloco_tecido_destaque.title }}</a>
+                            <div class="f-infoblock-with-icon__info_text b-infoblock-with-icon__info_text">
+                                {{ bloco_tecido_destaque.sub_title }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="b-infoblock">
+        <div class="container">
+            <div class="col-md-4 col-sm-12 col-xs-12">
+                <h3 class="f-primary-l">veja o que falam de <span class="f-primary-b">nós</span></h3>
+                <div class="b-mention-short-item">
+                    <div class="b-mention-short-item__comment">
+                        <div class="f-mention-short-item__comment_name f-primary-b">Serviços excelente de estamparia</div>
+                        <div class="b-mention-short-item__comment_text f-mention-short-item__comment_text">Serviço feito com extremo profissionalismo, me deram muita atenção para o meu produto e conseguimos fazer um bom serviço, obrigado pela atenção...</div>
+                        <div class="b-stars-group f-stars-group">
+                            <i class="fa fa-star is-active-stars"></i>
+                            <i class="fa fa-star is-active-stars"></i>
+                            <i class="fa fa-star is-active-stars"></i>
+                            <i class="fa fa-star is-active-stars"></i>
+                            <i class="fa fa-star"></i>
+                        </div>
+                    </div>
+                    <div class="b-mention-short-item__user">
+                        <div class="b-mention-short-item__user_img b-right">
+                            <img class="fade-in-animate" data-retina src="../../../images/site/img/users/usert.png" alt=""/>
+                        </div>
+                        <div class="b-mention-short-item__user_info f-right">
+                            <div class="f-mention-short-item__user_name f-primary-b">Tiririca Alexis</div>
+                            <div class="f-mention-short-item__user_position">Empresa de multi-marcas</div>
+                        </div>
+                    </div>
+                </div>
+                <hr class="b-hr-light hidden-lg" />
+            </div>
+            <div class="col-md-4 col-sm-12 col-xs-12">
+                <h3 class="f-primary-l">popular <span class="f-primary-b">posts</span></h3>
+                <div class="b-blog-short-post b-blog-short-post--w-img f-blog-short-post--w-img row">
+                    <div class="b-blog-short-post__item col-md-12 col-sm-6 col-xs-12 f-primary-b">
+                        <div class="b-blog-short-post__item_img">
+                            <a href="../../../views/site/pages/blog_detail_right_slidebar.html"><img data-retina src="../../../images/site/img/homepage/post-img1_1.jpg" alt=""/></a>
+                        </div>
+                        <div class="b-remaining">
+                            <div class="b-blog-short-post__item_text f-blog-short-post__item_text">
+                                <a href="../../../views/site/pages/blog_detail_right_slidebar.html">A moda atual no brasil, suas particularidades e profissionalismo</a>
+                            </div>
+                            <div class="b-blog-short-post__item_date f-blog-short-post__item_date f-primary-it">
+                                21, agosto, 2015
+                            </div>
+                        </div>
+                    </div>
+                    <div class="b-blog-short-post__item col-md-12 col-sm-6 col-xs-12 f-primary-b">
+                        <div class="b-blog-short-post__item_img">
+                            <a href="../../../views/site/pages/blog_detail_right_slidebar.html"><img data-retina src="../../../images/site/img/homepage/post-img2_2.jpg" alt=""/></a>
+                        </div>
+                        <div class="b-remaining">
+                            <div class="b-blog-short-post__item_text f-blog-short-post__item_text">
+                                <a href="../../../views/site/pages/blog_detail_right_slidebar.html">A importância das cores na moda atual e suas particularidades. </a>
+                            </div>
+                            <div class="b-blog-short-post__item_date f-blog-short-post__item_date f-primary-it">
+                                21, agosto, 2015
+                            </div>
+                        </div>
+                    </div>
+                    <div class="b-blog-short-post__item col-md-12 col-sm-6 col-xs-12 f-primary-b">
+                        <div class="b-blog-short-post__item_img">
+                            <a href="../../../views/site/pages/blog_detail_right_slidebar.html"><img data-retina src="../../../images/site/img/homepage/post-img3_3.jpg" alt=""/></a>
+                        </div>
+                        <div class="b-remaining">
+                            <div class="b-blog-short-post__item_text f-blog-short-post__item_text">
+                                <a href="../../../views/site/pages/blog_detail_right_slidebar.html">Como montar um bom mokup para suas camisetas.</a>
+                            </div>
+                            <div class="b-blog-short-post__item_date f-blog-short-post__item_date f-primary-it">
+                                21, agosto, 2015
+                            </div>
+                        </div>
+                    </div>
+                    <div class="b-blog-short-post__item col-md-12 col-sm-6 col-xs-12 f-primary-b">
+                        <div class="b-blog-short-post__item_img">
+                            <a href="../../../views/site/pages/blog_detail_right_slidebar.html"><img data-retina src="../../../images/site/img/homepage/post-img4_4.jpg" alt=""/></a>
+                        </div>
+                        <div class="b-remaining">
+                            <div class="b-blog-short-post__item_text f-blog-short-post__item_text">
+                                <a href="../../../views/site/pages/blog_detail_right_slidebar.html">Saiba a importância das cores da moda em estações do ano.</a>
+                            </div>
+                            <div class="b-blog-short-post__item_date f-blog-short-post__item_date f-primary-it">
+                                21, agosto, 2015
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr class="b-hr-light hidden-lg" />
+            </div>
+            <div class="col-md-4 col-sm-12 col-xs-12">
+                <h3 class="f-primary-l">twitter <span class="f-primary-b">feeds</span></h3>
+                <div class="b-twitter-feeds row">
+                    <div class="col-md-12 col-sm-4 col-xs-12">
+                        <div class="b-twitter-feeds__item">
+                            <div class="b-twitter-feeds__item_name f-twitter-feeds__item_name f-primary-b"><i class="fa fa-twitter"></i> rossina studio</div>
+                            <div class="b-twitter-feeds__item_twit f-twitter-feeds__item_twit">
+                                serviços com qualidade e agilidade na rossina estamparia. <a href="http://t.co/hd3sk" target="_blank">http://t.co/hd3sk</a>
+                            </div>
+                            <div class="b-twitter-feeds__item_date f-twitter-feeds__item_date f-primary-it">2 dias atrás</div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 col-sm-4 col-xs-12">
+                        <div class="b-twitter-feeds__item">
+                            <div class="b-twitter-feeds__item_name f-twitter-feeds__item_name f-primary-b"><i class="fa fa-twitter"></i> rossina studio</div>
+                            <div class="b-twitter-feeds__item_twit f-twitter-feeds__item_twit">
+                                Conheça a nossa ferramenta crie e monte seu mokup para suas camisetas <a href="http://t.co/hd3sk" target="_blank">http://t.co/hd3sk</a>
+                            </div>
+                            <div class="b-twitter-feeds__item_date f-twitter-feeds__item_date f-primary-it">2 dias atrás</div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 col-sm-4 col-xs-12">
+                        <div class="b-twitter-feeds__item">
+                            <div class="b-twitter-feeds__item_name f-twitter-feeds__item_name f-primary-b"><i class="fa fa-twitter"></i> rossina studio</div>
+                            <div class="b-twitter-feeds__item_twit f-twitter-feeds__item_twit">
+                                Oferecemos serviços de estamparia digital em metro corrido com largura máxima de 1,76m.<a href="http://t.co/hd3sk" target="_blank">http://t.co/hd3sk</a>
+                            </div>
+                            <div class="b-twitter-feeds__item_date f-twitter-feeds__item_date f-primary-it">2 dias atrás</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

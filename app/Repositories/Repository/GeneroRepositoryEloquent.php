@@ -13,6 +13,10 @@ class GeneroRepositoryEloquent extends BaseRepository implements GeneroRepositor
 {
     protected $presenter = GeneroPresenter::class;
 
+    protected $setPresenter = true;
+
+    protected $skipPresenter = true;
+
     public function model()
     {
         return Genero::class;
@@ -25,10 +29,6 @@ class GeneroRepositoryEloquent extends BaseRepository implements GeneroRepositor
     {
         $this->pushCriteria(app(RequestCriteria::class));
     }
-
-    protected $skipPresenter = true;
-
-    protected $setPresenter = true;
 
     public function presenter()
     {

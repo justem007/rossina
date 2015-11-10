@@ -4,6 +4,7 @@ namespace Rossina\Http\Controllers;
 
 use Illuminate\Http\Request;
 use League\Fractal\Manager;
+use League\Fractal\Resource\Collection;
 use Rossina\Http\Requests;
 use Rossina\Repositories\Repository\TecidoRepositoryEloquent;
 use Rossina\Repositories\Transformers\TecidoTransformer;
@@ -20,11 +21,17 @@ class TecidoController extends ApiController
         $this->apiController = $apiController;
     }
 
-    public function index(Manager $fractal, TecidoTransformer $tecidoTransformer)
+    public function index(Manager $fractal, TecidoTransformer $projectTransformer)
     {
-        $tecidos = $this->repository->with(['tecimages'])->all();
 
-        return $this->apiController->respondWithCollection($tecidos, new TecidoTransformer);
+        $projects = $this->repository->with(['tecimages'])->all();
+
+        $collection = new Collection($projects, $projectTransformer);
+
+        $data = $fractal->createData($collection)->toArray();
+
+        return $this->respond($data);
+
     }
 
     /**

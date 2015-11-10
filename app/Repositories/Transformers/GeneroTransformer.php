@@ -11,7 +11,7 @@ class GeneroTransformer extends TransformerAbstract
     public function transform(Genero $model)
     {
         return [
-//            'id'          => (int) $model->id,
+            'id'          => (int) $model->id,
             'name'        => $model->name,
             'description' => $model->description,
 //            'created_at'  => (string) $model->created_at,

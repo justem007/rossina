@@ -14,6 +14,6 @@ class Comment extends Model implements Transformable
 
     public function posts(){
 
-        return $this->belongsTo('Rossina\Post');
+        return $this->belongsTo(Post::class);
     }
 }

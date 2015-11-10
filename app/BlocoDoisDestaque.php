@@ -4,6 +4,7 @@ namespace Rossina;
 
 use Illuminate\Database\Eloquent\Model;
 use Prettus\Repository\Contracts\Presentable;
+use Prettus\Repository\Presenter\ModelFractalPresenter;
 use Prettus\Repository\Traits\PresentableTrait;
 
 class BlocoDoisDestaque extends Model implements Presentable
@@ -14,7 +15,7 @@ class BlocoDoisDestaque extends Model implements Presentable
 
     public function presenter()
     {
-        return "Prettus\\Repository\\Presenter\\ModelFractalPresenter";
+        return ModelFractalPresenter::class;
     }
 
 }

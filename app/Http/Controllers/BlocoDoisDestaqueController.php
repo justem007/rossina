@@ -2,10 +2,9 @@
 
 namespace Rossina\Http\Controllers;
 
-use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Input;
 use League\Fractal\Manager;
-use League\Fractal\Pagination\IlluminatePaginatorAdapter;
-use League\Fractal\Resource\Collection;
+use League\Fractal\Resource\Item;
 use Rossina\Http\Requests;
 use Rossina\Repositories\Repository\BlocoDoisDestaqueRepositoryEloquent;
 use Rossina\Repositories\Transformers\BlocoDoisDestaqueTransformer;
@@ -13,91 +12,65 @@ use Rossina\Repositories\Transformers\BlocoDoisDestaqueTransformer;
 class BlocoDoisDestaqueController extends ApiController
 {
     protected $apiController;
-    protected $bloco;
+    protected $repository;
 
-    public function __construct(ApiController $apiController, BlocoDoisDestaqueRepositoryEloquent $bloco){
+    public function __construct(ApiController $apiController, BlocoDoisDestaqueRepositoryEloquent $repository){
         $this->apiController = $apiController;
-        $this->bloco = $bloco;
+        $this->repository = $repository;
     }
 
     public function index()
     {
-        $bloco = $this->bloco->all();
+        $bloco = $this->repository->all();
 
         return $this->apiController->respondWithCollection($bloco, new BlocoDoisDestaqueTransformer());
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-
-    public function status()
+    public function show($id, Manager $fractal, BlocoDoisDestaqueTransformer $projectTransformer)
     {
+        $project = $this->repository->find($id);
 
-        $paginator = $this->bloco->paginate(3);
+        $item = new Item($project, $projectTransformer);
 
-//        $bloco = $paginator->getCollection();
-//
-//        $resource = new Collection($bloco, new BlocoDoisDestaqueTransformer);
-//
-//         $resource->setPaginator(new IlluminatePaginatorAdapter($paginator));
+        $data = $fractal->createData($item)->toArray();
 
-        return $paginator;
-
-//        $posts = $this->repository->paginate();
-
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        $model = $this->bloco->find($id);
-
-        if (!$model) {
+        if (!$data) {
             return $this->errorNotFound('Você inventou um ID e tentou carregar um local? Idiota.');
         }
 
-        return $this->apiController->respondWithItem($model, new BlocoDoisDestaqueTransformer());
+        return $this->respond($data);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
+    public function find($id, $columns = array('*'))
     {
-        //
+
+        $repository = $this->repository->find($id, $columns = array('id', 'title', 'text'));
+
+        return $repository;
+
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
+    public function create()
     {
-        //
+
+        $repository = $this->repository->create( Input::all() ); return $repository; }
+
+    public function update($id)
+    {
+
+        $repository = $this->repository->update( Input::all(), $id );
+
+        return $repository;
+
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
+    public function delete($id)
     {
-        //
+
+        $repository = $this->repository->find($id)->delete();
+
+        return redirect()->route('posts');
+
     }
+
 }

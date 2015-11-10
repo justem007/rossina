@@ -12,4 +12,9 @@ class Tecimage extends Model implements Transformable
 
     protected $fillable = [];
 
+    public function tecimages()
+    {
+        return $this->belongsToMany(Tecido::class);
+    }
+
 }

@@ -1,0 +1,175 @@
+<div class="b-inner-page-header f-inner-page-header">
+    <div class="b-inner-page-header__content">
+        <div class="container">
+            <h1 class="f-primary-l c-default">Estamparia Digital - Qualidade em impressão 100% digital.</h1>
+        </div>
+    </div>
+</div>
+
+<div class="l-main-container">
+    <div class="b-breadcrumbs f-breadcrumbs">
+        <div class="container">
+            <ul>
+                <li><a href="#/"><i class="fa fa-home"></i>Home</a></li>
+                <li><i class="fa fa-angle-right"></i><a href="#/estamparia_digital">estamparia</a></li>
+                <li><i class="fa fa-angle-right"></i><span>serviços</span></li>
+            </ul>
+        </div>
+    </div>
+    <div class="container l-inner-page-container">
+        <div class="b-portfolio-box col-md-12" ng-controller="blocoDoisDestaqueController">
+            <div class="b-portfolio-item"  ng-repeat="bloco_dois_destaque in bloco_dois_destaques.data">
+                <div class="row" >
+                    <div class="col-md-6 col-xs-12">
+                        <div class="b-portfolio_image">
+                            <div class="b-portfolio_image_box view view-sixth">
+                                <img data-retina="" src="../../../images/site/img/portfolio/estamparia.jpg" alt="">
+                                <div class="b-item-hover-action f-center mask">
+                                    <div class="b-item-hover-action__inner">
+                                        <div class="b-item-hover-action__inner-btn_group">
+                                            <a href="#/estamparia_detalhes" class="b-btn f-btn b-btn-light f-btn-light info"><i class="fa fa-link"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-xs-12">
+                        <div class="b-portfolio_info">
+                            <div class="b-portfolio_info_title f-primary-b f-portfolio_info_title"><a href="#/estamparia_detalhes">{{ bloco_dois_destaque.title }}</a></div>
+                            <div class="b-portfolio_info_rating">
+                                <div class="b-stars-group f-stars-group">
+                                    <i class="fa fa-star is-active-stars"></i>
+                                    <i class="fa fa-star is-active-stars"></i>
+                                    <i class="fa fa-star is-active-stars"></i>
+                                    <i class="fa fa-star is-active-stars"></i>
+                                    <i class="fa fa-star"></i>
+                                </div>
+                                <span class="b-rating_bord hidden-xs"></span>
+                                <div class="b-portfolio_rating_category">
+                                    <span class="f-portfolio_category_title">Categorias :</span>
+                                    <a href="#" class="f-portfolio_category_name">Animation,</a>
+                                    <a href="#" class="f-portfolio_category_name">Game Design</a>
+                                </div>
+                            </div>
+                            <div class="b-portfolio_info_description f-portfolio_info_description">
+                                {{ bloco_dois_destaque.sub_title }}
+                            </div>
+                            <div class="b-portfolio_info_button f-portfolio_info_button">
+                                <a href="#/estamparia_detalhes" class="button-sm">Read more</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="b-portfolio-box col-md-12" ng-controller="blocoDoisDestaqueUmController">
+            <div class="b-portfolio-item"  ng-repeat="bloco_dois_destaque_um in bloco_dois_destaque_ums.data">
+                <div class="row" >
+                    <div class="col-md-6 col-xs-12">
+                        <div class="b-portfolio_image">
+                            <div class="b-portfolio_image_box view view-sixth">
+                                <img data-retina="" src="../../../images/site/img/portfolio/topo_calandra_350x170.jpg" alt="">
+                                <div class="b-item-hover-action f-center mask">
+                                    <div class="b-item-hover-action__inner">
+                                        <div class="b-item-hover-action__inner-btn_group">
+                                            <a href="#/estamparia_detalhes" class="b-btn f-btn b-btn-light f-btn-light info"><i class="fa fa-link"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-xs-12">
+                        <div class="b-portfolio_info">
+                            <div class="b-portfolio_info_title f-primary-b f-portfolio_info_title"><a href="#/estamparia_detalhes">{{ bloco_dois_destaque_um.title }}</a></div>
+                            <div class="b-portfolio_info_rating">
+                                <div class="b-stars-group f-stars-group">
+                                    <i class="fa fa-star is-active-stars"></i>
+                                    <i class="fa fa-star is-active-stars"></i>
+                                    <i class="fa fa-star is-active-stars"></i>
+                                    <i class="fa fa-star is-active-stars"></i>
+                                    <i class="fa fa-star"></i>
+                                </div>
+                                <span class="b-rating_bord hidden-xs"></span>
+                                <div class="b-portfolio_rating_category">
+                                    <span class="f-portfolio_category_title">Categorias :</span>
+                                    <a href="#" class="f-portfolio_category_name">Animation,</a>
+                                    <a href="#" class="f-portfolio_category_name">Game Design</a>
+                                </div>
+                            </div>
+                            <div class="b-portfolio_info_description f-portfolio_info_description">
+                                {{ bloco_dois_destaque_um.sub_title }}
+                            </div>
+                            <div class="b-portfolio_info_button f-portfolio_info_button">
+                                <a href="#/estamparia_detalhes" class="button-sm">Read more</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="b-portfolio-box col-md-12" ng-controller="blocoDoisDestaqueDoisController">
+            <div class="b-portfolio-item" ng-repeat="bloco_dois_destaque_doi in bloco_dois_destaque_dois.data">
+                <div class="row" >
+                    <div class="col-md-6 col-xs-12">
+                        <div class="b-portfolio_image">
+                            <div class="b-portfolio_image_box view view-sixth">
+                                <img data-retina="" src="../../../images/site/img/portfolio/impressaofitascadarcos2.jpg" alt="">
+                                <div class="b-item-hover-action f-center mask">
+                                    <div class="b-item-hover-action__inner">
+                                        <div class="b-item-hover-action__inner-btn_group">
+                                            <a href="#/estamparia_detalhes" class="b-btn f-btn b-btn-light f-btn-light info"><i class="fa fa-link"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-xs-12">
+                        <div class="b-portfolio_info">
+                            <div class="b-portfolio_info_title f-primary-b f-portfolio_info_title"><a href="#/estamparia_detalhes">{{ bloco_dois_destaque_doi.title }}</a></div>
+                            <div class="b-portfolio_info_rating">
+                                <div class="b-stars-group f-stars-group">
+                                    <i class="fa fa-star is-active-stars"></i>
+                                    <i class="fa fa-star is-active-stars"></i>
+                                    <i class="fa fa-star is-active-stars"></i>
+                                    <i class="fa fa-star is-active-stars"></i>
+                                    <i class="fa fa-star"></i>
+                                </div>
+                                <span class="b-rating_bord hidden-xs"></span>
+                                <div class="b-portfolio_rating_category">
+                                    <span class="f-portfolio_category_title">Categorias :</span>
+                                    <a href="#" class="f-portfolio_category_name">Animation,</a>
+                                    <a href="#" class="f-portfolio_category_name">Game Design</a>
+                                </div>
+                            </div>
+                            <div class="b-portfolio_info_description f-portfolio_info_description">
+                                {{ bloco_dois_destaque_doi.sub_title }}
+                            </div>
+                            <div class="b-portfolio_info_button f-portfolio_info_button">
+                                <a href="#/estamparia_detalhes" class="button-sm">Read more</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row b-pagination col-md-12 f-pagination">
+            <div class="container">
+                <ul>
+                    <li><a href="#">First</a></li>
+                    <li><a class="prev" href="#"><i class="fa fa-angle-left"></i></a></li>
+                    <li class="is-active-pagination"><a href="#">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a class="next" href="#"><i class="fa fa-angle-right"></i></a></li>
+                    <li><a href="#">Last</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

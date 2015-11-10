@@ -14,21 +14,21 @@ class Camisetas extends Model implements Transformable
 
     public function generos()
     {
-        return $this->belongsToMany('Rossina\Genero');
+        return $this->belongsToMany(Genero::class);
     }
 
     public function cors()
     {
-        return $this->belongsToMany('Rossina\Cor');
+        return $this->belongsToMany(Cor::class);
     }
 
     public function tamanhos()
     {
-        return $this->belongsToMany('Rossina\Tamanho');
+        return $this->belongsToMany(Tamanho::class);
     }
 
     public function silks(){
-        return $this->belongsToMany('Rossina\Silk');
+        return $this->belongsToMany(Silk::class);
     }
 
     public function etiquetas()
@@ -38,6 +38,6 @@ class Camisetas extends Model implements Transformable
 
     public function tags()
     {
-        return $this->belongsToMany('Rossina\Tag');
+        return $this->belongsToMany(Tag::class);
     }
 }

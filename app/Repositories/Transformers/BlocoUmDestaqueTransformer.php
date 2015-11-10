@@ -23,6 +23,7 @@ class BlocoUmDestaqueTransformer extends TransformerAbstract
             'id'         => (int) $model->id,
             'title'      => $model->title,
             'sub_title'  => $model->sub_title,
+            'alt'        => $model->alt,
             'image_id'   => (int) $model->image_id,
             'user_id'    => (int) $model->user_id,
             'created_at' => (string) $model->created_at,

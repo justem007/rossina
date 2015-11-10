@@ -4,6 +4,7 @@ namespace Rossina;
 
 use Illuminate\Database\Eloquent\Model;
 use Prettus\Repository\Contracts\Transformable;
+use Prettus\Repository\Presenter\ModelFractalPresenter;
 use Prettus\Repository\Traits\TransformableTrait;
 
 class Tag extends Model implements Transformable
@@ -12,24 +13,19 @@ class Tag extends Model implements Transformable
 
     protected $fillable = ['title'];
 
-    public function presenter()
-    {
-        return "Prettus\\Repository\\Presenter\\ModelFractalPresenter";
-    }
-
     public function posts()
     {
-        return $this->belongsToMany('Rossina\Post');
+        return $this->belongsToMany(Post::class);
     }
 
     public function tecidos()
     {
-        return $this->belongsToMany('Rossina\Tecido');
+        return $this->belongsToMany(Tecido::class);
     }
 
     public function camisetas()
     {
-        return $this->belongsToMany('Rossina\Camisetas');
+        return $this->belongsToMany(Camisetas::class);
     }
 
 }

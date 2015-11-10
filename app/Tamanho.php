@@ -15,7 +15,7 @@ class Tamanho extends Model implements Transformable
 
     public function camisetas()
     {
-        return $this->belongsToMany('Rossina\Camisetas');
+        return $this->belongsToMany(Camisetas::class);
     }
 
 }

@@ -12,12 +12,6 @@ use Rossina\TecidoAmostra;
 class TecidoAmostraTransformer extends TransformerAbstract
 {
 
-    /**
-     * Transform the \TecidoAmostra entity
-     * @param \TecidoAmostra $model
-     *
-     * @return array
-     */
     public function transform(TecidoAmostra $model)
     {
         return [
@@ -30,4 +24,5 @@ class TecidoAmostraTransformer extends TransformerAbstract
 //            'updated_at'   => $model->updated_at
         ];
     }
+
 }

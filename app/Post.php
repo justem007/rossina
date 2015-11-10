@@ -2,7 +2,6 @@
 
 namespace Rossina;
 
-use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 use Prettus\Repository\Contracts\Presentable;
 use Prettus\Repository\Traits\PresentableTrait;
@@ -15,22 +14,27 @@ class Post extends Model implements Presentable
 
     public function images()
     {
-        return $this->belongsToMany('Rossina\Image');
+        return $this->belongsToMany(Image::class);
     }
 
     public function comments()
     {
-        return $this->hasMany('Rossina\Comment');
+        return $this->hasMany(Comment::class);
     }
 
     public function tags()
     {
-        return $this->belongsToMany('Rossina\Tag');
+        return $this->belongsToMany(Tag::class);
     }
 
     public function users()
     {
-        return $this->belongsTo('Rossina\User');
+        return $this->belongsTo(User::class);
+    }
+
+    public function categorias()
+    {
+        return $this->belongsToMany(Categoria::class);
     }
 
 }

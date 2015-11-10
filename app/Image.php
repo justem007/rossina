@@ -14,7 +14,7 @@ class Image extends Model implements Transformable
 
     public function posts()
     {
-        return $this->belongsToMany('Rossina\Post');
+        return $this->belongsToMany(Post::class);
     }
 
     public function ferramentas()

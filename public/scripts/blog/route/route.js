@@ -1,14 +1,14 @@
 app.config(['$routeProvider',function($routeProvider){
     $routeProvider.
-        when('/',{controller:'mainController',
-            templateUrl:'views/pages/main.html'}).
-        when('/usuarios',{controller:'userController',
-            templateUrl:'views/pages/user.html'}).
+        when('/blog',{controller:'mainController',
+            templateUrl:'views/blog/pages/index.html'}).
+        when('/blog_detalhes',{controller:'detalheController',
+            templateUrl:'views/blog/pages/detalhes.html'}).
         when('/comentarios',{controller:'commentController',
-            templateUrl:'views/pages/comment.html'}).
+            templateUrl:'pages/comment.html'}).
         when('/tags',{controller:'tagController',
-            templateUrl:'views/pages/tag.html'}).
+            templateUrl:'pages/tag.html'}).
         when('/login',{controller:'loginController',
-            templateUrl:'views/pages/login.html'}).
+            templateUrl:'pages/login.html'}).
         otherwise({redirectTo:'/'});
 }])
