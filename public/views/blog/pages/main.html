@@ -1,0 +1,40 @@
+<div ng-repeat="user in users.data">
+
+    <div ng-repeat="post in user.posts.data">
+
+    <h2> {{ post.title }}<small class="pull-right">
+        <i class="fa fa-user"></i>  por {{user.name}}
+        </small>
+    </h2>
+
+    <p>{{post.text}}</p>
+
+    <p ng-repeat="image in post.images.data">
+        Images : {{ image.name }}
+    </p>
+
+    <!--<p ng-repeat="comment in post.comments.data">-->
+        <!--Comentários : {{ comment.text}}-->
+    <!--</p>-->
+
+    <br/><a href="#api/posts/show/{{post.id}}"><i class="fa fa-hand-o-right"></i> Continue lendo...</a>
+
+     <span ng-init="lengthComments = post.comments.data.length">
+        <a ng-show="lengthComments>0" class="pull-right"
+        href="#api/post/show/{{post.id}}">
+        {{lengthComments}}
+        comentário{{ lengthComments != 1 ? 's' : ''}} </a>
+    </span>
+
+    <p class="text-right">
+    <p>
+    Tags :
+    <span ng-repeat="tag in post.tags.data"
+         class="badge tag">{{ tag.title }} </span>
+    </p>
+    </p>
+    <hr/>
+
+    </div>
+
+</div>
