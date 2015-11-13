@@ -12,7 +12,7 @@ return [
     |
     */
 
-    'secret' => env('JWT_SECRET', 'Bq9HTtezwOIa3nxmO9r9ylJYS5Er7Ce6'),
+    'secret' => env('JWT_SECRET', 'ptOGrGI5oP3M9hfZ35dTfZ00DPCEiha8'),
 
     /*
     |--------------------------------------------------------------------------
@@ -64,7 +64,7 @@ return [
     |
     */
 
-    'user' => 'App\User',
+    'user' => 'Rossina\User',
 
     /*
     |--------------------------------------------------------------------------

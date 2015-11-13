@@ -32,9 +32,9 @@ class Post extends Model implements Presentable
         return $this->belongsTo(User::class);
     }
 
-    public function categorias()
+    public function categoriaBlogs()
     {
-        return $this->belongsToMany(Categoria::class);
+        return $this->belongsToMany(CategoriaBlog::class);
     }
 
 }

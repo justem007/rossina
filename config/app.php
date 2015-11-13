@@ -200,7 +200,8 @@ return [
         'View'       => Illuminate\Support\Facades\View::class,
         'Authorizer' => LucaDegasperi\OAuth2Server\Facades\Authorizer::class,
         'JWTAuth'    => Tymon\JWTAuth\Facades\JWTAuth::class,
-        'Flysystem' =>  GrahamCampbell\Flysystem\Facades\Flysystem::class,
+        'JWTFactory' => Tymon\JWTAuth\Facades\JWTFactory::class,
+        'Flysystem'  =>  GrahamCampbell\Flysystem\Facades\Flysystem::class,
 
     ],
 ];

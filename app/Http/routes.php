@@ -1,10 +1,11 @@
 <?php
 
-//use Illuminate\Support\Facades\App;
-//use Illuminate\Support\Facades\DB;
-//use Illuminate\Support\Facades\Redirect;
-//use Monolog\Handler\StreamHandler;
-//use Monolog\Logger;
+use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Redirect;
+use Monolog\Handler\StreamHandler;
+use Monolog\Logger;
+use Tymon\JWTAuth\Facades\JWTAuth;
 
 //Route::get('guzzle', function(){
 //
@@ -22,9 +23,9 @@
 //    return  Redirect::to('views/blog/index.html');
 //});
 //
-//Route::get('/', function (){
-//    return  Redirect::to('index.html');
-//});
+Route::get('/', function (){
+    return  Redirect::to('index.html');
+});
 //
 ////Route::get('/', 'HomeController@principal');
 //
@@ -32,6 +33,17 @@
 //    \Artisan::call('route:list');
 //    return "<pre>".\Artisan::output();
 //});
+
+Route::group(['prefix' => 'api'], function()
+{
+    Route::resource('authenticate', 'AuthenticateController', ['only' => ['index']]);
+    Route::post('authenticate', 'AuthenticateController@authenticate');
+});
+
+Route::post('test', function () {
+    $token = JWTAuth::parseToken('bearer', 'HTTP_AUTHORIZATION')->getToken();
+    dd($token);
+});
 
 Route::group(['prefix' => 'api'], function (){
 
@@ -42,6 +54,14 @@ Route::group(['prefix' => 'api'], function (){
         Route::post('/', ['as' => 'posts.create', 'uses' => 'PostsController@create']);
         Route::put('update/{id}',['as' => 'posts.update', 'uses' => 'PostsController@update']);
         Route::delete('delete/{id}', ['as' => 'posts.delete', 'uses' => 'PostsController@delete']);
+    });
+
+    Route::group(['prefix' => 'categoria-blogs'], function () {
+        Route::get('/', ['as' => 'categoria-blogs', 'uses' => 'CategoriaBlogController@index']);
+        Route::get('show/{id}', ['as' => 'categoria-blogs.show', 'uses' => 'CategoriaBlogController@show']);
+        Route::post('/', ['as' => 'categoria-blogs.create', 'uses' => 'CategoriaBlogController@create']);
+        Route::put('update/{id}', ['as' => 'categoria-blogs.update', 'uses' => 'CategoriaBlogController@update']);
+        Route::delete('delete/{id}', ['as' => 'categoria-blogs.delete', 'uses' => 'CategoriaBlogController@delete']);
     });
 
     Route::group(['prefix' => 'categorias'], function () {
@@ -151,7 +171,6 @@ Route::group(['prefix' => 'api'], function (){
         Route::post('/', ['as' => 'bloco-camiseta-destaques.create', 'uses' => 'BlocoCamisetaDestaqueController@create']);
         Route::put('update/{id}', ['as' => 'bloco-camiseta-destaques.update', 'uses' => 'BlocoCamisetaDestaqueController@update']);
         Route::delete('delete/{id}', ['as' => 'bloco-camiseta-destaques.delete', 'uses' => 'BlocoCamisetaDestaqueController@delete']);
-        Route::get('status', ['as' => 'bloco-camiseta-destaques.status', 'uses' => 'BlocoCamisetaDestaqueController@status']);
     });
 
     Route::group(['prefix' => 'bloco-tecidos'], function () {
@@ -226,6 +245,15 @@ Route::group(['prefix' => 'api'], function (){
         Route::delete('delete/{id}', ['as' => 'silks.delete', 'uses' => 'SilkController@delete']);
     });
 
+    Route::group(['prefix' => 'categoria-tecidos'], function () {
+        Route::get('/', ['as' => 'categoria-tecidos', 'uses' => 'CategoriaTecidoController@index']);
+        Route::get('paginate', ['as' => 'categoria-tecidos', 'uses' => 'CategoriaTecidoController@paginate']);
+        Route::get('show/{id}', ['as' => 'categoria-tecidos.show', 'uses' => 'CategoriaTecidoController@show']);
+        Route::post('/', ['as' => 'categoria-tecidos.create', 'uses' => 'CategoriaTecidoController@create']);
+        Route::put('update/{id}', ['as' => 'categoria-tecidos.update', 'uses' => 'CategoriaTecidoController@update']);
+        Route::delete('delete/{id}', ['as' => 'categoria-tecidos.delete', 'uses' => 'CategoriaTecidoController@delete']);
+    });
+
     Route::group(['prefix' => 'tecidos'], function () {
         Route::get('/', ['as' => 'tecidos', 'uses' => 'TecidoController@index']);
         Route::get('paginate', ['as' => 'tecidos', 'uses' => 'TecidoController@paginate']);
@@ -269,6 +297,24 @@ Route::group(['prefix' => 'api'], function (){
         Route::post('/', ['as' => 'menus.create', 'uses' => 'MenuController@create']);
         Route::put('update/{id}', ['as' => 'menus.update', 'uses' => 'MenuController@update']);
         Route::delete('delete/{id}', ['as' => 'menus.delete', 'uses' => 'MenuController@delete']);
+    });
+
+    Route::group(['prefix' => 'faqs'], function () {
+        Route::get('/', ['as' => 'faqs', 'uses' => 'FaqController@index']);
+        Route::get('paginate', ['as' => 'faqs', 'uses' => 'FaqController@paginate']);
+        Route::get('show/{id}', ['as' => 'faqs.show', 'uses' => 'FaqController@show']);
+        Route::post('/', ['as' => 'faqs.create', 'uses' => 'FaqController@create']);
+        Route::put('update/{id}', ['as' => 'faqs.update', 'uses' => 'FaqController@update']);
+        Route::delete('delete/{id}', ['as' => 'faqs.delete', 'uses' => 'FaqController@delete']);
+    });
+
+    Route::group(['prefix' => 'categoria-faqs'], function () {
+        Route::get('/', ['as' => 'categoria-faqs', 'uses' => 'CategoriaFaqController@index']);
+        Route::get('paginate', ['as' => 'categoria-faqs', 'uses' => 'CategoriaFaqController@paginate']);
+        Route::get('show/{id}', ['as' => 'categoria-faqs.show', 'uses' => 'CategoriaFaqController@show']);
+        Route::post('/', ['as' => 'categoria-faqs.create', 'uses' => 'CategoriaFaqController@create']);
+        Route::put('update/{id}', ['as' => 'categoria-faqs.update', 'uses' => 'CategoriaFaqController@update']);
+        Route::delete('delete/{id}', ['as' => 'categoria-faqs.delete', 'uses' => 'CategoriaFaqController@delete']);
     });
 });
 

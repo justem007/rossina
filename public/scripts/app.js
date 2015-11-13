@@ -3,5 +3,6 @@ app = new angular.module('app',[
         'ngResource',
         'ngAnimate',
         'ngMaterial',
-        'ngMessages'
+        'ngMessages',
+        'ui.bootstrap'
     ]);

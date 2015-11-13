@@ -1,10 +1,10 @@
-app.controller('mainTecidoController',function ($scope,$http) {
+app.controller('mainBlogController',function ($scope,$http) {
 
-    $scope.posts = [];
+    $scope.categoria_blogs = [];
 
-    $http.get("/api/posts").then(function(response){
+    $http.get("/api/categoria-blogs").then(function(response){
         console.log(response);
-        $scope.posts = response.data;
+        $scope.categoria_blogs = response.data;
     },function(response){
         console.warn(response);
     });

@@ -1,10 +1,10 @@
 app.controller('lojaTecidoController',function ($scope,$http) {
 
-    $scope.tecidos = [];
+    $scope.categoria_tecidos = [];
 
-    $http.get("/api/tecidos").then(function(response){
+    $http.get("/api/categoria-tecidos").then(function(response){
         console.log(response);
-        $scope.tecidos = response.data;
+        $scope.categoria_tecidos = response.data;
     },function(response){
         console.warn(response);
     });

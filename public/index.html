@@ -8,6 +8,7 @@
 
     <link rel="stylesheet" type="text/css" href="bower_components/bootswatch/spacelab/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="bower_components/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="bower_components/bootstrap-notify/css/bootstrap-notify.css">
     <link rel="stylesheet" type="text/css" href="styles/site/css/main-default.css">
 
 </head>
@@ -19,10 +20,10 @@
             <div class="b-option-contacts f-option-contacts" ng-repeat="horario in horarios.data">
                 <a href="#/"><i class="fa fa-calendar"></i>{{ horario.atendimento }}</a>
                 <a href="#/"><i class="fa fa-phone"></i> {{ horario.telefone }} </a>
-                <a href="#/"><i class="fa fa-space-shuttle"></i> {{ horario.entrega }} |</a>
+                <a href="#/"><i class="fa fa-space-shuttle"></i> {{ horario.entrega }}</a>
                 <a href="#/registrar"><i class="fa fa-user"></i>Cadastre-se</a>
-                <a href="#/login_site"><i class="fa fa-lock"></i> Login</a>
-                <a href="#/compras"><i class="fa fa-archive "></i> Minhas Compras </a>
+                <a href="#/login_site"><i class="fa fa-lock"></i>Login</a>
+                <a href="#/compras"><i class="fa fa-archive "></i> Minhas</a>
              </div>
         </div>
     </div>
@@ -83,23 +84,24 @@
                       <a href="#/check"> <button class="button-xs">Check out  </button></a>
                   </div>
               </div>
-               </span>
+          </span>
             </div>
-            <div class="b-top-nav-show-slide f-top-nav-show-slide b-right j-top-nav-show-slide"><i class="fa fa-align-justify"></i></div>
-         <div ng-controller="menuController">
-            <nav class="b-top-nav f-top-nav b-right j-top-nav " >
-                <ul class="b-top-nav__1level_wrap" >
+            <div class="b-top-nav-show-slide f-top-nav-show-slide b-right"><i class="fa fa-align-justify fa-2x"></i></div>
+             <div ng-controller="menuController">
+                <nav class="b-top-nav f-top-nav b-right j-top-nav">
+                    <ul class="b-top-nav__1level_wrap" >
 
-                    <li class="b-top-nav__1level f-top-nav__1level is-active-top-nav__1level">
-                        <a href="#/" tooltip-popup-close-delay='500' uib-tooltip='Qualidade Digital'><i class="fa fa-home "></i> Home<span class="b-ico-dropdown"><i class="fa fa-arrow-circle-down"></i></span></a>
-                    </li>
+                        <li class="b-top-nav__1level f-top-nav__1level is-active-top-nav__1level">
+                            <a href="#/" tooltip-popup-close-delay='500' uib-tooltip='Qualidade Digital'><i class="fa fa-home "></i> Home<span class="b-ico-dropdown"><i class="fa fa-arrow-circle-down"></i></span></a>
+                        </li>
 
-                    <li class="b-top-nav__1level f-top-nav__1level f-primary-b" ng-repeat="menu in menus.data">
-                        <a href="#/{{ menu.url }}" tooltip-popup-close-delay='500' uib-tooltip='{{ menu.description }}'><i class="{{ menu.fafa }} "></i> {{ menu.title }} <span class="b-ico-dropdown"><i class="fa fa-arrow-circle-down"></i></span></a>
-                    </li>
-                </ul>
-            </nav>
-             </div>
+                        <li class="b-top-nav__1level f-top-nav__1level f-primary-b" ng-repeat="menu in menus.data">
+                            <a href="#/{{ menu.url }}" tooltip-popup-close-delay='500' uib-tooltip='{{ menu.description }}'><i class="{{ menu.fafa }} "></i> {{ menu.title }} | <span class="b-ico-dropdown"><i class="fa fa-arrow-circle-down"></i></span></a>
+                        </li>
+                    </ul>
+                </nav>
+                 </div>
+            </div>
         </div>
     </div>
 </header>
@@ -282,6 +284,7 @@
 <script src="bower_components/angular-sanitize/angular-sanitize.min.js"></script>
 <script src="bower_components/angular-aria/angular-aria.min.js"></script>
 <script src="bower_components/angular-material/angular-material.min.js"></script>
+<script src="bower_components/bootstrap-notify/js/bootstrap-notify.js"></script>
 
 <script src="scripts/site/app.js"></script>
 <script src="scripts/site/route/route.js"></script>
@@ -309,6 +312,7 @@
 <script src="scripts/site/controller/blocoCamisetaDestaque.js"></script>
 <script src="scripts/site/controller/blocoTecido.js"></script>
 <script src="scripts/site/controller/blocoTecidoDestaque.js"></script>
+<script src="scripts/ui-bootstrap/accordion.js"></script>
 
 
 <script src="scripts/blog/route/route.js"></script>

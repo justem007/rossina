@@ -2,7 +2,6 @@
 
 namespace Rossina\Http\Controllers;
 
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 use League\Fractal\Manager;
 use League\Fractal\Pagination\IlluminatePaginatorAdapter;
@@ -10,7 +9,6 @@ use League\Fractal\Resource\Collection;
 use League\Fractal\Resource\Item;
 use Rossina\Http\Requests;
 use Rossina\Repositories\Repository\CategoriaRepositoryEloquent;
-use Rossina\Repositories\Transformers\BlocoUmTransformer;
 use Rossina\Repositories\Transformers\CategoriaTransformer;
 
 class CategoriaController extends ApiController

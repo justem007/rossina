@@ -23,6 +23,7 @@ class DatabaseSeeder extends Seeder
 //        $this->call(HorarioTableSeeder::class);
 //        $this->call(MensagemEspecialTableSeeder::class);
 //        $this->call(MenuTableSeeder::class);
+//        $this->call(TecidoCategoriaTableSeeder::class);
 
         Model::reguard();
     }

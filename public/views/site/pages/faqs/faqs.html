@@ -1,12 +1,3 @@
-<div class="b-inner-page-header f-inner-page-header">
-    <div class="b-inner-page-header__content">
-        <div class="container">
-            <h1 class="f-primary-l c-default">FAQs</h1>
-        </div>
-    </div>
-</div>
-<div class="l-main-container">
-
     <div class="b-breadcrumbs f-breadcrumbs">
         <div class="container">
             <ul>
@@ -18,222 +9,83 @@
     </div>
     <section class="b-infoblock--small">
         <div class="container">
-            <div class="row b-col-default-indent">
+            <div class="row b-col-default-indent" ng-controller="faqController">
                 <div class="col-md-9">
-                    <p class="f-primary-b f-uppercase f-title-small c-primary">Frequently asked questions</p>
+                    <p class="f-primary-b f-uppercase f-title-small c-primary">Perguntas frequentes</p>
 
-                    <div class="j-accordion b-accordion f-accordion b-accordion--secondary b-accordion--with-icon-indent f-accordion--secondary">
-                        <h3 class="b-accordion__title f-accordion__title f-primary-b"><i
-                                class="fa fa-question-circle"></i> Donec ut purus sed tortor malesuada venenatis eget
-                        </h3>
+                  <div>
 
-                        <div class="b-accordion__content">
-                            <p>Mauris rhoncus pretium porttitor. Cras scelerisque commodo odio. Phasellus dolor enim,
-                                faucibus egestas scelerisque hendrerit, aliquet sed lorem. Pellentesque et pulvinar
-                                enim. Quisque at tempor ligula. Maecenas augue ante, euismod vitae egestas sit amet,
-                                accumsan eu nulla. <br/>
-                                <a href="blog_detail_left_slidebar.html" class="f-more f-primary-b">Read more</a></p>
-                        </div>
-                        <h3 class="b-accordion__title f-accordion__title f-primary-b"><i
-                                class="fa fa-question-circle"></i> Suspendisse vitae lectus in tellu</h3>
+                      <script type="text/ng-template" id="group-template.html">
+                          <div class="panel {{panelClass || 'panel-default'}}">
+                              <div class="panel-heading">
+                                  <h4 class="panel-title" style="color:#fa39c3">
+                                      <a href tabindex="0" class="accordion-toggle" ng-click="toggleOpen()" uib-accordion-transclude="heading"><span
+                                              ng-class="{'text-muted': isDisabled}">{{heading}}</span></a>
+                                  </h4>
+                              </div>
+                              <div class="panel-collapse collapse" uib-collapse="!isOpen">
+                                  <div class="panel-body" style="text-align: right" ng-transclude></div>
+                              </div>
+                          </div>
+                      </script>
 
-                        <div class="b-accordion__content">
-                            <p>Mauris rhoncus pretium porttitor. Cras scelerisque commodo odio. Phasellus dolor enim,
-                                faucibus egestas scelerisque hendrerit, aliquet sed lorem. Pellentesque et pulvinar
-                                enim. Quisque at tempor ligula. Maecenas augue ante, euismod vitae egestas sit amet,
-                                accumsan eu nulla. At vero eos et accusamus et iusto odio dignissimos ducimus qui
-                                blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas. <br/>
-                                <a href="blog_detail_left_slidebar.html" class="f-more f-primary-b">Read more</a></p>
-                        </div>
-                        <h3 class="b-accordion__title f-accordion__title f-primary-b"><i
-                                class="fa fa-question-circle"></i> Maecenas augue ante, euismod vitae egestas </h3>
+                      <div class="checkbox">
+                          <label>
+                              <input type="checkbox" ng-model="oneAtATime">
+                              Abra somente um de cada vez
+                          </label>
+                      </div>
 
-                        <div class="b-accordion__content">
-                            <p>Mauris rhoncus pretium porttitor. Cras scelerisque commodo odio. Phasellus dolor enim,
-                                faucibus egestas scelerisque hendrerit, aliquet sed lorem. Pellentesque et pulvinar
-                                enim. Quisque at tempor ligula. Maecenas augue ante, euismod vitae egestas sit amet,
-                                accumsan eu nulla. <br/>
-                                <a href="blog_detail_left_slidebar.html" class="f-more f-primary-b">Read more</a></p>
-                        </div>
-                        <h3 class="b-accordion__title f-accordion__title f-primary-b"><i
-                                class="fa fa-question-circle"></i> Donec ut purus sed tortor malesuada venenatis eget
-                        </h3>
-
-                        <div class="b-accordion__content">
-                            <p>Mauris rhoncus pretium porttitor. Cras scelerisque commodo odio. Phasellus dolor enim,
-                                faucibus egestas scelerisque hendrerit, aliquet sed lorem. Pellentesque et pulvinar
-                                enim. Quisque at tempor ligula. Maecenas augue ante, euismod vitae egestas sit amet,
-                                accumsan eu nulla. <br/>
-                                <a href="blog_detail_left_slidebar.html" class="f-more f-primary-b">Read more</a></p>
-                        </div>
-                        <h3 class="b-accordion__title f-accordion__title f-primary-b"><i
-                                class="fa fa-question-circle"></i> Suspendisse vitae lectus in tellu</h3>
-
-                        <div class="b-accordion__content">
-                            <p>Mauris rhoncus pretium porttitor. Cras scelerisque commodo odio. Phasellus dolor enim,
-                                faucibus egestas scelerisque hendrerit, aliquet sed lorem. Pellentesque et pulvinar
-                                enim. Quisque at tempor ligula. Maecenas augue ante, euismod vitae egestas sit amet,
-                                accumsan eu nulla. At vero eos et accusamus et iusto odio dignissimos ducimus qui
-                                blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas. <br/>
-                                <a href="blog_detail_left_slidebar.htmll" class="f-more f-primary-b">Read more</a></p>
-                        </div>
-                        <h3 class="b-accordion__title f-accordion__title f-primary-b"><i
-                                class="fa fa-check-circle-o"></i> Morbi sagittis, sem quis lacinia faucibus, orci ipsum
-                            gravida tortor ? </h3>
-
-                        <div class="b-accordion__content">
-                            <p>Mauris rhoncus pretium porttitor. Cras scelerisque commodo odio. Phasellus dolor enim,
-                                faucibus egestas scelerisque hendrerit, aliquet sed lorem. Pellentesque et pulvinar
-                                enim. Quisque at tempor ligula. Maecenas augue ante, euismod vitae egestas sit amet,
-                                accumsan eu nulla. <br/>
-                                <a href="blog_detail_left_slidebar.html" class="f-more f-primary-b">Read more</a></p>
-                        </div>
-                        <h3 class="b-accordion__title f-accordion__title f-primary-b"><i
-                                class="fa fa-check-circle-o"></i> Maecenas augue ante, euismod vitae egestas </h3>
-
-                        <div class="b-accordion__content">
-                            <p>Mauris rhoncus pretium porttitor. Cras scelerisque commodo odio. Phasellus dolor enim,
-                                faucibus egestas scelerisque hendrerit, aliquet sed lorem. Pellentesque et pulvinar
-                                enim. Quisque at tempor ligula. Maecenas augue ante, euismod vitae egestas sit amet,
-                                accumsan eu nulla. <br/>
-                                <a href="blog_detail_left_slidebar.html" class="f-more f-primary-b">Read more</a></p>
-                        </div>
-                    </div>
-
-                    <section
-                            class="b-infoblock-with-icon-group b-infoblock-with-icon--small-indent row b-infoblock-with-icon--sm f-infoblock-with-icon--sm b-infoblock-with-icon--biggest-icons b-infoblock-with-icon--center f-infoblock-with-icon--center b-default-top-indent">
-                        <div class="col-md-4 col-sm-6 col-xs-12 b-null-bottom-indent">
-                            <div class="b-infoblock-with-icon">
-                                <a href="contact_us_v2.html"
-                                   class="b-infoblock-with-icon__icon f-infoblock-with-icon__icon">
-                                    <i class="fa fa-comments"></i>
-                                </a>
-
-                                <div class="b-infoblock-with-icon__info f-infoblock-with-icon__info">
-                                    <a href="contact_us_v2.html"
-                                       class="f-infoblock-with-icon__info_title b-infoblock-with-icon__info_title f-title-big f-primary-sb">Live
-                                        chat with us</a>
-
-                                    <div class="f-infoblock-with-icon__info_text b-infoblock-with-icon__info_text">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ut massa in.
-                                        At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis
-                                        praesentium voluptatum deleniti atque c
-                                    </div>
-                                    <p><a class="f-more f-primary-b" href="contact_us_v2.html">Read more </a></p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 col-sm-6 col-xs-12 b-null-bottom-indent">
-                            <div class="b-infoblock-with-icon">
-                                <a href="contact_us_v2.html"
-                                   class="b-infoblock-with-icon__icon f-infoblock-with-icon__icon">
-                                    <i class="fa fa-headphones"></i>
-                                </a>
-
-                                <div class="b-infoblock-with-icon__info f-infoblock-with-icon__info">
-                                    <a href="contact_us_v2.html"
-                                       class="f-infoblock-with-icon__info_title b-infoblock-with-icon__info_title f-title-big f-primary-sb">Free
-                                        call for all</a>
-
-                                    <div class="f-infoblock-with-icon__info_text b-infoblock-with-icon__info_text">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ut massa in.
-                                        At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis
-                                        praesentium voluptatum deleniti atque c
-                                    </div>
-                                    <p><a class="f-more f-primary-b" href="contact_us_v2.html">Read more </a></p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 col-sm-6 col-xs-12 b-null-bottom-indent">
-                            <div class="b-infoblock-with-icon">
-                                <a href="contact_us_v2.html"
-                                   class="b-infoblock-with-icon__icon f-infoblock-with-icon__icon">
-                                    <i class="fa fa-comments"></i>
-                                </a>
-
-                                <div class="b-infoblock-with-icon__info f-infoblock-with-icon__info">
-                                    <a href="contact_us_v2.html"
-                                       class="f-infoblock-with-icon__info_title b-infoblock-with-icon__info_title f-title-big f-primary-sb">Forum
-                                        support</a>
-
-                                    <div class="f-infoblock-with-icon__info_text b-infoblock-with-icon__info_text">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ut massa in.
-                                        At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis
-                                        praesentium voluptatum deleniti atque c
-                                    </div>
-                                    <p><a class="f-more f-primary-b" href="contact_us_v2.html">Read more </a></p>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
+                      <!--<div  ng-repeat="faq in faqs.data">-->
+                      <uib-accordion close-others="oneAtATime">
+                          <div ng-repeat="faqCategoria in categoria_faqs.data">
+                          <uib-accordion-group heading="{{faq.title}}" ng-repeat="faq in faqCategoria.faqs.data">
+                              <h5>{{faq.description}}</h5>
+                          </uib-accordion-group>
+                          </div>
+                      </uib-accordion>
+                      <!--</div>-->
+                  </div>
 
                 </div>
                 <aside class="col-md-3">
                     <div>
-                        <h4 class="f-primary-b b-h4-special f-h4-special c-primary">search</h4>
+                        <h4 class="f-primary-b b-h4-special f-h4-special c-primary"> <i class="fa fa-search fa-2x"></i> Pesquisar</h4>
 
                         <div class="b-form-row b-input-search">
-                            <input class="form-control" type="text" placeholder="Enter your keywords"/>
+                            <input class="form-control" type="text" placeholder="colocar palavras chaves"/>
                             <span class="b-btn b-btn-search f-btn-search fa fa-search"></span>
                         </div>
                     </div>
                     <div class="b-categories-filter b-default-top-indent">
-                        <h4 class="f-primary-b b-h4-special f-h4-special c-primary">knowledge base</h4>
+                        <h4 class="f-primary-b b-h4-special f-h4-special c-primary">Perguntas frequentes</h4>
                         <ul>
-                            <li>
-                                <a class="f-categories-filter_name" href="#"><i class="fa fa-plus"></i> Web Design</a>
+                            <li ng-repeat="categoria in categoria_faqs.data">
+                                <a class="f-categories-filter_name" href="#"><i class="fa fa-plus"></i> {{ categoria.title }}</a>
                                 <span class="b-categories-filter_count f-categories-filter_count">12</span>
-                            </li>
-                            <li>
-                                <a class="f-categories-filter_name" href="#"><i class="fa fa-plus"></i> Smart Phone</a>
-                                <span class="b-categories-filter_count f-categories-filter_count">23</span>
-                            </li>
-                            <li>
-                                <a class="f-categories-filter_name" href="#"><i class="fa fa-plus"></i> Latop</a>
-                                <span class="b-categories-filter_count f-categories-filter_count">12</span>
-                            </li>
-                            <li>
-                                <a class="f-categories-filter_name" href="#"><i class="fa fa-plus"></i> Apple Store</a>
-                                <span class="b-categories-filter_count f-categories-filter_count">23</span>
-                            </li>
-                            <li>
-                                <a class="f-categories-filter_name" href="#"><i class="fa fa-plus"></i> Wordpress Theme</a>
-                                <span class="b-categories-filter_count f-categories-filter_count">12</span>
-                            </li>
-                            <li>
-                                <a class="f-categories-filter_name" href="#"><i class="fa fa-plus"></i> Web Design</a>
-                                <span class="b-categories-filter_count f-categories-filter_count">23</span>
-                            </li>
-                            <li>
-                                <a class="f-categories-filter_name" href="#"><i class="fa fa-plus"></i> Sport</a>
-                                <span class="b-categories-filter_count f-categories-filter_count">12</span>
-                            </li>
-                            <li>
-                                <a class="f-categories-filter_name" href="#"><i class="fa fa-plus"></i> Fashion</a>
-                                <span class="b-categories-filter_count f-categories-filter_count">23</span>
                             </li>
                         </ul>
                     </div>
-                    <div class="b-default-top-indent">
-                        <h4 class="f-primary-b b-h4-special f-h4-special c-primary">submit your questions</h4>
+                </aside>
+                <aside class="col-md-3">
+                <div class="b-default-top-indent">
+                    <h4 class="f-primary-b b-h4-special f-h4-special c-primary">Envie sua dúvida.</h4>
 
-                        <div class="b-form-row">
-                            <input type="text" class="form-control" placeholder="Your email"/>
-                        </div>
-                        <div class="b-form-row">
-                            <input type="text" class="form-control" placeholder="Subject"/>
-                        </div>
-                        <div class="b-form-row">
-                            <textarea class="form-control" placeholder="Your questions" rows="5"></textarea>
-                        </div>
-                        <div class="b-form-row">
-                            <a href="#" class="b-btn f-btn b-btn-md b-btn-default f-primary-b b-btn__w100">submit
-                                questions</a>
-                        </div>
+                    <div class="b-form-row">
+                        <input type="text" class="form-control" placeholder="seu email"/>
                     </div>
+                    <div class="b-form-row">
+                        <input type="text" class="form-control" placeholder="assunto"/>
+                    </div>
+                    <div class="b-form-row">
+                        <textarea class="form-control" placeholder="sua questão" rows="5"></textarea>
+                    </div>
+                    <div class="b-form-row">
+                        <a href="#" class="b-btn f-btn b-btn-md b-btn-default f-primary-b b-btn__w100">enviar
+                            questão</a>
+                    </div>
+                </div>
                 </aside>
             </div>
         </div>
     </section>
-
-</div>

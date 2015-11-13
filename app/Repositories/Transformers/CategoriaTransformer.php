@@ -12,12 +12,7 @@ use Rossina\Categoria;
 class CategoriaTransformer extends TransformerAbstract
 {
 
-    /**
-     * Transform the \Categoria entity
-     * @param \Categoria $model
-     *
-     * @return array
-     */
+
     public function transform(Categoria $model)
     {
         return [
@@ -30,4 +25,5 @@ class CategoriaTransformer extends TransformerAbstract
 //            'updated_at' => $model->updated_at
         ];
     }
+
 }

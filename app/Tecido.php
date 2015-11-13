@@ -26,4 +26,9 @@ class Tecido extends Model implements Transformable
     {
         return $this->belongsToMany(Tag::class);
     }
+
+    public function categoriaTecidos()
+    {
+        return $this->belongsToMany(CategoriaTecido::class);
+    }
 }

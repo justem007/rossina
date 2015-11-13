@@ -13,80 +13,80 @@ class CategoriaTableSeeder extends Seeder
     public function run()
     {
         DB::table('categorias')->insert([
-            'title'         => 'Moda Camisetas',
-            'description'   => 'moda camisetas' ,
+            'title'         => 'Envio',
+            'description'   => 'Produtos/Tamanhos' ,
             'user_id'       => 1,
             'created_at'    => '2015/11/05 09:40:40',
             'updated_at'    => '2015/11/05 09:40:40',
         ]);
 
         DB::table('categorias')->insert([
-            'title'         => 'Tecidos ',
-            'description'   => 'Tecidos' ,
+            'title'         => 'Troca ',
+            'description'   => 'Troca' ,
             'user_id'       => 1,
             'created_at'    => '2015/11/05 09:40:40',
             'updated_at'    => '2015/11/05 09:40:40',
         ]);
 
         DB::table('categorias')->insert([
-            'title'         => 'Floral',
-            'description'   => 'Floral' ,
+            'title'         => 'Cancelamento',
+            'description'   => 'Cancelamento' ,
             'user_id'       => 1,
             'created_at'    => '2015/11/05 09:40:40',
             'updated_at'    => '2015/11/05 09:40:40',
         ]);
 
         DB::table('categorias')->insert([
-            'title'         => 'Praia',
-            'description'   => 'Praia' ,
+            'title'         => 'Segurança',
+            'description'   => 'segurança' ,
             'user_id'       => 1,
             'created_at'    => '2015/11/05 09:40:40',
             'updated_at'    => '2015/11/05 09:40:40',
         ]);
 
         DB::table('categorias')->insert([
-            'title'         => 'Futurista',
-            'description'   => 'Futurista' ,
+            'title'         => 'Pagamento',
+            'description'   => 'Pagamento' ,
             'user_id'       => 1,
             'created_at'    => '2015/11/05 09:40:40',
             'updated_at'    => '2015/11/05 09:40:40',
         ]);
 
         DB::table('categorias')->insert([
-            'title'         => 'Ilustração',
-            'description'   => 'Ilustração' ,
+            'title'         => 'Sobre a Rossina Estamparia',
+            'description'   => 'Rossina Estamparia' ,
             'user_id'       => 1,
             'created_at'    => '2015/11/05 09:40:40',
             'updated_at'    => '2015/11/05 09:40:40',
         ]);
 
         DB::table('categorias')->insert([
-            'title'         => 'Animação',
-            'description'   => 'Animação' ,
+            'title'         => 'Logistas',
+            'description'   => 'Logista' ,
             'user_id'       => 1,
             'created_at'    => '2015/11/05 09:40:40',
             'updated_at'    => '2015/11/05 09:40:40',
         ]);
 
         DB::table('categorias')->insert([
-            'title'         => 'Caligrafia',
-            'description'   => 'Caligrafia' ,
+            'title'         => 'Meu Cadastro',
+            'description'   => 'Meu Cadastro' ,
             'user_id'       => 1,
             'created_at'    => '2015/11/05 09:40:40',
             'updated_at'    => '2015/11/05 09:40:40',
         ]);
 
         DB::table('categorias')->insert([
-            'title'         => 'Grafite',
-            'description'   => 'grafite' ,
+            'title'         => 'Prazo de entrega',
+            'description'   => 'prazo de entrega' ,
             'user_id'       => 1,
             'created_at'    => '2015/11/05 09:40:40',
             'updated_at'    => '2015/11/05 09:40:40',
         ]);
 
         DB::table('categorias')->insert([
-            'title'         => 'Pintura',
-            'description'   => 'Pintura' ,
+            'title'         => 'Como enviar estampas',
+            'description'   => 'enviar estampas' ,
             'user_id'       => 1,
             'created_at'    => '2015/11/05 09:40:40',
             'updated_at'    => '2015/11/05 09:40:40',

@@ -10,9 +10,10 @@
 
     <div class="l-inner-page-container">
         <div class="container">
-            <div class="row">
-                <div class="col-md-9 col-md-push-3" ng-controller="mainTecidoController">
-                    <div class=" b-blog-one-column__row b-news-item__block"  ng-repeat="post in posts.data">
+            <div class="row"  ng-controller="mainBlogController">
+                <div class="col-md-9 col-md-push-3">
+                   <div  ng-repeat="categoriaBlog in categoria_blogs.data">
+                    <div class=" b-blog-one-column__row b-news-item__block"  ng-repeat="post in categoriaBlog.posts.data">
                         <div class="row">
                             <div class="col-sm-6 col-md-4">
                                 <div class=" view view-sixth">
@@ -51,6 +52,7 @@
                             </div>
                         </div>
                     </div>
+                   </div>
                     <div class="b-pagination f-pagination">
                         <ul>
                             <li><a href="#">First</a></li>
@@ -63,12 +65,13 @@
                         </ul>
                     </div>
                 </div>
+
                 <div class="visible-xs-block visible-sm-block b-hr"></div>
                 <div class="col-md-3 col-md-pull-9">
                     <div class="row">
                         <div class="col-md-12">
                             <div class="b-form-row b-input-search">
-                                <input class="form-control" type="text" placeholder="Enter your keywords"/>
+                                <input class="form-control" type="text" placeholder="palavras chaves"/>
                                 <span class="b-btn b-btn-search f-btn-search fa fa-search"></span>
                             </div>
                         </div>
@@ -76,110 +79,30 @@
                     <div class="row b-col-default-indent">
                         <div class="col-md-12">
                             <div class="b-categories-filter">
-                                <h4 class="f-primary-b b-h4-special f-h4-special--gray f-h4-special">blog categories</h4>
+                                <h4 class="f-primary-b b-h4-special f-h4-special--gray f-h4-special"><i class="fa fa-folder-open"></i> categorias blog</h4>
                                 <ul>
-                                    <li>
-                                        <a class="f-categories-filter_name" href="#/blog"><i class="fa fa-plus"></i> Web Design</a>
+                                    <li ng-repeat="categoria in categoria_blogs.data">
+                                        <a class="f-categories-filter_name" href="#/blog"><i class="fa fa-plus"></i>{{ categoria.title }}</a>
                                         <span class="b-categories-filter_count f-categories-filter_count">12</span>
-                                    </li>
-                                    <li>
-                                        <a class="f-categories-filter_name" href="#/blog"><i class="fa fa-plus"></i> Smart Phone</a>
-                                        <span class="b-categories-filter_count f-categories-filter_count">23</span>
-                                    </li>
-                                    <li>
-                                        <a class="f-categories-filter_name" href="#/blog"><i class="fa fa-plus"></i> Latop</a>
-                                        <span class="b-categories-filter_count f-categories-filter_count">12</span>
-                                    </li>
-                                    <li>
-                                        <a class="f-categories-filter_name" href="#/blog"><i class="fa fa-plus"></i> Apple Store</a>
-                                        <span class="b-categories-filter_count f-categories-filter_count">23</span>
-                                    </li>
-                                    <li>
-                                        <a class="f-categories-filter_name" href="#/blog"><i class="fa fa-plus"></i> Wordpress Theme</a>
-                                        <span class="b-categories-filter_count f-categories-filter_count">12</span>
-                                    </li>
-                                    <li>
-                                        <a class="f-categories-filter_name" href="#/blog"><i class="fa fa-plus"></i> Web Design</a>
-                                        <span class="b-categories-filter_count f-categories-filter_count">23</span>
-                                    </li>
-                                    <li>
-                                        <a class="f-categories-filter_name" href="#/blog"><i class="fa fa-plus"></i> Sport</a>
-                                        <span class="b-categories-filter_count f-categories-filter_count">12</span>
-                                    </li>
-                                    <li>
-                                        <a class="f-categories-filter_name" href="#/blog"><i class="fa fa-plus"></i> Fashion</a>
-                                        <span class="b-categories-filter_count f-categories-filter_count">23</span>
                                     </li>
                                 </ul>
                             </div>
                         </div>
                         <div class="col-md-12">
-                            <h4 class="f-primary-b b-h4-special  f-h4-special--gray f-h4-special">popular postes</h4>
+                            <h4 class="f-primary-b b-h4-special  f-h4-special--gray f-h4-special"><i class="fa fa-share"></i> posts populares</h4>
 
-                            <div class="b-blog-short-post b-blog-short-post--img-hover-bordered b-blog-short-post--w-img f-blog-short-post--w-img row">
-                                <div class="b-blog-short-post b-blog-short-post--img-hover-bordered b-blog-short-post--w-img f-blog-short-post--w-img row">
+                            <div class="b-blog-short-post b-blog-short-post--img-hover-bordered b-blog-short-post--w-img f-blog-short-post--w-img row" ng-repeat="categoriaB in categoria_blogs.data">
+                                <div class="b-blog-short-post b-blog-short-post--img-hover-bordered b-blog-short-post--w-img f-blog-short-post--w-img row" ng-repeat="post in categoriaB.posts.data">
                                     <div class="b-blog-short-post--popular col-md-12  col-xs-12 f-primary-b">
                                         <div class="b-blog-short-post__item_img">
-                                            <a href="#"><img data-retina src="../../../images/site/img/shop/popular_1.png" alt=""/></a>
+                                            <a href="#"><img data-retina src="../../../images/site/img/shop/poa-estrelado-para-web.jpg" alt="" width="56" height="56"/></a>
                                         </div>
                                         <div class="b-remaining">
                                             <div class="b-blog-short-post__item_text f-blog-short-post__item_text">
-                                                <a href="#">Phasellus id mattis dolorunc et erat hendrerit, tincidunt</a>
+                                                <a href="#">{{ post.title }}</a>
                                             </div>
                                             <div class="b-blog-short-post__item_date f-blog-short-post__item_date f-primary-it">
-                                                10, January, 2014
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="b-blog-short-post--popular col-md-12  col-xs-12 f-primary-b">
-                                        <div class="b-blog-short-post__item_img">
-                                            <a href="#"><img data-retina src="../../../images/site/img/shop/popular_1.png" alt=""/></a>
-                                        </div>
-                                        <div class="b-remaining">
-                                            <div class="b-blog-short-post__item_text f-blog-short-post__item_text">
-                                                <a href="#">Vel eleifend id ullamcorper eu velit</a>
-                                            </div>
-                                            <div class="b-blog-short-post__item_date f-blog-short-post__item_date f-primary-it">
-                                                14, January, 2014
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="b-blog-short-post--popular col-md-12  col-xs-12 f-primary-b">
-                                        <div class="b-blog-short-post__item_img">
-                                            <a href="#"><img data-retina src="../../../images/site/img/shop/popular_1.png" alt=""/></a>
-                                        </div>
-                                        <div class="b-remaining">
-                                            <div class="b-blog-short-post__item_text f-blog-short-post__item_text">
-                                                <a href="#">Lorem ipsum dolor sit amet purus vitae magna rhoncus</a>
-                                            </div>
-                                            <div class="b-blog-short-post__item_date f-blog-short-post__item_date f-primary-it">
-                                                10, January, 2014
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="b-blog-short-post--popular col-md-12  col-xs-12 f-primary-b">
-                                        <div class="b-blog-short-post__item_img">
-                                            <a href="#"><img data-retina src="../../../images/site/img/shop/popular_1.png" alt=""/></a>
-                                        </div>
-                                        <div class="b-remaining">
-                                            <div class="b-blog-short-post__item_text f-blog-short-post__item_text">
-                                                <a href="#">Fusce vitae dui sit amet lacus rutrum convallis</a>
-                                            </div>
-                                            <div class="b-blog-short-post__item_date f-blog-short-post__item_date f-primary-it">
-                                                10, January, 2014
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="b-blog-short-post--popular col-md-12  col-xs-12 f-primary-b @@hidden">
-                                        <div class="b-blog-short-post__item_img">
-                                            <a href="#"><img data-retina src="../../../images/site/img/shop/popular_1.png" alt=""/></a>
-                                        </div>
-                                        <div class="b-remaining">
-                                            <div class="b-blog-short-post__item_text f-blog-short-post__item_text">
-                                                <a href="#">Fusce vitae dui sit amet lacus rutrum convallis</a>
-                                            </div>
-                                            <div class="b-blog-short-post__item_date f-blog-short-post__item_date f-primary-it">
-                                                10, January, 2014
+                                                <i class="fa fa-angle-right"></i> {{ post.created_at }}
                                             </div>
                                         </div>
                                     </div>
@@ -187,7 +110,7 @@
                             </div>
                         </div>
                         <div class="col-md-12">
-                            <h4 class="f-primary-b b-h4-special f-h4-special--gray f-h4-special">tags cloud</h4>
+                            <h4 class="f-primary-b b-h4-special f-h4-special--gray f-h4-special"><i class="fa fa-tags"></i> tags</h4>
                             <div>
                                 <a class="f-tag b-tag" href="#">Dress</a>
                                 <a class="f-tag b-tag" href="#">Mini</a>

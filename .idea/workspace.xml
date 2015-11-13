@@ -2,68 +2,31 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="49d3674c-9ded-44ef-b79e-a6327c0e9255" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Http/Controllers/teste.php" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/favicon.ico" afterPath="$PROJECT_DIR$/public/favicon.ico" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/BlocoDoisController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/BlocoDoisController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/BlocoDoisDestaque.php" afterPath="$PROJECT_DIR$/app/BlocoDoisDestaque.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/BlocoDoisDestaqueController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/BlocoDoisDestaqueController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/seeds/BlocoDoisDestaqueTableSeeder.php" afterPath="$PROJECT_DIR$/database/seeds/BlocoDoisDestaqueTableSeeder.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Repositories/Presenters/BlocoDoisPresenter.php" afterPath="$PROJECT_DIR$/app/Repositories/Presenters/BlocoDoisPresenter.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/BlocoUm.php" afterPath="$PROJECT_DIR$/app/BlocoUm.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/BlocoUmController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/BlocoUmController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/BlocoUmDestaqueController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/BlocoUmDestaqueController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Repositories/Transformers/BlocoUmDestaqueTransformer.php" afterPath="$PROJECT_DIR$/app/Repositories/Transformers/BlocoUmDestaqueTransformer.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Repositories/Repository/BlocoUmRepositoryEloquent.php" afterPath="$PROJECT_DIR$/app/Repositories/Repository/BlocoUmRepositoryEloquent.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Repositories/Transformers/BlocoUmTransformer.php" afterPath="$PROJECT_DIR$/app/Repositories/Transformers/BlocoUmTransformer.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/seeds/CamisetaGeneroTableSeeder.php" afterPath="$PROJECT_DIR$/database/seeds/CamisetaGeneroTableSeeder.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/seeds/CamisetaTableSeeder.php" afterPath="$PROJECT_DIR$/database/seeds/CamisetaTableSeeder.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Camisetas.php" afterPath="$PROJECT_DIR$/app/Camisetas.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/CamisetasController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/CamisetasController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Comment.php" afterPath="$PROJECT_DIR$/app/Comment.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/CommentController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/CommentController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Cor.php" afterPath="$PROJECT_DIR$/app/Cor.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/CorController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/CorController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/EtiquetaController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/EtiquetaController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Ferramenta.php" afterPath="$PROJECT_DIR$/app/Ferramenta.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/FerramentaController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/FerramentaController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Genero.php" afterPath="$PROJECT_DIR$/app/Genero.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/GeneroController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/GeneroController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Repositories/Repository/GeneroRepositoryEloquent.php" afterPath="$PROJECT_DIR$/app/Repositories/Repository/GeneroRepositoryEloquent.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Repositories/Transformers/GeneroTransformer.php" afterPath="$PROJECT_DIR$/app/Repositories/Transformers/GeneroTransformer.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Image.php" afterPath="$PROJECT_DIR$/app/Image.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/ImageController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/ImageController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Repositories/Repository/ImageRepositoryEloquent.php" afterPath="$PROJECT_DIR$/app/Repositories/Repository/ImageRepositoryEloquent.php" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/database/seeds/triggers" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/CategoriaController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/CategoriaController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/seeds/CategoriaTableSeeder.php" afterPath="$PROJECT_DIR$/database/seeds/CategoriaTableSeeder.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Repositories/Transformers/CategoriaTransformer.php" afterPath="$PROJECT_DIR$/app/Repositories/Transformers/CategoriaTransformer.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Kernel.php" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Post.php" afterPath="$PROJECT_DIR$/app/Post.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/PostsController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/PostsController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Silk.php" afterPath="$PROJECT_DIR$/app/Silk.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/SilkController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/SilkController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/StatusProducaoController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/StatusProducaoController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Tag.php" afterPath="$PROJECT_DIR$/app/Tag.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/TagController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/TagController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Tamanho.php" afterPath="$PROJECT_DIR$/app/Tamanho.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/TamanhoController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/TamanhoController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/seeds/PostImageTableSeeder.php" afterPath="$PROJECT_DIR$/database/seeds/PostImageTableSeeder.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Tecido.php" afterPath="$PROJECT_DIR$/app/Tecido.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/TecidoAmostra.php" afterPath="$PROJECT_DIR$/app/TecidoAmostra.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/TecidoAmostraController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/TecidoAmostraController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Repositories/Presenters/TecidoAmostraPresenter.php" afterPath="$PROJECT_DIR$/app/Repositories/Presenters/TecidoAmostraPresenter.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Repositories/Transformers/TecidoAmostraTransformer.php" afterPath="$PROJECT_DIR$/app/Repositories/Transformers/TecidoAmostraTransformer.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/TecidoController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/TecidoController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Repositories/Presenters/TecidoPresenter.php" afterPath="$PROJECT_DIR$/app/Repositories/Presenters/TecidoPresenter.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Repositories/Repository/TecidoRepositoryEloquent.php" afterPath="$PROJECT_DIR$/app/Repositories/Repository/TecidoRepositoryEloquent.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/seeds/TecidosTableSeeder.php" afterPath="$PROJECT_DIR$/database/seeds/TecidosTableSeeder.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Tecimage.php" afterPath="$PROJECT_DIR$/app/Tecimage.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/TecimageController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/TecimageController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/User.php" afterPath="$PROJECT_DIR$/app/User.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/seeds/UserTableSeeder.php" afterPath="$PROJECT_DIR$/database/seeds/UserTableSeeder.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/scripts/app.js" afterPath="$PROJECT_DIR$/public/scripts/app.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/app.php" afterPath="$PROJECT_DIR$/config/app.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower.json" afterPath="$PROJECT_DIR$/bower.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.json" afterPath="$PROJECT_DIR$/composer.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.lock" afterPath="$PROJECT_DIR$/composer.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/views/blog/index.html" afterPath="$PROJECT_DIR$/public/views/blog/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/views/site/pages/contatos/contatos.html" afterPath="$PROJECT_DIR$/public/views/site/pages/contatos/contatos.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/scripts/site/controller/faq.js" afterPath="$PROJECT_DIR$/public/scripts/site/controller/faq.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/views/site/pages/faqs/faqs.html" afterPath="$PROJECT_DIR$/public/views/site/pages/faqs/faqs.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/index.html" afterPath="$PROJECT_DIR$/public/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/views/blog/pages/index.html" afterPath="$PROJECT_DIR$/public/views/blog/pages/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/views/blog/pages/main.html" afterPath="$PROJECT_DIR$/public/views/blog/pages/main.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/scripts/blog/route/route.js" afterPath="$PROJECT_DIR$/public/scripts/blog/route/route.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/jwt.php" afterPath="$PROJECT_DIR$/config/jwt.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/views/site/pages/login/login.html" afterPath="$PROJECT_DIR$/public/views/site/pages/login/login.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/scripts/tecidos/controller/lojaTecido.js" afterPath="$PROJECT_DIR$/public/scripts/tecidos/controller/lojaTecido.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/styles/site/css/main-default.css" afterPath="$PROJECT_DIR$/public/styles/site/css/main-default.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/views/tecidos/pages/main.html" afterPath="$PROJECT_DIR$/public/views/tecidos/pages/main.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/scripts/blog/controller/mainBlog.js" afterPath="$PROJECT_DIR$/public/scripts/blog/controller/mainBlog.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/scripts/site/controller/menu.js" afterPath="$PROJECT_DIR$/public/scripts/site/controller/menu.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/routes.php" afterPath="$PROJECT_DIR$/app/Http/routes.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -93,33 +56,23 @@
       <file leaf-file-name="routes.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-13.333333" vertical-offset="0" max-vertical-offset="6678">
-              <caret line="49" column="8" selection-start-line="49" selection-start-column="8" selection-end-line="49" selection-end-column="8" />
+            <state vertical-scroll-proportion="-11.333333" vertical-offset="342" max-vertical-offset="8028">
+              <caret line="36" column="30" selection-start-line="36" selection-start-column="30" selection-end-line="36" selection-end-column="30" />
               <folding>
-                <element signature="e#185#219#0#PHP" expanded="false" />
+                <element signature="e#7#42#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="flysystem.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config/flysystem.php">
+      <file leaf-file-name="AuthenticateController.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AuthenticateController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-76.0" vertical-offset="0" max-vertical-offset="4068">
-              <caret line="114" column="55" selection-start-line="114" selection-start-column="55" selection-end-line="114" selection-end-column="55" />
+            <state vertical-scroll-proportion="0.61497325" vertical-offset="267" max-vertical-offset="1152">
+              <caret line="34" column="13" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="13" />
               <folding>
-                <element signature="e#7#235#0#PHP" expanded="true" />
+                <element signature="e#44#72#0#PHP" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="composer.json" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/composer.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.51336896" vertical-offset="0" max-vertical-offset="1188">
-              <caret line="16" column="43" selection-start-line="16" selection-start-column="43" selection-end-line="16" selection-end-column="43" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -132,57 +85,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/Repositories/Presenters/BlocoCamisetaDestaquePresenter.php" />
-        <option value="$PROJECT_DIR$/app/Repositories/Presenters/BlocoCamisetaPresenter.php" />
-        <option value="$PROJECT_DIR$/app/Repositories/Presenters/BlocoDoisDestaqueDoisPresenter.php" />
-        <option value="$PROJECT_DIR$/app/Repositories/Presenters/BlocoDoisDestaqueUmPresenter.php" />
-        <option value="$PROJECT_DIR$/app/Repositories/Presenters/BlocoDoisPresenter.php" />
-        <option value="$PROJECT_DIR$/app/Repositories/Presenters/BlocoTecidoDestaquePresenter.php" />
-        <option value="$PROJECT_DIR$/app/Repositories/Presenters/BlocoTecidoPresenter.php" />
-        <option value="$PROJECT_DIR$/app/Repositories/Presenters/CategoriaPresenter.php" />
-        <option value="$PROJECT_DIR$/app/Repositories/Presenters/HorarioPresenter.php" />
-        <option value="$PROJECT_DIR$/app/Repositories/Presenters/MenuPresenter.php" />
-        <option value="$PROJECT_DIR$/app/Repositories/Transformers/PostTransformer.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/BlocoCamisetaController.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/BlocoCamisetaDestaqueController.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/BlocoDoisController.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/BlocoDoisDestaqueController.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/BlocoDoisDestaqueDoisController.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/BlocoDoisDestaqueUmController.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/BlocoTecidoController.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/BlocoTecidoDestaqueController.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/BlocoUmController.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/BlocoUmDestaqueController.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/CamisetasController.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/CategoriaController.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/CommentController.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/CorController.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/EtiquetaController.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/FerramentaController.php" />
-        <option value="$PROJECT_DIR$/app/Repositories/Transformers/GeneroTransformer.php" />
-        <option value="$PROJECT_DIR$/app/Repositories/Repository/GeneroRepositoryEloquent.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/GeneroController.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/HorarioController.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/ImageController.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/MenuController.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/SilkController.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/StatusProducaoController.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/TagController.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/TamanhoController.php" />
-        <option value="$PROJECT_DIR$/app/Repositories/Presenters/TecidoPresenter.php" />
-        <option value="$PROJECT_DIR$/app/Repositories/Repository/TecidoRepositoryEloquent.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/TecidoController.php" />
-        <option value="$PROJECT_DIR$/app/Tecimage.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/TecimageController.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/TecidoAmostraController.php" />
-        <option value="$PROJECT_DIR$/app/Repositories/Transformers/TecidoAmostraTransformer.php" />
-        <option value="$PROJECT_DIR$/app/Repositories/Presenters/TecidoAmostraPresenter.php" />
+        <option value="$PROJECT_DIR$/app/Repositories/Repository/CategoriaFaqRepositoryEloquent.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/CategoriFaqController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/CategoriaFaqController.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2015_11_11_174829_create_categoria_faqs_table.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2015_11_11_133535_create_faqs_table.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2015_11_11_184747_create_faqs_table.php" />
+        <option value="$PROJECT_DIR$/app/Repositories/Transformers/FaqTransformer.php" />
+        <option value="$PROJECT_DIR$/app/Repositories/Transformers/CategoriaFaqTransformer.php" />
+        <option value="$PROJECT_DIR$/app/CategoriaFaq.php" />
+        <option value="$PROJECT_DIR$/database/seeds/CategoriaFaqTableSeeder.php" />
+        <option value="$PROJECT_DIR$/public/scripts/site/controller/faq.js" />
+        <option value="$PROJECT_DIR$/public/scripts/ui-bootstrap/accordion.js" />
+        <option value="$PROJECT_DIR$/public/views/site/pages/faqs/faqs.html" />
+        <option value="$PROJECT_DIR$/public/views/site/pages/contatos/contatos.html" />
+        <option value="$PROJECT_DIR$/database/migrations/2015_11_11_191332_create_categoria_blogs_table.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2015_11_12_120413_create_categoria_tecidos_table.php" />
+        <option value="$PROJECT_DIR$/database/seeds/CategoriaTecidoTableSeeder.php" />
+        <option value="$PROJECT_DIR$/app/CategoriaTecido.php" />
         <option value="$PROJECT_DIR$/app/Tecido.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/PostsController.php" />
-        <option value="$PROJECT_DIR$/app/Http/routes.php" />
-        <option value="$PROJECT_DIR$/composer.json" />
+        <option value="$PROJECT_DIR$/app/Repositories/Interfaces/CategoriaTecidoRepository.php" />
+        <option value="$PROJECT_DIR$/app/Repositories/Presenters/CategoriaTecidoPresenter.php" />
+        <option value="$PROJECT_DIR$/app/Repositories/Repository/CategoriaTecidoRepositoryEloquent.php" />
+        <option value="$PROJECT_DIR$/app/Repositories/Transformers/CategoriaTecidoTransformer.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/CategoriaTecidoController.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2015_11_12_125750_create_categoria_tecido_tecido_table.php" />
+        <option value="$PROJECT_DIR$/database/seeds/CategoriaTecicoTecidoTableSeeder.php" />
+        <option value="$PROJECT_DIR$/database/seeds/CategoriaTTecidoTableSeeder.php" />
+        <option value="$PROJECT_DIR$/database/seeds/TecidoCategoriaTableSeeder.php" />
+        <option value="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" />
+        <option value="$PROJECT_DIR$/database/seeds/PostImageTableSeeder.php" />
+        <option value="$PROJECT_DIR$/public/scripts/tecidos/controller/lojaTecido.js" />
+        <option value="$PROJECT_DIR$/public/views/tecidos/pages/main.html" />
+        <option value="$PROJECT_DIR$/app/Repositories/Interfaces/CategoriaBlogRepository.php" />
+        <option value="$PROJECT_DIR$/app/Repositories/Presenters/CategoriaBlogPresenter.php" />
+        <option value="$PROJECT_DIR$/app/Repositories/Repository/CategoriaBlogRepositoryEloquent.php" />
+        <option value="$PROJECT_DIR$/database/seeds/CategoriaBlogTableSeeder.php" />
+        <option value="$PROJECT_DIR$/app/Repositories/Transformers/CategoriaBlogTransformer.php" />
+        <option value="$PROJECT_DIR$/app/CategoriaBlog.php" />
+        <option value="$PROJECT_DIR$/app/Post.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2015_11_12_153021_create_categoria_categoria_blog_post_table.php" />
+        <option value="$PROJECT_DIR$/database/seeds/BlogCategoriaTableSeeder.php" />
+        <option value="$PROJECT_DIR$/public/scripts/blog/controller/mainBlog.js" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/CategoriaBlogController.php" />
+        <option value="$PROJECT_DIR$/public/views/blog/pages/index.html" />
         <option value="$PROJECT_DIR$/config/app.php" />
-        <option value="$PROJECT_DIR$/config/flysystem.php" />
+        <option value="$PROJECT_DIR$/config/jwt.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Auth/AuthController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Kernel.php" />
+        <option value="$PROJECT_DIR$/database/seeds/UserTableSeeder.php" />
+        <option value="$PROJECT_DIR$/app/Http/routes.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/AuthenticateController.php" />
       </list>
     </option>
   </component>
@@ -260,6 +213,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -278,9 +232,40 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="larangular" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="larangular" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="database" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="larangular" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="larangular" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="database" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="seeds" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -387,15 +372,15 @@
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23413897" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.29198185" sideWeight="0.50729334" order="3" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20347957" sideWeight="0.50729334" order="2" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32741934" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.37601295" sideWeight="0.5" order="11" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.375" sideWeight="0.5" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24962178" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2771475" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.21558245" sideWeight="0.49270666" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.27597404" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.21558245" sideWeight="0.49270666" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -425,454 +410,371 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="24" />
+      <option name="time" value="25" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/CategoriaController.php">
+    <entry file="file://$PROJECT_DIR$/app/Repositories/Transformers/CategoriaTecidoTransformer.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.4117647" vertical-offset="0" max-vertical-offset="1962">
-          <caret line="53" column="45" selection-start-line="53" selection-start-column="45" selection-end-line="53" selection-end-column="45" />
-          <folding />
+        <state vertical-scroll-proportion="1.0285715" vertical-offset="0" max-vertical-offset="738">
+          <caret line="33" column="66" selection-start-line="33" selection-start-column="66" selection-end-line="33" selection-end-column="66" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/CommentController.php">
+    <entry file="file://$PROJECT_DIR$/database/seeds/DatabaseSeeder.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.12834224" vertical-offset="270" max-vertical-offset="1710">
-          <caret line="31" column="5" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
-          <folding />
+        <state vertical-scroll-proportion="0.7714286" vertical-offset="0" max-vertical-offset="630">
+          <caret line="25" column="46" selection-start-line="25" selection-start-column="46" selection-end-line="25" selection-end-column="46" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/CorController.php">
+    <entry file="file://$PROJECT_DIR$/database/seeds/CategoriaTecidoTableSeeder.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.0855615" vertical-offset="1221" max-vertical-offset="1782">
-          <caret line="42" column="45" selection-start-line="42" selection-start-column="45" selection-end-line="42" selection-end-column="45" />
-          <folding />
+        <state vertical-scroll-proportion="0.4606947" vertical-offset="0" max-vertical-offset="1566">
+          <caret line="14" column="53" selection-start-line="13" selection-start-column="12" selection-end-line="14" selection-end-column="53" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/EtiquetaController.php">
+    <entry file="file://$PROJECT_DIR$/database/seeds/TecidoCategoriaTableSeeder.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.25668448" vertical-offset="126" max-vertical-offset="1908">
-          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding>
-            <element signature="e#44#81#0#PHP" expanded="false" />
-          </folding>
+        <state vertical-scroll-proportion="0.83928573" vertical-offset="1006" max-vertical-offset="1638">
+          <caret line="82" column="11" selection-start-line="14" selection-start-column="8" selection-end-line="82" selection-end-column="11" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Repositories/Transformers/GeneroTransformer.php">
+    <entry file="file://$PROJECT_DIR$/public/scripts/tecidos/controller/mainTecidos.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4171123" vertical-offset="0" max-vertical-offset="561">
-          <caret line="14" column="42" selection-start-line="14" selection-start-column="42" selection-end-line="14" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Repositories/Presenters/GeneroPresenter.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="588">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="587">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#51#107#0#PHP" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Repositories/Interfaces/GeneroRepository.php">
+    <entry file="file://$PROJECT_DIR$/public/scripts/tecidos/controller/site.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="588">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="587">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Repositories/Repository/GeneroRepositoryEloquent.php">
+    <entry file="file://$PROJECT_DIR$/public/scripts/tecidos/controller/slider.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.96256685" vertical-offset="0" max-vertical-offset="774">
-          <caret line="30" column="5" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
-          <folding>
-            <element signature="e#50#98#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/CamisetasController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.64171124" vertical-offset="486" max-vertical-offset="1908">
-          <caret line="7" column="50" selection-start-line="7" selection-start-column="50" selection-end-line="7" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/FerramentaController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8716577" vertical-offset="1257" max-vertical-offset="1890">
-          <caret line="105" column="5" selection-start-line="44" selection-start-column="4" selection-end-line="105" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/GeneroController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.8877006" vertical-offset="1365" max-vertical-offset="1926">
-          <caret line="17" column="26" selection-start-line="17" selection-start-column="26" selection-end-line="17" selection-end-column="26" />
-          <folding>
-            <element signature="e#44#72#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/HomeController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="588">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="587">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/HorarioController.php">
+    <entry file="file://$PROJECT_DIR$/public/scripts/tecidos/controller/tag.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.8930481" vertical-offset="1365" max-vertical-offset="1926">
-          <caret line="56" column="26" selection-start-line="56" selection-start-column="26" selection-end-line="56" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/BlocoCamisetaController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.7040998" vertical-offset="214" max-vertical-offset="1692">
-          <caret line="71" column="51" selection-start-line="71" selection-start-column="51" selection-end-line="71" selection-end-column="51" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ImageController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.0267379" vertical-offset="0" max-vertical-offset="1764">
-          <caret line="40" column="0" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/MenuController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.8609625" vertical-offset="162" max-vertical-offset="1800">
-          <caret line="75" column="5" selection-start-line="75" selection-start-column="5" selection-end-line="75" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/SilkController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.21925133" vertical-offset="357" max-vertical-offset="1890">
-          <caret line="21" column="7" selection-start-line="21" selection-start-column="7" selection-end-line="21" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/StatusProducaoController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.1229947" vertical-offset="54" max-vertical-offset="1818">
-          <caret line="47" column="29" selection-start-line="47" selection-start-column="29" selection-end-line="47" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TagController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.117647" vertical-offset="1221" max-vertical-offset="1782">
-          <caret line="41" column="0" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TamanhoController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.2139038" vertical-offset="1401" max-vertical-offset="1962">
-          <caret line="40" column="0" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
-          <folding>
-            <element signature="e#44#81#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Repositories/Transformers/PostTransformer.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5508021" vertical-offset="591" max-vertical-offset="1152">
-          <caret line="51" column="0" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/UserController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.7326204" vertical-offset="972" max-vertical-offset="2160">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="587">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/scripts/tecidos/controller/detalhesTecidos.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="587">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/scripts/tecidos/controller/lojaTecido.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="288">
+          <caret line="4" column="30" selection-start-line="4" selection-start-column="30" selection-end-line="4" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/views/tecidos/pages/main.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.59232175" vertical-offset="2268" max-vertical-offset="3132">
+          <caret line="144" column="82" selection-start-line="144" selection-start-column="82" selection-end-line="144" selection-end-column="82" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Repositories/Interfaces/CategoriaBlogRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.06428572" vertical-offset="0" max-vertical-offset="560">
+          <caret line="2" column="31" selection-start-line="2" selection-start-column="31" selection-end-line="2" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Repositories/Presenters/CategoriaBlogPresenter.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.225" vertical-offset="0" max-vertical-offset="560">
+          <caret line="7" column="3" selection-start-line="7" selection-start-column="3" selection-end-line="7" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Repositories/Repository/CategoriaBlogRepositoryEloquent.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.675" vertical-offset="0" max-vertical-offset="846">
+          <caret line="21" column="35" selection-start-line="21" selection-start-column="35" selection-end-line="21" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/CategoriaFaqController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-18.074074" vertical-offset="1204" max-vertical-offset="1836">
+          <caret line="104" column="5" selection-start-line="18" selection-start-column="4" selection-end-line="104" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/seeds/CategoriaFaqTableSeeder.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.83928573" vertical-offset="1024" max-vertical-offset="1656">
+          <caret line="84" column="11" selection-start-line="16" selection-start-column="8" selection-end-line="84" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Repositories/Transformers/CategoriaFaqTransformer.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2125" vertical-offset="151" max-vertical-offset="738">
+          <caret line="16" column="6" selection-start-line="16" selection-start-column="6" selection-end-line="16" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/CategoriaTecido.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.45" vertical-offset="0" max-vertical-offset="560">
+          <caret line="16" column="51" selection-start-line="16" selection-start-column="51" selection-end-line="16" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Repositories/Transformers/CategoriaBlogTransformer.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-13.333333" vertical-offset="162" max-vertical-offset="756">
+          <caret line="29" column="32" selection-start-line="29" selection-start-column="32" selection-end-line="29" selection-end-column="32" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Post.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.4117647" vertical-offset="231" max-vertical-offset="792">
+        <state vertical-scroll-proportion="0.58214283" vertical-offset="232" max-vertical-offset="792">
+          <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2015_11_12_125750_create_categoria_tecido_tecido_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.40535715" vertical-offset="97" max-vertical-offset="684">
+          <caret line="19" column="71" selection-start-line="15" selection-start-column="12" selection-end-line="19" selection-end-column="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2015_11_12_153021_create_categoria_categoria_blog_post_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.45" vertical-offset="108" max-vertical-offset="684">
+          <caret line="21" column="5" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/CategoriaBlog.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.45" vertical-offset="0" max-vertical-offset="560">
+          <caret line="16" column="49" selection-start-line="16" selection-start-column="49" selection-end-line="16" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/seeds/CategoriaTableSeeder.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.1178572" vertical-offset="1186" max-vertical-offset="1800">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Repositories/Repository/TecidoRepositoryEloquent.php">
+    <entry file="file://$PROJECT_DIR$/database/seeds/PostImageTableSeeder.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.25668448" vertical-offset="0" max-vertical-offset="954">
-          <caret line="8" column="52" selection-start-line="8" selection-start-column="52" selection-end-line="8" selection-end-column="52" />
-          <folding />
+        <state vertical-scroll-proportion="0.83928573" vertical-offset="934" max-vertical-offset="1566">
+          <caret line="79" column="0" selection-start-line="30" selection-start-column="8" selection-end-line="79" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Repositories/Presenters/TecidoPresenter.php">
+    <entry file="file://$PROJECT_DIR$/public/views/blog/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.48128343" vertical-offset="0" max-vertical-offset="561">
-          <caret line="15" column="18" selection-start-line="15" selection-start-column="18" selection-end-line="15" selection-end-column="18" />
-          <folding>
-            <element signature="e#51#107#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Repositories/Interfaces/TecidoRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4171123" vertical-offset="0" max-vertical-offset="561">
-          <caret line="13" column="1" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Repositories/Interfaces/PostRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="588">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2574">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Repositories/Transformers/TecidoTransformer.php">
+    <entry file="file://$PROJECT_DIR$/public/views/blog/pages/main.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1098">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="810">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TecidoController.php">
+    <entry file="file://$PROJECT_DIR$/public/scripts/blog/controller/mainBlog.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.0" vertical-offset="180" max-vertical-offset="1944">
-          <caret line="28" column="69" selection-start-line="28" selection-start-column="69" selection-end-line="28" selection-end-column="69" />
-          <folding>
-            <element signature="e#44#72#0#PHP" expanded="false" />
-          </folding>
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="288">
+          <caret line="6" column="30" selection-start-line="6" selection-start-column="30" selection-end-line="6" selection-end-column="30" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Tecimage.php">
+    <entry file="file://$PROJECT_DIR$/database/seeds/BlogCategoriaTableSeeder.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.3333335" vertical-offset="0" max-vertical-offset="432">
-          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-          <folding />
+        <state vertical-scroll-proportion="0.69464284" vertical-offset="691" max-vertical-offset="1278">
+          <caret line="61" column="38" selection-start-line="61" selection-start-column="38" selection-end-line="61" selection-end-column="38" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Repositories/Transformers/TecimageTransformer.php">
+    <entry file="file://$PROJECT_DIR$/database/seeds/CategoriaBlogTableSeeder.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.28877005" vertical-offset="162" max-vertical-offset="738">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+        <state vertical-scroll-proportion="0.51964283" vertical-offset="1005" max-vertical-offset="1620">
+          <caret line="73" column="51" selection-start-line="73" selection-start-column="32" selection-end-line="73" selection-end-column="51" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TecimageController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.6666667" vertical-offset="198" max-vertical-offset="1908">
-          <caret line="15" column="26" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
-          <folding>
-            <element signature="e#44#72#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Repositories/Repository/TecidoAmostraRepositoryEloquent.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="756">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Repositories/Presenters/TecidoAmostraPresenter.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.48128343" vertical-offset="0" max-vertical-offset="561">
-          <caret line="15" column="18" selection-start-line="15" selection-start-column="18" selection-end-line="15" selection-end-column="18" />
-          <folding>
-            <element signature="e#51#101#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Repositories/Interfaces/TecidoAmostraRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="588">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Tecido.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.12834224" vertical-offset="0" max-vertical-offset="630">
-          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding>
-            <element signature="e#27#66#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Repositories/Transformers/TecidoAmostraTransformer.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.44919786" vertical-offset="0" max-vertical-offset="612">
-          <caret line="14" column="51" selection-start-line="14" selection-start-column="51" selection-end-line="15" selection-end-column="5" />
-          <folding>
-            <element signature="e#53#92#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TecidoAmostraController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8983957" vertical-offset="72" max-vertical-offset="2016">
-          <caret line="32" column="5" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
-          <folding>
-            <element signature="e#44#81#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/TecidoAmostra.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5775401" vertical-offset="0" max-vertical-offset="561">
-          <caret line="18" column="1" selection-start-line="18" selection-start-column="1" selection-end-line="18" selection-end-column="1" />
-          <folding>
-            <element signature="e#27#66#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/PostsController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="2.631016" vertical-offset="0" max-vertical-offset="1656">
-          <caret line="82" column="42" selection-start-line="82" selection-start-column="42" selection-end-line="82" selection-end-column="42" />
-          <folding>
-            <element signature="e#44#81#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/artisan.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.09694794" vertical-offset="54" max-vertical-offset="1746">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
+    <entry file="file://$PROJECT_DIR$/public/images/site/img/shop/popular_1.png">
+      <provider selected="true" editor-type-id="images">
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/list.txt">
+    <entry file="file://$PROJECT_DIR$/public/views/blog/pages/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1746">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/novo">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="936">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+        <state vertical-scroll-proportion="0.85557586" vertical-offset="1404" max-vertical-offset="2502">
+          <caret line="104" column="82" selection-start-line="104" selection-start-column="82" selection-end-line="104" selection-end-column="82" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2014_04_24_110705_create_oauth_client_scopes_table.php">
+    <entry file="file://$PROJECT_DIR$/public/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1080">
+        <state vertical-scroll-proportion="-9.851919" vertical-offset="5389" max-vertical-offset="6120">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/jwt.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/CategoriaBlogController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3132">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+        <state vertical-scroll-proportion="0.93214285" vertical-offset="0" max-vertical-offset="1836">
+          <caret line="36" column="43" selection-start-line="36" selection-start-column="43" selection-end-line="36" selection-end-column="43" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/graham-campbell/flysystem/config/flysystem.php">
+    <entry file="file://$PROJECT_DIR$/bootstrap/autoload.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.9465241" vertical-offset="2214" max-vertical-offset="3942">
+        <state vertical-scroll-proportion="-0.2857143" vertical-offset="160" max-vertical-offset="720">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bootstrap/app.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.51428574" vertical-offset="0" max-vertical-offset="936">
+          <caret line="25" column="1" selection-start-line="25" selection-start-column="1" selection-end-line="25" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Middleware/EncryptCookies.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="587">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Middleware/RedirectIfAuthenticated.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.28928572" vertical-offset="162" max-vertical-offset="864">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Middleware/VerifyCsrfToken.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="587">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Middleware/Authenticate.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="954">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Auth/AuthController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.4464285" vertical-offset="0" max-vertical-offset="1278">
+          <caret line="45" column="61" selection-start-line="45" selection-start-column="61" selection-end-line="45" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/UserController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.54642856" vertical-offset="0" max-vertical-offset="2160">
+          <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.env">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="587">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/composer.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1188">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/config/app.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="4.208556" vertical-offset="1311" max-vertical-offset="3816">
-          <caret line="204" column="6" selection-start-line="204" selection-start-column="6" selection-end-line="204" selection-end-column="6" />
-          <folding />
+        <state vertical-scroll-proportion="2.2214286" vertical-offset="2410" max-vertical-offset="3834">
+          <caret line="203" column="21" selection-start-line="203" selection-start-column="21" selection-end-line="203" selection-end-column="21" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/filesystems.php">
+    <entry file="file://$PROJECT_DIR$/public/bower_components/satellizer/satellizer.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="1638">
+        <state vertical-scroll-proportion="-5.9268293" vertical-offset="3402" max-vertical-offset="16560">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/seeds/UserTableSeeder.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.41785714" vertical-offset="54" max-vertical-offset="666">
+          <caret line="16" column="30" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/jwt.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="2.9197862" vertical-offset="0" max-vertical-offset="3132">
+          <caret line="91" column="56" selection-start-line="91" selection-start-column="56" selection-end-line="91" selection-end-column="56" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.333333" vertical-offset="0" max-vertical-offset="6678">
-          <caret line="49" column="8" selection-start-line="49" selection-start-column="8" selection-end-line="49" selection-end-column="8" />
+        <state vertical-scroll-proportion="-11.333333" vertical-offset="342" max-vertical-offset="8028">
+          <caret line="36" column="30" selection-start-line="36" selection-start-column="30" selection-end-line="36" selection-end-column="30" />
           <folding>
-            <element signature="e#185#219#0#PHP" expanded="false" />
+            <element signature="e#7#42#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/flysystem.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Kernel.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-76.0" vertical-offset="0" max-vertical-offset="4068">
-          <caret line="114" column="55" selection-start-line="114" selection-start-column="55" selection-end-line="114" selection-end-column="55" />
-          <folding>
-            <element signature="e#7#235#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/composer.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.51336896" vertical-offset="0" max-vertical-offset="1188">
-          <caret line="16" column="43" selection-start-line="16" selection-start-column="43" selection-end-line="16" selection-end-column="43" />
+        <state vertical-scroll-proportion="0.77540106" vertical-offset="303" max-vertical-offset="864">
+          <caret line="41" column="1" selection-start-line="41" selection-start-column="1" selection-end-line="41" selection-end-column="1" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AuthenticateController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.61497325" vertical-offset="267" max-vertical-offset="1152">
+          <caret line="34" column="13" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="13" />
+          <folding>
+            <element signature="e#44#72#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
