@@ -1,0 +1,34 @@
+<div class="container" ng-controller="sobreController as sobre">
+    <h3>Sobre Nós</h3>
+    <button class="btn btn-primary" style="margin-bottom: 10px" ng-click="sobre.getSobreNos()">Mostrar Sobre Nós</button>
+    <div class="table-responsive" ng-if="sobre.sobre_nos">
+        <table class="table table-striped table-condensed table-responsive">
+            <thead>
+            <tr>
+                <th>#ID</th>
+                <th>Nome</th>
+                <th>Descrição</th>
+                <th>Criado em:</th>
+                <th>Atualizado em:</th>
+                <th>Ação</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="sobre in sobre.sobre_nos.data">
+                <td>{{sobre.id}}</td>
+                <td>{{sobre.titulo}}</td>
+                <td>{{sobre.description}}</td>
+                <td>{{sobre.created_at}}</td>
+                <td>{{sobre.updated_at}}</td>
+                <td>Editar | Novo | Deletar</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="alert alert-danger" ng-if="sobre_nos.error">
+        <strong>Havia um erro: </strong> {{sobre_nos.error.error}}
+        <br>Por favor, volte e faça login novamente
+    </div>
+    <hr style="width: 100%; color: black; height: 2px; background-color:black;" />
+</div>

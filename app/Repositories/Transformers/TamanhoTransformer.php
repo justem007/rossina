@@ -21,7 +21,7 @@ class TamanhoTransformer extends TransformerAbstract
     public function transform(Tamanho $model)
     {
         return [
-//            'id'         => (int) $model->id,
+            'id'         => (int) $model->id,
             'name'       => $model->name,
 //            'created_at' => (string) $model->created_at,
 //            'updated_at' => (string) $model->updated_at

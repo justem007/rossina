@@ -2,11 +2,13 @@
 
 namespace Rossina\Http\Controllers;
 
-use Illuminate\Support\Facades\Input;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Response;
 use League\Fractal\Manager;
 use League\Fractal\Pagination\IlluminatePaginatorAdapter;
 use League\Fractal\Resource\Collection;
 use League\Fractal\Resource\Item;
+use Rossina\Etiqueta;
 use Rossina\Http\Requests;
 use Rossina\Repositories\Repository\EtiquetaRepositoryEloquent;
 use Rossina\Repositories\Transformers\EtiquetaTransformer;
@@ -22,19 +24,42 @@ class EtiquetaController extends ApiController
      * @var ApiController
      */
     protected $apiController;
+    /**
+     * @var Etiqueta
+     */
+    protected $etiqueta;
 
-    public function __construct(EtiquetaRepositoryEloquent $repository, ApiController $apiController)
+    /**
+     * @param EtiquetaRepositoryEloquent $repository
+     * @param Etiqueta $etiqueta
+     * @param ApiController $apiController
+     */
+    public function __construct(EtiquetaRepositoryEloquent $repository,Etiqueta $etiqueta ,ApiController $apiController)
     {
-
         $this->repository = $repository;
         $this->apiController = $apiController;
+        $this->etiqueta = $etiqueta;
     }
 
-    public function index()
+    /**
+     * @param EtiquetaTransformer $etiquetaTransformer
+     * @param Manager $fractal
+     * @return mixed
+     */
+    public function index(EtiquetaTransformer $etiquetaTransformer, Manager $fractal)
     {
-        //
+        $projects = $this->repository->all();
+
+        $collection = new Collection($projects, $etiquetaTransformer);
+
+        $data = $fractal->createData($collection)->toArray();
+
+        return $this->respondWithCORS($data);
     }
 
+    /**
+     * @return mixed
+     */
     public function paginate(){
 
         $paginator = $this->repository->paginate();
@@ -48,53 +73,77 @@ class EtiquetaController extends ApiController
         return $paginator;
     }
 
-    public function show($id, Manager $fractal, EtiquetaTransformer $etiqueta)
+    /**
+     * @param $id
+     * @param Manager $fractal
+     * @param EtiquetaTransformer $etiquetaTransformer
+     * @return mixed
+     */
+    public function show($id, Manager $fractal, EtiquetaTransformer $etiquetaTransformer)
     {
-        $project = $this->repository->find($id);
+        $project = $this->etiqueta->find($id);
 
-        $item = new Item($project, $etiqueta);
+        if(!$project){
+            return Response::json([
+                'error' => [
+                    'message' => 'Comentário não foi encontrado, favor procurar outro nome'
+                ]
+            ], 404);
+        }
+
+        $item = new Item($project, $etiquetaTransformer);
 
         $data = $fractal->createData($item)->toArray();
-
-        if (!$data) {
-            return $this->errorNotFound('Você inventou um ID e tentou carregar um local? Idiota.');
-        }
 
         return $this->respond($data);
     }
 
-    public function find($id, $columns = array('*'))
+    /**
+     * @param Request $request
+     * @return mixed
+     */
+    public function create(Request $request)
     {
+        $repository = $this->repository->create($request->all());
 
-        $repository = $this->repository->find($id, $columns = array('id', 'title', 'text'));
-
-        return $repository;
-
+        return Response::json([
+            'sucesso' => [
+                'message' => 'Etiqueta CRIADO com sucesso',
+                'data'    => $repository
+            ]
+        ], 200);
     }
 
-    public function create()
+    /**
+     * @param Request $request
+     * @param $id
+     * @return mixed
+     */
+    public function update(Request $request,$id)
     {
+        $repository = $this->repository->update( $request->all(), $id );
 
-        $repository = $this->repository->create( Input::all() );
-
-        return $repository;
+        return Response::json([
+            'sucesso' => [
+                'message' => 'Etiqueta MODIFICADO com sucesso',
+                'data'    => $repository
+            ]
+        ], 200);
     }
 
-    public function update($id)
-    {
-
-        $repository = $this->repository->update( Input::all(), $id );
-
-        return $repository;
-
-    }
-
+    /**
+     * @param $id
+     * @return mixed
+     */
     public function delete($id)
     {
-
         $repository = $this->repository->find($id)->delete();
 
-        return redirect()->route('posts');
-
+        return Response::json([
+            'sucesso' => [
+                'message' => 'Etiqueta DELETADO com sucesso',
+                'data'    => $repository
+            ]
+        ], 200);
     }
 }

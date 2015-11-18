@@ -3,9 +3,10 @@
 namespace Rossina\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Response;
 use League\Fractal\Manager;
-use League\Fractal\Pagination\IlluminatePaginatorAdapter;
 use League\Fractal\Resource\Collection;
+use League\Fractal\Resource\Item;
 use Rossina\Http\Requests;
 use Rossina\Repositories\Transformers;
 use Rossina\Repositories\Transformers\UserTransformer;
@@ -17,20 +18,22 @@ class UserController extends ApiController
 
     protected $user;
 
+    /**
+     * @param ApiController $apiController
+     * @param User $user
+     */
     public function __construct(ApiController $apiController, User $user)
     {
         $this->apiController = $apiController;
         $this->user = $user;
     }
 
-    public function index()
-    {
-        $array = array('foo', 'bar');
-
-        return $array;
-    }
-
-    public function all(Manager $fractal, UserTransformer $projectTransformer)
+    /**
+     * @param Manager $fractal
+     * @param UserTransformer $projectTransformer
+     * @return mixed
+     */
+    public function index(Manager $fractal, UserTransformer $projectTransformer)
     {
         $projects = $this->user->with(['posts'])->get();
 
@@ -41,6 +44,9 @@ class UserController extends ApiController
         return $this->respondWithCORS($data);
     }
 
+    /**
+     * @return mixed
+     */
     public function paginate()
     {
         $paginator = $this->user->paginate();
@@ -49,74 +55,76 @@ class UserController extends ApiController
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
+     * @param $id
+     * @param Manager $fractal
+     * @param UserTransformer $userTransformer
+     * @return mixed
      */
-
-    public function create()
+    public function show($id, Manager $fractal, UserTransformer $userTransformer)
     {
-        //
+        $project = $this->user->find($id);
+
+        if(!$project){
+            return Response::json([
+                'error' => [
+                    'message' => 'Usuário não foi encontrado, favor procurar outro nome'
+                ]
+            ], 404);
+        }
+
+        $item = new Item($project, $userTransformer);
+
+        $data = $fractal->createData($item)->toArray();
+
+        return $this->respond($data);
     }
 
     /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @param Request $request
+     * @return mixed
      */
-
-    public function store(Request $request)
+    public function create(Request $request)
     {
-        //
+        $repository = $this->user->create($request->all());
+
+        return Response::json([
+            'sucesso' => [
+                'message' => 'Usuário CRIADO com sucesso',
+                'data'    => $repository
+            ]
+        ], 200);
     }
 
     /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param Request $request
+     * @param $id
+     * @return mixed
      */
-
-    public function show($id)
+    public function update(Request $request,$id)
     {
-        //
+        $repository = $this->user->update( $request->all(), $id );
+
+        return Response::json([
+            'sucesso' => [
+                'message' => 'Usuário MODIFICADO com sucesso',
+                'data'    => $repository
+            ]
+        ], 200);
     }
 
     /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param $id
+     * @return mixed
      */
-
-    public function edit($id)
+    public function delete($id)
     {
-        //
-    }
+        $repository = $this->user->find($id)->delete();
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-
-    public function destroy($id)
-    {
-        //
+        return Response::json([
+            'sucesso' => [
+                'message' => 'Usuário DELETADO com sucesso',
+                'data'    => $repository
+            ]
+        ], 200);
     }
 }

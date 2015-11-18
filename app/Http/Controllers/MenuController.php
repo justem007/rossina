@@ -3,12 +3,13 @@
 namespace Rossina\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Response;
 use League\Fractal\Manager;
 use League\Fractal\Pagination\IlluminatePaginatorAdapter;
 use League\Fractal\Resource\Collection;
 use League\Fractal\Resource\Item;
 use Rossina\Http\Requests;
+use Rossina\Menu;
 use Rossina\Repositories\Repository\MenuRepositoryEloquent;
 use Rossina\Repositories\Transformers\MenuTransformer;
 
@@ -27,16 +28,24 @@ class MenuController extends ApiController
      * @var MenuTransformer
      */
     protected $menuTransformer;
+    /**
+     * @var Menu
+     */
+    protected $menu;
 
-    public function __construct(MenuRepositoryEloquent $repository, ApiController $apiController,
+    public function __construct(MenuRepositoryEloquent $repository,Menu $menu ,ApiController $apiController,
                                  Manager $fractal, MenuTransformer $menuTransformer)
     {
         $this->repository = $repository;
         $this->apiController = $apiController;
         $this->fractal = $fractal;
         $this->menuTransformer = $menuTransformer;
+        $this->menu = $menu;
     }
 
+    /**
+     * @return mixed
+     */
     public function index()
     {
         $menu = $this->repository->all();
@@ -44,6 +53,9 @@ class MenuController extends ApiController
         return $this->apiController->respondWithCollection($menu, $this->menuTransformer);
     }
 
+    /**
+     * @return mixed
+     */
     public function paginate(){
 
         $paginator = $this->repository->paginate();
@@ -57,46 +69,77 @@ class MenuController extends ApiController
         return $paginator;
     }
 
-    public function show($id, Manager $fractal, MenuTransformer $menu)
+    /**
+     * @param $id
+     * @param Manager $fractal
+     * @param MenuTransformer $menuTransformer
+     * @return mixed
+     */
+    public function show($id, Manager $fractal, MenuTransformer $menuTransformer)
     {
-        $project = $this->repository->find($id);
+        $project = $this->menu->find($id);
 
-        $item = new Item($project, $menu);
+        if(!$project){
+            return Response::json([
+                'error' => [
+                    'message' => 'Menu não foi encontrado, favor procurar outro nome'
+                ]
+            ], 404);
+        }
+
+        $item = new Item($project, $menuTransformer);
 
         $data = $fractal->createData($item)->toArray();
-
-        if (!$data) {
-            return $this->errorNotFound('Você inventou um ID e tentou carregar um local? Idiota.');
-        }
 
         return $this->respond($data);
     }
 
-    public function find($id, $columns = array('*'))
+    /**
+     * @param Request $request
+     * @return mixed
+     */
+    public function create(Request $request)
     {
-        $repository = $this->repository->find($id, $columns = array('id', 'title', 'text'));
+        $repository = $this->repository->create($request->all());
 
-        return $repository;
+        return Response::json([
+            'sucesso' => [
+                'message' => 'Menu CRIADO com sucesso',
+                'data'    => $repository
+            ]
+        ], 200);
     }
 
-    public function create()
+    /**
+     * @param Request $request
+     * @param $id
+     * @return mixed
+     */
+    public function update(Request $request,$id)
     {
-        $repository = $this->repository->create( Input::all() );
+        $repository = $this->repository->update( $request->all(), $id );
 
-        return $repository;
+        return Response::json([
+            'sucesso' => [
+                'message' => 'Menu MODIFICADO com sucesso',
+                'data'    => $repository
+            ]
+        ], 200);
     }
 
-    public function update($id)
-    {
-        $repository = $this->repository->update( Input::all(), $id );
-
-        return $repository;
-    }
-
+    /**
+     * @param $id
+     * @return mixed
+     */
     public function delete($id)
     {
         $repository = $this->repository->find($id)->delete();
 
-        return redirect()->route('posts');
+        return Response::json([
+            'sucesso' => [
+                'message' => 'Menu DELETADO com sucesso',
+                'data'    => $repository
+            ]
+        ], 200);
     }
 }

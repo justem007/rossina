@@ -2,11 +2,13 @@
 
 namespace Rossina\Http\Controllers;
 
-use Illuminate\Support\Facades\Input;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Response;
 use League\Fractal\Manager;
 use League\Fractal\Pagination\IlluminatePaginatorAdapter;
 use League\Fractal\Resource\Collection;
 use League\Fractal\Resource\Item;
+use Rossina\Categoria;
 use Rossina\Http\Requests;
 use Rossina\Repositories\Repository\CategoriaRepositoryEloquent;
 use Rossina\Repositories\Transformers\CategoriaTransformer;
@@ -25,15 +27,30 @@ class CategoriaController extends ApiController
      * @var CategoriaTransformer
      */
     protected $categoriaTransformer;
+    /**
+     * @var Categoria
+     */
+    protected $categoria;
 
-    public function __construct(CategoriaRepositoryEloquent $repository, ApiController $apiController,
+    /**
+     * @param CategoriaRepositoryEloquent $repository
+     * @param Categoria $categoria
+     * @param ApiController $apiController
+     * @param CategoriaTransformer $categoriaTransformer
+     */
+    public function __construct(CategoriaRepositoryEloquent $repository,Categoria $categoria ,ApiController $apiController,
                                 CategoriaTransformer $categoriaTransformer)
     {
         $this->repository = $repository;
         $this->apiController = $apiController;
         $this->categoriaTransformer = $categoriaTransformer;
+        $this->categoria = $categoria;
     }
 
+    /**
+     * @param Manager $fractal
+     * @return mixed
+     */
     public function index(Manager $fractal)
     {
         $categoria = $this->repository->with(['posts'])->all();
@@ -45,6 +62,9 @@ class CategoriaController extends ApiController
         return $this->respondWithCORS($data);
     }
 
+    /**
+     * @return mixed
+     */
     public function paginate(){
 
         $paginator = $this->repository->paginate();
@@ -58,53 +78,77 @@ class CategoriaController extends ApiController
         return $paginator;
     }
 
-    public function show($id, Manager $fractal, CategoriaTransformer $categoria)
+    /**
+     * @param $id
+     * @param Manager $fractal
+     * @param CategoriaTransformer $categoriaTransformer
+     * @return mixed
+     */
+    public function show($id, Manager $fractal, CategoriaTransformer $categoriaTransformer)
     {
-        $project = $this->repository->find($id);
+        $project = $this->categoria->find($id);
 
-        $item = new Item($project, $categoria);
+        if(!$project){
+            return Response::json([
+                'error' => [
+                    'message' => 'Categoria não foi encontrado, favor procurar outro nome'
+                ]
+            ], 404);
+        }
+
+        $item = new Item($project, $categoriaTransformer);
 
         $data = $fractal->createData($item)->toArray();
-
-        if (!$data) {
-            return $this->errorNotFound('Você inventou um ID e tentou carregar um local? Idiota.');
-        }
 
         return $this->respond($data);
     }
 
-    public function find($id, $columns = array('*'))
+    /**
+     * @param Request $request
+     * @return mixed
+     */
+    public function create(Request $request)
     {
+        $repository = $this->repository->create($request->all());
 
-        $repository = $this->repository->find($id, $columns = array('id', 'title', 'text'));
-
-        return $repository;
-
+        return Response::json([
+            'sucesso' => [
+                'message' => 'Categoria CRIADO com sucesso',
+                'data'    => $repository
+            ]
+        ], 200);
     }
 
-    public function create()
+    /**
+     * @param Request $request
+     * @param $id
+     * @return mixed
+     */
+    public function update(Request $request,$id)
     {
+        $repository = $this->repository->update( $request->all(), $id );
 
-        $repository = $this->repository->create( Input::all() );
-
-        return $repository;
+        return Response::json([
+            'sucesso' => [
+                'message' => 'Categoria MODIFICADO com sucesso',
+                'data'    => $repository
+            ]
+        ], 200);
     }
 
-    public function update($id)
-    {
-
-        $repository = $this->repository->update( Input::all(), $id );
-
-        return $repository;
-
-    }
-
+    /**
+     * @param $id
+     * @return mixed
+     */
     public function delete($id)
     {
-
         $repository = $this->repository->find($id)->delete();
 
-        return redirect()->route('posts');
-
+        return Response::json([
+            'sucesso' => [
+                'message' => 'Categoria DELETADO com sucesso',
+                'data'    => $repository
+            ]
+        ], 200);
     }
 }

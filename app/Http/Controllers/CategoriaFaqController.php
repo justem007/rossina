@@ -2,11 +2,13 @@
 
 namespace Rossina\Http\Controllers;
 
-use Illuminate\Support\Facades\Input;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Response;
 use League\Fractal\Manager;
 use League\Fractal\Pagination\IlluminatePaginatorAdapter;
 use League\Fractal\Resource\Collection;
 use League\Fractal\Resource\Item;
+use Rossina\CategoriaFaq;
 use Rossina\Http\Requests;
 use Rossina\Repositories\Repository\CategoriaFaqRepositoryEloquent;
 use Rossina\Repositories\Repository\CategoriaRepositoryEloquent;
@@ -28,15 +30,30 @@ class CategoriaFaqController extends ApiController
      * @var CategoriaTransformer
      */
     protected $categoriaFaqTransformer;
+    /**
+     * @var CategoriaFaq
+     */
+    protected $categoriaFaq;
 
-    public function __construct(CategoriaFaqRepositoryEloquent $repository, ApiController $apiController,
+    /**
+     * @param CategoriaFaqRepositoryEloquent $repository
+     * @param CategoriaFaq $categoriaFaq
+     * @param ApiController $apiController
+     * @param CategoriaFaqTransformer $categoriaFaqTransformer
+     */
+    public function __construct(CategoriaFaqRepositoryEloquent $repository,CategoriaFaq $categoriaFaq ,ApiController $apiController,
                                 CategoriaFaqTransformer $categoriaFaqTransformer)
     {
         $this->repository = $repository;
         $this->apiController = $apiController;
         $this->categoriaFaqTransformer = $categoriaFaqTransformer;
+        $this->categoriaFaq = $categoriaFaq;
     }
 
+    /**
+     * @param Manager $fractal
+     * @return mixed
+     */
     public function index(Manager $fractal)
     {
         $faq = $this->repository->all();
@@ -48,6 +65,9 @@ class CategoriaFaqController extends ApiController
         return $this->respondWithCORS($data);
     }
 
+    /**
+     * @return mixed
+     */
     public function paginate(){
 
         $paginator = $this->repository->paginate();
@@ -61,46 +81,77 @@ class CategoriaFaqController extends ApiController
         return $paginator;
     }
 
-    public function show($id, Manager $fractal, FaqTransformer $faq)
+    /**
+     * @param $id
+     * @param Manager $fractal
+     * @param CategoriaTransformer $categoriaFaqTransformer
+     * @return mixed
+     */
+    public function show($id, Manager $fractal, CategoriaFaqTransformer $categoriaFaqTransformer)
     {
-        $project = $this->repository->find($id);
+        $project = $this->categoriaFaq->find($id);
 
-        $item = new Item($project, $faq);
+        if(!$project){
+            return Response::json([
+                'error' => [
+                    'message' => 'Categoria faq não foi encontrado, favor procurar outro nome'
+                ]
+            ], 404);
+        }
+
+        $item = new Item($project, $categoriaFaqTransformer);
 
         $data = $fractal->createData($item)->toArray();
-
-        if (!$data) {
-            return $this->errorNotFound('Você inventou um ID e tentou carregar um local? Idiota.');
-        }
 
         return $this->respond($data);
     }
 
-    public function find($id, $columns = array('*'))
+    /**
+     * @param Request $request
+     * @return mixed
+     */
+    public function create(Request $request)
     {
-        $repository = $this->repository->find($id, $columns = array('id', 'title', 'text'));
+        $repository = $this->repository->create($request->all());
 
-        return $repository;
+        return Response::json([
+            'sucesso' => [
+                'message' => 'Categoria faq CRIADO com sucesso',
+                'data'    => $repository
+            ]
+        ], 200);
     }
 
-    public function create()
+    /**
+     * @param Request $request
+     * @param $id
+     * @return mixed
+     */
+    public function update(Request $request,$id)
     {
-        $repository = $this->repository->create( Input::all() );
+        $repository = $this->repository->update( $request->all(), $id );
 
-        return $repository;
+        return Response::json([
+            'sucesso' => [
+                'message' => 'Categoria faq MODIFICADO com sucesso',
+                'data'    => $repository
+            ]
+        ], 200);
     }
 
-    public function update($id)
-    {
-        $repository = $this->repository->update( Input::all(), $id );
-
-        return $repository;
-    }
-
+    /**
+     * @param $id
+     * @return mixed
+     */
     public function delete($id)
     {
         $repository = $this->repository->find($id)->delete();
 
-        return redirect()->route('posts');
+        return Response::json([
+            'sucesso' => [
+                'message' => 'Categoria faq DELETADO com sucesso',
+                'data'    => $repository
+            ]
+        ], 200);
     }
 }

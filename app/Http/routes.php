@@ -23,22 +23,37 @@ use Tymon\JWTAuth\Facades\JWTAuth;
 //    return  Redirect::to('views/blog/index.html');
 //});
 //
+
 Route::get('/', function (){
     return  Redirect::to('index.html');
 });
-//
-////Route::get('/', 'HomeController@principal');
-//
-//Route::get('routes', function() {
-//    \Artisan::call('route:list');
-//    return "<pre>".\Artisan::output();
+
+//Route::get('/', function (){
+//    return  Redirect::to('views/index.html');
 //});
+
+
+//Route::get('/', 'HomeController@principal');
+//
+Route::get('/api', function () {
+    return view('index');
+});
+
+Route::get('/admin-rossina', function () {
+    return view('admin');
+});
 
 Route::group(['prefix' => 'api'], function()
 {
     Route::resource('authenticate', 'AuthenticateController', ['only' => ['index']]);
     Route::post('authenticate', 'AuthenticateController@authenticate');
+    Route::get('authenticate/user', 'AuthenticateController@getAuthenticatedUser');
 });
+
+//Route::get('routes', function() {
+//    \Artisan::call('route:list');
+//    return "<pre>".\Artisan::output();
+//});
 
 Route::post('test', function () {
     $token = JWTAuth::parseToken('bearer', 'HTTP_AUTHORIZATION')->getToken();
@@ -49,7 +64,6 @@ Route::group(['prefix' => 'api'], function (){
 
     Route::group(['prefix' => 'posts'], function () {
         Route::get('/', ['as' => 'posts', 'uses' => 'PostsController@index']);
-        Route::get('index', ['as' => 'posts', 'uses' => 'PostsController@index']);
         Route::get('show/{id}', ['as' => 'posts.show', 'uses' => 'PostsController@show']);
         Route::post('/', ['as' => 'posts.create', 'uses' => 'PostsController@create']);
         Route::put('update/{id}',['as' => 'posts.update', 'uses' => 'PostsController@update']);
@@ -192,7 +206,7 @@ Route::group(['prefix' => 'api'], function (){
     });
 
     Route::group(['prefix' => 'users'], function () {
-        Route::get('/', ['as' => 'users', 'uses' => 'UserController@all']);
+        Route::get('/', ['as' => 'users', 'uses' => 'UserController@index']);
         Route::get('paginate', ['as' => 'users', 'uses' => 'UserController@paginate']);
         Route::get('show/{id}', ['as' => 'users.show', 'uses' => 'UserController@show']);
         Route::post('/', ['as' => 'users.create', 'uses' => 'UserController@create']);
@@ -315,6 +329,15 @@ Route::group(['prefix' => 'api'], function (){
         Route::post('/', ['as' => 'categoria-faqs.create', 'uses' => 'CategoriaFaqController@create']);
         Route::put('update/{id}', ['as' => 'categoria-faqs.update', 'uses' => 'CategoriaFaqController@update']);
         Route::delete('delete/{id}', ['as' => 'categoria-faqs.delete', 'uses' => 'CategoriaFaqController@delete']);
+    });
+
+    Route::group(['prefix' => 'sobre-nos'], function () {
+        Route::get('/', ['as' => 'sobre-nos', 'uses' => 'SobreNosController@index']);
+        Route::get('paginate', ['as' => 'sobre-nos', 'uses' => 'SobreNosController@paginate']);
+        Route::get('show/{id}', ['as' => 'sobre-nos.show', 'uses' => 'SobreNosController@show']);
+        Route::post('/', ['as' => 'sobre-nos.create', 'uses' => 'SobreNosController@create']);
+        Route::put('update/{id}', ['as' => 'sobre-nos.update', 'uses' => 'SobreNosController@update']);
+        Route::delete('delete/{id}', ['as' => 'sobre-nos.delete', 'uses' => 'SobreNosController@delete']);
     });
 });
 

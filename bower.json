@@ -64,6 +64,7 @@
     "metisMenu": "~2.2.0",
     "raphael": "~2.1.4",
     "bootstrap-notify": "~0.2.0",
-    "satellizer": "~0.13.0"
+    "satellizer": "~0.13.0",
+    "angular-ui-router": "~0.2.15"
   }
 }

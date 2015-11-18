@@ -1,0 +1,96 @@
+<div class="container" ng-controller="blocoDoisDestaqueController as blocoDoisDestaque">
+    <h3>Estamparia - Parti 1</h3>
+    <button class="btn btn-primary" style="margin-bottom: 10px" ng-click="blocoDoisDestaque.getBlocoDoisDestaques()">Mostrar Bloco Dois - Parti 1</button>
+    <div class="table-responsive" ng-if="blocoDoisDestaque.bloco_dois_destaques">
+        <table class="table table-striped table-condensed table-responsive">
+            <thead>
+            <tr>
+                <th>#ID</th>
+                <th>Título</th>
+                <th>Sub_título</th>
+                <th>alt</th>
+                <th>Ação</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="blocoDoisDestaque in blocoDoisDestaque.bloco_dois_destaques.data">
+                <td>{{blocoDoisDestaque.id}}</td>
+                <td>{{blocoDoisDestaque.title}}</td>
+                <td>{{blocoDoisDestaque.sub_title}}</td>
+                <td>{{blocoDoisDestaque.alt}}</td>
+                <td>Editar | Novo | Deletar</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="alert alert-danger" ng-if="bloco_dois_destaques.error">
+        <strong>Havia um erro: </strong> {{bloco_dois_destaques.error.error}}
+        <br>Por favor, volte e faça login novamente
+    </div>
+</div>
+
+<div class="container" ng-controller="blocoDoisDestaqueDoisController as blocoDoisDestaqueDois">
+    <h3>Estamparia - Parti 2</h3>
+    <button class="btn btn-primary" style="margin-bottom: 10px" ng-click="blocoDoisDestaqueDois.getBlocoDoisDestaqueDois()">Mostrar Bloco Dois - Parti 2</button>
+    <div class="table-responsive" ng-if="blocoDoisDestaqueDois.bloco_dois_destaque_ums">
+        <table class="table table-striped table-condensed table-responsive">
+            <thead>
+            <tr>
+                <th>#ID</th>
+                <th>Título</th>
+                <th>Sub_título</th>
+                <th>alt</th>
+                <th>Ação</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="blocoDoisDestaqueDois in blocoDoisDestaqueDois.bloco_dois_destaque_ums.data">
+                <td>{{blocoDoisDestaqueDois.id}}</td>
+                <td>{{blocoDoisDestaqueDois.title}}</td>
+                <td>{{blocoDoisDestaqueDois.sub_title}}</td>
+                <td>{{blocoDoisDestaqueDois.alt}}</td>
+                <td>Editar | Novo | Deletar</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="alert alert-danger" ng-if="bloco_dois_destaque_ums.error">
+        <strong>Havia um erro: </strong> {{bloco_dois_destaque_ums.error.error}}
+        <br>Por favor, volte e faça login novamente
+    </div>
+</div>
+
+<div class="container" ng-controller="blocoDoisDestaqueTresController as blocoDoisDestaqueTres">
+    <h3>Bloco Dois - Parti 3</h3>
+    <button class="btn btn-primary" style="margin-bottom: 10px" ng-click="blocoDoisDestaqueTres.getBlocoDoisDestaqueTres()">Mostrar Bloco Dois - Parti 3</button>
+    <div class="table-responsive" ng-if="blocoDoisDestaqueTres.bloco_dois_destaque_dois">
+        <table class="table table-striped table-condensed table-responsive">
+            <thead>
+            <tr>
+                <th>#ID</th>
+                <th>Título</th>
+                <th>Sub_título</th>
+                <th>alt</th>
+                <th>Ação</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="blocoDoisDestaqueTres in blocoDoisDestaqueTres.bloco_dois_destaque_dois.data">
+                <td>{{blocoDoisDestaqueTres.id}}</td>
+                <td>{{blocoDoisDestaqueTres.title}}</td>
+                <td>{{blocoDoisDestaqueTres.sub_title}}</td>
+                <td>{{blocoDoisDestaqueTres.alt}}</td>
+                <td>Editar | Novo | Deletar</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="alert alert-danger" ng-if="bloco_dois_destaque_dois.error">
+        <strong>Havia um erro: </strong> {{bloco_dois_destaque_dois.error.error}}
+        <br>Por favor, volte e faça login novamente
+    </div>
+    <hr style="width: 100%; color: black; height: 2px; background-color:black;" />
+</div>

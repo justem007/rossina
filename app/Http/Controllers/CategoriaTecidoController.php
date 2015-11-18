@@ -2,11 +2,13 @@
 
 namespace Rossina\Http\Controllers;
 
-use Illuminate\Support\Facades\Input;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Response;
 use League\Fractal\Manager;
 use League\Fractal\Pagination\IlluminatePaginatorAdapter;
 use League\Fractal\Resource\Collection;
 use League\Fractal\Resource\Item;
+use Rossina\CategoriaTecido;
 use Rossina\Http\Requests;
 use Rossina\Repositories\Repository\CategoriaTecidoRepositoryEloquent;
 use Rossina\Repositories\Transformers\CategoriaTecidoTransformer;
@@ -25,15 +27,30 @@ class CategoriaTecidoController extends ApiController
      * @var CategoriaTecidoTransformer
      */
     protected $categoriaTecidoTransformer;
+    /**
+     * @var CategoriaTecido
+     */
+    protected $categoriaTecido;
 
-    public function __construct(CategoriaTecidoRepositoryEloquent $repository, ApiController $apiController,
+    /**
+     * @param CategoriaTecidoRepositoryEloquent $repository
+     * @param CategoriaTecido $categoriaTecido
+     * @param ApiController $apiController
+     * @param CategoriaTecidoTransformer $categoriaTecidoTransformer
+     */
+    public function __construct(CategoriaTecidoRepositoryEloquent $repository,CategoriaTecido $categoriaTecido ,ApiController $apiController,
                                 CategoriatecidoTransformer $categoriaTecidoTransformer)
     {
         $this->repository = $repository;
         $this->apiController = $apiController;
         $this->categoriaTecidoTransformer = $categoriaTecidoTransformer;
+        $this->categoriaTecido = $categoriaTecido;
     }
 
+    /**
+     * @param Manager $fractal
+     * @return mixed
+     */
     public function index(Manager $fractal)
     {
         $categoriaTecido = $this->repository->with(['tecidos'])->all();
@@ -45,6 +62,9 @@ class CategoriaTecidoController extends ApiController
         return $this->respondWithCORS($data);
     }
 
+    /**
+     * @return mixed
+     */
     public function paginate(){
 
         $paginator = $this->repository->paginate();
@@ -58,46 +78,77 @@ class CategoriaTecidoController extends ApiController
         return $paginator;
     }
 
-    public function show($id, Manager $fractal, CategoriaTecidoTransformer $categoriaTecido)
+    /**
+     * @param $id
+     * @param Manager $fractal
+     * @param CategoriaTecidoTransformer $categoriaTecidoTransformer
+     * @return mixed
+     */
+    public function show($id, Manager $fractal, CategoriaTecidoTransformer $categoriaTecidoTransformer)
     {
-        $project = $this->repository->find($id);
+        $project = $this->categoriaTecido->find($id);
 
-        $item = new Item($project, $categoriaTecido);
+        if(!$project){
+            return Response::json([
+                'error' => [
+                    'message' => 'Categoria tecido não foi encontrado, favor procurar outro nome'
+                ]
+            ], 404);
+        }
+
+        $item = new Item($project, $categoriaTecidoTransformer);
 
         $data = $fractal->createData($item)->toArray();
-
-        if (!$data) {
-            return $this->errorNotFound('Você inventou um ID e tentou carregar um local? Idiota.');
-        }
 
         return $this->respond($data);
     }
 
-    public function find($id, $columns = array('*'))
+    /**
+     * @param Request $request
+     * @return mixed
+     */
+    public function create(Request $request)
     {
-        $repository = $this->repository->find($id, $columns = array('id', 'title', 'text'));
+        $repository = $this->repository->create($request->all());
 
-        return $repository;
+        return Response::json([
+            'sucesso' => [
+                'message' => 'Categoria tecido CRIADO com sucesso',
+                'data'    => $repository
+            ]
+        ], 200);
     }
 
-    public function create()
+    /**
+     * @param Request $request
+     * @param $id
+     * @return mixed
+     */
+    public function update(Request $request,$id)
     {
-        $repository = $this->repository->create( Input::all() );
+        $repository = $this->repository->update( $request->all(), $id );
 
-        return $repository;
+        return Response::json([
+            'sucesso' => [
+                'message' => 'Categoria tecido MODIFICADO com sucesso',
+                'data'    => $repository
+            ]
+        ], 200);
     }
 
-    public function update($id)
-    {
-        $repository = $this->repository->update( Input::all(), $id );
-
-        return $repository;
-    }
-
+    /**
+     * @param $id
+     * @return mixed
+     */
     public function delete($id)
     {
         $repository = $this->repository->find($id)->delete();
 
-        return redirect()->route('posts');
+        return Response::json([
+            'sucesso' => [
+                'message' => 'Categoria tecido DELETADO com sucesso',
+                'data'    => $repository
+            ]
+        ], 200);
     }
 }

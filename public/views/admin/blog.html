@@ -1,0 +1,106 @@
+<div class="container" ng-controller="blogController as post">
+    <h3>Posts</h3>
+    <button class="btn btn-primary" style="margin-bottom: 10px" ng-click="post.getPosts()">Mostrar Posts</button>
+    <div class="table-responsive" ng-if="post.posts">
+        <table class="table table-striped table-condensed table-responsive">
+            <thead>
+            <tr>
+                <th>#ID</th>
+                <th>Titulo</th>
+                <th>Texto</th>
+                <th>Ativo/Inativo</th>
+                <th>Criado em:</th>
+                <th>Atualizado em:</th>
+                <th>Ação</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="post in post.posts.data">
+                <td>{{post.id}}</td>
+                <td>{{post.title}}</td>
+                <td>{{post.text}}</td>
+                <td>{{post.active}}</td>
+                <td>{{post.created_at}}</td>
+                <td>{{post.updated_at}}</td>
+                <td>Editar | Novo | Deletar</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="alert alert-danger" ng-if="posts.error">
+        <strong>Havia um erro: </strong> {{posts.error.error}}
+        <br>Por favor, volte e faça login novamente
+    </div>
+    <hr style="width: 100%; color: black; height: 2px; background-color:black;" />
+</div>
+
+<div class="container" ng-controller="commentController as comment">
+    <h3>Comentários</h3>
+    <button class="btn btn-primary" style="margin-bottom: 10px" ng-click="comment.getComments()">Mostrar Comentários</button>
+    <div class="table-responsive" ng-if="comment.comments">
+        <table class="table table-striped table-condensed table-responsive">
+            <thead>
+            <tr>
+                <th>#ID</th>
+                <th>Titulo</th>
+                <th>Texto</th>
+                <th>Ativo/Inativo</th>
+                <th>Criado em:</th>
+                <th>Atualizado em:</th>
+                <th>Ação</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="comment in comment.comments.data">
+                <td>{{comment.id}}</td>
+                <td>{{comment.text}}</td>
+                <td>{{comment.name}}</td>
+                <td>{{comment.active}}</td>
+                <td>{{comment.created_at}}</td>
+                <td>{{comment.updated_at}}</td>
+                <td>Editar | Novo | Deletar</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="alert alert-danger" ng-if="comments.error">
+        <strong>Havia um erro: </strong> {{comments.error.error}}
+        <br>Por favor, volte e faça login novamente
+    </div>
+    <hr style="width: 100%; color: black; height: 2px; background-color:black;" />
+</div>
+
+<div class="container" ng-controller="blogController as postTag">
+    <h3>Posts</h3>
+    <button class="btn btn-primary" style="margin-bottom: 10px" ng-click="postTag.getPosts()">Mostrar Posts</button>
+    <div class="table-responsive" ng-if="postTag.posts">
+        <table class="table table-striped table-condensed table-responsive">
+            <thead>
+            <tr>
+                <th>#ID</th>
+                <th>Titulo</th>
+                <th>Criado em:</th>
+                <th>Atualizado em:</th>
+                <th>Ação</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="postTag in postTag.tags.data">
+                <td>{{postTag.id}}</td>
+                <td>{{postTag.title}}</td>
+                <td>{{postTag.created_at}}</td>
+                <td>{{postTag.updated_at}}</td>
+                <td>Editar | Novo | Deletar</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="alert alert-danger" ng-if="posts.error">
+        <strong>Havia um erro: </strong> {{posts.error.error}}
+        <br>Por favor, volte e faça login novamente
+    </div>
+    <hr style="width: 100%; color: black; height: 2px; background-color:black;" />
+</div>

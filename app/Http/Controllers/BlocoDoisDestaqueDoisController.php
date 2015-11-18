@@ -3,19 +3,19 @@
 namespace Rossina\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Input;
+use Rossina\Http\Requests;
+use Illuminate\Support\Facades\Response;
 use League\Fractal\Manager;
 use League\Fractal\Resource\Item;
-use Rossina\Http\Requests;
-use Rossina\Http\Controllers\Controller;
-use Rossina\Repositories\Repository\BlocoDoisDestaqueDoisRepositoryEloquent;
+use Rossina\BlocoDoisDestaqueDois;
+use Rossina\Repositories\Repository\BlocoDoisDestaqueDoisRepositoryEloquent as BlocoDDDRE;
 use Rossina\Repositories\Transformers\BlocoDoisDestaqueDoisTransformer;
 
 class BlocoDoisDestaqueDoisController extends ApiController
 {
 
     /**
-     * @var BlocoDoisDestaqueDoisRepositoryEloquent
+     * @var BlocoDDDRE
      */
     protected $repository;
     /**
@@ -30,16 +30,31 @@ class BlocoDoisDestaqueDoisController extends ApiController
      * @var BlocoDoisDestaqueDoisTransformer
      */
     protected $blocoDoisDestaqueDoisTransformer;
+    /**
+     * @var BlocoDoisDestaqueDois
+     */
+    protected $blocoDoisDestaqueDois;
 
-    public function __construct(BlocoDoisDestaqueDoisRepositoryEloquent $repository, ApiController $apiController,
+    /**
+     * @param BlocoDDDRE $repository
+     * @param BlocoDoisDestaqueDois $blocoDoisDestaqueDois
+     * @param ApiController $apiController
+     * @param Manager $fractal
+     * @param BlocoDoisDestaqueDoisTransformer $blocoDoisDestaqueDoisTransformer
+     */
+    public function __construct(BlocoDDDRE $repository,BlocoDoisDestaqueDois $blocoDoisDestaqueDois ,ApiController $apiController,
                                 Manager $fractal, BlocoDoisDestaqueDoisTransformer $blocoDoisDestaqueDoisTransformer)
     {
         $this->repository = $repository;
         $this->apiController = $apiController;
         $this->fractal = $fractal;
         $this->blocoDoisDestaqueDoisTransformer = $blocoDoisDestaqueDoisTransformer;
+        $this->blocoDoisDestaqueDois = $blocoDoisDestaqueDois;
     }
 
+    /**
+     * @return mixed
+     */
     public function index()
     {
         $blocoDoisDestaqueDois = $this->repository->all();
@@ -47,54 +62,77 @@ class BlocoDoisDestaqueDoisController extends ApiController
         return $this->apiController->respondWithCollection($blocoDoisDestaqueDois, $this->blocoDoisDestaqueDoisTransformer);
     }
 
-    public function show($id, Manager $fractal, BlocoDoisDestaqueDoisTransformer $blocoDDDT)
+    /**
+     * @param $id
+     * @param Manager $fractal
+     * @param BlocoDoisDestaqueDoisTransformer $blocoDoisDestaqueDoisTransformer
+     * @return mixed
+     */
+    public function show($id, Manager $fractal, BlocoDoisDestaqueDoisTransformer $blocoDoisDestaqueDoisTransformer)
     {
-        $project = $this->repository->find($id);
+        $project = $this->blocoDoisDestaqueDois->find($id);
 
-        $item = new Item($project, $blocoDDDT);
+        if(!$project){
+            return Response::json([
+                'error' => [
+                    'message' => 'O Bloco dois destaques dois não foi encontrado, favor procurar outro nome'
+                ]
+            ], 404);
+        }
+
+        $item = new Item($project, $blocoDoisDestaqueDoisTransformer);
 
         $data = $fractal->createData($item)->toArray();
-
-        if (!$data) {
-            return $this->errorNotFound('Você inventou um ID e tentou carregar um local? Idiota.');
-        }
 
         return $this->respond($data);
     }
 
-    public function find($id, $columns = array('*'))
+    /**
+     * @param Request $request
+     * @return mixed
+     */
+    public function create(Request $request)
     {
+        $repository = $this->repository->create($request->all());
 
-        $repository = $this->repository->find($id, $columns = array('id', 'title', 'text'));
-
-        return $repository;
-
+        return Response::json([
+            'sucesso' => [
+                'message' => 'Bloco dois destaques dois CRIADO com sucesso',
+                'data'    => $repository
+            ]
+        ], 200);
     }
 
-    public function create()
+    /**
+     * @param Request $request
+     * @param $id
+     * @return mixed
+     */
+    public function update(Request $request,$id)
     {
+        $repository = $this->repository->update( $request->all(), $id );
 
-        $repository = $this->repository->create( Input::all() );
-
-        return $repository;
+        return Response::json([
+            'sucesso' => [
+                'message' => 'Bloco dois destaques dois MODIFICADO com sucesso',
+                'data'    => $repository
+            ]
+        ], 200);
     }
 
-    public function update($id)
-    {
-
-        $repository = $this->repository->update( Input::all(), $id );
-
-        return $repository;
-
-    }
-
+    /**
+     * @param $id
+     * @return mixed
+     */
     public function delete($id)
     {
-
         $repository = $this->repository->find($id)->delete();
 
-        return redirect()->route('posts');
-
+        return Response::json([
+            'sucesso' => [
+                'message' => 'Bloco dois destaques dois DELETADO com sucesso',
+                'data'    => $repository
+            ]
+        ], 200);
     }
-
 }

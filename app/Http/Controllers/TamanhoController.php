@@ -2,7 +2,8 @@
 
 namespace Rossina\Http\Controllers;
 
-use Illuminate\Support\Facades\Input;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Response;
 use League\Fractal\Manager;
 use League\Fractal\Pagination\IlluminatePaginatorAdapter;
 use League\Fractal\Resource\Collection;
@@ -10,6 +11,7 @@ use League\Fractal\Resource\Item;
 use Rossina\Http\Requests;
 use Rossina\Repositories\Repository\TamanhoRepositoryEloquent;
 use Rossina\Repositories\Transformers\TamanhoTransformer;
+use Rossina\Tamanho;
 
 class TamanhoController extends ApiController
 {
@@ -21,13 +23,28 @@ class TamanhoController extends ApiController
      * @var ApiController
      */
     protected $apiController;
+    /**
+     * @var Tamanho
+     */
+    protected $tamanho;
 
-    public function __construct(TamanhoRepositoryEloquent $repository, ApiController $apiController)
+    /**
+     * @param TamanhoRepositoryEloquent $repository
+     * @param Tamanho $tamanho
+     * @param ApiController $apiController
+     */
+    public function __construct(TamanhoRepositoryEloquent $repository,Tamanho $tamanho ,ApiController $apiController)
     {
         $this->repository = $repository;
         $this->apiController = $apiController;
+        $this->tamanho = $tamanho;
     }
 
+    /**
+     * @param Manager $fractal
+     * @param TamanhoTransformer $tamanhoTransformer
+     * @return mixed
+     */
     public function index(Manager $fractal, TamanhoTransformer $tamanhoTransformer)
     {
         $projects = $this->repository->with(['camisetas'])->all();
@@ -39,6 +56,9 @@ class TamanhoController extends ApiController
         return $this->respondWithCORS($data);
     }
 
+    /**
+     * @return mixed
+     */
     public function paginate(){
         $paginator = $this->repository->paginate();
 
@@ -51,53 +71,77 @@ class TamanhoController extends ApiController
         return $paginator;
     }
 
-    public function show($id, Manager $fractal, TamanhoTransformer $tamanho)
+    /**
+     * @param $id
+     * @param Manager $fractal
+     * @param TamanhoTransformer $tamanhoTransformer
+     * @return mixed
+     */
+    public function show($id, Manager $fractal, TamanhoTransformer $tamanhoTransformer)
     {
-        $project = $this->repository->find($id);
+        $project = $this->tamanho->find($id);
 
-        $item = new Item($project, $tamanho);
+        if(!$project){
+            return Response::json([
+                'error' => [
+                    'message' => 'Tamanho não foi encontrado, favor procurar outro nome'
+                ]
+            ], 404);
+        }
+
+        $item = new Item($project, $tamanhoTransformer);
 
         $data = $fractal->createData($item)->toArray();
-
-        if (!$data) {
-            return $this->errorNotFound('Você inventou um ID e tentou carregar um local? Idiota.');
-        }
 
         return $this->respond($data);
     }
 
-    public function find($id, $columns = array('*'))
+    /**
+     * @param Request $request
+     * @return mixed
+     */
+    public function create(Request $request)
     {
+        $repository = $this->repository->create($request->all());
 
-        $repository = $this->repository->find($id, $columns = array('id', 'title', 'text'));
-
-        return $repository;
-
+        return Response::json([
+            'sucesso' => [
+                'message' => 'Tamanho CRIADO com sucesso',
+                'data'    => $repository
+            ]
+        ], 200);
     }
 
-    public function create()
+    /**
+     * @param Request $request
+     * @param $id
+     * @return mixed
+     */
+    public function update(Request $request,$id)
     {
+        $repository = $this->repository->update( $request->all(), $id );
 
-        $repository = $this->repository->create( Input::all() );
-
-        return $repository;
+        return Response::json([
+            'sucesso' => [
+                'message' => 'Tamanho MODIFICADO com sucesso',
+                'data'    => $repository
+            ]
+        ], 200);
     }
 
-    public function update($id)
-    {
-
-        $repository = $this->repository->update( Input::all(), $id );
-
-        return $repository;
-
-    }
-
+    /**
+     * @param $id
+     * @return mixed
+     */
     public function delete($id)
     {
-
         $repository = $this->repository->find($id)->delete();
 
-        return redirect()->route('posts');
-
+        return Response::json([
+            'sucesso' => [
+                'message' => 'Tamanho DELETADO com sucesso',
+                'data'    => $repository
+            ]
+        ], 200);
     }
 }

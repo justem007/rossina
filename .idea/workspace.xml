@@ -1,33 +1,484 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="ANALYSIS_IN_BACKGROUND" value="true" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="49d3674c-9ded-44ef-b79e-a6327c0e9255" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/database/seeds/triggers" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Http/Controllers/BlogController.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/database/migrations/2015_11_11_184747_create_faqs_table.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/blog/controller/comment.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/blog/controller/corscomment.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/blog/controller/detalhe.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/blog/controller/genero.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/blog/controller/icons.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/blog/controller/main.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/blog/controller/menu.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/blog/controller/tag.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/blog/controller/tagscomment.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/blog/controller/tamanhos.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/blog/route/route2.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/blog/site/app.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/camisetas/controller/comment.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/camisetas/controller/contato.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/camisetas/controller/corscomment.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/camisetas/controller/detalhesEstamparia.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/camisetas/controller/genero.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/camisetas/controller/icons.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/camisetas/controller/mainCamisetas.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/camisetas/controller/menu.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/camisetas/controller/site.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/camisetas/controller/slider.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/camisetas/controller/tag.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/camisetas/controller/tagscomment.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/camisetas/controller/tamanhos.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/camisetas/js/audioplayer.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/camisetas/js/audioplayer/js/Jplayer.swf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/camisetas/js/audioplayer/js/jplayer.playlist.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/camisetas/js/audioplayer/js/jquery.jplayer.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/camisetas/js/bootstrap-progressbar/bootstrap-progressbar-3.2.0.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/camisetas/js/bootstrap-progressbar/bootstrap-progressbar.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/camisetas/js/bootstrap.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/camisetas/js/breakpoints.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/camisetas/js/bxslider/images/bx_loader.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/camisetas/js/bxslider/images/controls.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/camisetas/js/bxslider/jquery.bxslider.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/camisetas/js/bxslider/jquery.bxslider.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/camisetas/js/bxslider/jquery.bxslider.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/camisetas/js/cookie.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/camisetas/js/countdown/jquery.countdown.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/camisetas/js/countdown/jquery.countdown.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/camisetas/js/custom.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/camisetas/js/fancybox/blank.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/camisetas/js/fancybox/fancybox_loading.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/camisetas/js/fancybox/fancybox_loading@2x.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/camisetas/js/fancybox/fancybox_overlay.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/camisetas/js/fancybox/fancybox_sprite.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/camisetas/js/fancybox/fancybox_sprite@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/camisetas/js/fancybox/helpers/fancybox_buttons.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/camisetas/js/fancybox/helpers/jquery.fancybox-buttons.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/camisetas/js/fancybox/helpers/jquery.fancybox-buttons.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/camisetas/js/fancybox/helpers/jquery.fancybox-media.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/camisetas/js/fancybox/helpers/jquery.fancybox-thumbs.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/camisetas/js/fancybox/helpers/jquery.fancybox-thumbs.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/camisetas/js/fancybox/jquery.fancybox.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/camisetas/js/fancybox/jquery.fancybox.custom.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/camisetas/js/fancybox/jquery.fancybox.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/camisetas/js/fancybox/jquery.fancybox.pack.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/camisetas/js/fancybox/jquery.mousewheel.pack.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/camisetas/js/fancybox/sprite.psd" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/camisetas/js/flexslider/flexslider.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/camisetas/js/flexslider/fonts/flexslider-icon.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/camisetas/js/flexslider/fonts/flexslider-icon.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/camisetas/js/flexslider/fonts/flexslider-icon.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/camisetas/js/flexslider/fonts/flexslider-icon.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/camisetas/js/flexslider/images/bg_play_pause.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/camisetas/js/flexslider/jquery.flexslider.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/camisetas/js/fontawesome-markers.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/camisetas/js/google-chart.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/camisetas/js/imagesloaded.pkgd.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/camisetas/js/j.placeholder.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/camisetas/js/jquery.carouFredSel-6.2.1-packed.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/camisetas/js/jquery.roundabout.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/camisetas/js/jquery.roundabout.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/camisetas/js/jquery/jquery-1.11.1.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/camisetas/js/jqueryui/jquery-ui.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/camisetas/js/jqueryui/jquery-ui.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/camisetas/js/jqueryui/jquery-ui.structure.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/camisetas/js/load-js.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/camisetas/js/loader.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/camisetas/js/markerwithlabel.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/camisetas/js/masonry.pkgd.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/camisetas/js/min/breakpoints.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/camisetas/js/min/google.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/camisetas/js/min/load-js.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/camisetas/js/min/main.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/camisetas/js/modules/animate-numbers.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/camisetas/js/modules/color-themes.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/camisetas/js/modules/maps-google.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/camisetas/js/modules/navigation-slide.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/camisetas/js/modules/parallax-effect.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/camisetas/js/modules/retina.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/camisetas/js/modules/settings.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/camisetas/js/modules/sliders.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/camisetas/js/modules/ui.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/camisetas/js/progressbars.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/camisetas/js/radial-progress/jquery.easing.1.3.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/camisetas/js/radial-progress/radialProgress.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/camisetas/js/radial-progress/style.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/camisetas/js/rs-plugin/assets/arrow_large_left.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/camisetas/js/rs-plugin/assets/arrow_large_right.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/camisetas/js/rs-plugin/assets/arrow_left.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/camisetas/js/rs-plugin/assets/arrow_left2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/camisetas/js/rs-plugin/assets/arrow_right.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/camisetas/js/rs-plugin/assets/arrow_right2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/camisetas/js/rs-plugin/assets/arrowleft.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/camisetas/js/rs-plugin/assets/arrowright.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/camisetas/js/rs-plugin/assets/arrows.psd" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/camisetas/js/rs-plugin/assets/black50.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/camisetas/js/rs-plugin/assets/boxed_bgtile.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/camisetas/js/rs-plugin/assets/bullet.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/camisetas/js/rs-plugin/assets/bullet_boxed.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/camisetas/js/rs-plugin/assets/bullets.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/camisetas/js/rs-plugin/assets/bullets.psd" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/camisetas/js/rs-plugin/assets/bullets2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/camisetas/js/rs-plugin/assets/coloredbg.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/camisetas/js/rs-plugin/assets/grain.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/camisetas/js/rs-plugin/assets/gridtile.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/camisetas/js/rs-plugin/assets/gridtile_3x3.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/camisetas/js/rs-plugin/assets/gridtile_3x3_white.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/camisetas/js/rs-plugin/assets/gridtile_white.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/camisetas/js/rs-plugin/assets/large_left.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/camisetas/js/rs-plugin/assets/large_right.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/camisetas/js/rs-plugin/assets/loader.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/camisetas/js/rs-plugin/assets/loader2.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/camisetas/js/rs-plugin/assets/navigdots.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/camisetas/js/rs-plugin/assets/navigdots_bgtile.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/camisetas/js/rs-plugin/assets/shadow1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/camisetas/js/rs-plugin/assets/shadow2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/camisetas/js/rs-plugin/assets/shadow3.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/camisetas/js/rs-plugin/assets/slider-lg-controls.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/camisetas/js/rs-plugin/assets/small_arrows.psd" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/camisetas/js/rs-plugin/assets/small_left.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/camisetas/js/rs-plugin/assets/small_left_boxed.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/camisetas/js/rs-plugin/assets/small_right.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/camisetas/js/rs-plugin/assets/small_right_boxed.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/camisetas/js/rs-plugin/assets/timer.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/camisetas/js/rs-plugin/assets/timerdot.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/camisetas/js/rs-plugin/assets/transparent.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/camisetas/js/rs-plugin/assets/white50.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/camisetas/js/rs-plugin/css/settings-custom.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/camisetas/js/rs-plugin/css/settings.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/camisetas/js/rs-plugin/font/revicons.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/camisetas/js/rs-plugin/font/revicons.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/camisetas/js/rs-plugin/font/revicons.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/camisetas/js/rs-plugin/font/revicons.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/camisetas/js/rs-plugin/images/decor_inside.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/camisetas/js/rs-plugin/images/decor_inside_white.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/camisetas/js/rs-plugin/images/decor_testimonial.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/camisetas/js/rs-plugin/images/gradient/g30.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/camisetas/js/rs-plugin/images/gradient/g40.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/camisetas/js/rs-plugin/js/jquery.themepunch.plugins.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/camisetas/js/rs-plugin/js/jquery.themepunch.revolution.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/camisetas/js/rs-plugin/js/jquery.themepunch.revolution.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/camisetas/js/rs-plugin/videojs/demo.captions.vtt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/camisetas/js/rs-plugin/videojs/font/vjs.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/camisetas/js/rs-plugin/videojs/font/vjs.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/camisetas/js/rs-plugin/videojs/font/vjs.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/camisetas/js/rs-plugin/videojs/font/vjs.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/camisetas/js/rs-plugin/videojs/video-js.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/camisetas/js/rs-plugin/videojs/video-js.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/camisetas/js/rs-plugin/videojs/video-js.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/camisetas/js/rs-plugin/videojs/video-js.swf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/camisetas/js/rs-plugin/videojs/video.dev.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/camisetas/js/rs-plugin/videojs/video.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/camisetas/js/scrollIt/scrollIt.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/camisetas/js/scrollIt/scrollIt.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/camisetas/js/scrollspy.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/camisetas/js/smooth-scroll/SmoothScroll.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/camisetas/js/timeline.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/camisetas/js/user.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/tecidos/controller/comment.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/tecidos/controller/contato.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/tecidos/controller/corscomment.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/tecidos/controller/faq.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/tecidos/controller/genero.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/tecidos/controller/icons.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/tecidos/controller/menu.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/tecidos/controller/site.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/tecidos/controller/slider.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/tecidos/controller/tag.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/tecidos/controller/tagscomment.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/tecidos/controller/tamanhos.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/tecidos/js/audioplayer.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/tecidos/js/audioplayer/js/Jplayer.swf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/tecidos/js/audioplayer/js/jplayer.playlist.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/tecidos/js/audioplayer/js/jquery.jplayer.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/tecidos/js/bootstrap-progressbar/bootstrap-progressbar-3.2.0.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/tecidos/js/bootstrap-progressbar/bootstrap-progressbar.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/tecidos/js/bootstrap.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/tecidos/js/breakpoints.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/tecidos/js/bxslider/images/bx_loader.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/tecidos/js/bxslider/images/controls.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/tecidos/js/bxslider/jquery.bxslider.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/tecidos/js/bxslider/jquery.bxslider.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/tecidos/js/bxslider/jquery.bxslider.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/tecidos/js/cookie.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/tecidos/js/countdown/jquery.countdown.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/tecidos/js/countdown/jquery.countdown.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/tecidos/js/custom.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/tecidos/js/fancybox/blank.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/tecidos/js/fancybox/fancybox_loading.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/tecidos/js/fancybox/fancybox_loading@2x.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/tecidos/js/fancybox/fancybox_overlay.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/tecidos/js/fancybox/fancybox_sprite.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/tecidos/js/fancybox/fancybox_sprite@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/tecidos/js/fancybox/helpers/fancybox_buttons.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/tecidos/js/fancybox/helpers/jquery.fancybox-buttons.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/tecidos/js/fancybox/helpers/jquery.fancybox-buttons.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/tecidos/js/fancybox/helpers/jquery.fancybox-media.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/tecidos/js/fancybox/helpers/jquery.fancybox-thumbs.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/tecidos/js/fancybox/helpers/jquery.fancybox-thumbs.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/tecidos/js/fancybox/jquery.fancybox.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/tecidos/js/fancybox/jquery.fancybox.custom.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/tecidos/js/fancybox/jquery.fancybox.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/tecidos/js/fancybox/jquery.fancybox.pack.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/tecidos/js/fancybox/jquery.mousewheel.pack.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/tecidos/js/fancybox/sprite.psd" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/tecidos/js/flexslider/flexslider.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/tecidos/js/flexslider/fonts/flexslider-icon.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/tecidos/js/flexslider/fonts/flexslider-icon.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/tecidos/js/flexslider/fonts/flexslider-icon.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/tecidos/js/flexslider/fonts/flexslider-icon.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/tecidos/js/flexslider/images/bg_play_pause.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/tecidos/js/flexslider/jquery.flexslider.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/tecidos/js/fontawesome-markers.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/tecidos/js/google-chart.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/tecidos/js/imagesloaded.pkgd.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/tecidos/js/j.placeholder.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/tecidos/js/jquery.carouFredSel-6.2.1-packed.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/tecidos/js/jquery.roundabout.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/tecidos/js/jquery.roundabout.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/tecidos/js/jquery/jquery-1.11.1.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/tecidos/js/jqueryui/jquery-ui.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/tecidos/js/jqueryui/jquery-ui.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/tecidos/js/jqueryui/jquery-ui.structure.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/tecidos/js/load-js.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/tecidos/js/loader.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/tecidos/js/markerwithlabel.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/tecidos/js/masonry.pkgd.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/tecidos/js/min/breakpoints.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/tecidos/js/min/google.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/tecidos/js/min/load-js.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/tecidos/js/min/main.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/tecidos/js/modules/animate-numbers.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/tecidos/js/modules/color-themes.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/tecidos/js/modules/maps-google.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/tecidos/js/modules/navigation-slide.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/tecidos/js/modules/parallax-effect.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/tecidos/js/modules/retina.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/tecidos/js/modules/settings.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/tecidos/js/modules/sliders.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/tecidos/js/modules/ui.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/tecidos/js/progressbars.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/tecidos/js/radial-progress/jquery.easing.1.3.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/tecidos/js/radial-progress/radialProgress.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/tecidos/js/radial-progress/style.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/tecidos/js/rs-plugin/assets/arrow_large_left.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/tecidos/js/rs-plugin/assets/arrow_large_right.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/tecidos/js/rs-plugin/assets/arrow_left.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/tecidos/js/rs-plugin/assets/arrow_left2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/tecidos/js/rs-plugin/assets/arrow_right.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/tecidos/js/rs-plugin/assets/arrow_right2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/tecidos/js/rs-plugin/assets/arrowleft.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/tecidos/js/rs-plugin/assets/arrowright.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/tecidos/js/rs-plugin/assets/arrows.psd" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/tecidos/js/rs-plugin/assets/black50.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/tecidos/js/rs-plugin/assets/boxed_bgtile.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/tecidos/js/rs-plugin/assets/bullet.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/tecidos/js/rs-plugin/assets/bullet_boxed.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/tecidos/js/rs-plugin/assets/bullets.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/tecidos/js/rs-plugin/assets/bullets.psd" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/tecidos/js/rs-plugin/assets/bullets2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/tecidos/js/rs-plugin/assets/coloredbg.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/tecidos/js/rs-plugin/assets/grain.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/tecidos/js/rs-plugin/assets/gridtile.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/tecidos/js/rs-plugin/assets/gridtile_3x3.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/tecidos/js/rs-plugin/assets/gridtile_3x3_white.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/tecidos/js/rs-plugin/assets/gridtile_white.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/tecidos/js/rs-plugin/assets/large_left.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/tecidos/js/rs-plugin/assets/large_right.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/tecidos/js/rs-plugin/assets/loader.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/tecidos/js/rs-plugin/assets/loader2.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/tecidos/js/rs-plugin/assets/navigdots.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/tecidos/js/rs-plugin/assets/navigdots_bgtile.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/tecidos/js/rs-plugin/assets/shadow1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/tecidos/js/rs-plugin/assets/shadow2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/tecidos/js/rs-plugin/assets/shadow3.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/tecidos/js/rs-plugin/assets/slider-lg-controls.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/tecidos/js/rs-plugin/assets/small_arrows.psd" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/tecidos/js/rs-plugin/assets/small_left.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/tecidos/js/rs-plugin/assets/small_left_boxed.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/tecidos/js/rs-plugin/assets/small_right.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/tecidos/js/rs-plugin/assets/small_right_boxed.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/tecidos/js/rs-plugin/assets/timer.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/tecidos/js/rs-plugin/assets/timerdot.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/tecidos/js/rs-plugin/assets/transparent.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/tecidos/js/rs-plugin/assets/white50.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/tecidos/js/rs-plugin/css/settings-custom.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/tecidos/js/rs-plugin/css/settings.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/tecidos/js/rs-plugin/font/revicons.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/tecidos/js/rs-plugin/font/revicons.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/tecidos/js/rs-plugin/font/revicons.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/tecidos/js/rs-plugin/font/revicons.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/tecidos/js/rs-plugin/images/decor_inside.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/tecidos/js/rs-plugin/images/decor_inside_white.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/tecidos/js/rs-plugin/images/decor_testimonial.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/tecidos/js/rs-plugin/images/gradient/g30.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/tecidos/js/rs-plugin/images/gradient/g40.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/tecidos/js/rs-plugin/js/jquery.themepunch.plugins.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/tecidos/js/rs-plugin/js/jquery.themepunch.revolution.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/tecidos/js/rs-plugin/js/jquery.themepunch.revolution.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/tecidos/js/rs-plugin/videojs/demo.captions.vtt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/tecidos/js/rs-plugin/videojs/font/vjs.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/tecidos/js/rs-plugin/videojs/font/vjs.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/tecidos/js/rs-plugin/videojs/font/vjs.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/tecidos/js/rs-plugin/videojs/font/vjs.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/tecidos/js/rs-plugin/videojs/video-js.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/tecidos/js/rs-plugin/videojs/video-js.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/tecidos/js/rs-plugin/videojs/video-js.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/tecidos/js/rs-plugin/videojs/video-js.swf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/tecidos/js/rs-plugin/videojs/video.dev.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/tecidos/js/rs-plugin/videojs/video.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/tecidos/js/scrollIt/scrollIt.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/tecidos/js/scrollIt/scrollIt.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/tecidos/js/scrollspy.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/tecidos/js/smooth-scroll/SmoothScroll.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/tecidos/js/timeline.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scripts/tecidos/js/user.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/upload.php" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/bower_components/jquery/.bower.json" afterPath="$PROJECT_DIR$/public/bower_components/jquery-2/.bower.json" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/bower_components/jquery/MIT-LICENSE.txt" afterPath="$PROJECT_DIR$/public/bower_components/jquery-2/MIT-LICENSE.txt" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/bower_components/jquery/bower.json" afterPath="$PROJECT_DIR$/public/bower_components/jquery-2/bower.json" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/bower_components/jquery/dist/jquery.js" afterPath="$PROJECT_DIR$/public/bower_components/jquery-2/dist/jquery.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/bower_components/jquery/dist/jquery.min.js" afterPath="$PROJECT_DIR$/public/bower_components/jquery-2/dist/jquery.min.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/bower_components/jquery/dist/jquery.min.map" afterPath="$PROJECT_DIR$/public/bower_components/jquery-2/dist/jquery.min.map" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/bower_components/jquery/src/ajax.js" afterPath="$PROJECT_DIR$/public/bower_components/jquery-2/src/ajax.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/bower_components/jquery/src/ajax/jsonp.js" afterPath="$PROJECT_DIR$/public/bower_components/jquery-2/src/ajax/jsonp.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/bower_components/jquery/src/ajax/load.js" afterPath="$PROJECT_DIR$/public/bower_components/jquery-2/src/ajax/load.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/bower_components/jquery/src/ajax/parseJSON.js" afterPath="$PROJECT_DIR$/public/bower_components/jquery-2/src/ajax/parseJSON.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/bower_components/jquery/src/ajax/parseXML.js" afterPath="$PROJECT_DIR$/public/bower_components/jquery-2/src/ajax/parseXML.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/bower_components/jquery/src/ajax/script.js" afterPath="$PROJECT_DIR$/public/bower_components/jquery-2/src/ajax/script.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/bower_components/jquery/src/ajax/var/nonce.js" afterPath="$PROJECT_DIR$/public/bower_components/jquery-2/src/ajax/var/nonce.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/bower_components/jquery/src/ajax/var/rquery.js" afterPath="$PROJECT_DIR$/public/bower_components/jquery-2/src/ajax/var/rquery.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/bower_components/jquery/src/ajax/xhr.js" afterPath="$PROJECT_DIR$/public/bower_components/jquery-2/src/ajax/xhr.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/bower_components/jquery/src/attributes.js" afterPath="$PROJECT_DIR$/public/bower_components/jquery-2/src/attributes.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/bower_components/jquery/src/attributes/attr.js" afterPath="$PROJECT_DIR$/public/bower_components/jquery-2/src/attributes/attr.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/bower_components/jquery/src/attributes/classes.js" afterPath="$PROJECT_DIR$/public/bower_components/jquery-2/src/attributes/classes.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/bower_components/jquery/src/attributes/prop.js" afterPath="$PROJECT_DIR$/public/bower_components/jquery-2/src/attributes/prop.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/bower_components/jquery/src/attributes/support.js" afterPath="$PROJECT_DIR$/public/bower_components/jquery-2/src/attributes/support.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/bower_components/jquery/src/attributes/val.js" afterPath="$PROJECT_DIR$/public/bower_components/jquery-2/src/attributes/val.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/bower_components/jquery/src/callbacks.js" afterPath="$PROJECT_DIR$/public/bower_components/jquery-2/src/callbacks.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/bower_components/jquery/src/core.js" afterPath="$PROJECT_DIR$/public/bower_components/jquery-2/src/core.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/bower_components/jquery/src/core/access.js" afterPath="$PROJECT_DIR$/public/bower_components/jquery-2/src/core/access.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/bower_components/jquery/src/core/init.js" afterPath="$PROJECT_DIR$/public/bower_components/jquery-2/src/core/init.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/bower_components/jquery/src/core/parseHTML.js" afterPath="$PROJECT_DIR$/public/bower_components/jquery-2/src/core/parseHTML.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/bower_components/jquery/src/core/ready.js" afterPath="$PROJECT_DIR$/public/bower_components/jquery-2/src/core/ready.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/bower_components/jquery/src/core/var/rsingleTag.js" afterPath="$PROJECT_DIR$/public/bower_components/jquery-2/src/core/var/rsingleTag.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/bower_components/jquery/src/css.js" afterPath="$PROJECT_DIR$/public/bower_components/jquery-2/src/css.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/bower_components/jquery/src/css/addGetHookIf.js" afterPath="$PROJECT_DIR$/public/bower_components/jquery-2/src/css/addGetHookIf.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/bower_components/jquery/src/css/curCSS.js" afterPath="$PROJECT_DIR$/public/bower_components/jquery-2/src/css/curCSS.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/bower_components/jquery/src/css/defaultDisplay.js" afterPath="$PROJECT_DIR$/public/bower_components/jquery-2/src/css/defaultDisplay.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/bower_components/jquery/src/css/hiddenVisibleSelectors.js" afterPath="$PROJECT_DIR$/public/bower_components/jquery-2/src/css/hiddenVisibleSelectors.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/bower_components/jquery/src/css/support.js" afterPath="$PROJECT_DIR$/public/bower_components/jquery-2/src/css/support.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/bower_components/jquery/src/css/swap.js" afterPath="$PROJECT_DIR$/public/bower_components/jquery-2/src/css/swap.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/bower_components/jquery/src/css/var/cssExpand.js" afterPath="$PROJECT_DIR$/public/bower_components/jquery-2/src/css/var/cssExpand.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/bower_components/jquery/src/css/var/getStyles.js" afterPath="$PROJECT_DIR$/public/bower_components/jquery-2/src/css/var/getStyles.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/bower_components/jquery/src/css/var/isHidden.js" afterPath="$PROJECT_DIR$/public/bower_components/jquery-2/src/css/var/isHidden.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/bower_components/jquery/src/css/var/rmargin.js" afterPath="$PROJECT_DIR$/public/bower_components/jquery-2/src/css/var/rmargin.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/bower_components/jquery/src/css/var/rnumnonpx.js" afterPath="$PROJECT_DIR$/public/bower_components/jquery-2/src/css/var/rnumnonpx.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/bower_components/jquery/src/data.js" afterPath="$PROJECT_DIR$/public/bower_components/jquery-2/src/data.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/bower_components/jquery/src/data/Data.js" afterPath="$PROJECT_DIR$/public/bower_components/jquery-2/src/data/Data.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/bower_components/jquery/src/data/accepts.js" afterPath="$PROJECT_DIR$/public/bower_components/jquery-2/src/data/accepts.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/bower_components/jquery/src/data/var/data_priv.js" afterPath="$PROJECT_DIR$/public/bower_components/jquery-2/src/data/var/data_priv.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/bower_components/jquery/src/data/var/data_user.js" afterPath="$PROJECT_DIR$/public/bower_components/jquery-2/src/data/var/data_user.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/bower_components/jquery/src/deferred.js" afterPath="$PROJECT_DIR$/public/bower_components/jquery-2/src/deferred.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/bower_components/jquery/src/deprecated.js" afterPath="$PROJECT_DIR$/public/bower_components/jquery-2/src/deprecated.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/bower_components/jquery/src/dimensions.js" afterPath="$PROJECT_DIR$/public/bower_components/jquery-2/src/dimensions.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/bower_components/jquery/src/effects.js" afterPath="$PROJECT_DIR$/public/bower_components/jquery-2/src/effects.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/bower_components/jquery/src/effects/Tween.js" afterPath="$PROJECT_DIR$/public/bower_components/jquery-2/src/effects/Tween.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/bower_components/jquery/src/effects/animatedSelector.js" afterPath="$PROJECT_DIR$/public/bower_components/jquery-2/src/effects/animatedSelector.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/bower_components/jquery/src/event.js" afterPath="$PROJECT_DIR$/public/bower_components/jquery-2/src/event.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/bower_components/jquery/src/event/ajax.js" afterPath="$PROJECT_DIR$/public/bower_components/jquery-2/src/event/ajax.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/bower_components/jquery/src/event/alias.js" afterPath="$PROJECT_DIR$/public/bower_components/jquery-2/src/event/alias.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/bower_components/jquery/src/event/support.js" afterPath="$PROJECT_DIR$/public/bower_components/jquery-2/src/event/support.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/bower_components/jquery/src/exports/amd.js" afterPath="$PROJECT_DIR$/public/bower_components/jquery-2/src/exports/amd.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/bower_components/jquery/src/exports/global.js" afterPath="$PROJECT_DIR$/public/bower_components/jquery-2/src/exports/global.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/bower_components/jquery/src/intro.js" afterPath="$PROJECT_DIR$/public/bower_components/jquery-2/src/intro.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/bower_components/jquery/src/jquery.js" afterPath="$PROJECT_DIR$/public/bower_components/jquery-2/src/jquery.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/bower_components/jquery/src/manipulation.js" afterPath="$PROJECT_DIR$/public/bower_components/jquery-2/src/manipulation.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/bower_components/jquery/src/manipulation/_evalUrl.js" afterPath="$PROJECT_DIR$/public/bower_components/jquery-2/src/manipulation/_evalUrl.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/bower_components/jquery/src/manipulation/support.js" afterPath="$PROJECT_DIR$/public/bower_components/jquery-2/src/manipulation/support.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/bower_components/jquery/src/manipulation/var/rcheckableType.js" afterPath="$PROJECT_DIR$/public/bower_components/jquery-2/src/manipulation/var/rcheckableType.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/bower_components/jquery/src/offset.js" afterPath="$PROJECT_DIR$/public/bower_components/jquery-2/src/offset.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/bower_components/jquery/src/outro.js" afterPath="$PROJECT_DIR$/public/bower_components/jquery-2/src/outro.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/bower_components/jquery/src/queue.js" afterPath="$PROJECT_DIR$/public/bower_components/jquery-2/src/queue.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/bower_components/jquery/src/queue/delay.js" afterPath="$PROJECT_DIR$/public/bower_components/jquery-2/src/queue/delay.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/bower_components/jquery/src/selector-native.js" afterPath="$PROJECT_DIR$/public/bower_components/jquery-2/src/selector-native.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/bower_components/jquery/src/selector-sizzle.js" afterPath="$PROJECT_DIR$/public/bower_components/jquery-2/src/selector-sizzle.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/bower_components/jquery/src/selector.js" afterPath="$PROJECT_DIR$/public/bower_components/jquery-2/src/selector.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/bower_components/jquery/src/serialize.js" afterPath="$PROJECT_DIR$/public/bower_components/jquery-2/src/serialize.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/bower_components/jquery/src/sizzle/dist/sizzle.js" afterPath="$PROJECT_DIR$/public/bower_components/jquery-2/src/sizzle/dist/sizzle.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/bower_components/jquery/src/sizzle/dist/sizzle.min.js" afterPath="$PROJECT_DIR$/public/bower_components/jquery-2/src/sizzle/dist/sizzle.min.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/bower_components/jquery/src/sizzle/dist/sizzle.min.map" afterPath="$PROJECT_DIR$/public/bower_components/jquery-2/src/sizzle/dist/sizzle.min.map" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/bower_components/jquery/src/traversing.js" afterPath="$PROJECT_DIR$/public/bower_components/jquery-2/src/traversing.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/bower_components/jquery/src/traversing/findFilter.js" afterPath="$PROJECT_DIR$/public/bower_components/jquery-2/src/traversing/findFilter.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/bower_components/jquery/src/traversing/var/rneedsContext.js" afterPath="$PROJECT_DIR$/public/bower_components/jquery-2/src/traversing/var/rneedsContext.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/bower_components/jquery/src/var/arr.js" afterPath="$PROJECT_DIR$/public/bower_components/jquery-2/src/var/arr.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/bower_components/jquery/src/var/class2type.js" afterPath="$PROJECT_DIR$/public/bower_components/jquery-2/src/var/class2type.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/bower_components/jquery/src/var/concat.js" afterPath="$PROJECT_DIR$/public/bower_components/jquery-2/src/var/concat.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/bower_components/jquery/src/var/hasOwn.js" afterPath="$PROJECT_DIR$/public/bower_components/jquery-2/src/var/hasOwn.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/bower_components/jquery/src/var/indexOf.js" afterPath="$PROJECT_DIR$/public/bower_components/jquery-2/src/var/indexOf.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/bower_components/jquery/src/var/pnum.js" afterPath="$PROJECT_DIR$/public/bower_components/jquery-2/src/var/pnum.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/bower_components/jquery/src/var/push.js" afterPath="$PROJECT_DIR$/public/bower_components/jquery-2/src/var/push.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/bower_components/jquery/src/var/rnotwhite.js" afterPath="$PROJECT_DIR$/public/bower_components/jquery-2/src/var/rnotwhite.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/bower_components/jquery/src/var/slice.js" afterPath="$PROJECT_DIR$/public/bower_components/jquery-2/src/var/slice.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/bower_components/jquery/src/var/strundefined.js" afterPath="$PROJECT_DIR$/public/bower_components/jquery-2/src/var/strundefined.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/bower_components/jquery/src/var/support.js" afterPath="$PROJECT_DIR$/public/bower_components/jquery-2/src/var/support.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/bower_components/jquery/src/var/toString.js" afterPath="$PROJECT_DIR$/public/bower_components/jquery-2/src/var/toString.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/bower_components/jquery/src/wrap.js" afterPath="$PROJECT_DIR$/public/bower_components/jquery-2/src/wrap.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/AuthenticateController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/AuthenticateController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/BlocoCamisetaController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/BlocoCamisetaController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/BlocoCamisetaDestaqueController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/BlocoCamisetaDestaqueController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/BlocoDoisController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/BlocoDoisController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/BlocoDoisDestaqueController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/BlocoDoisDestaqueController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/BlocoDoisDestaqueDoisController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/BlocoDoisDestaqueDoisController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/BlocoDoisDestaqueUmController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/BlocoDoisDestaqueUmController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/BlocoTecidoController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/BlocoTecidoController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/BlocoTecidoDestaqueController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/BlocoTecidoDestaqueController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/BlocoUmController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/BlocoUmController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/BlocoUmDestaqueController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/BlocoUmDestaqueController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/CamisetasController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/CamisetasController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/CategoriaBlogController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/CategoriaBlogController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/CategoriaController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/CategoriaController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/seeds/CategoriaTableSeeder.php" afterPath="$PROJECT_DIR$/database/seeds/CategoriaTableSeeder.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Repositories/Transformers/CategoriaTransformer.php" afterPath="$PROJECT_DIR$/app/Repositories/Transformers/CategoriaTransformer.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Kernel.php" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Post.php" afterPath="$PROJECT_DIR$/app/Post.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/seeds/PostImageTableSeeder.php" afterPath="$PROJECT_DIR$/database/seeds/PostImageTableSeeder.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Tecido.php" afterPath="$PROJECT_DIR$/app/Tecido.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/seeds/UserTableSeeder.php" afterPath="$PROJECT_DIR$/database/seeds/UserTableSeeder.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/CategoriaFaqController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/CategoriaFaqController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/CategoriaTecidoController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/CategoriaTecidoController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/CommentController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/CommentController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Repositories/Transformers/CommentTransformer.php" afterPath="$PROJECT_DIR$/app/Repositories/Transformers/CommentTransformer.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/CorController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/CorController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Repositories/Transformers/CorTransformer.php" afterPath="$PROJECT_DIR$/app/Repositories/Transformers/CorTransformer.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/EtiquetaController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/EtiquetaController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/FaqController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/FaqController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/FerramentaController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/FerramentaController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/GeneroController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/GeneroController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/HorarioController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/HorarioController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/ImageController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/ImageController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/MenuController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/MenuController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Repositories/Repository/PostRepositoryEloquent.php" afterPath="$PROJECT_DIR$/app/Repositories/Repository/PostRepositoryEloquent.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/PostsController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/PostsController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/SilkController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/SilkController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/StatusProducaoController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/StatusProducaoController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/TagController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/TagController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/TamanhoController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/TamanhoController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Repositories/Transformers/TamanhoTransformer.php" afterPath="$PROJECT_DIR$/app/Repositories/Transformers/TamanhoTransformer.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/TecidoAmostraController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/TecidoAmostraController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/TecidoController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/TecidoController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/TecimageController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/TecimageController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/WelcomeController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/WelcomeController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/app.blade.php" afterPath="$PROJECT_DIR$/resources/views/app.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/scripts/app.js" afterPath="$PROJECT_DIR$/public/scripts/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/app.php" afterPath="$PROJECT_DIR$/config/app.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/scripts/site/app.js" afterPath="$PROJECT_DIR$/public/scripts/site/app.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower.json" afterPath="$PROJECT_DIR$/bower.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/views/site/pages/contatos/contatos.html" afterPath="$PROJECT_DIR$/public/views/site/pages/contatos/contatos.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/scripts/site/controller/faq.js" afterPath="$PROJECT_DIR$/public/scripts/site/controller/faq.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/views/site/pages/faqs/faqs.html" afterPath="$PROJECT_DIR$/public/views/site/pages/faqs/faqs.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/index.html" afterPath="$PROJECT_DIR$/public/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/views/blog/pages/index.html" afterPath="$PROJECT_DIR$/public/views/blog/pages/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/jwt.php" afterPath="$PROJECT_DIR$/config/jwt.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/views/blog/index.html" afterPath="$PROJECT_DIR$/public/views/blog/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/views/site/pages/login/login.html" afterPath="$PROJECT_DIR$/public/views/site/pages/login/login.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/scripts/tecidos/controller/lojaTecido.js" afterPath="$PROJECT_DIR$/public/scripts/tecidos/controller/lojaTecido.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/styles/site/css/main-default.css" afterPath="$PROJECT_DIR$/public/styles/site/css/main-default.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/views/tecidos/pages/main.html" afterPath="$PROJECT_DIR$/public/views/tecidos/pages/main.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/scripts/blog/controller/mainBlog.js" afterPath="$PROJECT_DIR$/public/scripts/blog/controller/mainBlog.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/scripts/site/controller/menu.js" afterPath="$PROJECT_DIR$/public/scripts/site/controller/menu.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/scripts/site/controller/loginSite.js" afterPath="$PROJECT_DIR$/public/scripts/site/controller/loginSite.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/emails/password.blade.php" afterPath="$PROJECT_DIR$/resources/views/emails/password.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/scripts/site/route/route.js" afterPath="$PROJECT_DIR$/public/scripts/site/route/route.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/routes.php" afterPath="$PROJECT_DIR$/app/Http/routes.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/views/site/pages/sobre/sobre.html" afterPath="$PROJECT_DIR$/public/views/site/pages/sobre/sobre.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/scripts/site/controller/sobre.js" afterPath="$PROJECT_DIR$/public/scripts/site/controller/sobre.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="larangular.iws" />
@@ -53,25 +504,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="routes.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="routes.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-11.333333" vertical-offset="342" max-vertical-offset="8028">
-              <caret line="36" column="30" selection-start-line="36" selection-start-column="30" selection-end-line="36" selection-end-column="30" />
+            <state vertical-scroll-proportion="-3.0072992" vertical-offset="2026" max-vertical-offset="8028">
+              <caret line="41" column="42" selection-start-line="41" selection-start-column="41" selection-end-line="41" selection-end-column="42" />
               <folding>
-                <element signature="e#7#42#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AuthenticateController.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AuthenticateController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.61497325" vertical-offset="267" max-vertical-offset="1152">
-              <caret line="34" column="13" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="13" />
-              <folding>
-                <element signature="e#44#72#0#PHP" expanded="true" />
+                <element signature="e#210#244#0#PHP" expanded="false" />
+                <element signature="e#1186#1221#0#PHP" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -85,57 +525,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/Repositories/Repository/CategoriaFaqRepositoryEloquent.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/CategoriFaqController.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/CategoriaFaqController.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2015_11_11_174829_create_categoria_faqs_table.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2015_11_11_133535_create_faqs_table.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2015_11_11_184747_create_faqs_table.php" />
-        <option value="$PROJECT_DIR$/app/Repositories/Transformers/FaqTransformer.php" />
-        <option value="$PROJECT_DIR$/app/Repositories/Transformers/CategoriaFaqTransformer.php" />
-        <option value="$PROJECT_DIR$/app/CategoriaFaq.php" />
-        <option value="$PROJECT_DIR$/database/seeds/CategoriaFaqTableSeeder.php" />
-        <option value="$PROJECT_DIR$/public/scripts/site/controller/faq.js" />
-        <option value="$PROJECT_DIR$/public/scripts/ui-bootstrap/accordion.js" />
-        <option value="$PROJECT_DIR$/public/views/site/pages/faqs/faqs.html" />
-        <option value="$PROJECT_DIR$/public/views/site/pages/contatos/contatos.html" />
-        <option value="$PROJECT_DIR$/database/migrations/2015_11_11_191332_create_categoria_blogs_table.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2015_11_12_120413_create_categoria_tecidos_table.php" />
-        <option value="$PROJECT_DIR$/database/seeds/CategoriaTecidoTableSeeder.php" />
-        <option value="$PROJECT_DIR$/app/CategoriaTecido.php" />
-        <option value="$PROJECT_DIR$/app/Tecido.php" />
-        <option value="$PROJECT_DIR$/app/Repositories/Interfaces/CategoriaTecidoRepository.php" />
-        <option value="$PROJECT_DIR$/app/Repositories/Presenters/CategoriaTecidoPresenter.php" />
-        <option value="$PROJECT_DIR$/app/Repositories/Repository/CategoriaTecidoRepositoryEloquent.php" />
-        <option value="$PROJECT_DIR$/app/Repositories/Transformers/CategoriaTecidoTransformer.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/CategoriaTecidoController.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2015_11_12_125750_create_categoria_tecido_tecido_table.php" />
-        <option value="$PROJECT_DIR$/database/seeds/CategoriaTecicoTecidoTableSeeder.php" />
-        <option value="$PROJECT_DIR$/database/seeds/CategoriaTTecidoTableSeeder.php" />
-        <option value="$PROJECT_DIR$/database/seeds/TecidoCategoriaTableSeeder.php" />
-        <option value="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" />
-        <option value="$PROJECT_DIR$/database/seeds/PostImageTableSeeder.php" />
-        <option value="$PROJECT_DIR$/public/scripts/tecidos/controller/lojaTecido.js" />
-        <option value="$PROJECT_DIR$/public/views/tecidos/pages/main.html" />
-        <option value="$PROJECT_DIR$/app/Repositories/Interfaces/CategoriaBlogRepository.php" />
-        <option value="$PROJECT_DIR$/app/Repositories/Presenters/CategoriaBlogPresenter.php" />
-        <option value="$PROJECT_DIR$/app/Repositories/Repository/CategoriaBlogRepositoryEloquent.php" />
-        <option value="$PROJECT_DIR$/database/seeds/CategoriaBlogTableSeeder.php" />
-        <option value="$PROJECT_DIR$/app/Repositories/Transformers/CategoriaBlogTransformer.php" />
-        <option value="$PROJECT_DIR$/app/CategoriaBlog.php" />
-        <option value="$PROJECT_DIR$/app/Post.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2015_11_12_153021_create_categoria_categoria_blog_post_table.php" />
-        <option value="$PROJECT_DIR$/database/seeds/BlogCategoriaTableSeeder.php" />
-        <option value="$PROJECT_DIR$/public/scripts/blog/controller/mainBlog.js" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/CategoriaBlogController.php" />
-        <option value="$PROJECT_DIR$/public/views/blog/pages/index.html" />
-        <option value="$PROJECT_DIR$/config/app.php" />
-        <option value="$PROJECT_DIR$/config/jwt.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Auth/AuthController.php" />
-        <option value="$PROJECT_DIR$/app/Http/Kernel.php" />
-        <option value="$PROJECT_DIR$/database/seeds/UserTableSeeder.php" />
+        <option value="$PROJECT_DIR$/database/seeds/SobreNosTableSeeder.php" />
+        <option value="$PROJECT_DIR$/app/Repositories/Interfaces/SobreNoRepository.php" />
+        <option value="$PROJECT_DIR$/app/Repositories/Presenters/SobreNoPresenter.php" />
+        <option value="$PROJECT_DIR$/app/Repositories/Repository/SobreNoRepositoryEloquent.php" />
+        <option value="$PROJECT_DIR$/app/Repositories/Transformers/SobreNoTransformer.php" />
         <option value="$PROJECT_DIR$/app/Http/routes.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/AuthenticateController.php" />
+        <option value="$PROJECT_DIR$/public/scripts/site/controller/sobre.js" />
+        <option value="$PROJECT_DIR$/public/scripts/site/route/route.js" />
+        <option value="$PROJECT_DIR$/public/scripts/admin/admin.js" />
+        <option value="$PROJECT_DIR$/public/scripts/admin/sobreController.js" />
+        <option value="$PROJECT_DIR$/public/views/admin/sobre.html" />
+        <option value="$PROJECT_DIR$/public/views/admin/admin.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/admin.blade.php" />
+        <option value="$PROJECT_DIR$/public/views/site/pages/sobre/sobre.html" />
+        <option value="$PROJECT_DIR$/app/Repositories/Repository/PostRepositoryEloquent.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/CategoriaBlogController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/CategoriaController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/CategoriaFaqController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/CategoriaTecidoController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/CommentController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/CorController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/EtiquetaController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/SobresNosController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/BlocoCamisetaController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/BlocoCamisetaDestaqueController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/BlocoDoisController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/BlocoDoisDestaqueController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/BlocoDoisDestaqueDoisController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/BlocoDoisDestaqueUmController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/BlocoTecidoController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/BlocoTecidoDestaqueController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/BlocoUmController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/BlocoUmDestaqueController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/CamisetasController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/FaqController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/FerramentaController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/GeneroController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/HorarioController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/ImageController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/MenuController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/PostsController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/SilkController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/SobreNosController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/StatusProducaoController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/TagController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/TamanhoController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/TecidoAmostraController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/TecidoController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/TecimageController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/UserController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/WelcomeController.php" />
       </list>
     </option>
   </component>
@@ -213,7 +653,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -232,44 +671,13 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="larangular" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="larangular" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="database" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="larangular" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="larangular" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="database" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="seeds" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../laravel-plataforma" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../laravel-pro1" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="FullScreen" value="false" />
     <property name="LayoutCode.rearrangeEntriesPHP" value="false" />
@@ -283,18 +691,18 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/public/images/site/img/shop" />
       <recent name="$PROJECT_DIR$/public/images/site/img/slider" />
-      <recent name="$PROJECT_DIR$/public/images/site/img/homepage" />
-      <recent name="$PROJECT_DIR$/public/views/camisetas" />
-      <recent name="$PROJECT_DIR$/public/scripts/site/controller" />
+      <recent name="$PROJECT_DIR$/public/scripts/admin" />
+      <recent name="$PROJECT_DIR$/public/views/admin" />
+      <recent name="$PROJECT_DIR$/public/scripts/site/route" />
+      <recent name="$PROJECT_DIR$/public/token" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/Http/Requests" />
+      <recent name="$PROJECT_DIR$/public/token/views" />
       <recent name="$PROJECT_DIR$/public/images/site/img/slider" />
       <recent name="$PROJECT_DIR$/public/scripts/site/controller" />
       <recent name="$PROJECT_DIR$/public/views/site/pages/contatos" />
-      <recent name="$PROJECT_DIR$/public/views/site" />
-      <recent name="$PROJECT_DIR$/public" />
     </key>
   </component>
   <component name="RunManager">
@@ -368,26 +776,26 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1588" y="63" width="1390" height="756" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23413897" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20347957" sideWeight="0.50729334" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2344932" sideWeight="0.50729334" order="2" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32741934" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.375" sideWeight="0.5" order="11" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.37437603" sideWeight="0.5" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32576984" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24962178" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.27597404" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.21558245" sideWeight="0.49270666" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.27552673" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.20499243" sideWeight="0.49270666" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32903227" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32576984" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
@@ -410,370 +818,444 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="25" />
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/public/scripts/site/controller/loginSite.js</url>
+          <option name="timeStamp" value="25" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="26" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/Repositories/Transformers/CategoriaTecidoTransformer.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.0285715" vertical-offset="0" max-vertical-offset="738">
-          <caret line="33" column="66" selection-start-line="33" selection-start-column="66" selection-end-line="33" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/seeds/DatabaseSeeder.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7714286" vertical-offset="0" max-vertical-offset="630">
-          <caret line="25" column="46" selection-start-line="25" selection-start-column="46" selection-end-line="25" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/seeds/CategoriaTecidoTableSeeder.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4606947" vertical-offset="0" max-vertical-offset="1566">
-          <caret line="14" column="53" selection-start-line="13" selection-start-column="12" selection-end-line="14" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/seeds/TecidoCategoriaTableSeeder.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.83928573" vertical-offset="1006" max-vertical-offset="1638">
-          <caret line="82" column="11" selection-start-line="14" selection-start-column="8" selection-end-line="82" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/scripts/tecidos/controller/mainTecidos.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="587">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/scripts/tecidos/controller/site.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="587">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/scripts/tecidos/controller/slider.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="587">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/scripts/tecidos/controller/tag.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="587">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/scripts/tecidos/controller/detalhesTecidos.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="587">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/scripts/tecidos/controller/lojaTecido.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="288">
-          <caret line="4" column="30" selection-start-line="4" selection-start-column="30" selection-end-line="4" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/views/tecidos/pages/main.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.59232175" vertical-offset="2268" max-vertical-offset="3132">
-          <caret line="144" column="82" selection-start-line="144" selection-start-column="82" selection-end-line="144" selection-end-column="82" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Repositories/Interfaces/CategoriaBlogRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.06428572" vertical-offset="0" max-vertical-offset="560">
-          <caret line="2" column="31" selection-start-line="2" selection-start-column="31" selection-end-line="2" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Repositories/Presenters/CategoriaBlogPresenter.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.225" vertical-offset="0" max-vertical-offset="560">
-          <caret line="7" column="3" selection-start-line="7" selection-start-column="3" selection-end-line="7" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Repositories/Repository/CategoriaBlogRepositoryEloquent.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.675" vertical-offset="0" max-vertical-offset="846">
-          <caret line="21" column="35" selection-start-line="21" selection-start-column="35" selection-end-line="21" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/CategoriaFaqController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-18.074074" vertical-offset="1204" max-vertical-offset="1836">
-          <caret line="104" column="5" selection-start-line="18" selection-start-column="4" selection-end-line="104" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/seeds/CategoriaFaqTableSeeder.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.83928573" vertical-offset="1024" max-vertical-offset="1656">
-          <caret line="84" column="11" selection-start-line="16" selection-start-column="8" selection-end-line="84" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Repositories/Transformers/CategoriaFaqTransformer.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2125" vertical-offset="151" max-vertical-offset="738">
-          <caret line="16" column="6" selection-start-line="16" selection-start-column="6" selection-end-line="16" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/CategoriaTecido.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.45" vertical-offset="0" max-vertical-offset="560">
-          <caret line="16" column="51" selection-start-line="16" selection-start-column="51" selection-end-line="16" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Repositories/Transformers/CategoriaBlogTransformer.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.333333" vertical-offset="162" max-vertical-offset="756">
-          <caret line="29" column="32" selection-start-line="29" selection-start-column="32" selection-end-line="29" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Post.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.58214283" vertical-offset="232" max-vertical-offset="792">
-          <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2015_11_12_125750_create_categoria_tecido_tecido_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.40535715" vertical-offset="97" max-vertical-offset="684">
-          <caret line="19" column="71" selection-start-line="15" selection-start-column="12" selection-end-line="19" selection-end-column="71" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2015_11_12_153021_create_categoria_categoria_blog_post_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.45" vertical-offset="108" max-vertical-offset="684">
-          <caret line="21" column="5" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/CategoriaBlog.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.45" vertical-offset="0" max-vertical-offset="560">
-          <caret line="16" column="49" selection-start-line="16" selection-start-column="49" selection-end-line="16" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/seeds/CategoriaTableSeeder.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.1178572" vertical-offset="1186" max-vertical-offset="1800">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/seeds/PostImageTableSeeder.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.83928573" vertical-offset="934" max-vertical-offset="1566">
-          <caret line="79" column="0" selection-start-line="30" selection-start-column="8" selection-end-line="79" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/views/blog/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2574">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/views/blog/pages/main.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="810">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/scripts/blog/controller/mainBlog.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="288">
-          <caret line="6" column="30" selection-start-line="6" selection-start-column="30" selection-end-line="6" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/seeds/BlogCategoriaTableSeeder.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.69464284" vertical-offset="691" max-vertical-offset="1278">
-          <caret line="61" column="38" selection-start-line="61" selection-start-column="38" selection-end-line="61" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/seeds/CategoriaBlogTableSeeder.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.51964283" vertical-offset="1005" max-vertical-offset="1620">
-          <caret line="73" column="51" selection-start-line="73" selection-start-column="32" selection-end-line="73" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/images/site/img/shop/popular_1.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/views/blog/pages/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.85557586" vertical-offset="1404" max-vertical-offset="2502">
-          <caret line="104" column="82" selection-start-line="104" selection-start-column="82" selection-end-line="104" selection-end-column="82" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.851919" vertical-offset="5389" max-vertical-offset="6120">
+        <state vertical-scroll-proportion="-4.296296" vertical-offset="5266" max-vertical-offset="6192">
+          <caret line="299" column="44" selection-start-line="299" selection-start-column="44" selection-end-line="299" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/scripts/site/route/route.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="114" max-vertical-offset="918">
+          <caret line="16" column="27" selection-start-line="16" selection-start-column="27" selection-end-line="16" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/views/admin/faqs.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.38502672" vertical-offset="0" max-vertical-offset="702">
+          <caret line="12" column="29" selection-start-line="0" selection-start-column="0" selection-end-line="33" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/scripts/admin/admin.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1458">
+          <caret line="48" column="57" selection-start-line="48" selection-start-column="57" selection-end-line="48" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/scripts/admin/blocoDoisController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.42857143" vertical-offset="0" max-vertical-offset="612">
+          <caret line="14" column="17" selection-start-line="0" selection-start-column="0" selection-end-line="28" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/views/admin/sobre.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.13138686" vertical-offset="0" max-vertical-offset="702">
+          <caret line="4" column="74" selection-start-line="4" selection-start-column="74" selection-end-line="4" selection-end-column="74" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/scripts/admin/sobreController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.48979592" vertical-offset="0" max-vertical-offset="612">
+          <caret line="16" column="22" selection-start-line="16" selection-start-column="11" selection-end-line="16" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.5080214" vertical-offset="0" max-vertical-offset="2070">
+          <caret line="47" column="19" selection-start-line="47" selection-start-column="19" selection-end-line="47" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/views/admin/admin.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="561">
+          <caret line="0" column="30" selection-start-line="0" selection-start-column="30" selection-end-line="0" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/views/site/pages/sobre/sobre.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4270073" vertical-offset="0" max-vertical-offset="792">
+          <caret line="13" column="58" selection-start-line="13" selection-start-column="58" selection-end-line="13" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/league/fractal/src/Manager.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.540146" vertical-offset="4402" max-vertical-offset="4950">
+          <caret line="24" column="6" selection-start-line="24" selection-start-column="6" selection-end-line="24" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ApiController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.19251336" vertical-offset="54" max-vertical-offset="2718">
+          <caret line="18" column="25" selection-start-line="18" selection-start-column="14" selection-end-line="18" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Repositories/Repository/PostRepositoryEloquent.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5828877" vertical-offset="231" max-vertical-offset="792">
+          <caret line="37" column="5" selection-start-line="37" selection-start-column="5" selection-end-line="37" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Controller.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="588">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/CategoriaTecidoController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.36131388" vertical-offset="0" max-vertical-offset="2880">
+          <caret line="11" column="26" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/CommentController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="3.5294118" vertical-offset="0" max-vertical-offset="2682">
+          <caret line="110" column="7" selection-start-line="110" selection-start-column="7" selection-end-line="110" selection-end-column="7" />
+          <folding>
+            <element signature="e#44#72#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/EtiquetaController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8686131" vertical-offset="2170" max-vertical-offset="2790">
+          <caret line="147" column="5" selection-start-line="81" selection-start-column="4" selection-end-line="147" selection-end-column="5" />
+          <folding>
+            <element signature="e#44#72#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/CorController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2976827" vertical-offset="841" max-vertical-offset="2826">
+          <caret line="56" column="7" selection-start-line="56" selection-start-column="7" selection-end-line="56" selection-end-column="7" />
+          <folding>
+            <element signature="e#44#72#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/BlocoCamisetaController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.29562044" vertical-offset="0" max-vertical-offset="2592">
+          <caret line="9" column="26" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/BlocoCamisetaDestaqueController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.29562044" vertical-offset="0" max-vertical-offset="2484">
+          <caret line="9" column="34" selection-start-line="9" selection-start-column="34" selection-end-line="9" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/BlocoDoisController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.6256685" vertical-offset="1635" max-vertical-offset="2196">
+          <caret line="9" column="22" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/BlocoDoisDestaqueController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.32846716" vertical-offset="0" max-vertical-offset="3186">
+          <caret line="10" column="30" selection-start-line="10" selection-start-column="30" selection-end-line="10" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/BlocoDoisDestaqueDoisController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.29562044" vertical-offset="0" max-vertical-offset="2592">
+          <caret line="9" column="34" selection-start-line="9" selection-start-column="34" selection-end-line="9" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/BlocoDoisDestaqueUmController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.29562044" vertical-offset="0" max-vertical-offset="2520">
+          <caret line="9" column="32" selection-start-line="9" selection-start-column="32" selection-end-line="9" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/BlocoTecidoController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.28877005" vertical-offset="0" max-vertical-offset="2430">
+          <caret line="9" column="24" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/BlocoTecidoDestaqueController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.29562044" vertical-offset="0" max-vertical-offset="2538">
+          <caret line="9" column="32" selection-start-line="9" selection-start-column="32" selection-end-line="9" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/BlocoUmController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3529412" vertical-offset="0" max-vertical-offset="2574">
+          <caret line="11" column="20" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/BlocoUmDestaqueController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3529412" vertical-offset="0" max-vertical-offset="2574">
+          <caret line="11" column="28" selection-start-line="11" selection-start-column="28" selection-end-line="11" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/CamisetasController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3529412" vertical-offset="0" max-vertical-offset="2772">
+          <caret line="11" column="22" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/CategoriaBlogController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.93214285" vertical-offset="0" max-vertical-offset="1836">
-          <caret line="36" column="43" selection-start-line="36" selection-start-column="43" selection-end-line="36" selection-end-column="43" />
+        <state vertical-scroll-proportion="0.3529412" vertical-offset="0" max-vertical-offset="2880">
+          <caret line="11" column="26" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="26" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bootstrap/autoload.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/CategoriaController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.2857143" vertical-offset="160" max-vertical-offset="720">
+        <state vertical-scroll-proportion="0.13138686" vertical-offset="0" max-vertical-offset="2880">
+          <caret line="4" column="28" selection-start-line="4" selection-start-column="28" selection-end-line="4" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/CategoriaFaqController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.36131388" vertical-offset="0" max-vertical-offset="2934">
+          <caret line="11" column="26" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/FaqController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8716577" vertical-offset="2175" max-vertical-offset="2808">
+          <caret line="148" column="5" selection-start-line="82" selection-start-column="4" selection-end-line="148" selection-end-column="5" />
+          <folding>
+            <element signature="e#44#72#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/FerramentaController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8686131" vertical-offset="1900" max-vertical-offset="2520">
+          <caret line="142" column="5" selection-start-line="76" selection-start-column="4" selection-end-line="142" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/GeneroController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4171123" vertical-offset="126" max-vertical-offset="2412">
+          <caret line="30" column="5" selection-start-line="30" selection-start-column="4" selection-end-line="30" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/HomeController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="588">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bootstrap/app.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/HorarioController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.51428574" vertical-offset="0" max-vertical-offset="936">
-          <caret line="25" column="1" selection-start-line="25" selection-start-column="1" selection-end-line="25" selection-end-column="1" />
+        <state vertical-scroll-proportion="0.22459893" vertical-offset="162" max-vertical-offset="2646">
+          <caret line="16" column="1" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
+          <folding>
+            <element signature="e#44#72#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Middleware/EncryptCookies.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ImageController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="587">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.44919786" vertical-offset="162" max-vertical-offset="2592">
+          <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
+          <folding>
+            <element signature="e#44#72#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Middleware/RedirectIfAuthenticated.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/MenuController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.28928572" vertical-offset="162" max-vertical-offset="864">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.12834224" vertical-offset="522" max-vertical-offset="2718">
+          <caret line="33" column="13" selection-start-line="33" selection-start-column="13" selection-end-line="33" selection-end-column="13" />
+          <folding>
+            <element signature="e#44#72#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Middleware/VerifyCsrfToken.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/PostsController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="587">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.3262032" vertical-offset="339" max-vertical-offset="2574">
+          <caret line="29" column="28" selection-start-line="29" selection-start-column="28" selection-end-line="29" selection-end-column="28" />
+          <folding>
+            <element signature="e#44#72#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Middleware/Authenticate.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/SilkController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="954">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.64171124" vertical-offset="162" max-vertical-offset="2718">
+          <caret line="29" column="13" selection-start-line="29" selection-start-column="13" selection-end-line="29" selection-end-column="13" />
+          <folding>
+            <element signature="e#44#72#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Auth/AuthController.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TagController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.4464285" vertical-offset="0" max-vertical-offset="1278">
-          <caret line="45" column="61" selection-start-line="45" selection-start-column="61" selection-end-line="45" selection-end-column="61" />
+        <state vertical-scroll-proportion="-2.5347593" vertical-offset="1818" max-vertical-offset="2520">
+          <caret line="32" column="27" selection-start-line="32" selection-start-column="27" selection-end-line="32" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/StatusProducaoController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="2.4705882" vertical-offset="126" max-vertical-offset="2754">
+          <caret line="84" column="35" selection-start-line="84" selection-start-column="35" selection-end-line="84" selection-end-column="35" />
+          <folding>
+            <element signature="e#44#72#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/SobreNosController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4224599" vertical-offset="267" max-vertical-offset="2232">
+          <caret line="28" column="26" selection-start-line="28" selection-start-column="26" selection-end-line="28" selection-end-column="26" />
+          <folding>
+            <element signature="e#44#72#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TecidoAmostraController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.315508" vertical-offset="0" max-vertical-offset="2736">
+          <caret line="41" column="46" selection-start-line="41" selection-start-column="46" selection-end-line="41" selection-end-column="46" />
+          <folding>
+            <element signature="e#44#72#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TamanhoController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.6684492" vertical-offset="1566" max-vertical-offset="2754">
+          <caret line="35" column="28" selection-start-line="35" selection-start-column="28" selection-end-line="35" selection-end-column="28" />
+          <folding>
+            <element signature="e#44#72#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TecidoController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.3529412" vertical-offset="594" max-vertical-offset="2322">
+          <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
+          <folding>
+            <element signature="e#44#72#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/UserController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.54642856" vertical-offset="0" max-vertical-offset="2160">
-          <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+        <state vertical-scroll-proportion="1.6737968" vertical-offset="213" max-vertical-offset="2430">
+          <caret line="64" column="42" selection-start-line="64" selection-start-column="42" selection-end-line="64" selection-end-column="42" />
+          <folding>
+            <element signature="e#44#72#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.env">
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/WelcomeController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="587">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.8983957" vertical-offset="0" max-vertical-offset="990">
+          <caret line="28" column="35" selection-start-line="28" selection-start-column="35" selection-end-line="28" selection-end-column="35" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/composer.json">
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TecimageController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1188">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/app.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="2.2214286" vertical-offset="2410" max-vertical-offset="3834">
-          <caret line="203" column="21" selection-start-line="203" selection-start-column="21" selection-end-line="203" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/bower_components/satellizer/satellizer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.9268293" vertical-offset="3402" max-vertical-offset="16560">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/seeds/UserTableSeeder.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.41785714" vertical-offset="54" max-vertical-offset="666">
-          <caret line="16" column="30" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/jwt.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="2.9197862" vertical-offset="0" max-vertical-offset="3132">
-          <caret line="91" column="56" selection-start-line="91" selection-start-column="56" selection-end-line="91" selection-end-column="56" />
+        <state vertical-scroll-proportion="-1.660584" vertical-offset="1270" max-vertical-offset="2142">
+          <caret line="27" column="13" selection-start-line="27" selection-start-column="13" selection-end-line="27" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.333333" vertical-offset="342" max-vertical-offset="8028">
-          <caret line="36" column="30" selection-start-line="36" selection-start-column="30" selection-end-line="36" selection-end-column="30" />
+        <state vertical-scroll-proportion="-3.0072992" vertical-offset="2026" max-vertical-offset="8028">
+          <caret line="41" column="42" selection-start-line="41" selection-start-column="41" selection-end-line="41" selection-end-column="42" />
           <folding>
-            <element signature="e#7#42#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Kernel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.77540106" vertical-offset="303" max-vertical-offset="864">
-          <caret line="41" column="1" selection-start-line="41" selection-start-column="1" selection-end-line="41" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AuthenticateController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.61497325" vertical-offset="267" max-vertical-offset="1152">
-          <caret line="34" column="13" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="13" />
-          <folding>
-            <element signature="e#44#72#0#PHP" expanded="true" />
+            <element signature="e#210#244#0#PHP" expanded="false" />
+            <element signature="e#1186#1221#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>

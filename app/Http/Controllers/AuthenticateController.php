@@ -4,6 +4,7 @@ namespace Rossina\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Rossina\Http\Requests;
+use Rossina\User;
 use Tymon\JWTAuth\Exceptions\JWTException;
 use Tymon\JWTAuth\Exceptions\TokenExpiredException;
 use Tymon\JWTAuth\Exceptions\TokenInvalidException;
@@ -11,6 +12,22 @@ use Tymon\JWTAuth\Facades\JWTAuth;
 
 class AuthenticateController extends Controller
 {
+
+    public function __construct()
+    {
+        // Aplique o middleware jwt.auth a todos os métodos neste controlador
+        // exceto para o método de autenticação. Nós não queremos para evitar
+        // o usuário recupera o token se não tiver já
+        $this->middleware('jwt.auth', ['except' => ['authenticate']]);
+    }
+
+    public function index()
+    {
+        // Recuperar todos os usuários no banco de dados e devolvê-los
+        $users = User::all();
+        return $users;
+    }
+
     public function authenticate(Request $request)
     {
         // agarrar credenciais do pedido
@@ -49,7 +66,6 @@ class AuthenticateController extends Controller
         } catch (JWTException $e) {
 
             return response()->json(['token_ausente'], $e->getStatusCode());
-
         }
 
         // o token é válido e nós ter encontrado o utilizador através do sub reivindicação

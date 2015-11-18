@@ -4,6 +4,7 @@ namespace Rossina\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Response;
 use League\Fractal\Manager;
 use League\Fractal\Pagination\IlluminatePaginatorAdapter;
 use League\Fractal\Resource\Collection;
@@ -19,12 +20,21 @@ class GeneroController extends ApiController
 
     protected $apiController;
 
+    /**
+     * @param Genero $repository
+     * @param ApiController $apiController
+     */
     public function __construct(Genero $repository, ApiController $apiController)
     {
         $this->repository = $repository;
         $this->apiController = $apiController;
     }
 
+    /**
+     * @param Manager $fractal
+     * @param GeneroTransformer $generoTransformer
+     * @return mixed
+     */
     public function index(Manager $fractal, GeneroTransformer $generoTransformer)
     {
         $projects = $this->repository->with(['camisetas'])->get();
@@ -36,6 +46,9 @@ class GeneroController extends ApiController
         return $this->respondWithCORS($data);
     }
 
+    /**
+     * @return mixed
+     */
     public function paginate(){
 
         $paginator = $this->repository->paginate();
@@ -49,53 +62,77 @@ class GeneroController extends ApiController
         return $paginator;
     }
 
-    public function show($id, Manager $fractal, GeneroTransformer $genero)
+    /**
+     * @param $id
+     * @param Manager $fractal
+     * @param GeneroTransformer $generoTransformer
+     * @return mixed
+     */
+    public function show($id, Manager $fractal, GeneroTransformer $generoTransformer)
     {
         $project = $this->repository->find($id);
 
-        $item = new Item($project, $genero);
+        if(!$project){
+            return Response::json([
+                'error' => [
+                    'message' => 'Genero não foi encontrado, favor procurar outro nome'
+                ]
+            ], 404);
+        }
+
+        $item = new Item($project, $generoTransformer);
 
         $data = $fractal->createData($item)->toArray();
-
-        if (!$data) {
-            return $this->errorNotFound('Você inventou um ID e tentou carregar um local? Idiota.');
-        }
 
         return $this->respond($data);
     }
 
-    public function find($id, $columns = array('*'))
+    /**
+     * @param Request $request
+     * @return mixed
+     */
+    public function create(Request $request)
     {
+        $repository = $this->repository->create($request->all());
 
-        $repository = $this->repository->find($id, $columns = array('id', 'title', 'text'));
-
-        return $repository;
-
+        return Response::json([
+            'sucesso' => [
+                'message' => 'Genero CRIADO com sucesso',
+                'data'    => $repository
+            ]
+        ], 200);
     }
 
-    public function create()
+    /**
+     * @param Request $request
+     * @param $id
+     * @return mixed
+     */
+    public function update(Request $request,$id)
     {
+        $repository = $this->repository->update( $request->all(), $id );
 
-        $repository = $this->repository->create( Input::all() );
-
-        return $repository;
+        return Response::json([
+            'sucesso' => [
+                'message' => 'Genero MODIFICADO com sucesso',
+                'data'    => $repository
+            ]
+        ], 200);
     }
 
-    public function update($id)
-    {
-
-        $repository = $this->repository->update( Input::all(), $id );
-
-        return $repository;
-
-    }
-
+    /**
+     * @param $id
+     * @return mixed
+     */
     public function delete($id)
     {
-
         $repository = $this->repository->find($id)->delete();
 
-        return redirect()->route('posts');
-
+        return Response::json([
+            'sucesso' => [
+                'message' => 'Genero DELETADO com sucesso',
+                'data'    => $repository
+            ]
+        ], 200);
     }
 }

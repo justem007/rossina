@@ -3,27 +3,48 @@
 namespace Rossina\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Input;
+use Rossina\Http\Requests;
+use Illuminate\Support\Facades\Response;
 use League\Fractal\Manager;
 use League\Fractal\Pagination\IlluminatePaginatorAdapter;
-use League\Fractal\Resource\Item;
-use Rossina\Http\Requests;
-use Rossina\Repositories\Repository\CamisetasRepositoryEloquent;
-use Rossina\Repositories\Transformers\CamisetasTransformer;
 use League\Fractal\Resource\Collection;
+use League\Fractal\Resource\Item;
+use Rossina\Camisetas;
+use Rossina\Repositories\Repository\CamisetasRepositoryEloquent as CamisetasRE;
+use Rossina\Repositories\Transformers\CamisetasTransformer;
 
 class CamisetasController extends ApiController
 {
     protected $repository;
 
     protected $apiController;
+    /**
+     * @var Camisetas
+     */
+    protected $camisetas;
 
-    public function __construct(CamisetasRepositoryEloquent $repository, ApiController $apiController)
+    /**
+     * @param CamisetasRE $repository
+     * @param Camisetas $camisetas
+     * @param ApiController $apiController
+     */
+    public function __construct(CamisetasRE $repository,Camisetas $camisetas ,ApiController $apiController)
     {
         $this->repository = $repository;
         $this->apiController = $apiController;
+
+        // Aplique o middleware jwt.auth a todos os métodos neste controlador
+        // exceto para o método de autenticação. Nós não queremos para evitar
+        // o usuário recupera o token se não tiver já
+        $this->middleware('jwt.auth', ['except' => ['index', 'paginate', 'show']]);
+        $this->camisetas = $camisetas;
     }
 
+    /**
+     * @param Manager $fractal
+     * @param CamisetasTransformer $camisetasTransformer
+     * @return mixed
+     */
     public function index(Manager $fractal, CamisetasTransformer $camisetasTransformer)
     {
         $projects = $this->repository->with(['generos'])->all();
@@ -35,6 +56,9 @@ class CamisetasController extends ApiController
         return $this->respondWithCORS($data);
     }
 
+    /**
+     * @return mixed
+     */
     public function paginate(){
 
         $paginator = $this->repository->paginate();
@@ -48,53 +72,77 @@ class CamisetasController extends ApiController
         return $paginator;
     }
 
-    public function show($id, Manager $fractal, CamisetasTransformer $camisetaT)
+    /**
+     * @param $id
+     * @param Manager $fractal
+     * @param CamisetasTransformer $camisetasTransformer
+     * @return mixed
+     */
+    public function show($id, Manager $fractal, CamisetasTransformer $camisetasTransformer)
     {
-        $project = $this->repository->find($id);
+        $project = $this->camisetas->find($id);
 
-        $item = new Item($project, $camisetaT);
+        if(!$project){
+            return Response::json([
+                'error' => [
+                    'message' => 'Camiseta não foi encontrado, favor procurar outro nome'
+                ]
+            ], 404);
+        }
+
+        $item = new Item($project, $camisetasTransformer);
 
         $data = $fractal->createData($item)->toArray();
-
-        if (!$data) {
-            return $this->errorNotFound('Você inventou um ID e tentou carregar um local? Idiota.');
-        }
 
         return $this->respond($data);
     }
 
-    public function find($id, $columns = array('*'))
+    /**
+     * @param Request $request
+     * @return mixed
+     */
+    public function create(Request $request)
     {
+        $repository = $this->repository->create($request->all());
 
-        $repository = $this->repository->find($id, $columns = array('id', 'title', 'text'));
-
-        return $repository;
-
+        return Response::json([
+            'sucesso' => [
+                'message' => 'Camiseta, CRIADO com sucesso',
+                'data'    => $repository
+            ]
+        ], 200);
     }
 
-    public function create()
+    /**
+     * @param Request $request
+     * @param $id
+     * @return mixed
+     */
+    public function update(Request $request,$id)
     {
+        $repository = $this->repository->update( $request->all(), $id );
 
-        $repository = $this->repository->create( Input::all() );
-
-        return $repository;
+        return Response::json([
+            'sucesso' => [
+                'message' => 'Camiseta, MODIFICADO com sucesso',
+                'data'    => $repository
+            ]
+        ], 200);
     }
 
-    public function update($id)
-    {
-
-        $repository = $this->repository->update( Input::all(), $id );
-
-        return $repository;
-
-    }
-
+    /**
+     * @param $id
+     * @return mixed
+     */
     public function delete($id)
     {
-
         $repository = $this->repository->find($id)->delete();
 
-        return redirect()->route('posts');
-
+        return Response::json([
+            'sucesso' => [
+                'message' => 'Camiseta, DELETADO com sucesso',
+                'data'    => $repository
+            ]
+        ], 200);
     }
 }

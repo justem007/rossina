@@ -2,7 +2,9 @@
 
 namespace Rossina\Http\Controllers;
 
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Response;
 use League\Fractal\Manager;
 use League\Fractal\Pagination\IlluminatePaginatorAdapter;
 use League\Fractal\Resource\Collection;
@@ -10,6 +12,7 @@ use League\Fractal\Resource\Item;
 use Rossina\Http\Requests;
 use Rossina\Repositories\Repository\TecidoAmostraRepositoryEloquent;
 use Rossina\Repositories\Transformers\TecidoAmostraTransformer;
+use Rossina\TecidoAmostra;
 
 class TecidoAmostraController extends ApiController
 {
@@ -22,13 +25,26 @@ class TecidoAmostraController extends ApiController
      * @var ApiController
      */
     protected $apiController;
+    /**
+     * @var TecidoAmostra
+     */
+    protected $tecidoAmostra;
 
-    public function __construct(TecidoAmostraRepositoryEloquent $repository, ApiController $apiController)
+    /**
+     * @param TecidoAmostra $repository
+     * @param TecidoAmostra $tecidoAmostra
+     * @param ApiController $apiController
+     */
+    public function __construct(TecidoAmostra $repository,TecidoAmostra $tecidoAmostra ,ApiController $apiController)
     {
         $this->repository = $repository;
         $this->apiController = $apiController;
+        $this->tecidoAmostra = $tecidoAmostra;
     }
 
+    /**
+     * @return mixed
+     */
     public function index()
     {
         $tecidoAmostra = $this->repository->all();
@@ -54,53 +70,77 @@ class TecidoAmostraController extends ApiController
         return $paginator;
     }
 
-    public function show($id, Manager $fractal, TecidoAmostraTransformer $tecidoAmostra)
+    /**
+     * @param $id
+     * @param Manager $fractal
+     * @param TecidoAmostraTransformer $tecidoAmostraTransformer
+     * @return mixed
+     */
+    public function show($id, Manager $fractal, TecidoAmostraTransformer $tecidoAmostraTransformer)
     {
-        $project = $this->repository->find($id);
+        $project = $this->tecidoAmostra->find($id);
 
-        $item = new Item($project, $tecidoAmostra);
+        if(!$project){
+            return Response::json([
+                'error' => [
+                    'message' => 'Amostra Tecido não foi encontrado, favor procurar outro nome'
+                ]
+            ], 404);
+        }
+
+        $item = new Item($project, $tecidoAmostraTransformer);
 
         $data = $fractal->createData($item)->toArray();
-
-        if (!$data) {
-            return $this->errorNotFound('Você inventou um ID e tentou carregar um local? Idiota.');
-        }
 
         return $this->respond($data);
     }
 
-    public function find($id, $columns = array('*'))
+    /**
+     * @param Request $request
+     * @return mixed
+     */
+    public function create(Request $request)
     {
+        $repository = $this->repository->create($request->all());
 
-        $repository = $this->repository->find($id, $columns = array('id', 'title', 'text'));
-
-        return $repository;
-
+        return Response::json([
+            'sucesso' => [
+                'message' => 'Amostra Tecido CRIADO com sucesso',
+                'data'    => $repository
+            ]
+        ], 200);
     }
 
-    public function create()
+    /**
+     * @param Request $request
+     * @param $id
+     * @return mixed
+     */
+    public function update(Request $request,$id)
     {
+        $repository = $this->repository->update( $request->all(), $id );
 
-        $repository = $this->repository->create( Input::all() );
-
-        return $repository;
+        return Response::json([
+            'sucesso' => [
+                'message' => 'Amostra Tecido MODIFICADO com sucesso',
+                'data'    => $repository
+            ]
+        ], 200);
     }
 
-    public function update($id)
-    {
-
-        $repository = $this->repository->update( Input::all(), $id );
-
-        return $repository;
-
-    }
-
+    /**
+     * @param $id
+     * @return mixed
+     */
     public function delete($id)
     {
-
         $repository = $this->repository->find($id)->delete();
 
-        return redirect()->route('posts');
-
+        return Response::json([
+            'sucesso' => [
+                'message' => 'Amostra Tecido DELETADO com sucesso',
+                'data'    => $repository
+            ]
+        ], 200);
     }
 }

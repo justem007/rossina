@@ -28,7 +28,7 @@ class CommentTransformer extends TransformerAbstract
             'active'     => (boolean) $model->active,
             'post_id'    => (int) $model->post_id,
             'created_at' => (string) $model->created_at,
-//            'updated_at' => (string) $model->updated_at,
+            'updated_at' => (string) $model->updated_at,
         ];
     }
 }

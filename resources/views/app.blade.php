@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="rossina">
+<html lang="pt-br" ng-app="rossina">
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">

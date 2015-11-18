@@ -2,12 +2,14 @@
 
 namespace Rossina\Http\Controllers;
 
-use Illuminate\Support\Facades\Input;
+use Illuminate\Http\Request;
+use Rossina\Faq;
+use Rossina\Http\Requests;
+use Illuminate\Support\Facades\Response;
 use League\Fractal\Manager;
 use League\Fractal\Pagination\IlluminatePaginatorAdapter;
 use League\Fractal\Resource\Collection;
 use League\Fractal\Resource\Item;
-use Rossina\Http\Requests;
 use Rossina\Repositories\Repository\CategoriaRepositoryEloquent;
 use Rossina\Repositories\Repository\FaqRepositoryEloquent;
 use Rossina\Repositories\Transformers\CategoriaTransformer;
@@ -27,15 +29,24 @@ class FaqController extends ApiController
      * @var CategoriaTransformer
      */
     protected $faqTransformer;
+    /**
+     * @var Faq
+     */
+    protected $faq;
 
-    public function __construct(FaqRepositoryEloquent $repository, ApiController $apiController,
+    public function __construct(FaqRepositoryEloquent $repository,Faq $faq ,ApiController $apiController,
                                 FaqTransformer $faqTransformer)
     {
         $this->repository = $repository;
         $this->apiController = $apiController;
         $this->faqTransformer = $faqTransformer;
+        $this->faq = $faq;
     }
 
+    /**
+     * @param Manager $fractal
+     * @return mixed
+     */
     public function index(Manager $fractal)
     {
         $faq = $this->repository->all();
@@ -47,6 +58,9 @@ class FaqController extends ApiController
         return $this->respondWithCORS($data);
     }
 
+    /**
+     * @return mixed
+     */
     public function paginate(){
 
         $paginator = $this->repository->paginate();
@@ -60,46 +74,77 @@ class FaqController extends ApiController
         return $paginator;
     }
 
-    public function show($id, Manager $fractal, FaqTransformer $faq)
+    /**
+     * @param $id
+     * @param Manager $fractal
+     * @param FaqTransformer $faqTransformer
+     * @return mixed
+     */
+    public function show($id, Manager $fractal, FaqTransformer $faqTransformer)
     {
-        $project = $this->repository->find($id);
+        $project = $this->faq->find($id);
 
-        $item = new Item($project, $faq);
+        if(!$project){
+            return Response::json([
+                'error' => [
+                    'message' => 'Faq não foi encontrado, favor procurar outro nome'
+                ]
+            ], 404);
+        }
+
+        $item = new Item($project, $faqTransformer);
 
         $data = $fractal->createData($item)->toArray();
-
-        if (!$data) {
-            return $this->errorNotFound('Você inventou um ID e tentou carregar um local? Idiota.');
-        }
 
         return $this->respond($data);
     }
 
-    public function find($id, $columns = array('*'))
+    /**
+     * @param Request $request
+     * @return mixed
+     */
+    public function create(Request $request)
     {
-        $repository = $this->repository->find($id, $columns = array('id', 'title', 'text'));
+        $repository = $this->repository->create($request->all());
 
-        return $repository;
+        return Response::json([
+            'sucesso' => [
+                'message' => 'Faq CRIADO com sucesso',
+                'data'    => $repository
+            ]
+        ], 200);
     }
 
-    public function create()
+    /**
+     * @param Request $request
+     * @param $id
+     * @return mixed
+     */
+    public function update(Request $request,$id)
     {
-        $repository = $this->repository->create( Input::all() );
+        $repository = $this->repository->update( $request->all(), $id );
 
-        return $repository;
+        return Response::json([
+            'sucesso' => [
+                'message' => 'Faq MODIFICADO com sucesso',
+                'data'    => $repository
+            ]
+        ], 200);
     }
 
-    public function update($id)
-    {
-        $repository = $this->repository->update( Input::all(), $id );
-
-        return $repository;
-    }
-
+    /**
+     * @param $id
+     * @return mixed
+     */
     public function delete($id)
     {
         $repository = $this->repository->find($id)->delete();
 
-        return redirect()->route('posts');
+        return Response::json([
+            'sucesso' => [
+                'message' => 'Faq DELETADO com sucesso',
+                'data'    => $repository
+            ]
+        ], 200);
     }
 }

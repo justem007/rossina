@@ -2,19 +2,21 @@
 
 namespace Rossina\Http\Controllers;
 
-use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Response;
 use League\Fractal\Manager;
 use League\Fractal\Pagination\IlluminatePaginatorAdapter;
 use League\Fractal\Resource\Collection;
 use League\Fractal\Resource\Item;
+use Rossina\CategoriaBlog;
+use Illuminate\Http\Request;
 use Rossina\Http\Requests;
-use Rossina\Repositories\Repository\CategoriaBlogRepositoryEloquent;
+use Rossina\Repositories\Repository\CategoriaBlogRepositoryEloquent as CategoriaBRE;
 use Rossina\Repositories\Transformers\CategoriaBlogTransformer;
 
 class CategoriaBlogController extends ApiController
 {
     /**
-     * @var CategoriaBlogRepositoryEloquent
+     * @var CategoriaBRE
      */
     protected $repository;
     /**
@@ -25,15 +27,30 @@ class CategoriaBlogController extends ApiController
      * @var CategoriaBlogTransformer
      */
     protected $categoriaBlogTransformer;
+    /**
+     * @var CategoriaBlog
+     */
+    protected $categoriaBlog;
 
-    public function __construct(CategoriaBlogRepositoryEloquent $repository, ApiController $apiController,
+    /**
+     * @param CategoriaBRE $repository
+     * @param CategoriaBlog $categoriaBlog
+     * @param ApiController $apiController
+     * @param CategoriaBlogTransformer $categoriaBlogTransformer
+     */
+    public function __construct(CategoriaBRE $repository,CategoriaBlog $categoriaBlog ,ApiController $apiController,
                                 CategoriaBlogTransformer $categoriaBlogTransformer)
     {
         $this->repository = $repository;
         $this->apiController = $apiController;
         $this->categoriaBlogTransformer = $categoriaBlogTransformer;
+        $this->categoriaBlog = $categoriaBlog;
     }
 
+    /**
+     * @param Manager $fractal
+     * @return mixed
+     */
     public function index(Manager $fractal)
     {
         $faq = $this->repository->with(['posts'])->all();
@@ -45,6 +62,9 @@ class CategoriaBlogController extends ApiController
         return $this->respondWithCORS($data);
     }
 
+    /**
+     * @return mixed
+     */
     public function paginate(){
 
         $paginator = $this->repository->paginate();
@@ -58,46 +78,77 @@ class CategoriaBlogController extends ApiController
         return $paginator;
     }
 
-    public function show($id, Manager $fractal, CategoriaBlogTransformer $faq)
+    /**
+     * @param $id
+     * @param Manager $fractal
+     * @param CategoriaBlogTransformer $categoriaBlogTransformer
+     * @return mixed
+     */
+    public function show($id, Manager $fractal, CategoriaBlogTransformer $categoriaBlogTransformer)
     {
-        $project = $this->repository->find($id);
+        $project = $this->categoriaBlog->find($id);
 
-        $item = new Item($project, $faq);
+        if(!$project){
+            return Response::json([
+                'error' => [
+                    'message' => 'Categoria Blog não foi encontrado, favor procurar outro nome'
+                ]
+            ], 404);
+        }
+
+        $item = new Item($project, $categoriaBlogTransformer);
 
         $data = $fractal->createData($item)->toArray();
-
-        if (!$data) {
-            return $this->errorNotFound('Você inventou um ID e tentou carregar um local? Idiota.');
-        }
 
         return $this->respond($data);
     }
 
-    public function find($id, $columns = array('*'))
+    /**
+     * @param Request $request
+     * @return mixed
+     */
+    public function create(Request $request)
     {
-        $repository = $this->repository->find($id, $columns = array('id', 'title', 'text'));
+        $repository = $this->repository->create($request->all());
 
-        return $repository;
+        return Response::json([
+            'sucesso' => [
+                'message' => 'Categoria Blog, CRIADO com sucesso',
+                'data'    => $repository
+            ]
+        ], 200);
     }
 
-    public function create()
+    /**
+     * @param Request $request
+     * @param $id
+     * @return mixed
+     */
+    public function update(Request $request,$id)
     {
-        $repository = $this->repository->create( Input::all() );
+        $repository = $this->repository->update( $request->all(), $id );
 
-        return $repository;
+        return Response::json([
+            'sucesso' => [
+                'message' => 'Categoria Blog, MODIFICADO com sucesso',
+                'data'    => $repository
+            ]
+        ], 200);
     }
 
-    public function update($id)
-    {
-        $repository = $this->repository->update( Input::all(), $id );
-
-        return $repository;
-    }
-
+    /**
+     * @param $id
+     * @return mixed
+     */
     public function delete($id)
     {
         $repository = $this->repository->find($id)->delete();
 
-        return redirect()->route('posts');
+        return Response::json([
+            'sucesso' => [
+                'message' => 'Categoria Blog, DELETADO com sucesso',
+                'data'    => $repository
+            ]
+        ], 200);
     }
 }

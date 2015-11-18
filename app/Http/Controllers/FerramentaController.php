@@ -4,10 +4,12 @@ namespace Rossina\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Response;
 use League\Fractal\Manager;
 use League\Fractal\Pagination\IlluminatePaginatorAdapter;
 use League\Fractal\Resource\Collection;
 use League\Fractal\Resource\Item;
+use Rossina\Ferramenta;
 use Rossina\Http\Requests;
 use Rossina\Repositories\Repository\FerramentaRepositoryEloquent;
 use Rossina\Repositories\Transformers\FerramentaTransformer;
@@ -21,16 +23,24 @@ class FerramentaController extends ApiController
     protected $fractal;
 
     protected $ferramentaTransformer;
+    /**
+     * @var Ferramenta
+     */
+    protected $ferramenta;
 
-    public function __construct(FerramentaRepositoryEloquent $repository, ApiController $apiController,
+    public function __construct(FerramentaRepositoryEloquent $repository,Ferramenta $ferramenta ,ApiController $apiController,
                                 Manager $fractal, FerramentaTransformer $ferramentaTransformer)
     {
         $this->repository = $repository;
         $this->apiController = $apiController;
         $this->fractal = $fractal;
         $this->ferramentaTransformer = $ferramentaTransformer;
+        $this->ferramenta = $ferramenta;
     }
 
+    /**
+     * @return mixed
+     */
     public function index()
     {
         $repository = $this->repository->with(['images'])->all();
@@ -42,6 +52,9 @@ class FerramentaController extends ApiController
         return $this->respondWithCORS($data);
     }
 
+    /**
+     * @return mixed
+     */
     public function paginate(){
 
         $paginator = $this->repository->paginate();
@@ -55,53 +68,77 @@ class FerramentaController extends ApiController
         return $paginator;
     }
 
-    public function show($id, Manager $fractal, FerramentaTransformer $ferramenta)
+    /**
+     * @param $id
+     * @param Manager $fractal
+     * @param FerramentaTransformer $ferramentaTransformer
+     * @return mixed
+     */
+    public function show($id, Manager $fractal, FerramentaTransformer $ferramentaTransformer)
     {
-        $project = $this->repository->find($id);
+        $project = $this->ferramenta->find($id);
 
-        $item = new Item($project, $ferramenta);
+        if(!$project){
+            return Response::json([
+                'error' => [
+                    'message' => 'Ferramenta não foi encontrado, favor procurar outro nome'
+                ]
+            ], 404);
+        }
+
+        $item = new Item($project, $ferramentaTransformer);
 
         $data = $fractal->createData($item)->toArray();
-
-        if (!$data) {
-            return $this->errorNotFound('Você inventou um ID e tentou carregar um local? Idiota.');
-        }
 
         return $this->respond($data);
     }
 
-    public function find($id, $columns = array('*'))
+    /**
+     * @param Request $request
+     * @return mixed
+     */
+    public function create(Request $request)
     {
+        $repository = $this->repository->create($request->all());
 
-        $repository = $this->repository->find($id, $columns = array('id', 'title', 'text'));
-
-        return $repository;
-
+        return Response::json([
+            'sucesso' => [
+                'message' => 'Ferramenta CRIADO com sucesso',
+                'data'    => $repository
+            ]
+        ], 200);
     }
 
-    public function create()
+    /**
+     * @param Request $request
+     * @param $id
+     * @return mixed
+     */
+    public function update(Request $request,$id)
     {
+        $repository = $this->repository->update( $request->all(), $id );
 
-        $repository = $this->repository->create( Input::all() );
-
-        return $repository;
+        return Response::json([
+            'sucesso' => [
+                'message' => 'Ferramenta MODIFICADO com sucesso',
+                'data'    => $repository
+            ]
+        ], 200);
     }
 
-    public function update($id)
-    {
-
-        $repository = $this->repository->update( Input::all(), $id );
-
-        return $repository;
-
-    }
-
+    /**
+     * @param $id
+     * @return mixed
+     */
     public function delete($id)
     {
-
         $repository = $this->repository->find($id)->delete();
 
-        return redirect()->route('posts');
-
+        return Response::json([
+            'sucesso' => [
+                'message' => 'Ferramenta DELETADO com sucesso',
+                'data'    => $repository
+            ]
+        ], 200);
     }
 }

@@ -1,0 +1,426 @@
+<h1>Página Principal</h1>
+ <div class="col-sm-9">
+    <div class="container">
+        <h3>Horários</h3>
+        <button class="btn btn-primary" style="margin-bottom: 10px" ng-click="horario.getHorarios()">Mostrar Horários</button>
+        <div class="table-responsive" ng-if="horario.horarios">
+            <table class="table table-striped table-condensed table-responsive">
+                <thead>
+                <tr>
+                    <th>#ID</th>
+                    <th>Atendimento</th>
+                    <th>Telefone</th>
+                    <th>Entrega</th>
+                    <th>Ação</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="horario in horario.horarios.data">
+                    <td>{{horario.id}}</td>
+                    <td>{{horario.atendimento}}</td>
+                    <td>{{horario.telefone}}</td>
+                    <td>{{horario.entrega}}</td>
+                    <td>Editar | Novo | Deletar</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="alert alert-danger" ng-if="horarios.error">
+            <strong>Havia um erro: </strong> {{horarios.error.error}}
+            <br>Por favor, volte e faça login novamente
+        </div>
+        <hr style="width: 100%; color: black; height: 2px; background-color:black;" />
+    </div>
+
+     <div class="container" ng-controller="menuController as menu">
+         <h3>Menu</h3>
+         <button class="btn btn-primary" style="margin-bottom: 10px" ng-click="menu.getMenus()">Mostrar Menu</button>
+         <div class="table-responsive" ng-if="menu.menus">
+             <table class="table table-striped table-condensed table-responsive">
+                 <thead>
+                 <tr>
+                     <th>#ID</th>
+                     <th>Título</th>
+                     <th>URL</th>
+                     <th>Descrição</th>
+                     <th>Ação</th>
+                 </tr>
+                 </thead>
+                 <tbody>
+                 <tr ng-repeat="horario in menu.menus.data">
+                     <td>{{horario.id}}</td>
+                     <td>{{horario.title}}</td>
+                     <td>{{horario.url}}</td>
+                     <td>{{horario.description}}</td>
+                     <td>Editar | Novo | Deletar</td>
+                 </tr>
+                 </tbody>
+             </table>
+         </div>
+
+         <div class="alert alert-danger" ng-if="menus.error">
+             <strong>Havia um erro: </strong> {{menus.error.error}}
+             <br>Por favor, volte e faça login novamente
+         </div>
+         <hr style="width: 100%; color: black; height: 2px; background-color:black;" />
+     </div>
+
+     <div class="container" ng-controller="ferramentaController as ferramenta">
+         <h3>Bloco Ferramentas</h3>
+         <button class="btn btn-primary" style="margin-bottom: 10px" ng-click="ferramenta.getFerramentas()">Mostrar Ferramentas</button>
+         <div class="table-responsive" ng-if="ferramenta.ferramentas">
+             <table class="table table-striped table-condensed table-responsive">
+                 <thead>
+                 <tr>
+                     <th>#ID</th>
+                     <th>Título</th>
+                     <th>Descrição</th>
+                     <th>alt</th>
+                     <th>Ação</th>
+                 </tr>
+                 </thead>
+                 <tbody>
+                 <tr ng-repeat="ferramenta in ferramenta.ferramentas.data">
+                     <td>{{ferramenta.id}}</td>
+                     <td>{{ferramenta.title}}</td>
+                     <td>{{ferramenta.description}}</td>
+                     <td>{{ferramenta.alt}}</td>
+                     <td>Editar | Novo | Deletar</td>
+                 </tr>
+                 </tbody>
+             </table>
+         </div>
+
+         <div class="alert alert-danger" ng-if="ferramentas.error">
+             <strong>Havia um erro: </strong> {{ferramentas.error.error}}
+             <br>Por favor, volte e faça login novamente
+         </div>
+         <hr style="width: 100%; color: black; height: 2px; background-color:black;" />
+     </div>
+
+     <div class="container" ng-controller="blocoUmController as blocoUm">
+         <h3>Bloco Um</h3>
+         <button class="btn btn-primary" style="margin-bottom: 10px" ng-click="blocoUm.getBlocoUms()">Mostrar Bloco Um</button>
+         <div class="table table-striped table-condensed table-responsive" ng-if="blocoUm.bloco_ums">
+             <table class="table table-striped table-condensed table-responsive">
+                 <thead>
+                 <tr>
+                     <th>#ID</th>
+                     <th>Título</th>
+                     <th>Sub_título</th>
+                     <th>alt</th>
+                     <th>Ação</th>
+                 </tr>
+                 </thead>
+                 <tbody>
+                 <tr ng-repeat="blocoUm in blocoUm.bloco_ums.data">
+                     <td>{{blocoUm.id}}</td>
+                     <td>{{blocoUm.title}}</td>
+                     <td>{{blocoUm.sub_title}}</td>
+                     <td>{{blocoUm.alt}}</td>
+                     <td>Editar | Novo | Deletar</td>
+                 </tr>
+                 </tbody>
+             </table>
+         </div>
+
+         <div class="alert alert-danger" ng-if="bloco_ums.error">
+             <strong>Havia um erro: </strong> {{bloco_ums.error.error}}
+             <br>Por favor, volte e faça login novamente
+         </div>
+     </div>
+
+     <div class="container" ng-controller="blocoUmDestaqueController as blocoUmDestaque">
+         <h3>Bloco Um Destaques</h3>
+         <button class="btn btn-primary" style="margin-bottom: 10px" ng-click="blocoUmDestaque.getBlocoUmDestaques()">Mostrar Bloco Um Destaques</button>
+         <div class="table-responsive" ng-if="blocoUmDestaque.bloco_um_destaques">
+             <table class="table table-striped table-condensed table-responsive">
+                 <thead>
+                 <tr>
+                     <th>#ID</th>
+                     <th>Título</th>
+                     <th>Sub_título</th>
+                     <th>alt</th>
+                     <th>Ação</th>
+                 </tr>
+                 </thead>
+                 <tbody>
+                 <tr ng-repeat="blocoUmDestaque in blocoUmDestaque.bloco_um_destaques.data">
+                     <td>{{blocoUmDestaque.id}}</td>
+                     <td>{{blocoUmDestaque.title}}</td>
+                     <td>{{blocoUmDestaque.sub_title}}</td>
+                     <td>{{blocoUmDestaque.alt}}</td>
+                     <td>Editar | Novo | Deletar</td>
+                 </tr>
+                 </tbody>
+             </table>
+         </div>
+
+         <div class="alert alert-danger" ng-if="bloco_um_destaques.error">
+             <strong>Havia um erro: </strong> {{bloco_um_destaques.error.error}}
+             <br>Por favor, volte e faça login novamente
+         </div>
+         <hr style="width: 100%; color: black; height: 2px; background-color:black;" />
+     </div>
+
+     <div class="container" ng-controller="blocoDoisController as blocoDois">
+         <h3>Bloco Dois</h3>
+         <button class="btn btn-primary" style="margin-bottom: 10px" ng-click="blocoDois.getBlocoDois()">Mostrar Bloco Dois</button>
+         <div class="table-responsive" ng-if="blocoDois.bloco_dois">
+             <table class="table table-striped table-condensed table-responsive">
+                 <thead>
+                 <tr>
+                     <th>#ID</th>
+                     <th>Título</th>
+                     <th>Sub_título</th>
+                     <th>alt</th>
+                     <th>Ação</th>
+                 </tr>
+                 </thead>
+                 <tbody>
+                 <tr ng-repeat="blocoDois in blocoDois.bloco_dois.data">
+                     <td>{{blocoDois.id}}</td>
+                     <td>{{blocoDois.title}}</td>
+                     <td>{{blocoDois.sub_title}}</td>
+                     <td>{{blocoDois.alt}}</td>
+                     <td>Editar | Novo | Deletar</td>
+                 </tr>
+                 </tbody>
+             </table>
+         </div>
+
+         <div class="alert alert-danger" ng-if="bloco_dois.error">
+             <strong>Havia um erro: </strong> {{bloco_dois.error.error}}
+             <br>Por favor, volte e faça login novamente
+         </div>
+     </div>
+
+     <div class="container" ng-controller="blocoDoisDestaqueController as blocoDoisDestaque">
+         <h3>Bloco Dois - Parti 1</h3>
+         <button class="btn btn-primary" style="margin-bottom: 10px" ng-click="blocoDoisDestaque.getBlocoDoisDestaques()">Mostrar Bloco Dois - Parti 1</button>
+         <div class="table-responsive" ng-if="blocoDoisDestaque.bloco_dois_destaques">
+             <table class="table table-striped table-condensed table-responsive">
+                 <thead>
+                 <tr>
+                     <th>#ID</th>
+                     <th>Título</th>
+                     <th>Sub_título</th>
+                     <th>alt</th>
+                     <th>Ação</th>
+                 </tr>
+                 </thead>
+                 <tbody>
+                 <tr ng-repeat="blocoDoisDestaque in blocoDoisDestaque.bloco_dois_destaques.data">
+                     <td>{{blocoDoisDestaque.id}}</td>
+                     <td>{{blocoDoisDestaque.title}}</td>
+                     <td>{{blocoDoisDestaque.sub_title}}</td>
+                     <td>{{blocoDoisDestaque.alt}}</td>
+                     <td>Editar | Novo | Deletar</td>
+                 </tr>
+                 </tbody>
+             </table>
+         </div>
+
+         <div class="alert alert-danger" ng-if="bloco_dois_destaques.error">
+             <strong>Havia um erro: </strong> {{bloco_dois_destaques.error.error}}
+             <br>Por favor, volte e faça login novamente
+         </div>
+     </div>
+
+     <div class="container" ng-controller="blocoDoisDestaqueDoisController as blocoDoisDestaqueDois">
+         <h3>Bloco Dois - Parti 2</h3>
+         <button class="btn btn-primary" style="margin-bottom: 10px" ng-click="blocoDoisDestaqueDois.getBlocoDoisDestaqueDois()">Mostrar Bloco Dois - Parti 2</button>
+         <div class="table-responsive" ng-if="blocoDoisDestaqueDois.bloco_dois_destaque_ums">
+             <table class="table table-striped table-condensed table-responsive">
+                 <thead>
+                 <tr>
+                     <th>#ID</th>
+                     <th>Título</th>
+                     <th>Sub_título</th>
+                     <th>alt</th>
+                     <th>Ação</th>
+                 </tr>
+                 </thead>
+                 <tbody>
+                 <tr ng-repeat="blocoDoisDestaqueDois in blocoDoisDestaqueDois.bloco_dois_destaque_ums.data">
+                     <td>{{blocoDoisDestaqueDois.id}}</td>
+                     <td>{{blocoDoisDestaqueDois.title}}</td>
+                     <td>{{blocoDoisDestaqueDois.sub_title}}</td>
+                     <td>{{blocoDoisDestaqueDois.alt}}</td>
+                     <td>Editar | Novo | Deletar</td>
+                 </tr>
+                 </tbody>
+             </table>
+         </div>
+
+         <div class="alert alert-danger" ng-if="bloco_dois_destaque_ums.error">
+             <strong>Havia um erro: </strong> {{bloco_dois_destaque_ums.error.error}}
+             <br>Por favor, volte e faça login novamente
+         </div>
+     </div>
+
+     <div class="container" ng-controller="blocoDoisDestaqueTresController as blocoDoisDestaqueTres">
+         <h3>Bloco Dois - Parti 3</h3>
+         <button class="btn btn-primary" style="margin-bottom: 10px" ng-click="blocoDoisDestaqueTres.getBlocoDoisDestaqueTres()">Mostrar Bloco Dois - Parti 3</button>
+         <div class="table-responsive" ng-if="blocoDoisDestaqueTres.bloco_dois_destaque_dois">
+             <table class="table table-striped table-condensed table-responsive">
+                 <thead>
+                 <tr>
+                     <th>#ID</th>
+                     <th>Título</th>
+                     <th>Sub_título</th>
+                     <th>alt</th>
+                     <th>Ação</th>
+                 </tr>
+                 </thead>
+                 <tbody>
+                 <tr ng-repeat="blocoDoisDestaqueTres in blocoDoisDestaqueTres.bloco_dois_destaque_dois.data">
+                     <td>{{blocoDoisDestaqueTres.id}}</td>
+                     <td>{{blocoDoisDestaqueTres.title}}</td>
+                     <td>{{blocoDoisDestaqueTres.sub_title}}</td>
+                     <td>{{blocoDoisDestaqueTres.alt}}</td>
+                     <td>Editar | Novo | Deletar</td>
+                 </tr>
+                 </tbody>
+             </table>
+         </div>
+
+         <div class="alert alert-danger" ng-if="bloco_dois_destaque_dois.error">
+             <strong>Havia um erro: </strong> {{bloco_dois_destaque_dois.error.error}}
+             <br>Por favor, volte e faça login novamente
+         </div>
+         <hr style="width: 100%; color: black; height: 2px; background-color:black;" />
+     </div>
+
+     <div class="container" ng-controller="blocoTresController as blocoCamisetas">
+         <h3>Bloco Três</h3>
+         <button class="btn btn-primary" style="margin-bottom: 10px" ng-click="blocoCamisetas.getBlocoTres()">Mostrar Bloco Três</button>
+         <div class="table-responsive" ng-if="blocoCamisetas.bloco_camisetas">
+             <table class="table table-striped table-condensed table-responsive">
+                 <thead>
+                 <tr>
+                     <th>#ID</th>
+                     <th>Título</th>
+                     <th>Sub_título</th>
+                     <th>alt</th>
+                     <th>Ação</th>
+                 </tr>
+                 </thead>
+                 <tbody>
+                 <tr ng-repeat="blocoCamisetas in blocoCamisetas.bloco_camisetas.data">
+                     <td>{{blocoCamisetas.id}}</td>
+                     <td>{{blocoCamisetas.title}}</td>
+                     <td>{{blocoCamisetas.sub_title}}</td>
+                     <td>{{blocoCamisetas.alt}}</td>
+                     <td>Editar | Novo | Deletar</td>
+                 </tr>
+                 </tbody>
+             </table>
+         </div>
+
+         <div class="alert alert-danger" ng-if="bloco_camisetas.error">
+             <strong>Havia um erro: </strong> {{bloco_camisetas.error.error}}
+             <br>Por favor, volte e faça login novamente
+         </div>
+     </div>
+
+     <div class="container" ng-controller="blocoTresDestaqueController as blocoCamisetaDestaques">
+         <h3>Bloco Três Destaques</h3>
+         <button class="btn btn-primary" style="margin-bottom: 10px" ng-click="blocoCamisetaDestaques.getBlocoTresDestaque()">Mostrar Bloco Três Destaques</button>
+         <div class="table-responsive" ng-if="blocoCamisetaDestaques.bloco_camiseta_destaques">
+             <table class="table table-striped table-condensed table-responsive">
+                 <thead>
+                 <tr>
+                     <th>#ID</th>
+                     <th>Título</th>
+                     <th>Sub_título</th>
+                     <th>alt</th>
+                     <th>Ação</th>
+                 </tr>
+                 </thead>
+                 <tbody>
+                 <tr ng-repeat="blocoCamisetaDestaques in blocoCamisetaDestaques.bloco_camiseta_destaques.data">
+                     <td>{{blocoCamisetaDestaques.id}}</td>
+                     <td>{{blocoCamisetaDestaques.title}}</td>
+                     <td>{{blocoCamisetaDestaques.sub_title}}</td>
+                     <td>{{blocoCamisetaDestaques.alt}}</td>
+                     <td>Editar | Novo | Deletar</td>
+                 </tr>
+                 </tbody>
+             </table>
+         </div>
+
+         <div class="alert alert-danger" ng-if="bloco_camiseta_destaques.error">
+             <strong>Havia um erro: </strong> {{bloco_camiseta_destaques.error.error}}
+             <br>Por favor, volte e faça login novamente
+         </div>
+         <hr style="width: 100%; color: black; height: 2px; background-color:black;" />
+     </div>
+
+     <div class="container" ng-controller="blocoQuatroController as blocoTecido">
+         <h3>Bloco Quatro</h3>
+         <button class="btn btn-primary" style="margin-bottom: 10px" ng-click="blocoTecido.getBlocoTecidos()">Mostrar Bloco Quatro </button>
+         <div class="table-responsive" ng-if="blocoTecido.bloco_tecidos">
+             <table class="table table-striped table-condensed table-responsive">
+                 <thead>
+                 <tr>
+                     <th>#ID</th>
+                     <th>Título</th>
+                     <th>Sub_título</th>
+                     <th>alt</th>
+                     <th>Ação</th>
+                 </tr>
+                 </thead>
+                 <tbody>
+                 <tr ng-repeat="blocoTecido in blocoTecido.bloco_tecidos.data">
+                     <td>{{blocoTecido.id}}</td>
+                     <td>{{blocoTecido.title}}</td>
+                     <td>{{blocoTecido.sub_title}}</td>
+                     <td>{{blocoTecido.alt}}</td>
+                     <td>Editar | Novo | Deletar</td>
+                 </tr>
+                 </tbody>
+             </table>
+         </div>
+
+         <div class="alert alert-danger" ng-if="bloco_tecidos.error">
+             <strong>Havia um erro: </strong> {{bloco_tecidos.error.error}}
+             <br>Por favor, volte e faça login novamente
+         </div>
+     </div>
+
+     <div class="container" ng-controller="blocoQuatroDestaqueController as blocoTecidoDestaques">
+         <h3>Bloco Quatro Destaques</h3>
+         <button class="btn btn-primary" style="margin-bottom: 10px" ng-click="blocoTecidoDestaques.getBlocoTecidoDestaque()">Mostrar Bloco Quatro Destaques</button>
+         <div class="table-responsive" ng-if="blocoTecidoDestaques.bloco_tecido_destaques">
+             <table class="table table-striped table-condensed table-responsive">
+                 <thead>
+                 <tr>
+                     <th>#ID</th>
+                     <th>Título</th>
+                     <th>Sub_título</th>
+                     <th>alt</th>
+                     <th>Ação</th>
+                 </tr>
+                 </thead>
+                 <tbody>
+                 <tr ng-repeat="blocoTecidoDestaques in blocoTecidoDestaques.bloco_tecido_destaques.data">
+                     <td>{{blocoTecidoDestaques.id}}</td>
+                     <td>{{blocoTecidoDestaques.title}}</td>
+                     <td>{{blocoTecidoDestaques.sub_title}}</td>
+                     <td>{{blocoTecidoDestaques.alt}}</td>
+                     <td>Editar | Novo | Deletar</td>
+                 </tr>
+                 </tbody>
+             </table>
+         </div>
+
+         <div class="alert alert-danger" ng-if="bloco_tecido_destaques.error">
+             <strong>Havia um erro: </strong> {{bloco_tecido_destaques.error.error}}
+             <br>Por favor, volte e faça login novamente
+         </div>
+         <hr style="width: 100%; color: black; height: 2px; background-color:black;" />
+     </div>
+
+</div>

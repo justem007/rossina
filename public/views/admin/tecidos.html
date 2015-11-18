@@ -1,0 +1,69 @@
+<div class="container" ng-controller="tecidoController as tecido">
+    <h3>Tecidos</h3>
+    <button class="btn btn-primary" style="margin-bottom: 10px" ng-click="tecido.getTecidos()">Mostrar Tecidos</button>
+    <div class="table-responsive" ng-if="tecido.tecidos">
+        <table class="table table-striped table-condensed table-responsive">
+            <thead>
+            <tr>
+                <th>#ID</th>
+                <th>Nome</th>
+                <th>Descrição</th>
+                <th>Preço com</th>
+                <th>Preço sem</th>
+                <th>Ação</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="tecido in tecido.tecidos.data">
+                <td>{{tecido.id}}</td>
+                <td>{{tecido.name}}</td>
+                <td>{{tecido.description}}</td>
+                <td>{{tecido.price_com}}</td>
+                <td>{{tecido.price_sem}}</td>
+                <td>Editar | Novo | Deletar</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="alert alert-danger" ng-if="tecidos.error">
+        <strong>Havia um erro: </strong> {{tecidos.error.error}}
+        <br>Por favor, volte e faça login novamente
+    </div>
+    <hr style="width: 100%; color: black; height: 2px; background-color:black;" />
+</div>
+
+<div class="container" ng-controller="tecidoAmostraController as tecidoAmostra">
+    <h3>Amostras Tecidos</h3>
+    <button class="btn btn-primary" style="margin-bottom: 10px" ng-click="tecidoAmostra.getTecidoAmostras()">Mostrar Amostras Tecidos</button>
+    <div class="table-responsive" ng-if="tecidoAmostra.tecido_amostras">
+        <table class="table table-striped table-condensed table-responsive">
+            <thead>
+            <tr>
+                <th>#ID</th>
+                <th>Nome</th>
+                <th>Descrição</th>
+                <th>Medidas</th>
+                <th>Preço</th>
+                <th>Ação</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="tecidoAmostra in tecidoAmostra.tecido_amostras.data">
+                <td>{{tecidoAmostra.id}}</td>
+                <td>{{tecidoAmostra.name}}</td>
+                <td>{{tecidoAmostra.description}}</td>
+                <td>{{tecidoAmostra.medida}}</td>
+                <td>{{tecidoAmostra.price}}</td>
+                <td>Editar | Novo | Deletar</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="alert alert-danger" ng-if="tecido_amostras.error">
+        <strong>Havia um erro: </strong> {{tecido_amostras.error.error}}
+        <br>Por favor, volte e faça login novamente
+    </div>
+    <hr style="width: 100%; color: black; height: 2px; background-color:black;" />
+</div>

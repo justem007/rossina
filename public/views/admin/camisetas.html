@@ -1,0 +1,175 @@
+<div class="container">
+    <h3>Camisetas</h3>
+    <button class="btn btn-primary" style="margin-bottom: 10px" ng-click="camiseta.getCamisetas()">Mostrar Camisetas</button>
+    <div  ng-if="camiseta.camisetas">
+        <table class="table table-striped table-condensed table-responsive">
+            <thead>
+            <tr>
+                <th>#ID</th>
+                <th>Nome</th>
+                <th>Descrição</th>
+                <th>Com Serviço</th>
+                <th>Sem Serviço</th>
+                <th>Q: P</th>
+                <th>Q: M</th>
+                <th>Q: G</th>
+                <th>Q: GG</th>
+                <th>Q: 2GG</th>
+                <th>Q: 3GG</th>
+                <th>Ação</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="camiseta in camiseta.camisetas.data">
+                <td>{{camiseta.id}}</td>
+                <td>{{camiseta.name}}</td>
+                <td>{{camiseta.description}}</td>
+                <td>{{camiseta.price_com}}</td>
+                <td>{{camiseta.price_sem}}</td>
+                <td>{{camiseta.quant_p}}</td>
+                <td>{{camiseta.quant_m}}</td>
+                <td>{{camiseta.quant_g}}</td>
+                <td>{{camiseta.quant_gg}}</td>
+                <td>{{camiseta.quant_2gg}}</td>
+                <td>{{camiseta.quant_3gg}}</td>
+                <td>Editar | Novo | Deletar</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="alert alert-danger" ng-if="camiseta.error">
+        <strong>Havia um erro: </strong> {{camiseta.error.error}}
+        <br>Por favor, volte e faça login novamente
+    </div>
+    <hr style="width: 100%; color: black; height: 2px; background-color:black;" />
+</div>
+
+<div class="container" ng-controller="generoController as genero">
+    <h3>Generos Camisetas</h3>
+    <button class="btn btn-primary" style="margin-bottom: 10px" ng-click="genero.getGeneros()">Mostrar Generos</button>
+    <div class="table-responsive" ng-if="genero.generos">
+        <table class="table table-striped table-condensed table-responsive">
+            <thead>
+            <tr>
+                <th>#ID</th>
+                <th>Nome</th>
+                <th>Descrição</th>
+                <th>Ação</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="genero in genero.generos.data">
+                <td>{{genero.id}}</td>
+                <td>{{genero.name}}</td>
+                <td>{{genero.description}}</td>
+                <td>Editar | Novo | Deletar</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="alert alert-danger" ng-if="genero.error">
+        <strong>Havia um erro: </strong> {{genero.error.error}}
+        <br>Por favor, volte e faça login novamente
+    </div>
+    <hr style="width: 100%; color: black; height: 2px; background-color:black;" />
+</div>
+
+<div class="container" ng-controller="corController as cor">
+    <h3>Cores Camisetas</h3>
+    <button class="btn btn-primary" style="margin-bottom: 10px" ng-click="cor.getCors()">Mostrar Cores</button>
+    <div class="table-responsive" ng-if="cor.cors">
+        <table class="table table-striped table-condensed table-responsive">
+            <thead>
+            <tr>
+                <th>#ID</th>
+                <th>Nome</th>
+                <th>Cor RGB</th>
+                <th>Ação</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="cor in cor.cors.data">
+                <td>{{cor.id}}</td>
+                <td>{{cor.name}}</td>
+                <td>{{cor.rgb}}</td>
+                <td>Editar | Novo | Deletar</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="alert alert-danger" ng-if="cors.error">
+        <strong>Havia um erro: </strong> {{cors.error.error}}
+        <br>Por favor, volte e faça login novamente
+    </div>
+    <hr style="width: 100%; color: black; height: 2px; background-color:black;" />
+</div>
+
+<div class="container" ng-controller="tamanhoController as tamanho">
+    <h3>Tamanhos Camisetas</h3>
+    <button class="btn btn-primary" style="margin-bottom: 10px" ng-click="tamanho.getTamanhos()">Mostrar Tamanhos</button>
+    <div class="table-responsive" ng-if="tamanho.tamanhos">
+        <table class="table table-striped table-condensed table-responsive">
+            <thead>
+            <tr>
+                <th>#ID</th>
+                <th>Nome</th>
+                <th>Ação</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="tamanho in tamanho.tamanhos.data">
+                <td>{{tamanho.id}}</td>
+                <td>{{tamanho.name}}</td>
+                <td>Editar | Novo | Deletar</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="alert alert-danger" ng-if="tamanhos.error">
+        <strong>Havia um erro: </strong> {{tamanhos.error.error}}
+        <br>Por favor, volte e faça login novamente
+    </div>
+    <hr style="width: 100%; color: black; height: 2px; background-color:black;" />
+</div>
+
+<div class="container" ng-controller="silkController as silk">
+    <h3>Silks Camisetas</h3>
+    <button class="btn btn-primary" style="margin-bottom: 10px" ng-click="silk.getSilks()">Mostrar Silks</button>
+    <div class="table-responsive right" ng-if="silk.silks">
+        <button class="btn btn-primary">Novo</button>
+        <table class="table table-striped table-condensed table-responsive">
+            <thead>
+            <tr>
+                <th>#ID</th>
+                <th>Nome</th>
+                <th>Descrição</th>
+                <th>Medidas</th>
+                <th>Preço com</th>
+                <th>Preço sem</th>
+                <th>Ação</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="silk in silk.silks.data">
+                <td>{{silk.id}}</td>
+                <td>{{silk.name}}</td>
+                <td>{{silk.description}}</td>
+                <td>{{silk.medida}}</td>
+                <td>{{silk.price_un_com}}</td>
+                <td>{{silk.price_un_sem}}</td>
+                <td>Editar | Novo | Deletar</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="alert alert-danger" ng-if="silks.error">
+        <strong>Havia um erro: </strong> {{silks.error.error}}
+        <br>Por favor, volte e faça login novamente
+    </div>
+    <hr style="width: 100%; color: black; height: 2px; background-color:black;" />
+</div>

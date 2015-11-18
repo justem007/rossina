@@ -17,19 +17,16 @@ use Rossina\Repositories\Presenters\PostPresenter;
 class PostRepositoryEloquent extends BaseRepository implements PostRepository
 {
 
-    /**
-     * Specify Model class name
-     *
-     * @return string
-     */
+    protected $presenter = PostPresenter::class;
+
+    protected $skipPresenter = true;
+
+    protected $setPresenter = true;
 
     public function model()
     {
         return Post::class;
     }
-
-    protected $presenter = PostPresenter::class;
-
 
     /**
      * Boot up the repository, pushing criteria
@@ -40,14 +37,8 @@ class PostRepositoryEloquent extends BaseRepository implements PostRepository
         $this->pushCriteria(app(PostCriteria::class));
     }
 
-    protected $skipPresenter = true;
-
-    protected $setPresenter = true;
-
     public function presenter(){
 
         return ModelFractalPresenter::class;
-
     }
-
 }

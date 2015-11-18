@@ -18,11 +18,11 @@ class WelcomeController extends Controller {
 	|
 	*/
 
-	/**
-	 * Create a new controller instance.
-	 *
-	 * @return void
-	 */
+    /**
+     * Create a new controller instance.
+     *
+     * @param Category $category
+     */
 	public function __construct(Category $category)
 	{
         $this->categories = $category;

@@ -20,13 +20,13 @@
                             <div class="b-form-row">
                                 <label class="b-form-horizontal__label" for="create_account_email">Seu e-mail</label>
                                 <div class="b-form-horizontal__input">
-                                    <input type="text" id="create_account_email" class="form-control" />
+                                    <input type="text" id="create_account_email" class="form-control" ng-model="auth.email"/>
                                 </div>
                             </div>
                             <div class="b-form-row">
                                 <label class="b-form-horizontal__label" for="create_account_password">Seu password</label>
                                 <div class="b-form-horizontal__input">
-                                    <input type="text" id="create_account_password" class="form-control" />
+                                    <input type="text" id="create_account_password" class="form-control"  ng-model="auth.password"/>
                                 </div>
                             </div>
                             <div class="b-form-row">
@@ -39,7 +39,7 @@
                             <div class="b-form-row">
                                 <div class="b-form-horizontal__label"></div>
                                 <div class="b-form-horizontal__input">
-                                    <a href="#" class="b-btn f-btn b-btn-md b-btn-default f-primary-b b-btn__w100">login agora</a>
+                                    <button class="b-btn f-btn b-btn-md b-btn-default f-primary-b b-btn__w100" ng-click="auth.login()">acessar agora</button>
                                 </div>
                             </div>
                         </div>

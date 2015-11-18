@@ -1,5 +1,4 @@
 <div class="l-main-container">
-
     <div class="b-breadcrumbs f-breadcrumbs">
         <div class="container">
             <ul>
@@ -8,7 +7,7 @@
             </ul>
         </div>
     </div>
-    <section class="b-diagonal-line-bg-light b-infoblock--small ">
+    <section class="b-diagonal-line-bg-light b-infoblock--small">
         <div class="container">
             <div class="row b-col-default-indent">
                 <div class="col-md-6 col-xs-12">
@@ -16,23 +15,22 @@
                         <div class="">
                             <ul>
                                 <li style="list-style: none;">
-                                    <img data-retina src="../../../images/site/img/slider/sobre.jpg"  width="530" height="350" align="right">
+                                    <img data-retina src="../../../images/site/img/slider/sobre-nos-v1-para-web.jpg"  width="530" height="350" align="right">
                                 </li>
                             </ul>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 col-xs-12">
-                    <h3 class="f-primary-b">Seja Bem-Vindo a nossa Empresa.</h3>
-                    <p class="f-primary-l">Temos a experiência de 24 anos trabalhando com estamparia. Nosso maior compromisso é com você CLIENTE sempre com pontualidade, sigilo e objetividade na prestação de serviço. A nossa busca é acompanhar e inovar com o mercado de impressão têxtil e criar parcerias de sucesso com nossos fornecedores e clientes.
-                        Para estamparia digital direta com tinta base de água com resultados melhores que o “Silk Screen” convencional trabalhamos com a máquina da Kornit,  proporcionando agilidade, qualidade e repetibilidade nos impressos.
-                        Em 2010 iniciamos as instalações de um parque de impressão digital têxtil com capacidade de produção de 30.000 metros/mês englobando pré-tratamento, impressão e acabamento favorecendo a agilidade em bandeiras, show room, pequenas,médias e grandes tiragens. Como inovação e fator positivo é a impressão com 1,76m de largura, possibilitando imprimir em metro corrido, peças cortadas ou peças prontas.
-                        Nossa estrutura é voltada para receber a sua idéia e entregarmos pronta em seu tecido!</p>
+                <div ng-controller="sobreController">
+                <div class="col-md-6 col-xs-12" ng-repeat="sobre in sobre_nos.data">
 
+                    <h3 class="f-primary-b">{{ sobre.titulo }}</h3>
+                    <p class="f-primary-l">{{ sobre.description }}</p>
 
                     <div class="b-btn-container">
                         <a href="#/contatos" class="b-btn f-btn b-btn-md f-btn-md b-btn-default f-primary-b button-gray-light">Contatos</a>
                     </div>
+                </div>
                 </div>
             </div>
         </div>

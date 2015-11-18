@@ -16,7 +16,7 @@ class CorTransformer extends TransformerAbstract
     public function transform(Cor $model)
     {
         return [
-//            'id'         => (int) $model->id,
+            'id'         => (int) $model->id,
             'name'       => $model->name,
             'rgb'        => $model->rgb,
 //            'created_at' => (string) $model->created_at,

@@ -1,0 +1,34 @@
+<div class="container" ng-controller="faqController as faq">
+    <h3>Faqs - Perguntas Frequentes</h3>
+    <button class="btn btn-primary" style="margin-bottom: 10px" ng-click="faq.getFaqs()">Mostrar Faqs</button>
+    <div class="table-responsive" ng-if="faq.faqs">
+        <table class="table table-striped table-condensed table-responsive">
+            <thead>
+            <tr>
+                <th>#ID</th>
+                <th>Nome</th>
+                <th>Descrição</th>
+                <th>Criado em:</th>
+                <th>Atualizado em:</th>
+                <th>Ação</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="faq in faq.faqs.data">
+                <td>{{faq.id}}</td>
+                <td>{{faq.title}}</td>
+                <td>{{faq.description}}</td>
+                <td>{{faq.created_at}}</td>
+                <td>{{faq.updated_at}}</td>
+                <td>Editar | Novo | Deletar</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="alert alert-danger" ng-if="faqs.error">
+        <strong>Havia um erro: </strong> {{faqs.error.error}}
+        <br>Por favor, volte e faça login novamente
+    </div>
+    <hr style="width: 100%; color: black; height: 2px; background-color:black;" />
+</div>

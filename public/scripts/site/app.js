@@ -1,8 +1,3 @@
-app = new angular.module('app',[
-        'ngRoute',
-        'ngResource',
-        'ngAnimate',
-        'ngMaterial',
-        'ngMessages',
-        'ui.bootstrap'
-    ]);
+app =
+    new angular
+        .module('app',['ngRoute', 'satellizer', 'ngResource', 'ngAnimate', 'ngMaterial', 'ngMessages', 'ui.bootstrap' ]);

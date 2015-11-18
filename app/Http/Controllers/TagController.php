@@ -4,6 +4,7 @@ namespace Rossina\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Response;
 use League\Fractal\Manager;
 use League\Fractal\Pagination\IlluminatePaginatorAdapter;
 use League\Fractal\Resource\Collection;
@@ -11,6 +12,7 @@ use League\Fractal\Resource\Item;
 use Rossina\Http\Requests;
 use Rossina\Repositories\Repository\TagRepositoryEloquent;
 use Rossina\Repositories\Transformers\TagTransformer;
+use Rossina\Tag;
 
 class TagController extends ApiController
 {
@@ -19,12 +21,26 @@ class TagController extends ApiController
      * @var TagRepositoryEloquent
      */
     protected $repository;
+    /**
+     * @var Tag
+     */
+    protected $tag;
 
-    public function __construct(TagRepositoryEloquent $repository)
+    /**
+     * @param TagRepositoryEloquent $repository
+     * @param Tag $tag
+     */
+    public function __construct(TagRepositoryEloquent $repository, Tag $tag)
     {
         $this->repository = $repository;
+        $this->tag = $tag;
     }
 
+    /**
+     * @param Manager $fractal
+     * @param TagTransformer $projectTransformer
+     * @return mixed
+     */
     public function index(Manager $fractal, TagTransformer $projectTransformer)
     {
         $projects = $this->repository->with(['posts'])->all();
@@ -36,6 +52,9 @@ class TagController extends ApiController
         return $this->respondWithCORS($data);
     }
 
+    /**
+     * @return mixed
+     */
     public function paginate(){
 
         $paginator = $this->repository->paginate();
@@ -49,53 +68,77 @@ class TagController extends ApiController
         return $paginator;
     }
 
-    public function show($id, Manager $fractal, TagTransformer $tag)
+    /**
+     * @param $id
+     * @param Manager $fractal
+     * @param TagTransformer $tagTransformer
+     * @return mixed
+     */
+    public function show($id, Manager $fractal, TagTransformer $tagTransformer)
     {
-        $project = $this->repository->find($id);
+        $project = $this->tag->find($id);
 
-        $item = new Item($project, $tag);
+        if(!$project){
+            return Response::json([
+                'error' => [
+                    'message' => 'Tag não foi encontrado, favor procurar outro nome'
+                ]
+            ], 404);
+        }
+
+        $item = new Item($project, $tagTransformer);
 
         $data = $fractal->createData($item)->toArray();
-
-        if (!$data) {
-            return $this->errorNotFound('Você inventou um ID e tentou carregar um local? Idiota.');
-        }
 
         return $this->respond($data);
     }
 
-    public function find($id, $columns = array('*'))
+    /**
+     * @param Request $request
+     * @return mixed
+     */
+    public function create(Request $request)
     {
+        $repository = $this->repository->create($request->all());
 
-        $repository = $this->repository->find($id, $columns = array('id', 'title', 'text'));
-
-        return $repository;
-
+        return Response::json([
+            'sucesso' => [
+                'message' => 'Tag CRIADO com sucesso',
+                'data'    => $repository
+            ]
+        ], 200);
     }
 
-    public function create()
+    /**
+     * @param Request $request
+     * @param $id
+     * @return mixed
+     */
+    public function update(Request $request,$id)
     {
+        $repository = $this->repository->update( $request->all(), $id );
 
-        $repository = $this->repository->create( Input::all() );
-
-        return $repository;
+        return Response::json([
+            'sucesso' => [
+                'message' => 'Tag MODIFICADO com sucesso',
+                'data'    => $repository
+            ]
+        ], 200);
     }
 
-    public function update($id)
-    {
-
-        $repository = $this->repository->update( Input::all(), $id );
-
-        return $repository;
-
-    }
-
+    /**
+     * @param $id
+     * @return mixed
+     */
     public function delete($id)
     {
-
         $repository = $this->repository->find($id)->delete();
 
-        return redirect()->route('posts');
-
+        return Response::json([
+            'sucesso' => [
+                'message' => 'Tag DELETADO com sucesso',
+                'data'    => $repository
+            ]
+        ], 200);
     }
 }
