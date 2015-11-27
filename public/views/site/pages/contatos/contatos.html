@@ -8,33 +8,126 @@
         </div>
     </div>
 </div>
-
     <div class="container">
             <div class="col-md-9">
                 <div class="b-default-top-indent">
                     <h4 class="f-primary-b b-h4-special f-h4-special c-primary">Envie sua mensagem</h4>
+                  <form class="form-horizontal" role="form" name="userForm" novalidate>
+                    <div class="b-form-row" ng-class="{ 'has-error': userForm.name.$touched && userForm.name.$invalid }">
+                        <label>Nome* </label>
+                        <input
+                                type="text"
+                                class="form-control"
+                                placeholder="seu nome"
+                                name="name"
+                                ng-model="main.name"
+                                ng-minlength="5"
+                                ng-maxlength="50"
+                                required />
 
-                    <div class="b-form-row">
-                        <input type="text" class="form-control" placeholder="seu nome"/>
+                        <div class="help-block" ng-messages="userForm.name.$error" ng-if="userForm.name.$touched">
+                            <p ng-message="minlength">Nome muito curto</p>
+                            <p ng-message="maxlength">Nome muito longo</p>
+                            <p ng-message="required">O nome é obrigatório</p>
+                        </div>
+
                     </div>
-                    <div class="b-form-row">
-                        <input type="text" class="form-control" placeholder="seu email"/>
+
+
+                      <div class="b-form-row" ng-class="{ 'has-error': userForm.email.$touched && userForm.email.$invalid }">
+                        <label>Email* </label>
+                        <input
+                                type="text"
+                                class="form-control"
+                                placeholder="seu email"
+                                name="email"
+                                ng-model="main.email"
+                                ng-minlength="8"
+                                ng-maxlength="50"
+                                required />
+
+                        <div class="help-block" ng-messages="userForm.email.$error" ng-if="userForm.email.$touched">
+                            <p ng-message="minlength">Email muito curto</p>
+                            <p ng-message="maxlength">Email muito longo</p>
+                            <p ng-message="required">O email é obrigatório</p>
+                            <p ng-message="email">Isso precisa ser um e-mail válido</p>
+                        </div>
+                          <!--<pre>userForm.email.$error = {{ userForm.email.$error | json }}</pre>-->
+
+                      </div>
+
+                    <div class="b-form-row" ng-class="{ 'has-error': userForm.cnpj.$touched && userForm.cnpj.$invalid }">
+                        <label>CNPJ* formato 99.999.999/9999-99</label>
+                        <input
+                                name="cnpj"
+                                ng-model="cnpj"
+                                ng-cnpj
+                                ui-mask="99.999.999/9999-99"
+                                ng-pattern="/^[0-9]{1,7}[-\.\/]?+$/"
+                                type="text"
+                                class="form-control"
+                                placeholder="seu cnpj - formato 99.999.999/9999-99"
+                                ng-minlength="18"
+                                ng-maxlength="18"
+                                required />
+                        <!--myForm.cnpj.$valid = {{ myForm.cnpj.$valid }}-->
+
+                        <div class="help-block" ng-messages="userForm.cnpj.$error" ng-if="userForm.cnpj.$touched">
+                            <p ng-message="minlength">CNPJ muito curto</p>
+                            <p ng-message="maxlength">CNPJ muito longo</p>
+                            <p ng-message="required">O CNPJ é obrigatório</p>
+                        </div>
+
                     </div>
-                    <div class="b-form-row">
-                        <input type="text" class="form-control" placeholder="seu cnpj"/>
+
+                      <div class="b-form-row" ng-class="{ 'has-error': userForm.assunto.$touched && userForm.assunto.$invalid }">
+                        <label>Assunto* </label>
+                        <input
+                                type="text"
+                                class="form-control"
+                                placeholder="assunto"
+                                name="assunto"
+                                ng-model="main.assunto"
+                                ng-minlength="5"
+                                ng-maxlength="50"
+                                required />
+
+                          <div class="help-block" ng-messages="userForm.assunto.$error" ng-if="userForm.assunto.$touched">
+                              <p ng-message="minlength">Assunto muito curto</p>
+                              <p ng-message="maxlength">Assunto muito longo</p>
+                              <p ng-message="required">O Assunto é obrigatório</p>
+                          </div>
+
                     </div>
-                    <div class="b-form-row">
-                        <input type="text" class="form-control" placeholder="assunto"/>
-                    </div>
-                    <div class="b-form-row">
-                        <textarea class="form-control" placeholder="sua mensagem" rows="5"></textarea>
+
+                      <div class="b-form-row" ng-class="{ 'has-error': userForm.mensagem.$touched && userForm.mensagem.$invalid }">
+                        <label>Mensagem* </label>
+                        <textarea
+                                class="form-control"
+                                placeholder="sua mensagem"
+                                rows="5"
+                                name="mensagem"
+                                ng-model="main.mensagem"
+                                ng-minlength="5"
+                                ng-maxlength="300"
+                                required>
+                        </textarea>
+
+                          <div class="help-block" ng-messages="userForm.mensagem.$error" ng-if="userForm.mensagem.$touched">
+                              <p ng-message="minlength">Mensagem muito curta</p>
+                              <p ng-message="maxlength">Mensagem muito longa</p>
+                              <p ng-message="required">A mensagem é obrigatório</p>
+                          </div>
+
                     </div>
                     <div class="b-form-row">
                         <a href="#" class="b-btn f-btn b-btn-md b-btn-default f-primary-b b-btn__w100">enviar
                             mensagem</a>
                     </div>
+                  </form>
                 </div>
             </div>
+
             <aside class="col-md-3" ng-controller="faqController">
                 <div class="b-categories-filter b-default-top-indent">
                     <h4 class="f-primary-b b-h4-special f-h4-special c-primary">Perguntas frequentes</h4>

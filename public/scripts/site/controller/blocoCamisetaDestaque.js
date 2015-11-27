@@ -6,6 +6,6 @@ app.controller('blocoCamisetaDestaqueController',function ($scope,$http) {
         console.log(response);
         $scope.bloco_camiseta_destaques = response.data;
     },function(response){
-        console.warn(response);
+        notifyError(response)
     });
 });

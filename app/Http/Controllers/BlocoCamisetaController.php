@@ -15,7 +15,7 @@ class BlocoCamisetaController extends ApiController
 {
 
     /**
-     * @var BlocoCamisetaRepositoryEloquent
+     * @var BlocoCamisetaRE
      */
     protected $repository;
     /**
@@ -53,10 +53,44 @@ class BlocoCamisetaController extends ApiController
     }
 
     /**
+     * @param BlocoCamiseta $model
+     * @return array
+     */
+    public function transform(BlocoCamiseta $model)
+    {
+        return [
+            'id'         => (int) $model->id,
+            'title'      => $model->title,
+            'sub_title'  => $model->sub_title,
+            'alt'        => $model->alt,
+            'created_at' => $model->created_at,
+            'updated_at' => $model->updated_at
+        ];
+    }
+
+    /**
+     * @return array
+     */
+    public function all()
+    {
+        $blocoCamiseta = array();
+
+        $data = $this->repository->with([])->all();
+
+        foreach ($data as $blocoCamisetas) {
+            $blocoCamiseta[] = $this->transform($blocoCamisetas);
+        }
+
+        return $blocoCamiseta;
+    }
+
+    /**
      * @return mixed
      */
     public function index()
     {
+//        throw new \Exception("Esta é uma exceção de teste");
+
         $blocoCamiseta = $this->repository->all();
 
         return $this->apiController->respondWithCollection($blocoCamiseta, $this->blocoCamisetaTransformer);

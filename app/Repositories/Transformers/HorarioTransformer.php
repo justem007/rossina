@@ -25,9 +25,8 @@ class HorarioTransformer extends TransformerAbstract
             'atendimento'   => $model->atendimento,
             'telefone'      => $model->telefone,
             'entrega'       => $model->entrega,
-
-//            'created_at' => $model->created_at,
-//            'updated_at' => $model->updated_at
+            'created_at' => $model->created_at,
+            'updated_at' => $model->updated_at
         ];
     }
 }

@@ -55,6 +55,7 @@
                 <li><a href="#/faqs">faqs</a></li>
                 <li><a href="#/imagens">imagens</a></li>
                 <li><a href="#/blog">blog</a></li>
+                <li><a href="#/tag">tags</a></li>
                 <li><a href="#/logout">logout</a></li>
             </ul>
         </div>
@@ -70,10 +71,14 @@
 <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 <script src="bower_components/bootstrap-notify/js/bootstrap-notify.js"></script>
 <script src="bower_components/angular/angular.min.js"></script>
-<script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
 <script src="bower_components/angular-resource/angular-resource.min.js"></script>
+<script src="bower_components/angular-route/angular-route.min.js"></script>
+<script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
 <script src="bower_components/satellizer/satellizer.min.js"></script>
+{{--<script src="bower_components/angular-permission/dist/angular-permission.js"></script>--}}
 {{--<script src="js/base.js"></script>--}}
+
+{{--<script src="scripts/admin/base.js"></script>--}}
 <script src="scripts/admin/admin.js"></script>
 <script src="scripts/admin/adminController.js"></script>
 <script src="scripts/admin/camisetaController.js"></script>
@@ -105,6 +110,7 @@
 <script src="scripts/admin/contatoController.js"></script>
 <script src="scripts/admin/blogController.js"></script>
 <script src="scripts/admin/commentController.js"></script>
+<script src="scripts/admin/tagController.js"></script>
 
 </body>
 </html>

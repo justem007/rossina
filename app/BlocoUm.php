@@ -16,4 +16,14 @@ class BlocoUm extends Model implements Transformable, Presentable
 
     protected $fillable = ['title', 'sub_title', 'alt', 'user_id'];
 
+    public function getCreatedAtAttribute($value)
+    {
+        $value = date('U', strtotime($value));
+        return $value * 1000;
+    }
+    public function getUpdatedAtAttribute($value)
+    {
+        $value = date('U', strtotime($value));
+        return $value * 1000;
+    }
 }

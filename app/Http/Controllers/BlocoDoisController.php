@@ -39,6 +39,39 @@ class BlocoDoisController extends ApiController
         $this->blocoDois = $blocoDois;
     }
 
+    /**
+     * @param BlocoDois $model
+     * @return array
+     */
+    public function transform(BlocoDois $model)
+    {
+        return [
+            'id'         => (int) $model->id,
+            'title'      => $model->title,
+            'sub_title'  => $model->sub_title,
+            'alt'        => $model->alt,
+            'user_id'    => (int) $model->user_id,
+            'created_at' => $model->created_at,
+            'updated_at' => $model->updated_at
+        ];
+    }
+
+    /**
+     * @return array
+     */
+    public function all()
+    {
+        $blocoDois = array();
+
+        $data = $this->repository->with([])->all();
+
+        foreach ($data as $blocoDoiss) {
+            $blocoDois[] = $this->transform($blocoDoiss);
+        }
+
+        return $blocoDois;
+    }
+
     public function index()
     {
         $blocodois = $this->repository->all();
@@ -58,11 +91,11 @@ class BlocoDoisController extends ApiController
             ], 404);
         }
 
-        $item = new Item($project, $blocoDoisTransformer);
+//        $item = new Item($project, $blocoDoisTransformer);
 
-        $data = $fractal->createData($item)->toArray();
+//        $data = $fractal->createData($item)->toArray();
 
-        return $this->respond($data);
+        return $this->transform($project);
     }
 
     /**

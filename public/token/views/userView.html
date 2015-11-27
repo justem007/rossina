@@ -1,10 +1,42 @@
+<div class="container-fluid">
+<nav class="navbar navbar-default ">
+
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="">Rossina Estamparia Digital App</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li><a ui-sref="auth">Auth</a></li>
+                <li><a ui-sref="users">Usuários</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right" ng-show="currentUser != null">
+                <li><a href="">Seja Bem-Vindo, {{currentUser.name}}</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Meu Perfil <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a ng-click="user.logout()" style="cursor: pointer;">Logout</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+
+</nav>
+
 <div class="col-sm-6 col-sm-offset-3">
     <div class="well">
-        <h5 ng-if="authenticated">Seja Bem-Vindo, {{currentUser.name}}</h5>
         <h3>Users</h3>
         <div class="buttons" style="margin-bottom: 10px">
             <button class="btn btn-primary" ng-click="user.getUsers()">Get Users!</button>
-            <button class="btn btn-danger" ng-click="user.logout()">Logout</button>
+            <!--<button class="btn btn-danger" ng-click="user.logout()">Logout</button>-->
         </div>
         <ul class="list-group" ng-if="user.users">
             <li class="list-group-item" ng-repeat="user in user.users">
@@ -14,7 +46,49 @@
         </ul>
         <div class="alert alert-danger" ng-if="user.error">
             <strong>There was an error: </strong> {{user.error.error}}
-            <br>Please go back and login again
+            <br>Por favor, volte e faça login novamente
         </div>
     </div>
 </div>
+
+    <div class="col-sm-6 col-sm-offset-3">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Adicionar usuário..." ng-model="users.users">
+                  <span class="input-group-btn">
+                    <button class="btn btn-default" type="button" ng-click="users.addUser()">Add!</button>
+                  </span>
+                </div><!-- /input-group -->
+            </div><!-- /.col-lg-6 -->
+        </div>
+        <br>
+        <div>
+            <ul class="list-group">
+                <li class="list-group-item" ng-repeat="user in user.users">
+                <span ng-hide="editEnabled">
+                            {{user.name}}
+                                <a href="#" ng-click="editEnabled=!editEnabled"><span class="glyphicon glyphicon-pencil" ></span></a>
+                </span>
+                    <span ng-hide="editEnabled">
+                            {{user.email}}
+                                <a href="#" ng-click="editEnabled=!editEnabled"><span class="glyphicon glyphicon-pencil" ></span></a>
+                </span>
+                <span ng-show="editEnabled">
+                            <input ng-model="user.user">
+                            <a href="#" ng-click="editEnabled=!editEnabled; user.updateJoke(user)"><span class="glyphicon glyphicon-ok" ></span></a>
+                </span>
+                    <!-- <h4>{{joke.joke}}</h4> -->
+                    <span style="cursor: pointer;" class="glyphicon glyphicon-trash" ng-click="users.deleteJoke($index, user.user_id)"></span>
+                    <h5>{{user.submitted_by}}</h5>
+                </li>
+            </ul>
+            <div class="alert alert-danger" ng-if="users.error">
+                <strong>There was an error: </strong> {{users.error}}
+                <br>Please go back and login again...
+            </div>
+        </div>
+    </div>
+
+
+</div><!-- /.container-fluid -->

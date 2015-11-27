@@ -6,6 +6,6 @@ app.controller('categoriaCamisetaController',function ($scope,$http) {
         console.log(response);
         $scope.categorias = response.data;
     },function(response){
-        console.warn(response);
+        notifyError(response)
     });
 });

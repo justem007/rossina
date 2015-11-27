@@ -3,7 +3,7 @@
         <div class="container">
             <ul>
                 <li><a href="#"><i class="fa fa-home"></i>Home</a></li>
-                <li><a href="#"><i class="fa fa-angle-right"></i> Extra pages</a></li>
+                <li><a href="#/login_site"><i class="fa fa-angle-right"></i>login_site</a></li>
                 <li><i class="fa fa-angle-right"></i><span>Sign In</span></li>
             </ul>
         </div>
@@ -17,18 +17,52 @@
                     <hr class="b-hr" />
                     <div class="b-form-row b-form-inline b-form-horizontal">
                         <div class="col-xs-12">
-                            <div class="b-form-row">
-                                <label class="b-form-horizontal__label" for="create_account_email">Seu e-mail</label>
-                                <div class="b-form-horizontal__input">
-                                    <input type="text" id="create_account_email" class="form-control" ng-model="auth.email"/>
+                          <form class="form-horizontal" role="form" name="loginForm" novalidate>
+                            <div class="b-form-row" >
+                                <label class="b-form-horizontal__label">Seu e-mail</label>
+                                <div class="b-form-horizontal__input" ng-class="{ 'has-error': loginForm.email.$touched && loginForm.email.$invalid }">
+                                    <input
+                                            type="text"
+                                            class="form-control"
+                                            placeholder="seu email"
+                                            name="email"
+                                            ng-model="auth.email"
+                                            ng-minlength="8"
+                                            ng-maxlength="50"
+                                            required />
+
+                                    <div class="help-block" ng-messages="loginForm.email.$error" ng-if="loginForm.email.$touched">
+                                        <p ng-message="minlength">email muito curto</p>
+                                        <p ng-message="maxlength">email muito longo</p>
+                                        <p ng-message="required">O email é obrigatório</p>
+                                        <p ng-message="email">Isso precisa ser um e-mail válido</p>
+                                    </div>
+
                                 </div>
                             </div>
                             <div class="b-form-row">
                                 <label class="b-form-horizontal__label" for="create_account_password">Seu password</label>
-                                <div class="b-form-horizontal__input">
-                                    <input type="text" id="create_account_password" class="form-control"  ng-model="auth.password"/>
+                                <div class="b-form-horizontal__input" ng-class="{ 'has-error': loginForm.password.$touched && loginForm.password.$invalid }">
+                                    <input
+                                            type="password"
+                                            name="password"
+                                            id="create_account_password"
+                                            class="form-control"
+                                            placeholder="sua senha"
+                                            ng-model="auth.password"
+                                            ng-minlength="8"
+                                            ng-maxlength="20"
+                                            required />
+
+                                    <div class="help-block" ng-messages="loginForm.password.$error" ng-if="loginForm.password.$touched">
+                                        <p ng-message="minlength">password muito curto</p>
+                                        <p ng-message="maxlength">password muito longo</p>
+                                        <p ng-message="required">O password é obrigatório</p>
+                                    </div>
+
                                 </div>
                             </div>
+                          </form>
                             <div class="b-form-row">
                                 <div class="b-form-horizontal__label"></div>
                                 <label for="contact_form_copy" class="b-contact-form__window-form-row-label">
@@ -42,6 +76,7 @@
                                     <button class="b-btn f-btn b-btn-md b-btn-default f-primary-b b-btn__w100" ng-click="auth.login()">acessar agora</button>
                                 </div>
                             </div>
+
                         </div>
                     </div>
                 </div>

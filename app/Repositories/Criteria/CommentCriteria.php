@@ -16,8 +16,7 @@ class CommentCriteria implements CriteriaInterface {
      */
     public function apply($model, RepositoryInterface $repository)
     {
-//        $model = $model->whereNotBetween('id', [2, 7]);
-        $model = $model->orderBy('id', 'asc');
+        $model = $model->select('id','text','name', 'email','active','post_id','created_at','updated_at')->active()->orderBy('id', 'asc')->get();
 
         return $model;
     }

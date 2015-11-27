@@ -24,8 +24,8 @@ class UserTransformer extends TransformerAbstract
 //            'password'       => $model->password,
 //            'remenber_token' => $model->remenber_token,
             'phone'          => $model->phone,
-//            'created_at'     => (string) $model->created_at,
-//            'updated_at'     => (string) $model->updated_at
+            'created_at'     => $model->created_at,
+            'updated_at'     => $model->updated_at
         ];
     }
 

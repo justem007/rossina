@@ -142,6 +142,7 @@ return [
         Rossina\Providers\LarasponseServiceProvider::class,
         Tymon\JWTAuth\Providers\JWTAuthServiceProvider::class,
         GrahamCampbell\Flysystem\FlysystemServiceProvider::class,
+        Barryvdh\Cors\ServiceProvider::class,
         /*
          * Application Service Providers...
          */

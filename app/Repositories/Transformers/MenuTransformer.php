@@ -27,9 +27,8 @@ class MenuTransformer extends TransformerAbstract
             'description'  => $model->description,
             'alt'          => $model->alt,
             'fafa'         => $model->fafa,
-
-//            'created_at' => $model->created_at,
-//            'updated_at' => $model->updated_at
+            'created_at' => $model->created_at,
+            'updated_at' => $model->updated_at
         ];
     }
 }

@@ -39,6 +39,40 @@ class FerramentaController extends ApiController
     }
 
     /**
+     * @param Ferramenta $model
+     * @return array
+     */
+    public function transform(Ferramenta $model)
+    {
+        return [
+            'id'         => (int) $model->id,
+            'title'      => $model->title,
+            'description'=> $model->description,
+            'alt'        => $model->alt,
+            'image_id'   => (int) $model->image_id,
+            'user_id'    => (int) $model->user_id,
+            'created_at' => $model->created_at,
+            'updated_at' => $model->updated_at
+        ];
+    }
+
+    /**
+     * @return array
+     */
+    public function all()
+    {
+        $ferramenta = array();
+
+        $data = $this->repository->with([])->all();
+
+        foreach ($data as $ferramentas) {
+            $ferramenta[] = $this->transform($ferramentas);
+        }
+
+        return $ferramenta;
+    }
+
+    /**
      * @return mixed
      */
     public function index()
@@ -86,11 +120,11 @@ class FerramentaController extends ApiController
             ], 404);
         }
 
-        $item = new Item($project, $ferramentaTransformer);
+//        $item = new Item($project, $ferramentaTransformer);
 
-        $data = $fractal->createData($item)->toArray();
+//        $data = $fractal->createData($item)->toArray();
 
-        return $this->respond($data);
+        return $this->transform($project);
     }
 
     /**

@@ -16,6 +16,8 @@
                 <th>Q: GG</th>
                 <th>Q: 2GG</th>
                 <th>Q: 3GG</th>
+                <th>Criado em</th>
+                <th>Atualizado em</th>
                 <th>Ação</th>
             </tr>
             </thead>
@@ -32,6 +34,8 @@
                 <td>{{camiseta.quant_gg}}</td>
                 <td>{{camiseta.quant_2gg}}</td>
                 <td>{{camiseta.quant_3gg}}</td>
+                <td>{{camiseta.created_at | date:'dd/MM/yyyy HH:mm:ss Z'}}</td>
+                <td>{{camiseta.updated_at | date:'dd/MM/yyyy HH:mm:ss Z'}}</td>
                 <td>Editar | Novo | Deletar</td>
             </tr>
             </tbody>
@@ -55,6 +59,8 @@
                 <th>#ID</th>
                 <th>Nome</th>
                 <th>Descrição</th>
+                <th>Criado em</th>
+                <th>Atualizado em</th>
                 <th>Ação</th>
             </tr>
             </thead>
@@ -63,6 +69,8 @@
                 <td>{{genero.id}}</td>
                 <td>{{genero.name}}</td>
                 <td>{{genero.description}}</td>
+                <td>{{genero.created_at | date:'dd/MM/yyyy HH:mm:ss Z'}}</td>
+                <td>{{genero.updated_at | date:'dd/MM/yyyy HH:mm:ss Z'}}</td>
                 <td>Editar | Novo | Deletar</td>
             </tr>
             </tbody>
@@ -86,6 +94,8 @@
                 <th>#ID</th>
                 <th>Nome</th>
                 <th>Cor RGB</th>
+                <th>Criado em</th>
+                <th>Atualizado em</th>
                 <th>Ação</th>
             </tr>
             </thead>
@@ -94,6 +104,8 @@
                 <td>{{cor.id}}</td>
                 <td>{{cor.name}}</td>
                 <td>{{cor.rgb}}</td>
+                <td>{{cor.created_at | date:'dd/MM/yyyy HH:mm:ss Z'}}</td>
+                <td>{{cor.updated_at | date:'dd/MM/yyyy HH:mm:ss Z'}}</td>
                 <td>Editar | Novo | Deletar</td>
             </tr>
             </tbody>
@@ -116,6 +128,8 @@
             <tr>
                 <th>#ID</th>
                 <th>Nome</th>
+                <th>Criado em</th>
+                <th>Atualizado em</th>
                 <th>Ação</th>
             </tr>
             </thead>
@@ -123,6 +137,8 @@
             <tr ng-repeat="tamanho in tamanho.tamanhos.data">
                 <td>{{tamanho.id}}</td>
                 <td>{{tamanho.name}}</td>
+                <td>{{tamanho.created_at | date:'dd/MM/yyyy HH:mm:ss Z'}}</td>
+                <td>{{tamamho.updated_at | date:'dd/MM/yyyy HH:mm:ss Z'}}</td>
                 <td>Editar | Novo | Deletar</td>
             </tr>
             </tbody>
@@ -150,6 +166,8 @@
                 <th>Medidas</th>
                 <th>Preço com</th>
                 <th>Preço sem</th>
+                <th>Criado em</th>
+                <th>Atualizado em</th>
                 <th>Ação</th>
             </tr>
             </thead>
@@ -161,6 +179,8 @@
                 <td>{{silk.medida}}</td>
                 <td>{{silk.price_un_com}}</td>
                 <td>{{silk.price_un_sem}}</td>
+                <td>{{silk.created_at | date:'dd/MM/yyyy HH:mm:ss Z'}}</td>
+                <td>{{silk.updated_at | date:'dd/MM/yyyy HH:mm:ss Z'}}</td>
                 <td>Editar | Novo | Deletar</td>
             </tr>
             </tbody>

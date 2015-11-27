@@ -14,7 +14,7 @@ use Rossina\Repositories\Transformers\BlocoCamisetaDestaqueTransformer;
 class BlocoCamisetaDestaqueController extends ApiController
 {
     /**
-     * @var BlocoCamisetaDestaqueRepositoryEloquent
+     * @var BlocoCDRE
      */
     protected $repository;
     /**
@@ -42,6 +42,38 @@ class BlocoCamisetaDestaqueController extends ApiController
         $this->fractal = $fractal;
         $this->blocoCamisetaDestaqueTransformer = $blocoCamisetaDestaqueTransformer;
         $this->blocoCamisetaDestaque = $blocoCamisetaDestaque;
+    }
+
+    /**
+     * @param BlocoCamisetaDestaque $model
+     * @return array
+     */
+    public function transform(BlocoCamisetaDestaque $model)
+    {
+        return [
+            'id'         => (int) $model->id,
+            'title'      => $model->title,
+            'sub_title'  => $model->sub_title,
+            'alt'        => $model->alt,
+            'created_at' => $model->created_at,
+            'updated_at' => $model->updated_at
+        ];
+    }
+
+    /**
+     * @return array
+     */
+    public function all()
+    {
+        $blocoCamisetaDestaque = array();
+
+        $data = $this->repository->with([])->all();
+
+        foreach ($data as $blocoCamisetaDestaques) {
+            $blocoCamisetaDestaque[] = $this->transform($blocoCamisetaDestaques);
+        }
+
+        return $blocoCamisetaDestaque;
     }
 
     /**
@@ -74,11 +106,11 @@ class BlocoCamisetaDestaqueController extends ApiController
             ], 404);
         }
 
-        $item = new Item($project, $blocoCamisetaDestaqueTransformer);
+//        $item = new Item($project, $blocoCamisetaDestaqueTransformer);
 
-        $data = $fractal->createData($item)->toArray();
+//        $data = $fractal->createData($item)->toArray();
 
-        return $this->respond($data);
+        return $this->transform($project);
     }
 
     /**

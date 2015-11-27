@@ -11,6 +11,7 @@
         var vm = this;
 
         vm.loginError = false;
+        
         vm.loginErrorText;
 
         vm.login = function() {
@@ -22,8 +23,8 @@
 
             $auth.login(credentials).then(function() {
 
-                // Return an $http request for the now authenticated
-                // user so that we can flatten the promise chain
+                // Retorna uma solicitação $ http para o agora autenticado
+                // Usuário para que possamos achatar a cadeia promessa
                 return $http.get('api/authenticate/user');
 
                 // Handle errors
@@ -59,34 +60,3 @@
     }
 
 })();
-//(function() {
-//
-//    'use strict';
-//
-//    angular
-//        .module('app')
-//        .controller('AuthController', AuthController);
-//
-//
-//    function AuthController($auth, $state) {
-//
-//        var vm = this;
-//
-//        vm.login = function() {
-//
-//            var credentials = {
-//                email: vm.email,
-//                password: vm.password
-//            }
-//
-//            // Use $ auth serviço de Satellizer para acessar
-//            $auth.login(credentials).then(function(data) {
-//
-//                // Se o login for bem-sucedido, redirecionar usuários para o estado
-//                $state.go('users', {});
-//            });
-//        }
-//
-//    }
-//
-//})();

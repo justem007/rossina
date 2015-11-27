@@ -19,7 +19,7 @@ class BlocoDoisTransformer extends TransformerAbstract
             'title'      => $model->title,
             'sub_title'  => $model->sub_title,
             'alt'        => $model->alt,
-            'user_id'    => $model->user_id,
+            'user_id'    => (int) $model->user_id,
             'created_at' => (string) $model->created_at,
             'updated_at' => (string) $model->updated_at
         ];

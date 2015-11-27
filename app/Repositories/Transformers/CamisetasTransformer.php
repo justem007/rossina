@@ -36,8 +36,8 @@ use Rossina\Camisetas;
             'quant_gg'    => (int) $model->quantidade_tamanho_gg,
             'quant_2gg'   => (int) $model->quantidade_tamanho_2gg,
             'quant_3gg'   => (int) $model->quantidade_tamanho_3gg,
-//            'created_at'  => (string) $model->created_at,
-//            'updated_at'  => (string) $model->updated_at
+            'created_at'  => (string) $model->created_at,
+            'updated_at'  => (string) $model->updated_at
         ];
     }
 

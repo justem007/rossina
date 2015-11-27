@@ -26,7 +26,7 @@ app.config(['$routeProvider', '$authProvider',function($routeProvider,$authProvi
         when('/registrar',{ controller:'registrarController',
             templateUrl:'views/site/pages/registrar/registrar.html'
         }).
-        when('/login_site',{ controller:'loginSiteController as auth',
+        when('/login_site',{ //controller:'loginSiteController as auth',
             templateUrl:'views/site/pages/login/login.html'
         }).
         when('/compras',{ controller:'comprasController',

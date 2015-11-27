@@ -17,4 +17,15 @@ class Categoria extends Model implements Transformable
         return $this->belongsToMany(Post::class);
     }
 
+    public function getCreatedAtAttribute($value)
+    {
+        $value = date('U', strtotime($value));
+        return $value * 1000;
+    }
+    public function getUpdatedAtAttribute($value)
+    {
+        $value = date('U', strtotime($value));
+        return $value * 1000;
+    }
+
 }

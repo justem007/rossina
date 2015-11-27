@@ -18,4 +18,15 @@ class BlocoDoisDestaque extends Model implements Presentable
         return ModelFractalPresenter::class;
     }
 
+    public function getCreatedAtAttribute($value)
+    {
+        $value = date('U', strtotime($value));
+        return $value * 1000;
+    }
+    public function getUpdatedAtAttribute($value)
+    {
+        $value = date('U', strtotime($value));
+        return $value * 1000;
+    }
+
 }

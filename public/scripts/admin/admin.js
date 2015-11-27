@@ -3,7 +3,7 @@
     'use strict';
 
     angular
-        .module('appAdmin', ['ui.router','satellizer'])
+        .module('appAdmin', ['ui.router','satellizer','ngResource'])
         .config(function($stateProvider, $urlRouterProvider, $authProvider) {
 
             // Satellizer configuration that specifies which API
@@ -22,12 +22,18 @@
                 })
                 .state('/', {
                     url: '/',
-                    templateUrl: 'views/admin/admin.blade.php'
+                    templateUrl: 'views/admin/admin.blade.php',
+                    access: {
+                        requiresLogin: true
+                    }
                 })
                 .state('principal', {
                     url: '/principal',
                     templateUrl: 'views/admin/principal.html',
-                    controller: 'horarioController as horario'
+                    controller: 'horarioController as horario',
+                    access: {
+                        requiresLogin: true
+                    }
                 })
                 .state('estamparia', {
                     url: '/estamparia',
@@ -66,10 +72,16 @@
                     url: '/blog',
                     templateUrl: 'views/admin/blog.html'
                 })
+                .state('tag', {
+                    url: '/tag',
+                    templateUrl: 'views/admin/tag.html',
+                    controller: 'tagController'
+                })
                 .state('logout', {
                     url: '/logout',
                     templateUrl: 'views/admin/logout.html'
                 });
         });
+
 })();
 

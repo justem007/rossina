@@ -18,8 +18,8 @@
                 <td>{{faq.id}}</td>
                 <td>{{faq.title}}</td>
                 <td>{{faq.description}}</td>
-                <td>{{faq.created_at}}</td>
-                <td>{{faq.updated_at}}</td>
+                <td>{{faq.created_at | date:'dd/MM/yyyy HH:mm:ss Z'}}</td>
+                <td>{{faq.updated_at | date:'dd/MM/yyyy HH:mm:ss Z'}}</td>
                 <td>Editar | Novo | Deletar</td>
             </tr>
             </tbody>

@@ -3,18 +3,37 @@
 <head>
 
     <meta charset="UTF-8">
-    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <meta property="og:description" content="Só na rossinaestamparia.com.br você encontra o melhor da impressão digital textil, Tecidos em metro corrido, Camisetas Digital Personalizadas, Show Room  "/>
+    <meta property="og:keywords" content="estamparia digital, rossina estamparia, sublimação, tintas para sublimação, design de estampas, silk screen, estampas,camisetas, camisetas digitais, camisetas personalizadas, filme de recorte, tecidos, tecidos rolo rolo, calandra, kornit"/>
+    <meta property="og:title" content="rossinaestamparia.com.br - Estamparia Digital, Tecidos rola a rola, Camisetas Personalizadas , camisetas digitais"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:url" content="http://www.rossinaestamparia.com.br/"/>
+    <meta property="og:image" content="http://www.rossinaestamparia.com.br/"/>
+    <meta property="og:site_name" content="rossinaestamparia.com.br"/>
+    <meta property="og:description" content="Só na rossinaestamparia.com.br você encontra o melhor da impressão digital textil "/>
+    <meta name="application-name" content="rossinaestamparia.com.br" />
+    <meta name="msapplication-starturl" content="index.html" />
+    <meta name="msapplication-tooltip" content="rossinaestamparia.com.br" />
+    <meta name="msapplication-window" content="width=1024;height=768" />
+    <meta name="msapplication-navbutton-color" content="#0669DE" />
+    <meta name="msapplication-task" content="name=Central rossinaestamparia.com.br"/>
+
     <title>Rossina Estamparia - Estamparia Digital - Impressão Digital</title>
 
-    <link rel="stylesheet" type="text/css" href="bower_components/bootswatch/spacelab/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="bower_components/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="bower_components/bootstrap-notify/css/bootstrap-notify.css">
-    <link rel="stylesheet" type="text/css" href="styles/site/css/main-default.css">
+    <link rel="stylesheet" type="text/css" media='all' href="bower_components/bootswatch/spacelab/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" media='all' href="bower_components/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" media='all' href="bower_components/bootstrap-notify/css/bootstrap-notify.css">
+    <link rel="stylesheet" type="text/css" media='all' href="bower_components/angular-busy/dist/angular-busy.min.css">
+    <link rel="stylesheet" type="text/css" media='all' href="styles/site/css/main-default.css">
 
 </head>
 <body>
 
 <header>
+    <!--<div cg-busy="{promise:promise,templateUrl:templateUrl,message:message,backdrop:backdrop,delay:delay,minDuration:minDuration}">-->
+    <!--<div cg-busy="myPromise">-->
+
     <div class="b-top-options-panel">
         <div class="container" ng-controller="horarioController">
             <div class="b-option-contacts f-option-contacts" ng-repeat="horario in horarios.data">
@@ -27,6 +46,7 @@
              </div>
         </div>
     </div>
+    <!--</div>-->
     <div class="container b-header__box b-relative">
         <a href="#/" class="b-left b-logo "><img class="color-theme" data-retina src="../../images/site/img/homepage/logo.jpg" alt="Logo" /></a>
         <div class="b-header-r b-right b-header-r--icon">
@@ -92,11 +112,11 @@
                     <ul class="b-top-nav__1level_wrap" >
 
                         <li class="b-top-nav__1level f-top-nav__1level is-active-top-nav__1level">
-                            <a href="#/" tooltip-popup-close-delay='500' uib-tooltip='Qualidade Digital'><i class="fa fa-home "></i> Home<span class="b-ico-dropdown"><i class="fa fa-arrow-circle-down"></i></span></a>
+                            <a href="#/" tooltip-popup-close-delay='500' uib-tooltip='Qualidade Digital' ng-click="start()"><i class="fa fa-home "></i> Home<span class="b-ico-dropdown"><i class="fa fa-arrow-circle-down"></i></span></a>
                         </li>
 
                         <li class="b-top-nav__1level f-top-nav__1level f-primary-b" ng-repeat="menu in menus.data">
-                            <a href="#/{{ menu.url }}" tooltip-popup-close-delay='500' uib-tooltip='{{ menu.description }}'><i class="{{ menu.fafa }} "></i> {{ menu.title }} | <span class="b-ico-dropdown"><i class="fa fa-arrow-circle-down"></i></span></a>
+                            <a href="#/{{ menu.url }}" tooltip-popup-close-delay='500' uib-tooltip='{{ menu.description }}' ng-click="fetch()"><i class="{{ menu.fafa }} "></i> {{ menu.title }} | <span class="b-ico-dropdown"><i class="fa fa-arrow-circle-down"></i></span></a>
                         </li>
                     </ul>
                 </nav>
@@ -106,9 +126,10 @@
     </div>
 </header>
 
-<div ng-view>
-<!--carrega as páginas aqui-->
-</div>
+    <div id="loading" loading-indicator></div>
+    <div ng-view>
+    <!--carrega as páginas aqui-->
+    </div>
 
 <!--container site-->
 
@@ -272,23 +293,30 @@
         </div>
     </div>
 </footer>
-<!--footer-->
 
+<div class='notifications bottom-right'></div>
+
+<!--footer-->
 <script src="bower_components/jquery-2/dist/jquery.min.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="bower_components/bootstrap-notify/js/bootstrap-notify.js"></script>
 <script src="bower_components/angular/angular.min.js"></script>
+<script src="bower_components/angular-busy/dist/angular-busy.js"></script>
+<script src="bower_components/angular-animate/angular-animate.min.js"></script>
+<script src="bower_components/angular-messages/angular-messages.min.js"></script>
 <script src="bower_components/angular-route/angular-route.min.js"></script>
 <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
 <script src="bower_components/satellizer/satellizer.js"></script>
-<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-<script src="bower_components/angular-animate/angular-animate.min.js"></script>
 <script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.14.3.js"></script>
 <script src="bower_components/angular-resource/angular-resource.min.js"></script>
-<script src="bower_components/angular-messages/angular-messages.min.js"></script>
 <script src="bower_components/angular-touch/angular-touch.min.js"></script>
 <script src="bower_components/angular-sanitize/angular-sanitize.min.js"></script>
 <script src="bower_components/angular-aria/angular-aria.min.js"></script>
 <script src="bower_components/angular-material/angular-material.min.js"></script>
-<script src="bower_components/bootstrap-notify/js/bootstrap-notify.js"></script>
+<script src="bower_components/angular-ui-mask/dist/mask.js"></script>
+<!--<script src="bower_components/cpf_cnpj/build/cpf.js"></script>-->
+<!--<script src="bower_components/cpf_cnpj/build/cnpj.js"></script>-->
+<!--<script src="bower_components/ng-cpf-cnpj/lib/ngCpfCnpj.js"></script>-->
 
 <script src="scripts/site/app.js"></script>
 <script src="scripts/site/route/route.js"></script>

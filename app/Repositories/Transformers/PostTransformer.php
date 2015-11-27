@@ -31,8 +31,8 @@ class PostTransformer extends TransformerAbstract
             'text'       => $post->text,
             'active'     => (boolean) $post->active,
             'user_id'    => (int) $post->user_id,
-            'created_at' => (string) $post->created_at,
-            'updated_at' => (string) $post->updated_at,
+            'created_at' => $post->created_at,
+            'updated_at' => $post->updated_at,
         ];
     }
 

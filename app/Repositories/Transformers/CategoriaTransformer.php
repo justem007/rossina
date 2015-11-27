@@ -20,9 +20,8 @@ class CategoriaTransformer extends TransformerAbstract
             'title'       => $model->title,
             'description' => $model->description,
             'user_id'     => (int) $model->user_id,
-
-//            'created_at' => $model->created_at,
-//            'updated_at' => $model->updated_at
+            'created_at' => $model->created_at,
+            'updated_at' => $model->updated_at
         ];
     }
 

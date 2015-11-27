@@ -42,6 +42,37 @@ class CommentController extends ApiController
     }
 
     /**
+     * @param Comment $model
+     * @return array
+     */
+    public function transform(Comment $model)
+    {
+        return [
+            'id'         => (int) $model->id,
+            'text'       => $model->text,
+            'name'       => $model->name,
+            'email'      => $model->email,
+            'active'     => (boolean) $model->active,
+            'post_id'    => (int) $model->post_id,
+            'created_at' => $model->created_at,
+            'updated_at' => $model->updated_at,
+        ];
+    }
+
+    public function all()
+    {
+        $comment = array();
+
+        $data = $this->repository->with([])->all();
+
+        foreach ($data as $comments) {
+            $comment[] = $this->transform($comments);
+        }
+
+        return $comment;
+    }
+
+    /**
      * @return mixed
      */
     public function index()
@@ -85,11 +116,11 @@ class CommentController extends ApiController
             ], 404);
         }
 
-        $item = new Item($project, $commentTransformer);
+//        $item = new Item($project, $commentTransformer);
 
-        $data = $fractal->createData($item)->toArray();
+//        $data = $fractal->createData($item)->toArray();
 
-        return $this->respond($data);
+        return $this->transform($project);
     }
 
     /**

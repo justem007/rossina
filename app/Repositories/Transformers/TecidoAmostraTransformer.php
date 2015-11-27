@@ -20,8 +20,8 @@ class TecidoAmostraTransformer extends TransformerAbstract
             'description'  => $model->description,
             'medidas'      => $model->medidas,
             'price'        => (double) $model->price,
-//            'created_at'   => $model->created_at,
-//            'updated_at'   => $model->updated_at
+            'created_at'   => $model->created_at,
+            'updated_at'   => $model->updated_at
         ];
     }
 

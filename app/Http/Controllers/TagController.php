@@ -9,6 +9,9 @@ use League\Fractal\Manager;
 use League\Fractal\Pagination\IlluminatePaginatorAdapter;
 use League\Fractal\Resource\Collection;
 use League\Fractal\Resource\Item;
+use League\Fractal\Serializer\ArraySerializer;
+use League\Fractal\Serializer\DataArraySerializer;
+use League\Fractal\Serializer\JsonApiSerializer;
 use Rossina\Http\Requests;
 use Rossina\Repositories\Repository\TagRepositoryEloquent;
 use Rossina\Repositories\Transformers\TagTransformer;
@@ -45,11 +48,39 @@ class TagController extends ApiController
     {
         $projects = $this->repository->with(['posts'])->all();
 
-        $collection = new Collection($projects, $projectTransformer);
+        return $this->respondWithCORS($projects);
 
-        $data = $fractal->createData($collection)->toArray();
+    }
 
-        return $this->respondWithCORS($data);
+    /**
+     * @return mixed
+     */
+    public  function all()
+    {
+        $tag = array();
+
+        $data = $this->repository->with(['posts'])->all();
+
+        foreach ($data as $posts) {
+            $tag[] = $this->transform($posts);
+        }
+
+        return $tag;
+
+    }
+
+    /**
+     * @param Tag $model
+     * @return array
+     */
+    public function transform(Tag $model)
+    {
+        return [
+            'id'         => (int) $model->id,
+            'title'      => $model->title,
+            'created_at' => $model->created_at,
+            'updated_at' => $model->updated_at
+        ];
     }
 
     /**
@@ -86,11 +117,7 @@ class TagController extends ApiController
             ], 404);
         }
 
-        $item = new Item($project, $tagTransformer);
-
-        $data = $fractal->createData($item)->toArray();
-
-        return $this->respond($data);
+        return $this->respond($project);
     }
 
     /**
@@ -114,7 +141,7 @@ class TagController extends ApiController
      * @param $id
      * @return mixed
      */
-    public function update(Request $request,$id)
+    public function update(Request $request, $id)
     {
         $repository = $this->repository->update( $request->all(), $id );
 

@@ -37,4 +37,20 @@ class Post extends Model implements Presentable
         return $this->belongsToMany(CategoriaBlog::class);
     }
 
+    public function scopeActive($query)
+    {
+        return $query->where('active', 1);
+    }
+
+    public function getCreatedAtAttribute($value)
+    {
+        $value = date('U', strtotime($value));
+        return $value * 1000;
+    }
+    public function getUpdatedAtAttribute($value)
+    {
+        $value = date('U', strtotime($value));
+        return $value * 1000;
+    }
+
 }

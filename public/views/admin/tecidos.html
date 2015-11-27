@@ -10,6 +10,8 @@
                 <th>Descrição</th>
                 <th>Preço com</th>
                 <th>Preço sem</th>
+                <th>Criado em</th>
+                <th>Atualizado em</th>
                 <th>Ação</th>
             </tr>
             </thead>
@@ -20,6 +22,8 @@
                 <td>{{tecido.description}}</td>
                 <td>{{tecido.price_com}}</td>
                 <td>{{tecido.price_sem}}</td>
+                <td>{{tecido.created_at | date:'dd/MM/yyyy HH:mm:ss Z'}}</td>
+                <td>{{tecido.updated_at | date:'dd/MM/yyyy HH:mm:ss Z'}}</td>
                 <td>Editar | Novo | Deletar</td>
             </tr>
             </tbody>
@@ -45,6 +49,8 @@
                 <th>Descrição</th>
                 <th>Medidas</th>
                 <th>Preço</th>
+                <th>Criado em</th>
+                <th>Atualizado em</th>
                 <th>Ação</th>
             </tr>
             </thead>
@@ -55,6 +61,8 @@
                 <td>{{tecidoAmostra.description}}</td>
                 <td>{{tecidoAmostra.medida}}</td>
                 <td>{{tecidoAmostra.price}}</td>
+                <td>{{tecidoAmostra.created_at | date:'dd/MM/yyyy HH:mm:ss Z'}}</td>
+                <td>{{tecidoAmostra.updated_at | date:'dd/MM/yyyy HH:mm:ss Z'}}</td>
                 <td>Editar | Novo | Deletar</td>
             </tr>
             </tbody>

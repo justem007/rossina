@@ -53,6 +53,39 @@ class BlocoDoisDestaqueDoisController extends ApiController
     }
 
     /**
+     * @param BlocoDoisDestaqueDois $model
+     * @return array
+     */
+    public function transform(BlocoDoisDestaqueDois $model)
+    {
+        return [
+            'id'         => (int) $model->id,
+            'title'      => $model->title,
+            'sub_title'  => $model->sub_title,
+            'alt'        => $model->alt,
+            'user_id'    => $model->user_id,
+            'created_at' => $model->created_at,
+            'updated_at' => $model->updated_at
+        ];
+    }
+
+    /**
+     * @return array
+     */
+    public function all()
+    {
+        $blocoDoisDestaqueDois = array();
+
+        $data = $this->repository->with([])->all();
+
+        foreach ($data as $blocoDoisDestaquesDoiss) {
+            $blocoDoisDestaqueDois[] = $this->transform($blocoDoisDestaquesDoiss);
+        }
+
+        return $blocoDoisDestaqueDois;
+    }
+
+    /**
      * @return mixed
      */
     public function index()
@@ -80,11 +113,11 @@ class BlocoDoisDestaqueDoisController extends ApiController
             ], 404);
         }
 
-        $item = new Item($project, $blocoDoisDestaqueDoisTransformer);
+//        $item = new Item($project, $blocoDoisDestaqueDoisTransformer);
 
-        $data = $fractal->createData($item)->toArray();
+//        $data = $fractal->createData($item)->toArray();
 
-        return $this->respond($data);
+        return $this->transform($project);
     }
 
     /**

@@ -7,10 +7,12 @@ use Illuminate\Support\Facades\Response;
 use League\Fractal\Manager;
 use League\Fractal\Resource\Collection;
 use League\Fractal\Resource\Item;
+use League\Fractal\Serializer\ArraySerializer;
 use Rossina\Http\Requests;
 use Rossina\Post;
 use Rossina\Repositories\Repository\PostRepositoryEloquent as PostRE;
 use Rossina\Repositories\Transformers\PostTransformer;
+use League\Fractal\TransformerAbstract;
 
 class PostsController extends ApiController
 {
@@ -39,25 +41,46 @@ class PostsController extends ApiController
      * @param PostTransformer $postTransformer
      * @return mixed
      */
-    public function index(Manager $fractal, PostTransformer $postTransformer)
+    public function index(Manager $fractal)
     {
-        $projects = $this->repository->with(['comments.posts.tags'])->all();
+        $projects = $this->repository->with(['comments'])->all();
 
-        $collection = new Collection($projects, $postTransformer);
-
-        $data = $fractal->createData($collection)->toArray();
-
-        return $this->respond($data);
+        return $this->respond($projects);
     }
+
 
     /**
      * @return mixed
      */
     public  function all()
     {
-        $repository = $this->repository->all();
+        $post = array();
 
-        return $this->apiController->respondWithCollection($repository, new PostTransformer());
+        $data = $this->repository->with(['comments'])->all();
+
+        foreach ($data as $posts) {
+            $post[] = $this->transform($posts);
+        }
+
+    return $post;
+
+    }
+
+    /**
+     * @param Post $post
+     * @return array
+     */
+    public function transform(Post $post)
+    {
+        return [
+            'id'         => (int) $post->id,
+            'title'      => $post->title,
+            'text'       => $post->text,
+            'active'     => (boolean) $post->active,
+            'user_id'    => (int) $post->user_id,
+            'created_at' => $post->created_at,
+            'updated_at' => $post->updated_at,
+        ];
     }
 
     /**
@@ -68,6 +91,8 @@ class PostsController extends ApiController
      */
     public function show($id, Manager $fractal, PostTransformer $postTransformer)
     {
+        $fractal->setSerializer(new ArraySerializer());
+
         $project = $this->post->find($id);
 
         if(!$project){
@@ -78,11 +103,11 @@ class PostsController extends ApiController
             ], 404);
         }
 
-        $item = new Item($project, $postTransformer);
+//        $item = new Item($project, $postTransformer);
 
-        $data = $fractal->createData($item)->toArray();
+//        $data = $fractal->createData($item)->toArray();
 
-        return $this->respond($data);
+        return $this->respond($project);
     }
 
     /**
@@ -133,5 +158,4 @@ class PostsController extends ApiController
             ]
         ], 200);
     }
-
 }

@@ -3,7 +3,7 @@
     'use strict';
 
     angular
-        .module('app', ['ui.router', 'satellizer'])
+        .module('app', [ 'ui.router', 'satellizer', 'ngMessages'])
         .config(function($stateProvider, $urlRouterProvider, $authProvider, $httpProvider, $provide) {
 
             function redirectWhenLoggedOut($q, $injector) {
@@ -12,27 +12,27 @@
 
                     responseError: function(rejection) {
 
-                        // Need to use $injector.get to bring in $state or else we get
-                        // a circular dependency error
+                        // Necessidade de utilizar $ injector.get para trazer $ estadual ou então chegarmos
+                        // Um erro de dependência circular
                         var $state = $injector.get('$state');
 
-                        // Instead of checking for a status code of 400 which might be used
-                        // for other reasons in Laravel, we check for the specific rejection
-                        // reasons to tell us if we need to redirect to the login state
-                        var rejectionReasons = ['token_not_provided', 'token_expired', 'token_absent', 'token_invalid'];
+                        // Em vez de verificação de um código de status de 400, que pode ser usado
+                        // Por outras razões em Laravel, nós verificamos para a rejeição específica
+                        // Razões para nos dizer se precisamos para redirecionar para o estado de login
+                        var rejectionReasons = ['token_not_provided', 'token_expirado', 'token_ausente', 'token_inválido'];
 
-                        // Loop through each rejection reason and redirect to the login
-                        // state if one is encountered
+                        // Percorre cada motivo de rejeição e redirecionar para o login
+                        // Estado, se um for encontrado
                         angular.forEach(rejectionReasons, function(value, key) {
 
                             if(rejection.data.error === value) {
 
-                                // If we get a rejection corresponding to one of the reasons
-                                // in our array, we know we need to authenticate the user so
-                                // we can remove the current user from local storage
+                                // Se conseguirmos uma rejeição que corresponde a uma das razões
+                                // Em nossa matriz, sabemos que precisamos para autenticar o usuário assim
+                                // Podemos remover o usuário atual do armazenamento local
                                 localStorage.removeItem('user');
 
-                                // Send the user to the auth state so they can login
+                                // Envia o usuário para o estado de autenticação para que eles possam acessar
                                 $state.go('auth');
                             }
                         });
@@ -42,10 +42,10 @@
                 }
             }
 
-            // Setup for the $httpInterceptor
+            // Instalação para o $ httpInterceptor
             $provide.factory('redirectWhenLoggedOut', redirectWhenLoggedOut);
 
-            // Push the new factory onto the $http interceptor array
+            // Empurre a nova fábrica para a matriz interceptor $ http
             $httpProvider.interceptors.push('redirectWhenLoggedOut');
 
             $authProvider.loginUrl = '/api/authenticate';
@@ -55,49 +55,61 @@
             $stateProvider
                 .state('auth', {
                     url: '/auth',
-                    templateUrl: '../token/views/authView.html',
-                    controller: 'AuthController as auth'
+                    views: {
+                        'painelContent': {
+                            templateUrl: "../token/views/authView.html",
+                            controller: 'AuthController as auth'
+                        }
+                    }
                 })
                 .state('users', {
                     url: '/users',
-                    templateUrl: '../token/views/userView.html',
-                    controller: 'UserController as user'
+                    views: {
+                        'painelContent': {
+                            templateUrl: "../token/views/userView.html",
+                            controller: 'UserController as user',
+                            access: {
+                                requiresLogin: true
+                            }
+                        }
+                    }
                 });
         })
+
         .run(function($rootScope, $state) {
 
-            // $stateChangeStart is fired whenever the state changes. We can use some parameters
-            // such as toState to hook into details about the state as it is changing
+            // $ stateChangeStart é acionado sempre que as alterações de estado. Podemos usar alguns parâmetros
+            // tais como toState para ligar para detalhes sobre o estado em que está mudando
             $rootScope.$on('$stateChangeStart', function(event, toState) {
 
-                // Grab the user from local storage and parse it to an object
+                // Agarre o usuário de armazenamento local e analisá-lo a um objeto
                 var user = JSON.parse(localStorage.getItem('user'));
 
-                // If there is any user data in local storage then the user is quite
-                // likely authenticated. If their token is expired, or if they are
-                // otherwise not actually authenticated, they will be redirected to
-                // the auth state because of the rejected request anyway
+                // Se houver quaisquer dados do usuário no armazenamento local, em seguida, o usuário é bastante
+                // provavelmente autenticado. Se o seu token é expirado, ou se eles são
+                // caso contrário, não realmente autenticado, eles serão redirecionados para
+                // o estado de autenticação por causa da solicitação de qualquer maneira rejeitado
                 if(user) {
 
-                    // The user's authenticated state gets flipped to
-                    // true so we can now show parts of the UI that rely
-                    // on the user being logged in
+                    // Estado autenticada do usuário fica virado para
+                    // verdade para que possamos agora mostrar partes da interface do usuário que confiar
+                    // no usuário logado
                     $rootScope.authenticated = true;
 
-                    // Putting the user's data on $rootScope allows
-                    // us to access it anywhere across the app. Here
-                    // we are grabbing what is in local storage
+                    // Colocar os dados do usuário em $ rootScope permite
+                    // Nós para acessá-lo em qualquer lugar através do app. Aqui
+                    // Estamos pegando o que está no armazenamento local
                     $rootScope.currentUser = user;
 
-                    // If the user is logged in and we hit the auth route we don't need
-                    // to stay there and can send the user to the main state
+                    // Se o usuário está conectado e nós batemos a rota auth não precisamos
+                    // Para ficar lá e pode enviar o usuário para o principal estado
                     if(toState.name === "auth") {
 
-                        // Preventing the default behavior allows us to use $state.go
-                        // to change states
+                        // Prevenir o comportamento padrão nos permite usar $ state.go
+                        // Para alterar os estados
                         event.preventDefault();
 
-                        // go to the "main" state which in our case is users
+                        // Ir para o estado "principal", que no nosso caso é usuários
                         $state.go('users');
                     }
                 }
@@ -105,32 +117,3 @@
         });
 })();
 
-//(function() {
-//
-//    'use strict';
-//
-//    angular
-//        .module('app', ['ui.router','satellizer'])
-//        .config(function($stateProvider, $urlRouterProvider, $authProvider) {
-//
-//            // Satellizer configuration that specifies which API
-//            // route the JWT should be retrieved from
-//            $authProvider.loginUrl = '/api/authenticate';
-//
-//            // Redirecionar para o estado auth se quaisquer outros estados
-//            // são solicitado que não os utilizadores
-//            $urlRouterProvider.otherwise('/auths');
-//
-//            $stateProvider
-//                .state('auths', {
-//                    url: '/auths',
-//                    templateUrl: '../token/views/authView.html',
-//                    controller: 'AuthController as auth'
-//                })
-//                .state('users', {
-//                    url: '/users',
-//                    templateUrl: '../token/views/userView.html',
-//                    controller: 'UserController as user'
-//                });
-//        });
-//})();

@@ -1,85 +1,161 @@
-<div class="b-inner-page-header f-inner-page-header">
-    <div class="b-inner-page-header__content">
-        <div class="container">
-            <h1 class="f-primary-l c-default">Register an account</h1>
-        </div>
-    </div>
-</div>
 <div class="l-main-container">
     <div class="b-breadcrumbs f-breadcrumbs">
         <div class="container">
             <ul>
-                <li><a href="#"><i class="fa fa-home"></i>Home</a></li>
-                <li><a href="#"><i class="fa fa-angle-right"></i> Extra pages</a></li>
-                <li><i class="fa fa-angle-right"></i><span> Register an account</span></li>
+                <li><a href="#/"><i class="fa fa-home"></i>Home</a></li>
+                <li><a href="#/registrar"><i class="fa fa-angle-right"></i>registrar</a></li>
+                <li><i class="fa fa-angle-right"></i><span> Registrar nova connta</span></li>
             </ul>
         </div>
     </div>
     <div class="container b-container-login-page">
         <div class="row">
             <div class="col-md-6">
-                <div class="b-form-row f-primary-l f-title-big c-secondary">Create an account</div>
-                <div class="b-form-row">Consectetur adipiscing elituis sagittis eu mi et pellentesqueur</div>
+                <div class="b-form-row f-primary-l f-title-big c-secondary">Criar nova conta</div>
+                <div class="b-form-row">Crie uma nova conta para fazer cotação de seus pedidos.</div>
                 <hr class="b-hr" />
                 <div class="row b-form-inline b-form-horizontal">
                     <div class="col-xs-12">
-                        <div class="b-form-row">
-                            <label class="b-form-horizontal__label" for="create_account_email">Your Email</label>
+                        <form class="form-horizontal" role="form" name="contaForm" novalidate>
+                        <div class="b-form-row" ng-class="{ 'has-error': contaForm.nome.$touched && contaForm.nome.$invalid }">
+                            <label class="b-form-horizontal__label" for="create_account_name">Seu nome</label>
                             <div class="b-form-horizontal__input">
-                                <input type="text" id="create_account_email" class="form-control" />
+                                <input
+                                        type="text"
+                                        id="create_account_name"
+                                        class="form-control"
+                                        placeholder="seu nome"
+                                        name="nome"
+                                        ng-model="main.nome"
+                                        ng-minlength="8"
+                                        ng-maxlength="50"
+                                        required />
+
+                                <div class="help-block" ng-messages="contaForm.nome.$error" ng-if="contaForm.nome.$touched">
+                                    <p ng-message="minlength">Nome muito curto</p>
+                                    <p ng-message="maxlength">Nome muito longo</p>
+                                    <p ng-message="required">O Nome é obrigatório</p>
+                                </div>
+
                             </div>
                         </div>
-                        <div class="b-form-row">
-                            <label class="b-form-horizontal__label" for="create_account_password">Your password</label>
+
+                        <div class="b-form-row" ng-class="{ 'has-error': contaForm.email.$touched && contaForm.email.$invalid }">
+                            <label class="b-form-horizontal__label" for="create_account_email">Seu Email</label>
                             <div class="b-form-horizontal__input">
-                                <input type="text" id="create_account_password" class="form-control" />
+                                <input
+                                        type="text"
+                                        id="create_account_email"
+                                        class="form-control"
+                                        placeholder="seu email"
+                                        name="email"
+                                        ng-model="main.email"
+                                        ng-minlength="8"
+                                        ng-maxlength="50"
+                                        required />
+
+                                <div class="help-block" ng-messages="contaForm.email.$error" ng-if="contaForm.email.$touched">
+                                    <p ng-message="minlength">Email muito curto</p>
+                                    <p ng-message="maxlength">Email muito longo</p>
+                                    <p ng-message="required">O email é obrigatório</p>
+                                    <p ng-message="email">Isso precisa ser um e-mail válido</p>
+                                </div>
+
                             </div>
                         </div>
-                        <div class="b-form-row">
-                            <label class="b-form-horizontal__label" for="create_account_confirm">Confirm password</label>
+
+                        <div class="b-form-row" ng-class="{ 'has-error': contaForm.senha.$touched && contaForm.senha.$invalid }">
+                            <label class="b-form-horizontal__label" for="create_account_password">Sua senha</label>
                             <div class="b-form-horizontal__input">
-                                <input type="text" id="create_account_confirm" class="form-control" />
+                                <input
+                                        type="password"
+                                        id="create_account_password"
+                                        class="form-control"
+                                        placeholder="sua senha"
+                                        name="senha"
+                                        ng-model="main.senha"
+                                        ng-minlength="5"
+                                        ng-maxlength="15"
+                                        required />
+
+                                <div class="help-block" ng-messages="contaForm.senha.$error" ng-if="contaForm.senha.$touched">
+                                    <p ng-message="minlength">senha muito curta</p>
+                                    <p ng-message="maxlength">senha muito longa</p>
+                                    <p ng-message="required">A senha é obrigatória</p>
+                                </div>
+
                             </div>
                         </div>
-                        <div class="b-form-row">
-                            <label class="b-form-horizontal__label" for="create_account_phone">Phone Number</label>
+
+                            <div class="b-form-row" ng-class="{ 'has-error': contaForm.rsenha.$touched && contaForm.rsenha.$invalid }">
+                            <label class="b-form-horizontal__label" for="create_account_confirm">Confirmar senha</label>
                             <div class="b-form-horizontal__input">
-                                <input type="text" id="create_account_phone" class="form-control" />
+                                <input
+                                        type="password"
+                                        id="create_account_confirm"
+                                        class="form-control"
+                                        placeholder="repita sua senha"
+                                        name="rsenha"
+                                        ng-model="main.rsenha"
+                                        ng-minlength="5"
+                                        ng-maxlength="15"
+                                        required />
+
+                                <div class="help-block" ng-messages="contaForm.rsenha.$error" ng-if="contaForm.rsenha.$touched">
+                                    <p ng-message="minlength">repitir a senha muito curta</p>
+                                    <p ng-message="maxlength">repitir a senha muito longa</p>
+                                    <p ng-message="required">repitir a  senha é obrigatória</p>
+                                </div>
+
                             </div>
                         </div>
-                        <div class="b-form-row">
-                            <label class="b-form-horizontal__label" for="create_account_location">Location</label>
+
+                        <div class="b-form-row" ng-class="{ 'has-error': contaForm.telefone.$touched && contaForm.telefone.$invalid }">
+                            <label class="b-form-horizontal__label" for="create_account_phone">Seu Telefone</label>
                             <div class="b-form-horizontal__input">
-                                <input type="text" id="create_account_location" class="form-control" />
+                                <input
+                                        type="text"
+                                        id="create_account_phone"
+                                        class="form-control"
+                                        placeholder="seu telefone - formato (0xx)99999-9999"
+                                        name="telefone"
+                                        ng-model="main.telefone"
+                                        ng-minlength="5"
+                                        ng-maxlength="15"
+                                        required />
+
+                                <div class="help-block" ng-messages="contaForm.telefone.$error" ng-if="contaForm.telefone.$touched">
+                                    <p ng-message="minlength">Telefone muito curto</p>
+                                    <p ng-message="maxlength">telefone muito longo</p>
+                                    <p ng-message="required">telefone é obrigatório</p>
+                                </div>
+
                             </div>
                         </div>
-                        <div class="b-form-row">
-                            <label class="b-form-horizontal__label" for="create_account_name">Your name</label>
-                            <div class="b-form-horizontal__input">
-                                <input type="text" id="create_account_name" class="form-control" />
-                            </div>
-                        </div>
+
                         <div class="b-form-row">
                             <div class="b-form-horizontal__label"></div>
                             <div class="b-form-horizontal__input">
                                 <label for="create_account_terms">
                                     <input type="checkbox" class="b-form-checkbox b-form-checkbox" id="create_account_terms" />
-                                    <span>I agree to <a href="#" class="c-secondary f-more">Terms of Use</a></span>
+                                    <span>Aceite  <a href="#/" class="c-secondary f-more">os termos de uso</a></span>
                                 </label>
                             </div>
                         </div>
+                        </form>
                         <div class="b-form-row">
                             <div class="b-form-horizontal__label"></div>
                             <div class="b-form-horizontal__input">
-                                <a href="#" class="b-btn f-btn b-btn-md b-btn-default f-primary-b b-btn__w100">sign up now</a>
+                                <a href="#" class="b-btn f-btn b-btn-md b-btn-default f-primary-b b-btn__w100">criar conta</a>
                             </div>
                         </div>
                     </div>
                 </div>
+
             </div>
             <div class="col-md-6">
-                <div class="f-primary-l f-title-big c-secondary">Welcome to Frexy Studio</div>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sagittis eu mi et pellentesque. Curabitur vestibulum convallis orci, quis dapibus elit fringilla eget. Suspendisse posuere diam ut erat convallis, non dictum quam luctus. </p>
+                <div class="f-primary-l f-title-big c-secondary">Bem-Vindo a Rossina Estamparia</div>
+                <p>Aqui você encontrará tudo em serviço em estamparia digital, tecidos roloa rolo, camisetas em máquina digital, show room para suas amostras. </p>
                 <div class="b-shortcode-example">
                     <ul class="b-list-markers f-list-markers">
                         <li><i class="fa fa-check-circle b-list-markers__ico f-list-markers__ico"></i> <a href="#">Fusce viverra nisl eu nisl suscipit dictum.</a></li>

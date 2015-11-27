@@ -3,6 +3,8 @@
 namespace Rossina\Http\Controllers;
 
 use Illuminate\Http\Request;
+use League\Fractal\Serializer\ArraySerializer;
+use Rossina\BlocoCamiseta;
 use Rossina\Http\Requests;
 use Illuminate\Support\Facades\Response;
 use League\Fractal\Manager;
@@ -47,6 +49,8 @@ class CamisetasController extends ApiController
      */
     public function index(Manager $fractal, CamisetasTransformer $camisetasTransformer)
     {
+        $fractal->setSerializer(new ArraySerializer());
+
         $projects = $this->repository->with(['generos'])->all();
 
         $collection = new Collection($projects, $camisetasTransformer);
@@ -90,11 +94,11 @@ class CamisetasController extends ApiController
             ], 404);
         }
 
-        $item = new Item($project, $camisetasTransformer);
+//        $item = new Item($project, $camisetasTransformer);
 
-        $data = $fractal->createData($item)->toArray();
+//        $data = $fractal->createData($item)->toArray();
 
-        return $this->respond($data);
+        return $this->transform($project);
     }
 
     /**

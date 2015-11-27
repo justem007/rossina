@@ -48,6 +48,21 @@ class CategoriaBlogController extends ApiController
     }
 
     /**
+     * @param CategoriaBlog $model
+     * @return array
+     */
+    public function transform(CategoriaBlog $model)
+    {
+        return [
+            'id'         => (int) $model->id,
+            'title'      => $model->title,
+            'description'=> $model->description,
+            'created_at' => $model->created_at,
+            'updated_at' => $model->updated_at
+        ];
+    }
+
+    /**
      * @param Manager $fractal
      * @return mixed
      */
@@ -63,10 +78,26 @@ class CategoriaBlogController extends ApiController
     }
 
     /**
+     *
+     */
+    public function all()
+    {
+        $categoriaBlog = array();
+
+        $data = $this->repository->with(['posts'])->all();
+
+        foreach ($data as $categoriaBlogs) {
+            $categoriaBlog[] = $this->transform($categoriaBlogs);
+        }
+
+        return $categoriaBlog;
+    }
+
+    /**
      * @return mixed
      */
-    public function paginate(){
-
+    public function paginate()
+    {
         $paginator = $this->repository->paginate();
 
         $bloco = $paginator->getCollection();
@@ -84,7 +115,7 @@ class CategoriaBlogController extends ApiController
      * @param CategoriaBlogTransformer $categoriaBlogTransformer
      * @return mixed
      */
-    public function show($id, Manager $fractal, CategoriaBlogTransformer $categoriaBlogTransformer)
+    public function show($id)
     {
         $project = $this->categoriaBlog->find($id);
 
@@ -96,11 +127,11 @@ class CategoriaBlogController extends ApiController
             ], 404);
         }
 
-        $item = new Item($project, $categoriaBlogTransformer);
+//        $item = new Item($project, $categoriaBlogTransformer);
 
-        $data = $fractal->createData($item)->toArray();
+//        $data = $fractal->createData($item)->toArray();
 
-        return $this->respond($data);
+        return $this->transform($project);
     }
 
     /**

@@ -20,8 +20,8 @@ class EtiquetaTransformer extends TransformerAbstract
             'description'    => $model->description,
             'url_pdf'        => $model->url_pdf,
             'active'         => (boolean) $model->active,
-//            'created_at' => $model->created_at,
-//            'updated_at' => $model->updated_at
+            'created_at' => $model->created_at,
+            'updated_at' => $model->updated_at
         ];
     }
 }

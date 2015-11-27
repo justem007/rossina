@@ -2,7 +2,6 @@
 
 namespace Rossina\Repositories\Criteria;
 
-use Illuminate\Support\Facades\DB;
 use Prettus\Repository\Contracts\CriteriaInterface;
 use Prettus\Repository\Contracts\RepositoryInterface;
 
@@ -18,14 +17,8 @@ class PostCriteria implements  CriteriaInterface {
 
     public function apply($model, RepositoryInterface $repository)
     {
-//
-//
-//        $model = $model
-//            ->leftJoin('posts', 'users.id', '=', 'posts.user_id')
-//            ->where('user_id', '=', 2)
-//            ->get();
-        $model = $model->orderBy('id', 'asc');
-        return $model;
+        $model = $model->select('id','title','text','user_id','created_at','updated_at')->active()->orderBy('id', 'asc')->get();
 
+        return $model;
     }
 }

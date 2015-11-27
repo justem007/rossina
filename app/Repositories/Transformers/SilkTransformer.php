@@ -21,8 +21,8 @@ class SilkTransformer extends TransformerAbstract
             'medida'       => $model->medida,
             'price_un_com' => (double) $model->price_un_com,
             'price_un_sem' => (double) $model->price_un_sem,
-//            'created_at'   => $model->created_at,
-//            'updated_at'   => $model->updated_at
+            'created_at'   => $model->created_at,
+            'updated_at'   => $model->updated_at
         ];
     }
 }
