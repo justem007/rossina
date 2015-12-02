@@ -8,6 +8,7 @@ use League\Fractal\Manager;
 use League\Fractal\Pagination\IlluminatePaginatorAdapter;
 use League\Fractal\Resource\Collection;
 use League\Fractal\Resource\Item;
+use League\Fractal\Serializer\JsonSerializer;
 use Rossina\CategoriaTecido;
 use Rossina\Http\Requests;
 use Rossina\Repositories\Repository\CategoriaTecidoRepositoryEloquent;
@@ -53,6 +54,21 @@ class CategoriaTecidoController extends ApiController
      */
     public function index(Manager $fractal)
     {
+        $fractal->setSerializer(new JsonSerializer());
+
+        $categoriaTecido = $this->repository->all();
+
+//        $collection = new Collection($categoriaTecido, $this->categoriaTecidoTransformer);
+
+//        $data = $fractal->createData($collection)->toArray();
+
+        return $this->respondWithCORS($categoriaTecido);
+    }
+
+    public function getAll(Manager $fractal)
+    {
+        $fractal->setSerializer(new JsonSerializer());
+
         $categoriaTecido = $this->repository->with(['tecidos'])->all();
 
         $collection = new Collection($categoriaTecido, $this->categoriaTecidoTransformer);

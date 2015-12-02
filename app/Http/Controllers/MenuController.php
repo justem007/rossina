@@ -8,6 +8,7 @@ use League\Fractal\Manager;
 use League\Fractal\Pagination\IlluminatePaginatorAdapter;
 use League\Fractal\Resource\Collection;
 use League\Fractal\Resource\Item;
+use League\Fractal\Serializer\JsonSerializer;
 use Rossina\Http\Requests;
 use Rossina\Menu;
 use Rossina\Repositories\Repository\MenuRepositoryEloquent;
@@ -46,11 +47,17 @@ class MenuController extends ApiController
     /**
      * @return mixed
      */
-    public function index()
+    public function index(Manager $fractal)
     {
-        $menu = $this->repository->all();
+        $fractal->setSerializer(new JsonSerializer());
 
-        return $this->apiController->respondWithCollection($menu, $this->menuTransformer);
+        $projects = $this->repository->with([])->all();
+
+        $collection = new Collection($projects, new MenuTransformer);
+
+        $data = $fractal->createData($collection)->toArray();
+
+        return $this->respond($data);
     }
 
     /**
@@ -77,6 +84,8 @@ class MenuController extends ApiController
      */
     public function show($id, Manager $fractal, MenuTransformer $menuTransformer)
     {
+        $fractal->setSerializer(new JsonSerializer());
+
         $project = $this->menu->find($id);
 
         if(!$project){

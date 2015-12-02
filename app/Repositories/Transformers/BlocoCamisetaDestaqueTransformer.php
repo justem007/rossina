@@ -20,13 +20,13 @@ class BlocoCamisetaDestaqueTransformer extends TransformerAbstract
      */
     public function transform(BlocoCamisetaDestaque $model)
     {
-        return [
+        return json_decode([
             'id'         => (int) $model->id,
             'title'      => $model->title,
             'sub_title'  => $model->sub_title,
             'alt'        => $model->alt,
             'created_at' => $model->created_at,
             'updated_at' => $model->updated_at
-        ];
+        ]);
     }
 }

@@ -9,25 +9,46 @@ use League\Fractal\Manager;
 use League\Fractal\Pagination\IlluminatePaginatorAdapter;
 use League\Fractal\Resource\Collection;
 use League\Fractal\Resource\Item;
+use League\Fractal\Serializer\JsonSerializer;
 use Rossina\Genero;
 use Rossina\Http\Requests;
 use Rossina\Repositories\Transformers\GeneroTransformer;
-use Rossina\Repositories\GeneroRepositoryEloquent;
+use Rossina\RepositoriesRepository\GeneroRepositoryEloquent;
 
 class GeneroController extends ApiController
 {
     protected $repository;
 
     protected $apiController;
+    /**
+     * @var GeneroRepositoryEloquent
+     */
+    protected $genero;
 
     /**
      * @param Genero $repository
      * @param ApiController $apiController
      */
-    public function __construct(Genero $repository, ApiController $apiController)
+    public function __construct(Genero $repository, ApiController $apiController, GeneroRepositoryEloquent $genero)
     {
         $this->repository = $repository;
         $this->apiController = $apiController;
+        $this->genero = $genero;
+    }
+
+    /**
+     * @param Genero $model
+     * @return array
+     */
+    public function transform(Genero $model)
+    {
+        return [
+            'id'          => (int) $model->id,
+            'name'        => $model->name,
+            'description' => $model->description,
+            'created_at'  => $model->created_at,
+            'updated_at'  => $model->updated_at
+        ];
     }
 
     /**
@@ -37,6 +58,8 @@ class GeneroController extends ApiController
      */
     public function index(Manager $fractal, GeneroTransformer $generoTransformer)
     {
+        $fractal->setSerializer(new JsonSerializer());
+
         $projects = $this->repository->with(['camisetas'])->get();
 
         $collection = new Collection($projects, $generoTransformer);
@@ -80,11 +103,11 @@ class GeneroController extends ApiController
             ], 404);
         }
 
-        $item = new Item($project, $generoTransformer);
+//        $item = new Item($project, $generoTransformer);
 
-        $data = $fractal->createData($item)->toArray();
+//        $data = $fractal->createData($item)->toArray();
 
-        return $this->respond($data);
+        return $this->transform($project);
     }
 
     /**
@@ -110,7 +133,7 @@ class GeneroController extends ApiController
      */
     public function update(Request $request,$id)
     {
-        $repository = $this->repository->update( $request->all(), $id );
+        $repository = $this->genero->update( $request->all(), $id );
 
         return Response::json([
             'sucesso' => [

@@ -18,11 +18,19 @@ class PostTransformer extends TransformerAbstract
      * @return array
      */
     protected $defaultIncludes = [
-        'images',
+//        'images',
         'comments',
-        'tags',
+        'tags'
     ];
 
+//    protected $availableIncludes = [
+//        'tags'
+//    ];
+
+    /**
+     * @param Post $post
+     * @return array
+     */
     public function transform(Post $post)
     {
         return [
@@ -36,12 +44,12 @@ class PostTransformer extends TransformerAbstract
         ];
     }
 
-    public function includeImages(Post $images)
-    {
-        $images = $images->images;
-
-        return $this->collection($images, new ImageTransformer);
-    }
+//    public function includeImages(Post $images)
+//    {
+//        $images = $images->images;
+//
+//        return $this->collection($images, new ImageTransformer);
+//    }
 
     public function includeTags(Post $tags)
     {
@@ -56,4 +64,11 @@ class PostTransformer extends TransformerAbstract
 
         return $this->collection($comments, new CommentTransformer);
     }
+
+//    public function includeCategoriaBlogs(Post $categoriaBlogs)
+//    {
+//        $categoriaBlogs = $categoriaBlogs->categoriaBlogs;
+//
+//        return $this->collection($categoriaBlogs, new CategoriaBlogTransformer);
+//    }
 }

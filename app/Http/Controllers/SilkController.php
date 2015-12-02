@@ -8,6 +8,7 @@ use League\Fractal\Manager;
 use League\Fractal\Pagination\IlluminatePaginatorAdapter;
 use League\Fractal\Resource\Collection;
 use League\Fractal\Resource\Item;
+use League\Fractal\Serializer\JsonSerializer;
 use Rossina\Http\Requests;
 use Rossina\Repositories\Repository\SilkRepositoryEloquent;
 use Rossina\Repositories\Transformers\SilkTransformer;
@@ -37,12 +38,32 @@ class SilkController extends ApiController
     }
 
     /**
+     * @param Silk $model
+     * @return array
+     */
+    public function transform(Silk $model)
+    {
+        return [
+            'id'           => (int) $model->id,
+            'name'         => $model->name,
+            'description'  => $model->description,
+            'medida'       => $model->medida,
+            'price_un_com' => (double) $model->price_un_com,
+            'price_un_sem' => (double) $model->price_un_sem,
+            'created_at'   => $model->created_at,
+            'updated_at'   => $model->updated_at
+        ];
+    }
+
+    /**
      * @param Manager $fractal
      * @param SilkTransformer $silkTransformer
      * @return mixed
      */
     public function index(Manager $fractal, SilkTransformer $silkTransformer)
     {
+
+        $fractal->setSerializer(new JsonSerializer());
 
         $projects = $this->repository->with(['camisetas'])->all();
 
@@ -87,11 +108,11 @@ class SilkController extends ApiController
             ], 404);
         }
 
-        $item = new Item($project, $silkTransformer);
+//        $item = new Item($project, $silkTransformer);
 
-        $data = $fractal->createData($item)->toArray();
+//        $data = $fractal->createData($item)->toArray();
 
-        return $this->respond($data);
+        return $this->transform($project);
     }
 
     /**

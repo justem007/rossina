@@ -8,6 +8,7 @@ use League\Fractal\Manager;
 use League\Fractal\Pagination\IlluminatePaginatorAdapter;
 use League\Fractal\Resource\Collection;
 use League\Fractal\Resource\Item;
+use League\Fractal\Serializer\JsonSerializer;
 use Rossina\Http\Requests;
 use Rossina\Repositories\Repository\TamanhoRepositoryEloquent;
 use Rossina\Repositories\Transformers\TamanhoTransformer;
@@ -41,12 +42,28 @@ class TamanhoController extends ApiController
     }
 
     /**
+     * @param Tamanho $model
+     * @return array
+     */
+    public function transform(Tamanho $model)
+    {
+        return [
+            'id'         => (int) $model->id,
+            'name'       => $model->name,
+            'created_at' => $model->created_at,
+            'updated_at' => $model->updated_at
+        ];
+    }
+
+    /**
      * @param Manager $fractal
      * @param TamanhoTransformer $tamanhoTransformer
      * @return mixed
      */
     public function index(Manager $fractal, TamanhoTransformer $tamanhoTransformer)
     {
+        $fractal->setSerializer(new JsonSerializer());
+
         $projects = $this->repository->with(['camisetas'])->all();
 
         $collection = new Collection($projects, $tamanhoTransformer);
@@ -89,11 +106,11 @@ class TamanhoController extends ApiController
             ], 404);
         }
 
-        $item = new Item($project, $tamanhoTransformer);
+//        $item = new Item($project, $tamanhoTransformer);
 
-        $data = $fractal->createData($item)->toArray();
+//        $data = $fractal->createData($item)->toArray();
 
-        return $this->respond($data);
+        return $this->transform($project);
     }
 
     /**

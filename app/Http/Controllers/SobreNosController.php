@@ -5,7 +5,9 @@ namespace Rossina\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Response;
 use League\Fractal\Manager;
+use League\Fractal\Resource\Collection;
 use League\Fractal\Resource\Item;
+use League\Fractal\Serializer\JsonSerializer;
 use Rossina\Http\Requests;
 use Rossina\Repositories\Repository\SobreNoRepositoryEloquent;
 use Rossina\Repositories\Transformers\SobreNoTransformer;
@@ -35,11 +37,17 @@ class SobreNosController extends ApiController
     /**
      * @return mixed
      */
-    public function index()
+    public function index(Manager $fractal)
     {
-        $bloco = $this->repository->all();
+        $fractal->setSerializer(new JsonSerializer());
 
-        return $this->apiController->respondWithCollection($bloco, new SobreNoTransformer());
+        $faq = $this->repository->all();
+
+        $collection = new Collection($faq, new SobreNoTransformer);
+
+        $data = $fractal->createData($collection)->toArray();
+
+        return $this->respondWithCORS($data);
     }
 
     /**
@@ -50,6 +58,8 @@ class SobreNosController extends ApiController
      */
     public function show($id, Manager $fractal, SobreNoTransformer $sobreTransformer)
     {
+        $fractal->setSerializer(new JsonSerializer());
+
         $project = $this->sobre->find($id);
 
         if(!$project){
@@ -90,7 +100,7 @@ class SobreNosController extends ApiController
      */
     public function update(Request $request,$id)
     {
-        $repository = $this->repository->update( $request->all(), $id );
+        $repository = $this->sobre->update( $request->all(), $id );
 
         return Response::json([
             'sucesso' => [

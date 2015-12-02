@@ -8,6 +8,8 @@ use League\Fractal\Manager;
 use League\Fractal\Pagination\IlluminatePaginatorAdapter;
 use League\Fractal\Resource\Collection;
 use League\Fractal\Resource\Item;
+use League\Fractal\Serializer\JsonSerializer;
+use Psy\Util\Json;
 use Rossina\Horario;
 use Rossina\Http\Requests;
 use Rossina\Repositories\Repository\HorarioRepositoryEloquent;
@@ -42,11 +44,17 @@ class HorarioController extends ApiController
         $this->horario = $horario;
     }
 
-    public function index()
+    public function index(Manager $fractal)
     {
-        $horario = $this->repository->all();
+        $fractal->setSerializer(new JsonSerializer());
 
-        return $this->apiController->respondWithCollection($horario, $this->horarioTransformer);
+        $projects = $this->repository->with([])->all();
+
+        $collection = new Collection($projects, new HorarioTransformer);
+
+        $data = $fractal->createData($collection)->toArray();
+
+        return $this->respond($data);
     }
 
     /**
@@ -73,6 +81,8 @@ class HorarioController extends ApiController
      */
     public function show($id, Manager $fractal, HorarioTransformer $horarioTransformer)
     {
+        $fractal->setSerializer(new JsonSerializer());
+
         $project = $this->horario->find($id);
 
         if(!$project){

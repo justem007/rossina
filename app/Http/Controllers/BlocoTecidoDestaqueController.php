@@ -50,6 +50,38 @@ class BlocoTecidoDestaqueController extends ApiController
     }
 
     /**
+     * @param BlocoTecidoDestaque $model
+     * @return array
+     */
+    public function transform(BlocoTecidoDestaque $model)
+    {
+        return [
+            'id'         => (int) $model->id,
+            'title'      => $model->title,
+            'sub_title'  => $model->sub_title,
+            'user_id'    => (int) $model->user_id,
+            'created_at' => $model->created_at,
+            'updated_at' => $model->updated_at
+        ];
+    }
+
+    /**
+     * @return array
+     */
+    public function all()
+    {
+        $blocoTecidoDestaque = array();
+
+        $data = $this->repository->with([])->all();
+
+        foreach ($data as $blocoTecidoDestaques) {
+            $blocoTecidoDestaque[] = $this->transform($blocoTecidoDestaques);
+        }
+
+        return $blocoTecidoDestaque;
+    }
+
+    /**
      * @return mixed
      */
     public function index()
@@ -77,11 +109,11 @@ class BlocoTecidoDestaqueController extends ApiController
             ], 404);
         }
 
-        $item = new Item($project, $blocoTecidoDestaqueTransformer);
+//        $item = new Item($project, $blocoTecidoDestaqueTransformer);
 
-        $data = $fractal->createData($item)->toArray();
+//        $data = $fractal->createData($item)->toArray();
 
-        return $this->respond($data);
+        return $this->respond($project);
     }
 
     /**

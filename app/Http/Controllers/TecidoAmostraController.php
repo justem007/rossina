@@ -9,6 +9,7 @@ use League\Fractal\Manager;
 use League\Fractal\Pagination\IlluminatePaginatorAdapter;
 use League\Fractal\Resource\Collection;
 use League\Fractal\Resource\Item;
+use League\Fractal\Serializer\JsonSerializer;
 use Rossina\Http\Requests;
 use Rossina\Repositories\Repository\TecidoAmostraRepositoryEloquent;
 use Rossina\Repositories\Transformers\TecidoAmostraTransformer;
@@ -45,11 +46,17 @@ class TecidoAmostraController extends ApiController
     /**
      * @return mixed
      */
-    public function index()
+    public function index(Manager $fractal)
     {
-        $tecidoAmostra = $this->repository->all();
+        $fractal->setSerializer(new JsonSerializer());
 
-        return $this->apiController->respondWithCollection($tecidoAmostra, new TecidoAmostraTransformer);
+        $projects = $this->repository->with([])->get();
+
+        $collection = new Collection($projects, new TecidoAmostraTransformer);
+
+        $data = $fractal->createData($collection)->toArray();
+
+        return $this->respond($data);
     }
 
     /**
@@ -57,8 +64,8 @@ class TecidoAmostraController extends ApiController
      *
      * @return \Illuminate\Http\Response
      */
-    public function paginate(){
-
+    public function paginate()
+    {
         $paginator = $this->repository->paginate();
 
         $bloco = $paginator->getCollection();
@@ -78,6 +85,8 @@ class TecidoAmostraController extends ApiController
      */
     public function show($id, Manager $fractal, TecidoAmostraTransformer $tecidoAmostraTransformer)
     {
+        $fractal->setSerializer(new JsonSerializer());
+
         $project = $this->tecidoAmostra->find($id);
 
         if(!$project){

@@ -11,14 +11,14 @@
         <div class="container">
 
             <div ng-controller="blocoUmController">
-            <div  ng-repeat="bloco_um in bloco_ums.data">
+            <div  ng-repeat="bloco_um in bloco_ums">
             <h2 class="f-primary-l"> <strong class="f-primary-b">{{ bloco_um.title }}</strong></h2>
             <p class="b-desc-section f-desc-section f-secondary-l f-small">{{ bloco_um.sub_title }}</p>
             </div>
             </div>
 
             <div class="b-some-examples f-some-examples b-some-examples-secondary f-some-examples-secondary f-secondary row" ng-controller="blocoUmDestaqueController">
-                <div class="col-sm-4 col-xs-12" ng-repeat="bloco_um_destaque in bloco_um_destaques.data">
+                <div class="col-sm-4 col-xs-12" ng-repeat="bloco_um_destaque in bloco_um_destaques">
                     <div class="b-some-examples__item b-bg-transparent f-some-examples__item">
                         <div class="b-some-examples__item_img view view-sixth">
                             <a href="#"><img data-retina src="../../../images/site/img/homepage/camisetas-pretas-brancas.png" alt="{{ bloco_um_destaque.alt }}"/></a>
@@ -41,7 +41,7 @@
                 </div>
             </div>
          <div ng-controller="ferramentaController">
-            <div class="col-sm-4 col-xs-12" ng-repeat="ferramenta in ferramentas.data">
+            <div class="col-sm-4 col-xs-12" ng-repeat="ferramenta in ferramentas">
                 <div class="b-app-with-img__item">
                     <div class="b-app-with-img__item_img view view-sixth">
                         <a href="#"><img data-retina src="../../../images/site/img/homepage/app3_3.jpg" alt=""/></a>
@@ -67,13 +67,13 @@
     <section class="b-infoblock b-desc-section-container">
         <div class="container">
              <div ng-controller="blocoDoisController">
-             <div  ng-repeat="bloco_doi in bloco_dois.data">
+             <div  ng-repeat="bloco_doi in bloco_dois">
             <h2 class="f-primary-l f-center"> <span class="f-primary-b">{{ bloco_doi.title }}</span></h2>
             <p class="b-desc-section f-desc-section f-secondary-l f-small f-center">{{ bloco_doi.sub_title }}</p>
              </div>
              </div>
             <div class="b-infoblock-with-icon-group row b-infoblock-with-icon--circle-icon" ng-controller="blocoDoisDestaqueController">
-                <div class="col-md-4 col-sm-6 col-xs-12" ng-repeat="bloco_dois_destaque in bloco_dois_destaques.data">
+                <div class="col-md-4 col-sm-6 col-xs-12" ng-repeat="bloco_dois_destaque in bloco_dois_destaques">
                     <div class="b-infoblock-with-icon">
                         <a href="../../../views/site/pages/our_services_version_1.html" class="b-infoblock-with-icon__icon f-infoblock-with-icon__icon">
                             <i class="fa fa-tint fa-1x"></i>
@@ -91,7 +91,7 @@
         <div class="container">
             <div class="b-infoblock-with-icon-group row b-infoblock-with-icon--circle-icon">
                 <div class="b-infoblock-with-icon-group row b-infoblock-with-icon--circle-icon" ng-controller="blocoDoisDestaqueUmController">
-                    <div class="col-md-4 col-sm-6 col-xs-12" ng-repeat="bloco_dois_destaque_um in bloco_dois_destaque_ums.data">
+                    <div class="col-md-4 col-sm-6 col-xs-12" ng-repeat="bloco_dois_destaque_um in bloco_dois_destaque_ums">
                         <div class="b-infoblock-with-icon">
                             <a href="../../../views/site/pages/our_services_version_1.html" class="b-infoblock-with-icon__icon f-infoblock-with-icon__icon">
                                 <i class="fa fa-tint fa-1x"></i>
@@ -110,7 +110,7 @@
         <div class="container">
             <div class="b-infoblock-with-icon-group row b-infoblock-with-icon--circle-icon">
                 <div class="b-infoblock-with-icon-group row b-infoblock-with-icon--circle-icon"  ng-controller="blocoDoisDestaqueDoisController">
-                    <div class="col-md-4 col-sm-6 col-xs-12" ng-repeat="bloco_dois_destaque_doi in bloco_dois_destaque_dois.data">
+                    <div class="col-md-4 col-sm-6 col-xs-12" ng-repeat="bloco_dois_destaque_doi in bloco_dois_destaque_dois">
                         <div class="b-infoblock-with-icon">
                             <a href="../../../views/site/pages/our_services_version_1.html" class="b-infoblock-with-icon__icon f-infoblock-with-icon__icon">
                                 <i class="fa fa-tint fa-1x"></i>
@@ -131,13 +131,13 @@
     <section class="b-infoblock b-desc-section-container">
         <div class="container">
             <div ng-controller="blocoCamisetaController">
-                <div  ng-repeat="bloco_camiseta in bloco_camisetas.data">
+                <div  ng-repeat="bloco_camiseta in bloco_camisetas">
                     <h2 class="f-primary-l f-center"> <span class="f-primary-b">{{ bloco_camiseta.title }}</span></h2>
                     <p class="b-desc-section f-desc-section f-secondary-l f-small f-center">{{ bloco_camiseta.sub_title }}</p>
                 </div>
             </div>s
             <div class="b-infoblock-with-icon-group row b-infoblock-with-icon--circle-icon" ng-controller="blocoCamisetaDestaqueController">
-                <div class="col-md-4 col-sm-6 col-xs-12" ng-repeat="bloco_camiseta_destaque in bloco_camiseta_destaques.data">
+                <div class="col-md-4 col-sm-6 col-xs-12" ng-repeat="bloco_camiseta_destaque in bloco_camiseta_destaques">
                     <div class="b-infoblock-with-icon">
                         <a href="../../../views/site/pages/our_services_version_1.html" class="b-infoblock-with-icon__icon f-infoblock-with-icon__icon">
                             <i class="fa fa-shopping-cart"></i>
@@ -158,14 +158,14 @@
         <div class="container">
 
             <div ng-controller="blocoTecidoController">
-                <div  ng-repeat="bloco_tecido in bloco_tecidos.data">
+                <div  ng-repeat="bloco_tecido in bloco_tecidos">
                     <h2 class="f-primary-l f-center"> <span class="f-primary-b">{{ bloco_tecido.title }}</span></h2>
                     <p class="b-desc-section f-desc-section f-secondary-l f-small f-center">{{ bloco_tecido.sub_title }}</p>
                 </div>
             </div>
 
             <div class="b-infoblock-with-icon-group row b-infoblock-with-icon--circle-icon" ng-controller="blocoTecidoDestaqueController">
-                <div class="col-md-4 col-sm-6 col-xs-12" ng-repeat="bloco_tecido_destaque in bloco_tecido_destaques.data">
+                <div class="col-md-4 col-sm-6 col-xs-12" ng-repeat="bloco_tecido_destaque in bloco_tecido_destaques">
                     <div class="b-infoblock-with-icon">
                         <a href="../../../views/site/pages/our_services_version_1.html" class="b-infoblock-with-icon__icon f-infoblock-with-icon__icon ">
                             <i class="fa fa-th-large"></i>

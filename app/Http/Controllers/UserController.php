@@ -29,6 +29,41 @@ class UserController extends ApiController
     }
 
     /**
+     * @param User $model
+     * @return array
+     */
+    public function transform(User $model)
+    {
+        return [
+            'id'             => (int) $model->id,
+            'name'           => $model->name,
+            'email'          => $model->email,
+//            'password'       => $model->password,
+//            'remenber_token' => $model->remenber_token,
+            'phone'          => $model->phone,
+            'created_at'     => $model->created_at,
+            'updated_at'     => $model->updated_at
+        ];
+    }
+
+    /**
+     * @return array
+     */
+    public function all()
+    {
+        $user = array();
+
+        $data = $this->user->with([])->get();
+
+        foreach ($data as $users) {
+            $user[] = $this->transform($users);
+        }
+
+        return $user;
+    }
+
+
+    /**
      * @param Manager $fractal
      * @param UserTransformer $projectTransformer
      * @return mixed
@@ -72,11 +107,11 @@ class UserController extends ApiController
             ], 404);
         }
 
-        $item = new Item($project, $userTransformer);
+//        $item = new Item($project, $userTransformer);
 
-        $data = $fractal->createData($item)->toArray();
+//        $data = $fractal->createData($item)->toArray();
 
-        return $this->respond($data);
+        return $this->respond($project);
     }
 
     /**

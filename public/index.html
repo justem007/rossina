@@ -36,7 +36,7 @@
 
     <div class="b-top-options-panel">
         <div class="container" ng-controller="horarioController">
-            <div class="b-option-contacts f-option-contacts" ng-repeat="horario in horarios.data">
+            <div class="b-option-contacts f-option-contacts" ng-repeat="horario in horarios">
                 <a href="#/"><i class="fa fa-calendar"></i>{{ horario.atendimento }}</a>
                 <a href="#/"><i class="fa fa-phone"></i> {{ horario.telefone }} </a>
                 <a href="#/"><i class="fa fa-space-shuttle"></i> {{ horario.entrega }}</a>
@@ -115,7 +115,7 @@
                             <a href="#/" tooltip-popup-close-delay='500' uib-tooltip='Qualidade Digital' ng-click="start()"><i class="fa fa-home "></i> Home<span class="b-ico-dropdown"><i class="fa fa-arrow-circle-down"></i></span></a>
                         </li>
 
-                        <li class="b-top-nav__1level f-top-nav__1level f-primary-b" ng-repeat="menu in menus.data">
+                        <li class="b-top-nav__1level f-top-nav__1level f-primary-b" ng-repeat="menu in menus">
                             <a href="#/{{ menu.url }}" tooltip-popup-close-delay='500' uib-tooltip='{{ menu.description }}' ng-click="fetch()"><i class="{{ menu.fafa }} "></i> {{ menu.title }} | <span class="b-ico-dropdown"><i class="fa fa-arrow-circle-down"></i></span></a>
                         </li>
                     </ul>

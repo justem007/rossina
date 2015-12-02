@@ -50,7 +50,7 @@
                     </div>
                     <div class="row">
                         <div class="b-col-default-indent" ng-controller="lojaCamisetaController">
-                            <div class="col-md-4 col-sm-4 col-xs-6 col-mini-12" ng-repeat="camiseta in camisetas.data">
+                            <div class="col-md-4 col-sm-4 col-xs-6 col-mini-12" ng-repeat="camiseta in camisetas">
                                 <div class="b-product-preview">
                                     <div class="b-product-preview__img view view-sixth">
                                         <img data-retina src="../../../images/site/img/shop/kawasaki-Mpt-para-web.jpg" alt=""/>
@@ -70,7 +70,7 @@
                                             <a href="#/camisetas_detalhes" class="f-product-preview__content_title">{{ camiseta.name }}</a>
 
 
-                                                <div class="f-product-preview__content_category f-primary-b" ng-repeat="genero in camiseta.generos.data">
+                                                <div class="f-product-preview__content_category f-primary-b" ng-repeat="genero in camiseta.generos">
                                                     <a href="#/camiseta_detalhes">{{ genero.name }}</a> /
                                                     <a href="#/camiseta_detalhes">{{ camiseta.description }}</a></div>
                                         </div>
@@ -101,7 +101,7 @@
                                 <div class="b-categories-filter" ng-controller="categoriaCamisetaController">
                                     <h4 class="f-primary-b b-h4-special f-h4-special c-primary"><i class="fa fa-folder-open fa-2x"></i> Categorias</h4>
                                     <ul>
-                                        <li ng-repeat="categoria in categorias.data">
+                                        <li ng-repeat="categoria in categorias">
                                             <a class="f-categories-filter_name" href="#"><i class="fa fa-plus"></i> {{ categoria.title }}</a>
                                             <span class="b-categories-filter_count f-categories-filter_count">12</span>
                                         </li>
@@ -134,7 +134,7 @@
                             <div class="col-md-12" ng-controller="lojaCamisetaController">
                                 <h4 class="f-primary-b b-h4-special f-h4-special c-primary"><i class="fa fa-cart-arrow-down fa-2x"></i> Produtos + Vistos</h4>
                                 <div class="b-blog-short-post b-blog-short-post--popular b-blog-short-post--w-img b-blog-short-post--img-hover-bordered f-blog-short-post--w-img row f-blog-short-post--popular">
-                                    <div class="b-blog-short-post__item col-md-12 col-sm-6 col-xs-12" ng-repeat="camiseta in camisetas.data">
+                                    <div class="b-blog-short-post__item col-md-12 col-sm-6 col-xs-12" ng-repeat="camiseta in camisetas">
                                         <div class="b-blog-short-post__item_img">
                                             <a href="#"><img data-retina src="../../../images/site/img/shop/wedrive-Mpt-para-web.jpg" width="50" alt=""/></a>
                                         </div>
@@ -152,7 +152,7 @@
                             <div class="col-md-12" ng-controller="tagCamisetaController">
                                 <h4 class="f-primary-b b-h4-special f-h4-special c-primary"><i class="fa fa-tag fa-2x"></i> Tags </h4>
                                 <div>
-                                    <a class="f-tag b-tag" href="#" ng-repeat="tag in tags.data">{{ tag.title }}</a>
+                                    <a class="f-tag b-tag" href="#" ng-repeat="tag in tags">{{ tag.title }}</a>
                                 </div>
                             </div>
                         </div>

@@ -5,135 +5,45 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="49d3674c-9ded-44ef-b79e-a6327c0e9255" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_components/angular-permission/.bower.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_components/angular-permission/Gruntfile.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_components/angular-permission/LICENSE.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_components/angular-permission/README.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_components/angular-permission/dist/angular-permission.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_components/angular-permission/bower.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bower_components/angular-permission/package.json" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/novo" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/bower_components/angular/.bower.json" afterPath="$PROJECT_DIR$/public/bower_components/angular/.bower.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/BlocoCamiseta.php" afterPath="$PROJECT_DIR$/app/BlocoCamiseta.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/BlocoCamisetaController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/BlocoCamisetaController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/BlocoCamisetaDestaque.php" afterPath="$PROJECT_DIR$/app/BlocoCamisetaDestaque.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/BlocoCamisetaDestaqueController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/BlocoCamisetaDestaqueController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Repositories/Transformers/BlocoCamisetaDestaqueTransformer.php" afterPath="$PROJECT_DIR$/app/Repositories/Transformers/BlocoCamisetaDestaqueTransformer.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Repositories/Transformers/BlocoCamisetaTransformer.php" afterPath="$PROJECT_DIR$/app/Repositories/Transformers/BlocoCamisetaTransformer.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/BlocoDois.php" afterPath="$PROJECT_DIR$/app/BlocoDois.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/BlocoDoisController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/BlocoDoisController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/BlocoDoisDestaque.php" afterPath="$PROJECT_DIR$/app/BlocoDoisDestaque.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/BlocoDoisDestaqueController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/BlocoDoisDestaqueController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/BlocoDoisDestaqueDois.php" afterPath="$PROJECT_DIR$/app/BlocoDoisDestaqueDois.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/BlocoDoisDestaqueDoisController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/BlocoDoisDestaqueDoisController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Repositories/Transformers/BlocoDoisDestaqueDoisTransformer.php" afterPath="$PROJECT_DIR$/app/Repositories/Transformers/BlocoDoisDestaqueDoisTransformer.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Repositories/Transformers/BlocoDoisDestaqueTransformer.php" afterPath="$PROJECT_DIR$/app/Repositories/Transformers/BlocoDoisDestaqueTransformer.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/BlocoDoisDestaqueUm.php" afterPath="$PROJECT_DIR$/app/BlocoDoisDestaqueUm.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/BlocoDoisDestaqueUmController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/BlocoDoisDestaqueUmController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Repositories/Transformers/BlocoDoisDestaqueUmTransformer.php" afterPath="$PROJECT_DIR$/app/Repositories/Transformers/BlocoDoisDestaqueUmTransformer.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Repositories/Transformers/BlocoDoisTransformer.php" afterPath="$PROJECT_DIR$/app/Repositories/Transformers/BlocoDoisTransformer.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/BlocoTecido.php" afterPath="$PROJECT_DIR$/app/BlocoTecido.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/BlocoTecidoDestaque.php" afterPath="$PROJECT_DIR$/app/BlocoTecidoDestaque.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Repositories/Transformers/BlocoTecidoDestaqueTransformer.php" afterPath="$PROJECT_DIR$/app/Repositories/Transformers/BlocoTecidoDestaqueTransformer.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Repositories/Transformers/BlocoTecidoTransformer.php" afterPath="$PROJECT_DIR$/app/Repositories/Transformers/BlocoTecidoTransformer.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/BlocoUm.php" afterPath="$PROJECT_DIR$/app/BlocoUm.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/BlocoUmController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/BlocoUmController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/BlocoUmDestaque.php" afterPath="$PROJECT_DIR$/app/BlocoUmDestaque.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/BlocoUmDestaqueController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/BlocoUmDestaqueController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Repositories/Transformers/BlocoUmDestaqueTransformer.php" afterPath="$PROJECT_DIR$/app/Repositories/Transformers/BlocoUmDestaqueTransformer.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Repositories/Transformers/BlocoUmTransformer.php" afterPath="$PROJECT_DIR$/app/Repositories/Transformers/BlocoUmTransformer.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Camisetas.php" afterPath="$PROJECT_DIR$/app/Camisetas.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/BlocoTecidoController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/BlocoTecidoController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/BlocoTecidoDestaqueController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/BlocoTecidoDestaqueController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/CamisetasController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/CamisetasController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Repositories/Transformers/CamisetasTransformer.php" afterPath="$PROJECT_DIR$/app/Repositories/Transformers/CamisetasTransformer.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Categoria.php" afterPath="$PROJECT_DIR$/app/Categoria.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/CategoriaBlog.php" afterPath="$PROJECT_DIR$/app/CategoriaBlog.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/CategoriaBlogController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/CategoriaBlogController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Repositories/Transformers/CategoriaBlogTransformer.php" afterPath="$PROJECT_DIR$/app/Repositories/Transformers/CategoriaBlogTransformer.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/CategoriaFaq.php" afterPath="$PROJECT_DIR$/app/CategoriaFaq.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Repositories/Transformers/CategoriaFaqTransformer.php" afterPath="$PROJECT_DIR$/app/Repositories/Transformers/CategoriaFaqTransformer.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/CategoriaTecido.php" afterPath="$PROJECT_DIR$/app/CategoriaTecido.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Repositories/Transformers/CategoriaTecidoTransformer.php" afterPath="$PROJECT_DIR$/app/Repositories/Transformers/CategoriaTecidoTransformer.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Repositories/Transformers/CategoriaTransformer.php" afterPath="$PROJECT_DIR$/app/Repositories/Transformers/CategoriaTransformer.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Comment.php" afterPath="$PROJECT_DIR$/app/Comment.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/CommentController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/CommentController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Repositories/Criteria/CommentCriteria.php" afterPath="$PROJECT_DIR$/app/Repositories/Criteria/CommentCriteria.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Repositories/Transformers/CommentTransformer.php" afterPath="$PROJECT_DIR$/app/Repositories/Transformers/CommentTransformer.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Cor.php" afterPath="$PROJECT_DIR$/app/Cor.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Repositories/Transformers/CorTransformer.php" afterPath="$PROJECT_DIR$/app/Repositories/Transformers/CorTransformer.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Etiqueta.php" afterPath="$PROJECT_DIR$/app/Etiqueta.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Repositories/Transformers/EtiquetaTransformer.php" afterPath="$PROJECT_DIR$/app/Repositories/Transformers/EtiquetaTransformer.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Faq.php" afterPath="$PROJECT_DIR$/app/Faq.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Repositories/Transformers/FaqTransformer.php" afterPath="$PROJECT_DIR$/app/Repositories/Transformers/FaqTransformer.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Ferramenta.php" afterPath="$PROJECT_DIR$/app/Ferramenta.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/FerramentaController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/FerramentaController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Repositories/Transformers/FerramentaTransformer.php" afterPath="$PROJECT_DIR$/app/Repositories/Transformers/FerramentaTransformer.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Genero.php" afterPath="$PROJECT_DIR$/app/Genero.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Repositories/Transformers/GeneroTransformer.php" afterPath="$PROJECT_DIR$/app/Repositories/Transformers/GeneroTransformer.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Horario.php" afterPath="$PROJECT_DIR$/app/Horario.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Repositories/Transformers/HorarioTransformer.php" afterPath="$PROJECT_DIR$/app/Repositories/Transformers/HorarioTransformer.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Image.php" afterPath="$PROJECT_DIR$/app/Image.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Repositories/Transformers/ImageTransformer.php" afterPath="$PROJECT_DIR$/app/Repositories/Transformers/ImageTransformer.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Menu.php" afterPath="$PROJECT_DIR$/app/Menu.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Repositories/Transformers/MenuTransformer.php" afterPath="$PROJECT_DIR$/app/Repositories/Transformers/MenuTransformer.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/CategoriaController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/CategoriaController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/CategoriaFaqController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/CategoriaFaqController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/CategoriaTecidoController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/CategoriaTecidoController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/CorController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/CorController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/FaqController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/FaqController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/GeneroController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/GeneroController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/HorarioController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/HorarioController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/MenuController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/MenuController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Post.php" afterPath="$PROJECT_DIR$/app/Post.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Repositories/Criteria/PostCriteria.php" afterPath="$PROJECT_DIR$/app/Repositories/Criteria/PostCriteria.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Repositories/Repository/PostRepositoryEloquent.php" afterPath="$PROJECT_DIR$/app/Repositories/Repository/PostRepositoryEloquent.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Repositories/Transformers/PostTransformer.php" afterPath="$PROJECT_DIR$/app/Repositories/Transformers/PostTransformer.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/PostsController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/PostsController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Silk.php" afterPath="$PROJECT_DIR$/app/Silk.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Repositories/Transformers/SilkTransformer.php" afterPath="$PROJECT_DIR$/app/Repositories/Transformers/SilkTransformer.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/SobreNo.php" afterPath="$PROJECT_DIR$/app/SobreNo.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Repositories/Transformers/SobreNoTransformer.php" afterPath="$PROJECT_DIR$/app/Repositories/Transformers/SobreNoTransformer.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/StatusProducao.php" afterPath="$PROJECT_DIR$/app/StatusProducao.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Repositories/Transformers/StatusProducaoTransformer.php" afterPath="$PROJECT_DIR$/app/Repositories/Transformers/StatusProducaoTransformer.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Tag.php" afterPath="$PROJECT_DIR$/app/Tag.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/TagController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/TagController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Repositories/Transformers/TagTransformer.php" afterPath="$PROJECT_DIR$/app/Repositories/Transformers/TagTransformer.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Tamanho.php" afterPath="$PROJECT_DIR$/app/Tamanho.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Repositories/Transformers/TamanhoTransformer.php" afterPath="$PROJECT_DIR$/app/Repositories/Transformers/TamanhoTransformer.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Tecido.php" afterPath="$PROJECT_DIR$/app/Tecido.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/TecidoAmostra.php" afterPath="$PROJECT_DIR$/app/TecidoAmostra.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Repositories/Transformers/TecidoAmostraTransformer.php" afterPath="$PROJECT_DIR$/app/Repositories/Transformers/TecidoAmostraTransformer.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Repositories/Transformers/TecidoTransformer.php" afterPath="$PROJECT_DIR$/app/Repositories/Transformers/TecidoTransformer.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Tecimage.php" afterPath="$PROJECT_DIR$/app/Tecimage.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Repositories/Transformers/TecimageTransformer.php" afterPath="$PROJECT_DIR$/app/Repositories/Transformers/TecimageTransformer.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/User.php" afterPath="$PROJECT_DIR$/app/User.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Repositories/Transformers/UserTransformer.php" afterPath="$PROJECT_DIR$/app/Repositories/Transformers/UserTransformer.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/admin.blade.php" afterPath="$PROJECT_DIR$/resources/views/admin.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/scripts/admin/admin.js" afterPath="$PROJECT_DIR$/public/scripts/admin/admin.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/scripts/app.js" afterPath="$PROJECT_DIR$/public/scripts/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/app.php" afterPath="$PROJECT_DIR$/config/app.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/token/appUser.js" afterPath="$PROJECT_DIR$/public/token/appUser.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/token/authController.js" afterPath="$PROJECT_DIR$/public/token/authController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/token/views/authView.html" afterPath="$PROJECT_DIR$/public/token/views/authView.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/SilkController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/SilkController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/SobreNosController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/SobreNosController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/TamanhoController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/TamanhoController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/TecidoAmostraController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/TecidoAmostraController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/TecidoController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/TecidoController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/scripts/site/controller/blocoCamiseta.js" afterPath="$PROJECT_DIR$/public/scripts/site/controller/blocoCamiseta.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/scripts/site/controller/blocoCamisetaDestaque.js" afterPath="$PROJECT_DIR$/public/scripts/site/controller/blocoCamisetaDestaque.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/scripts/site/controller/blocoDoisDestaques.js" afterPath="$PROJECT_DIR$/public/scripts/site/controller/blocoDoisDestaques.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/views/admin/blog.html" afterPath="$PROJECT_DIR$/public/views/admin/blog.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower.json" afterPath="$PROJECT_DIR$/bower.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/views/admin/camisetas.html" afterPath="$PROJECT_DIR$/public/views/admin/camisetas.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/scripts/camisetas/controller/categoriaCamiseta.js" afterPath="$PROJECT_DIR$/public/scripts/camisetas/controller/categoriaCamiseta.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.json" afterPath="$PROJECT_DIR$/composer.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.lock" afterPath="$PROJECT_DIR$/composer.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/views/site/pages/contatos/contatos.html" afterPath="$PROJECT_DIR$/public/views/site/pages/contatos/contatos.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/views/admin/estamparia.html" afterPath="$PROJECT_DIR$/public/views/admin/estamparia.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/views/site/pages/estamparia/estamparia.html" afterPath="$PROJECT_DIR$/public/views/site/pages/estamparia/estamparia.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/scripts/site/controller/estamparia.js" afterPath="$PROJECT_DIR$/public/scripts/site/controller/estamparia.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/views/admin/faqs.html" afterPath="$PROJECT_DIR$/public/views/admin/faqs.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/scripts/site/controller/horario.js" afterPath="$PROJECT_DIR$/public/scripts/site/controller/horario.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/index.html" afterPath="$PROJECT_DIR$/public/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/index.php" afterPath="$PROJECT_DIR$/resources/views/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/views/site/pages/login/login.html" afterPath="$PROJECT_DIR$/public/views/site/pages/login/login.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/scripts/site/controller/loginSite.js" afterPath="$PROJECT_DIR$/public/scripts/site/controller/loginSite.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/views/admin/principal.html" afterPath="$PROJECT_DIR$/public/views/admin/principal.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/views/site/pages/registrar/registrar.html" afterPath="$PROJECT_DIR$/public/views/site/pages/registrar/registrar.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/scripts/site/route/route.js" afterPath="$PROJECT_DIR$/public/scripts/site/route/route.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin/index.html" afterPath="$PROJECT_DIR$/public/admin/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/views/blog/pages/index.html" afterPath="$PROJECT_DIR$/public/views/blog/pages/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/scripts/tecidos/controller/lojaTecido.js" afterPath="$PROJECT_DIR$/public/scripts/tecidos/controller/lojaTecido.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/views/camisetas/pages/main.html" afterPath="$PROJECT_DIR$/public/views/camisetas/pages/main.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/views/site/pages/home/main.html" afterPath="$PROJECT_DIR$/public/views/site/pages/home/main.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/views/tecidos/pages/main.html" afterPath="$PROJECT_DIR$/public/views/tecidos/pages/main.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/rossina.js" afterPath="$PROJECT_DIR$/public/rossina.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/routes.php" afterPath="$PROJECT_DIR$/app/Http/routes.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/views/admin/sobre.html" afterPath="$PROJECT_DIR$/public/views/admin/sobre.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/views/admin/tecidos.html" afterPath="$PROJECT_DIR$/public/views/admin/tecidos.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/token/userController.js" afterPath="$PROJECT_DIR$/public/token/userController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/token/views/userView.html" afterPath="$PROJECT_DIR$/public/token/views/userView.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/views/site/pages/sobre/sobre.html" afterPath="$PROJECT_DIR$/public/views/site/pages/sobre/sobre.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="larangular.iws" />
@@ -162,8 +72,8 @@
       <file leaf-file-name="routes.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-9.592592" vertical-offset="2603" max-vertical-offset="6318">
-              <caret line="174" column="25" selection-start-line="174" selection-start-column="25" selection-end-line="174" selection-end-column="25" />
+            <state vertical-scroll-proportion="-11.333333" vertical-offset="4374" max-vertical-offset="6534">
+              <caret line="275" column="25" selection-start-line="275" selection-start-column="25" selection-end-line="275" selection-end-column="25" />
               <folding>
                 <element signature="e#49#83#0#PHP" expanded="false" />
               </folding>
@@ -171,41 +81,41 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BlocoCamisetaController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/BlocoCamisetaController.php">
+      <file leaf-file-name="main.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/views/tecidos/pages/main.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-10.925926" vertical-offset="1091" max-vertical-offset="3078">
-              <caret line="84" column="5" selection-start-line="73" selection-start-column="4" selection-end-line="84" selection-end-column="5" />
+            <state vertical-scroll-proportion="-11.333333" vertical-offset="648" max-vertical-offset="3132">
+              <caret line="53" column="83" selection-start-line="53" selection-start-column="82" selection-end-line="53" selection-end-column="84" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BlocoCamisetaDestaqueController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/BlocoCamisetaDestaqueController.php">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/public/views/blog/pages/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-31.592592" vertical-offset="1037" max-vertical-offset="2934">
-              <caret line="112" column="32" selection-start-line="112" selection-start-column="32" selection-end-line="112" selection-end-column="32" />
+            <state vertical-scroll-proportion="0.5086207" vertical-offset="1806" max-vertical-offset="2502">
+              <caret line="120" column="73" selection-start-line="120" selection-start-column="73" selection-end-line="120" selection-end-column="73" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="rossina.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="CategoriaTecidoController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/CategoriaTecidoController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-9.592592" vertical-offset="605" max-vertical-offset="2988">
+              <caret line="58" column="44" selection-start-line="58" selection-start-column="44" selection-end-line="58" selection-end-column="44" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="rossina.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/rossina.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.05394191" vertical-offset="6441" max-vertical-offset="8514">
-              <caret line="360" column="70" selection-start-line="360" selection-start-column="70" selection-end-line="360" selection-end-column="70" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="admin.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/admin.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="774" max-vertical-offset="3672">
-              <caret line="65" column="41" selection-start-line="65" selection-start-column="12" selection-end-line="65" selection-end-column="41" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="17925" max-vertical-offset="22986">
+              <caret line="1021" column="43" selection-start-line="1021" selection-start-column="43" selection-end-line="1021" selection-end-column="43" />
               <folding />
             </state>
           </provider>
@@ -219,57 +129,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/Comment.php" />
-        <option value="$PROJECT_DIR$/public/scripts/admin.js" />
-        <option value="$PROJECT_DIR$/public/token/appUser.js" />
-        <option value="$PROJECT_DIR$/resources/views/index.php" />
-        <option value="$PROJECT_DIR$/public/token/views/authView.html" />
-        <option value="$PROJECT_DIR$/public/scripts/site/route/route.js" />
-        <option value="$PROJECT_DIR$/public/scripts/site/controller/loginSite.js" />
-        <option value="$PROJECT_DIR$/public/views/site/pages/registrar/registrar.html" />
-        <option value="$PROJECT_DIR$/public/views/site/pages/login/login.html" />
-        <option value="$PROJECT_DIR$/public/views/site/pages/contatos/contatos.html" />
-        <option value="$PROJECT_DIR$/public/views/admin/principal.html" />
-        <option value="$PROJECT_DIR$/public/scripts/admin/horarioController.js" />
-        <option value="$PROJECT_DIR$/public/scripts/admin/tag.js" />
-        <option value="$PROJECT_DIR$/public/index.html" />
-        <option value="$PROJECT_DIR$/public/scripts/admin/redirect.js" />
-        <option value="$PROJECT_DIR$/public/scripts/app.js" />
-        <option value="$PROJECT_DIR$/public/scripts/admin/base.js" />
-        <option value="$PROJECT_DIR$/public/scripts/admin/admin2.js" />
-        <option value="$PROJECT_DIR$/public/views/admin/tag.html" />
-        <option value="$PROJECT_DIR$/public/scripts/admin/tagController.js" />
-        <option value="$PROJECT_DIR$/resources/views/admin.blade.php" />
-        <option value="$PROJECT_DIR$/public/scripts/admin/admin.js" />
-        <option value="$PROJECT_DIR$/public/admin.html" />
-        <option value="$PROJECT_DIR$/public/admin/admin.html" />
-        <option value="$PROJECT_DIR$/public/admin/admin.js" />
-        <option value="$PROJECT_DIR$/app/Repositories/Transformers/PostTransformer.php" />
-        <option value="$PROJECT_DIR$/public/admin.js" />
         <option value="$PROJECT_DIR$/public/admin/index.html" />
-        <option value="$PROJECT_DIR$/app/Repositories/Transformers/BlocoDoisTransformer.php" />
-        <option value="$PROJECT_DIR$/app/Tag.php" />
-        <option value="$PROJECT_DIR$/vendor/league/fractal/src/Serializer/ArraySerializer.php" />
-        <option value="$PROJECT_DIR$/vendor/league/fractal/src/Serializer/EmbedSerializer.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/BlocoTecidoController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/BlocoTecidoDestaqueController.php" />
+        <option value="$PROJECT_DIR$/vendor/league/fractal/src/Serializer/JsonApiSerializer.php" />
+        <option value="$PROJECT_DIR$/vendor/league/fractal/src/Serializer/JsonSerializer.php" />
+        <option value="$PROJECT_DIR$/app/Repositories/Transformers/BlocoCamisetaDestaqueTransformer.php" />
+        <option value="$PROJECT_DIR$/app/Repositories/Transformers/CategoriaBlogTransformer.php" />
         <option value="$PROJECT_DIR$/vendor/league/fractal/src/Serializer/SerializerAbstract.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/PostsController.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/TagController.php" />
-        <option value="$PROJECT_DIR$/app/Repositories/Repository/PostRepositoryEloquent.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/CategoriaBlogController.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/CommentController.php" />
-        <option value="$PROJECT_DIR$/app/Repositories/Repository/CommentRepositoryEloquent.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/BlocoUmController.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/BlocoUmDestaqueController.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/FerramentaController.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/BlocoDoisController.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/BlocoDoisDestaqueController.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/BlocoDoisDestaqueUmController.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/BlocoDoisDestaqueDoisController.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/CamisetasController.php" />
+        <option value="$PROJECT_DIR$/vendor/league/fractal/src/Serializer/ArraySerializer.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/BlocoCamisetaController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/CategoriaBlogController.php" />
+        <option value="$PROJECT_DIR$/app/Repositories/Transformers/TagTransformer.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/CategoriaBlogPostController.php" />
+        <option value="$PROJECT_DIR$/app/Repositories/Interfaces/CategoriaBlogPostRepository.php" />
+        <option value="$PROJECT_DIR$/app/Repositories/Presenters/CategoriaBlogPostPresenter.php" />
+        <option value="$PROJECT_DIR$/app/Repositories/Repository/CategoriaBlogPostRepositoryEloquent.php" />
+        <option value="$PROJECT_DIR$/app/Repositories/Transformers/CategoriaBlogPostTransformer.php" />
+        <option value="$PROJECT_DIR$/app/Repositories/Transformers/PostTransformer.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/CategoriaController.php" />
+        <option value="$PROJECT_DIR$/app/Repositories/Transformers/CamisetasTransformer.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/CorController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/TamanhoController.php" />
+        <option value="$PROJECT_DIR$/app/Post.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/TagController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/PostsController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/TecidoController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/CamisetasController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/TecidoAmostraController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/HorarioController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/MenuController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/FaqController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/CategoriaFaqController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/SobreNosController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/GeneroController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/SilkController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/BlocoCamisetaDestaqueController.php" />
-        <option value="$PROJECT_DIR$/app/Http/routes.php" />
+        <option value="$PROJECT_DIR$/public/views/site/pages/contatos/contatos.html" />
+        <option value="$PROJECT_DIR$/public/views/site/pages/home/main.html" />
+        <option value="$PROJECT_DIR$/public/scripts/camisetas/controller/lojaCamiseta.js" />
+        <option value="$PROJECT_DIR$/public/scripts/camisetas/controller/categoriaCamiseta.js" />
+        <option value="$PROJECT_DIR$/public/scripts/site/controller/blocoCamiseta.js" />
+        <option value="$PROJECT_DIR$/public/views/camisetas/pages/main.html" />
+        <option value="$PROJECT_DIR$/public/index.html" />
+        <option value="$PROJECT_DIR$/public/views/tecidos/pages/main.html" />
+        <option value="$PROJECT_DIR$/public/views/site/pages/estamparia/estamparia.html" />
+        <option value="$PROJECT_DIR$/public/views/site/pages/sobre/sobre.html" />
+        <option value="$PROJECT_DIR$/public/views/blog/pages/index.html" />
         <option value="$PROJECT_DIR$/public/rossina.js" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/CategoriaTecidoController.php" />
+        <option value="$PROJECT_DIR$/app/Http/routes.php" />
+        <option value="$PROJECT_DIR$/public/scripts/tecidos/controller/lojaTecido.js" />
       </list>
     </option>
   </component>
@@ -333,7 +243,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -362,7 +271,81 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="larangular" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="larangular" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="larangular" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="larangular" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="site" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pages" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="larangular" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="larangular" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="site" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pages" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="contatos" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -377,32 +360,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Repositories" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Transformers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="larangular" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="larangular" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Repositories" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -448,6 +405,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -465,11 +423,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/vendor/league/fractal/src/Serializer" />
       <recent name="$PROJECT_DIR$/public/admin/node_modules" />
       <recent name="$PROJECT_DIR$/app/Repositories/Criteria" />
       <recent name="$PROJECT_DIR$/public/images" />
       <recent name="$PROJECT_DIR$/public/images/site/img/slider" />
-      <recent name="$PROJECT_DIR$/public/scripts/admin" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/public" />
@@ -549,12 +507,12 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-12" y="-3" width="1624" height="904" extended-state="6" />
+    <frame x="-12" y="-3" width="1624" height="904" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.19799691" sideWeight="0.49667773" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22429305" sideWeight="0.50332224" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20822622" sideWeight="0.50332224" order="2" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32741934" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.37437603" sideWeight="0.5" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -597,419 +555,408 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/vendor/prettus/l5-repository/src/Prettus/Repository/Traits/PresentableTrait.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/CategoriaBlogPostController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.22849083" vertical-offset="0" max-vertical-offset="792">
-          <caret line="9" column="6" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
-          <folding />
+        <state vertical-scroll-proportion="-6.0" vertical-offset="18" max-vertical-offset="1638">
+          <caret line="10" column="41" selection-start-line="10" selection-start-column="41" selection-end-line="10" selection-end-column="41" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/node_modules/ng-admin/doc/images/quick_filter.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/node_modules/ng-admin/src/javascripts/ng-admin.js">
+    <entry file="file://$PROJECT_DIR$/app/Repositories/Transformers/CategoriaBlogPostTransformer.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="736">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/node_modules/ng-admin/src/javascripts/ng-admin/Crud/button/maEditButton.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="756">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/admin/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.666667" vertical-offset="0" max-vertical-offset="504">
-          <caret line="19" column="26" selection-start-line="19" selection-start-column="26" selection-end-line="19" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/BlocoDois.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="736">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/league/fractal/src/TransformerAbstract.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.12693936" vertical-offset="0" max-vertical-offset="4752">
-          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding>
-            <element signature="e#269#308#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/league/fractal/src/Manager.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.333333" vertical-offset="0" max-vertical-offset="4986">
-          <caret line="21" column="1" selection-start-line="21" selection-start-column="1" selection-end-line="21" selection-end-column="1" />
-          <folding>
-            <element signature="e#269#315#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/league/fractal/src/Serializer/ArraySerializer.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.333333" vertical-offset="0" max-vertical-offset="2214">
-          <caret line="29" column="46" selection-start-line="29" selection-start-column="46" selection-end-line="29" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/league/fractal/src/Serializer/DataArraySerializer.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="736">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/league/fractal/src/Serializer/JsonApiSerializer.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="9.074074" vertical-offset="245" max-vertical-offset="1548">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/league/fractal/src/Serializer/SerializerAbstract.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.0" vertical-offset="0" max-vertical-offset="1494">
-          <caret line="27" column="65" selection-start-line="27" selection-start-column="65" selection-end-line="27" selection-end-column="65" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/league/fractal/src/ParamBag.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="61.74074" vertical-offset="1667" max-vertical-offset="2700">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/league/fractal/src/Serializer/EmbedSerializer.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.22566995" vertical-offset="38" max-vertical-offset="774">
-          <caret line="16" column="43" selection-start-line="16" selection-start-column="35" selection-end-line="16" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Tag.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-15.333333" vertical-offset="0" max-vertical-offset="810">
-          <caret line="26" column="5" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Post.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.02538787" vertical-offset="90" max-vertical-offset="1116">
-          <caret line="6" column="39" selection-start-line="6" selection-start-column="39" selection-end-line="6" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Repositories/Transformers/TagTransformer.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6346968" vertical-offset="0" max-vertical-offset="720">
-          <caret line="26" column="5" selection-start-line="18" selection-start-column="4" selection-end-line="26" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TagController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.55853313" vertical-offset="738" max-vertical-offset="3186">
-          <caret line="63" column="35" selection-start-line="63" selection-start-column="35" selection-end-line="63" selection-end-column="35" />
-          <folding>
-            <element signature="e#44#72#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/views/admin/tag.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.55853313" vertical-offset="0" max-vertical-offset="936">
-          <caret line="22" column="25" selection-start-line="22" selection-start-column="25" selection-end-line="22" selection-end-column="25" />
-          <folding>
-            <marker date="1448472393071" expanded="true" signature="-1:-1" placeholder="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Repositories/Repository/PostRepositoryEloquent.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.78702396" vertical-offset="0" max-vertical-offset="792">
-          <caret line="37" column="5" selection-start-line="37" selection-start-column="5" selection-end-line="37" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Repositories/Transformers/CategoriaBlogTransformer.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6600846" vertical-offset="0" max-vertical-offset="738">
-          <caret line="27" column="5" selection-start-line="18" selection-start-column="4" selection-end-line="27" selection-end-column="5" />
-          <folding />
+        <state vertical-scroll-proportion="-18.666666" vertical-offset="0" max-vertical-offset="666">
+          <caret line="28" column="10" selection-start-line="28" selection-start-column="10" selection-end-line="28" selection-end-column="10" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Repositories/Transformers/PostTransformer.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.02538787" vertical-offset="108" max-vertical-offset="1170">
-          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="39" />
+        <state vertical-scroll-proportion="1.6755995" vertical-offset="0" max-vertical-offset="1422">
+          <caret line="67" column="4" selection-start-line="67" selection-start-column="4" selection-end-line="72" selection-end-column="7" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/CategoriaBlog.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/CategoriaController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.45698166" vertical-offset="0" max-vertical-offset="709">
-          <caret line="20" column="5" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
-          <folding />
+        <state vertical-scroll-proportion="0.22849083" vertical-offset="1296" max-vertical-offset="2790">
+          <caret line="91" column="54" selection-start-line="91" selection-start-column="54" selection-end-line="91" selection-end-column="54" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/admin.js">
+    <entry file="file://$PROJECT_DIR$/app/Repositories/Transformers/CamisetasTransformer.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="774" max-vertical-offset="3672">
-          <caret line="65" column="41" selection-start-line="65" selection-start-column="12" selection-end-line="65" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Comment.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="736">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/CategoriaBlogController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.59379405" vertical-offset="1073" max-vertical-offset="3276">
-          <caret line="92" column="30" selection-start-line="84" selection-start-column="8" selection-end-line="92" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Repositories/Transformers/CommentTransformer.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.78702396" vertical-offset="0" max-vertical-offset="709">
-          <caret line="32" column="5" selection-start-line="20" selection-start-column="4" selection-end-line="32" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Repositories/Repository/CommentRepositoryEloquent.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6600846" vertical-offset="216" max-vertical-offset="1008">
-          <caret line="46" column="5" selection-start-line="46" selection-start-column="5" selection-end-line="46" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/PostsController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.583921" vertical-offset="738" max-vertical-offset="3006">
-          <caret line="64" column="17" selection-start-line="64" selection-start-column="17" selection-end-line="64" selection-end-column="17" />
-          <folding>
-            <element signature="e#44#72#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Repositories/Transformers/BlocoUmTransformer.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.583921" vertical-offset="0" max-vertical-offset="709">
-          <caret line="24" column="5" selection-start-line="14" selection-start-column="4" selection-end-line="24" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/CommentController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-19.333334" vertical-offset="594" max-vertical-offset="3078">
-          <caret line="71" column="24" selection-start-line="63" selection-start-column="0" selection-end-line="71" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Repositories/Transformers/BlocoUmDestaqueTransformer.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7616361" vertical-offset="0" max-vertical-offset="709">
-          <caret line="31" column="5" selection-start-line="19" selection-start-column="4" selection-end-line="31" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/BlocoUmController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7461213" vertical-offset="713" max-vertical-offset="3006">
-          <caret line="78" column="5" selection-start-line="67" selection-start-column="4" selection-end-line="78" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Repositories/Transformers/FerramentaTransformer.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.73624825" vertical-offset="0" max-vertical-offset="792">
-          <caret line="30" column="5" selection-start-line="18" selection-start-column="4" selection-end-line="30" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/BlocoUmDestaqueController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5684062" vertical-offset="677" max-vertical-offset="3024">
-          <caret line="69" column="5" selection-start-line="58" selection-start-column="4" selection-end-line="69" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/FerramentaController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.666667" vertical-offset="774" max-vertical-offset="3132">
-          <caret line="72" column="5" selection-start-line="61" selection-start-column="4" selection-end-line="72" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Repositories/Transformers/BlocoDoisDestaqueTransformer.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5077574" vertical-offset="0" max-vertical-offset="709">
-          <caret line="21" column="5" selection-start-line="10" selection-start-column="4" selection-end-line="21" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/BlocoDoisController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7108604" vertical-offset="666" max-vertical-offset="2664">
-          <caret line="72" column="5" selection-start-line="61" selection-start-column="4" selection-end-line="72" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Repositories/Transformers/BlocoDoisDestaqueUmTransformer.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.73624825" vertical-offset="0" max-vertical-offset="709">
-          <caret line="30" column="5" selection-start-line="20" selection-start-column="4" selection-end-line="30" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/BlocoDoisDestaqueController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-17.592592" vertical-offset="551" max-vertical-offset="3654">
-          <caret line="67" column="5" selection-start-line="56" selection-start-column="4" selection-end-line="67" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Repositories/Transformers/BlocoDoisTransformer.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6093089" vertical-offset="0" max-vertical-offset="709">
-          <caret line="25" column="5" selection-start-line="14" selection-start-column="4" selection-end-line="25" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Repositories/Transformers/BlocoDoisDestaqueDoisTransformer.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.73624825" vertical-offset="0" max-vertical-offset="709">
-          <caret line="30" column="5" selection-start-line="20" selection-start-column="4" selection-end-line="30" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/BlocoDoisDestaqueUmController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-14.666667" vertical-offset="936" max-vertical-offset="2988">
-          <caret line="81" column="5" selection-start-line="70" selection-start-column="4" selection-end-line="81" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Repositories/Transformers/BlocoCamisetaTransformer.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.73624825" vertical-offset="0" max-vertical-offset="709">
-          <caret line="30" column="5" selection-start-line="20" selection-start-column="4" selection-end-line="30" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/BlocoDoisDestaqueDoisController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-19.333334" vertical-offset="882" max-vertical-offset="3060">
-          <caret line="85" column="5" selection-start-line="74" selection-start-column="4" selection-end-line="85" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/CamisetasController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.07616361" vertical-offset="504" max-vertical-offset="2646">
-          <caret line="42" column="5" selection-start-line="42" selection-start-column="5" selection-end-line="42" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Repositories/Transformers/BlocoCamisetaDestaqueTransformer.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.73624825" vertical-offset="0" max-vertical-offset="709">
-          <caret line="30" column="5" selection-start-line="20" selection-start-column="4" selection-end-line="30" selection-end-column="5" />
+        <state vertical-scroll-proportion="0.5684062" vertical-offset="137" max-vertical-offset="1710">
+          <caret line="31" column="23" selection-start-line="31" selection-start-column="23" selection-end-line="31" selection-end-column="23" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/BlocoCamisetaController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.925926" vertical-offset="1091" max-vertical-offset="3078">
-          <caret line="84" column="5" selection-start-line="73" selection-start-column="4" selection-end-line="84" selection-end-column="5" />
+        <state vertical-scroll-proportion="0.16220029" vertical-offset="1451" max-vertical-offset="3060">
+          <caret line="95" column="8" selection-start-line="95" selection-start-column="8" selection-end-line="95" selection-end-column="107" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/admin.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.024896266" vertical-offset="1188" max-vertical-offset="3672">
+          <caret line="65" column="41" selection-start-line="65" selection-start-column="12" selection-end-line="65" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Repositories/Transformers/GeneroTransformer.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.45698166" vertical-offset="0" max-vertical-offset="709">
+          <caret line="19" column="5" selection-start-line="10" selection-start-column="4" selection-end-line="19" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Repositories/Transformers/CorTransformer.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.583921" vertical-offset="0" max-vertical-offset="709">
+          <caret line="24" column="5" selection-start-line="15" selection-start-column="4" selection-end-line="24" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/CorController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-10.666667" vertical-offset="630" max-vertical-offset="2970">
+          <caret line="61" column="54" selection-start-line="61" selection-start-column="54" selection-end-line="61" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Repositories/Transformers/TamanhoTransformer.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6854725" vertical-offset="0" max-vertical-offset="709">
+          <caret line="28" column="5" selection-start-line="20" selection-start-column="4" selection-end-line="28" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Repositories/Transformers/SilkTransformer.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6346968" vertical-offset="0" max-vertical-offset="709">
+          <caret line="26" column="5" selection-start-line="14" selection-start-column="4" selection-end-line="26" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/CategoriaBlog.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.20310296" vertical-offset="0" max-vertical-offset="709">
+          <caret line="10" column="27" selection-start-line="10" selection-start-column="27" selection-end-line="10" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Post.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="414" max-vertical-offset="1332">
+          <caret line="25" column="44" selection-start-line="25" selection-start-column="44" selection-end-line="25" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/PostsController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.0916784" vertical-offset="918" max-vertical-offset="3456">
+          <caret line="94" column="7" selection-start-line="94" selection-start-column="7" selection-end-line="94" selection-end-column="7" />
+          <folding>
+            <element signature="e#44#72#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TagController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.45698166" vertical-offset="540" max-vertical-offset="2952">
+          <caret line="61" column="55" selection-start-line="61" selection-start-column="52" selection-end-line="61" selection-end-column="55" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/CamisetasController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7207334" vertical-offset="29" max-vertical-offset="3168">
+          <caret line="42" column="38" selection-start-line="42" selection-start-column="38" selection-end-line="42" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TecidoController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-19.333334" vertical-offset="162" max-vertical-offset="2232">
+          <caret line="47" column="37" selection-start-line="41" selection-start-column="9" selection-end-line="47" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TecidoAmostraController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.53314525" vertical-offset="468" max-vertical-offset="2700">
+          <caret line="58" column="37" selection-start-line="50" selection-start-column="8" selection-end-line="58" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/HorarioController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.53314525" vertical-offset="432" max-vertical-offset="2628">
+          <caret line="56" column="37" selection-start-line="48" selection-start-column="8" selection-end-line="56" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/FaqController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.38081804" vertical-offset="1080" max-vertical-offset="2682">
+          <caret line="87" column="54" selection-start-line="87" selection-start-column="54" selection-end-line="87" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/MenuController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.7009873" vertical-offset="162" max-vertical-offset="2700">
+          <caret line="86" column="54" selection-start-line="86" selection-start-column="54" selection-end-line="86" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/CategoriaFaqController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6346968" vertical-offset="540" max-vertical-offset="2790">
+          <caret line="68" column="5" selection-start-line="57" selection-start-column="4" selection-end-line="68" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TamanhoController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.05077574" vertical-offset="1800" max-vertical-offset="2880">
+          <caret line="112" column="32" selection-start-line="112" selection-start-column="32" selection-end-line="112" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/SobreNosController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.46685472" vertical-offset="1541" max-vertical-offset="2250">
+          <caret line="113" column="17" selection-start-line="113" selection-start-column="17" selection-end-line="113" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/GeneroController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.1156559" vertical-offset="1585" max-vertical-offset="3006">
+          <caret line="132" column="7" selection-start-line="132" selection-start-column="5" selection-end-line="132" selection-end-column="7" />
+          <folding>
+            <element signature="e#44#72#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/SilkController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.45698166" vertical-offset="2016" max-vertical-offset="2916">
+          <caret line="140" column="39" selection-start-line="140" selection-start-column="39" selection-end-line="140" selection-end-column="39" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/BlocoCamisetaDestaqueController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-31.592592" vertical-offset="1037" max-vertical-offset="2934">
-          <caret line="112" column="32" selection-start-line="112" selection-start-column="32" selection-end-line="112" selection-end-column="32" />
+        <state vertical-scroll-proportion="-13.592592" vertical-offset="2009" max-vertical-offset="2952">
+          <caret line="139" column="50" selection-start-line="139" selection-start-column="50" selection-end-line="139" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/views/blog/pages/comment.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="736">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/scripts/camisetas/controller/detalhes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="736">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/scripts/camisetas/controller/lojaCamiseta.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.14673913" vertical-offset="0" max-vertical-offset="736">
+          <caret line="6" column="40" selection-start-line="6" selection-start-column="40" selection-end-line="6" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/scripts/camisetas/controller/categoriaCamiseta.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.24456522" vertical-offset="0" max-vertical-offset="736">
+          <caret line="10" column="3" selection-start-line="10" selection-start-column="2" selection-end-line="10" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/scripts/camisetas/controller/tagCamiseta.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="736">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/scripts/site/controller/blocoCamiseta.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2201087" vertical-offset="0" max-vertical-offset="736">
+          <caret line="9" column="7" selection-start-line="9" selection-start-column="7" selection-end-line="9" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/views/site/pages/home/main.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.0" vertical-offset="2214" max-vertical-offset="5580">
+          <caret line="132" column="50" selection-start-line="132" selection-start-column="32" selection-end-line="132" selection-end-column="55" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/views/site/pages/check/check.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.724138" vertical-offset="2592" max-vertical-offset="7506">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/views/camisetas/pages/detalhes.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.6465516" vertical-offset="2538" max-vertical-offset="7200">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.7931035" vertical-offset="4050" max-vertical-offset="6696">
+          <caret line="117" column="108" selection-start-line="117" selection-start-column="108" selection-end-line="117" selection-end-column="108" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/views/camisetas/pages/main.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.0862069" vertical-offset="1944" max-vertical-offset="3078">
+          <caret line="150" column="34" selection-start-line="150" selection-start-column="34" selection-end-line="150" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/views/tecidos/pages/detalhes.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.974138" vertical-offset="4158" max-vertical-offset="7200">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/views/site/pages/estamparia/estamparia.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.7586207" vertical-offset="2562" max-vertical-offset="3258">
+          <caret line="113" column="0" selection-start-line="113" selection-start-column="0" selection-end-line="113" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/views/site/pages/sobre/sobre.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5603448" vertical-offset="42" max-vertical-offset="792">
+          <caret line="24" column="77" selection-start-line="24" selection-start-column="77" selection-end-line="24" selection-end-column="77" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/views/blog/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2574">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/views/blog/pages/main.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="810">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/views/site/pages/contatos/contatos.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.88793105" vertical-offset="3030" max-vertical-offset="3726">
+          <caret line="134" column="69" selection-start-line="134" selection-start-column="69" selection-end-line="134" selection-end-column="69" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/rossina.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="17925" max-vertical-offset="22986">
+          <caret line="1021" column="43" selection-start-line="1021" selection-start-column="43" selection-end-line="1021" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/CategoriaTecidoController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.592592" vertical-offset="605" max-vertical-offset="2988">
+          <caret line="58" column="44" selection-start-line="58" selection-start-column="44" selection-end-line="58" selection-end-column="44" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.592592" vertical-offset="2603" max-vertical-offset="6318">
-          <caret line="174" column="25" selection-start-line="174" selection-start-column="25" selection-end-line="174" selection-end-column="25" />
+        <state vertical-scroll-proportion="-11.333333" vertical-offset="4374" max-vertical-offset="6534">
+          <caret line="275" column="25" selection-start-line="275" selection-start-column="25" selection-end-line="275" selection-end-column="25" />
           <folding>
             <element signature="e#49#83#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/rossina.js">
+    <entry file="file://$PROJECT_DIR$/public/views/tecidos/pages/main.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.05394191" vertical-offset="6441" max-vertical-offset="8514">
-          <caret line="360" column="70" selection-start-line="360" selection-start-column="70" selection-end-line="360" selection-end-column="70" />
+        <state vertical-scroll-proportion="-11.333333" vertical-offset="648" max-vertical-offset="3132">
+          <caret line="53" column="83" selection-start-line="53" selection-start-column="82" selection-end-line="53" selection-end-column="84" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/scripts/tecidos/controller/lojaTecido.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.24456522" vertical-offset="0" max-vertical-offset="736">
+          <caret line="10" column="3" selection-start-line="10" selection-start-column="3" selection-end-line="10" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/views/blog/pages/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5086207" vertical-offset="1806" max-vertical-offset="2502">
+          <caret line="120" column="73" selection-start-line="120" selection-start-column="73" selection-end-line="120" selection-end-column="73" />
           <folding />
         </state>
       </provider>

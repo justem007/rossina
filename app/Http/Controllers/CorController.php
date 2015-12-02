@@ -8,6 +8,7 @@ use League\Fractal\Manager;
 use League\Fractal\Pagination\IlluminatePaginatorAdapter;
 use League\Fractal\Resource\Collection;
 use League\Fractal\Resource\Item;
+use League\Fractal\Serializer\JsonSerializer;
 use Rossina\Cor;
 use Rossina\Http\Requests;
 use Rossina\Repositories\Repository\CorRepositoryEloquent;
@@ -37,12 +38,29 @@ class CorController extends ApiController
     }
 
     /**
+     * @param Cor $model
+     * @return array
+     */
+    public function transform(Cor $model)
+    {
+        return [
+            'id'         => (int) $model->id,
+            'name'       => $model->name,
+            'rgb'        => $model->rgb,
+            'created_at' => $model->created_at,
+            'updated_at' => $model->updated_at
+        ];
+    }
+
+    /**
      * @param Manager $fractal
      * @param CorTransformer $corTransformer
      * @return mixed
      */
     public function index(Manager $fractal, CorTransformer $corTransformer)
     {
+        $fractal->setSerializer(new JsonSerializer());
+
         $projects = $this->repository->with(['camisetas'])->all();
 
         $collection = new Collection($projects, $corTransformer);
@@ -86,18 +104,18 @@ class CorController extends ApiController
             ], 404);
         }
 
-        $item = new Item($project, $corTransformer);
+//        $item = new Item($project, $corTransformer);
 
-        $data = $fractal->createData($item)->toArray();
+//        $data = $fractal->createData($item)->toArray();
 
-//        return $this->respond($data);
+        return $this->transform($project);
 
-        return Response::json([
-            'success' => [
-                'message' => 'Cor encontrada',
-                'data'   => $data
-            ]
-        ], 200);
+//        return Response::json([
+//            'success' => [
+//                'message' => 'Cor encontrada',
+//                'data'   => $data
+//            ]
+//        ], 200);
     }
 
     /**

@@ -12,8 +12,8 @@
         <div class="container">
             <div class="row"  ng-controller="mainBlogController">
                 <div class="col-md-9 col-md-push-3">
-                   <div  ng-repeat="categoriaBlog in categoria_blogs.data">
-                    <div class=" b-blog-one-column__row b-news-item__block"  ng-repeat="post in categoriaBlog.posts.data">
+                   <div  ng-repeat="categoriaBlog in categoria_blogs">
+                    <div class=" b-blog-one-column__row b-news-item__block"  ng-repeat="post in categoriaBlog.posts">
                         <div class="row">
                             <div class="col-sm-6 col-md-4">
                                 <div class=" view view-sixth">
@@ -81,7 +81,7 @@
                             <div class="b-categories-filter">
                                 <h4 class="f-primary-b b-h4-special f-h4-special--gray f-h4-special"><i class="fa fa-folder-open"></i> categorias blog</h4>
                                 <ul>
-                                    <li ng-repeat="categoria in categoria_blogs.data">
+                                    <li ng-repeat="categoria in categoria_blogs">
                                         <a class="f-categories-filter_name" href="#/blog"><i class="fa fa-plus"></i>{{ categoria.title }}</a>
                                         <span class="b-categories-filter_count f-categories-filter_count">12</span>
                                     </li>

@@ -23,6 +23,10 @@ Route::get('/', function (){
     return  Redirect::to('index.html');
 });
 
+Route::get('info', function(){
+    return phpinfo();
+});
+
 Route::get('admin', function (){
     return  Redirect::to('admin/index.html');
 });
@@ -50,17 +54,20 @@ Route::group(['prefix' => 'api'], function()
 Route::group(['prefix' => 'api'], function (){
 
     Route::group(['prefix' => 'posts'], function () {
-        Route::get('/', ['as' => 'posts', 'uses' => 'PostsController@all']);
-        Route::get('index', ['as' => 'posts.index', 'uses' => 'PostsController@index']);
+        Route::get('/', ['as' => 'posts', 'uses' => 'PostsController@getPosts']);
+        Route::get('all', ['as' => 'posts.all', 'uses' => 'PostsController@all']);
+        Route::get('comments', ['as' => 'posts.comment', 'uses' => 'PostsController@comment']);
         Route::get('{id}', ['as' => 'posts.show', 'uses' => 'PostsController@show']);
         Route::post('/', ['as' => 'posts.create', 'uses' => 'PostsController@create']);
         Route::put('{id}',['as' => 'posts.update', 'uses' => 'PostsController@update']);
         Route::delete('{id}', ['as' => 'posts.delete', 'uses' => 'PostsController@delete']);
+        Route::get('tag', ['as' => 'posts.tag', 'uses' => 'PostsController@tag']);
     });
+    Route::get('tag', ['as' => 'posts.tag', 'uses' => 'PostsController@tag']);
 
     Route::group(['prefix' => 'categoria-blogs'], function () {
-        Route::get('/', ['as' => 'categoria-blogs.index', 'uses' => 'CategoriaBlogController@all']);
-        Route::get('index', ['as' => 'categoria-blogs', 'uses' => 'CategoriaBlogController@index']);
+        Route::get('/', ['as' => 'categoria-blogs.index', 'uses' => 'CategoriaBlogController@index']);
+        Route::get('all', ['as' => 'categoria-blogs.all', 'uses' => 'CategoriaBlogController@all']);
         Route::get('{id}', ['as' => 'categoria-blogs.show', 'uses' => 'CategoriaBlogController@show']);
         Route::post('/', ['as' => 'categoria-blogs.create', 'uses' => 'CategoriaBlogController@create']);
         Route::put('{id}', ['as' => 'categoria-blogs.update', 'uses' => 'CategoriaBlogController@update']);
@@ -79,6 +86,7 @@ Route::group(['prefix' => 'api'], function (){
 
     Route::group(['prefix' => 'tags'], function () {
         Route::get('/', ['as' => 'tags', 'uses' => 'TagController@all']);
+        Route::get('index', ['as' => 'tags.index', 'uses' => 'TagController@index']);
         Route::get('{id}', ['as' => 'tags.show', 'uses' => 'TagController@show']);
         Route::post('/', ['as' => 'tags.create', 'uses' => 'TagController@create']);
         Route::put('{id}', ['as' => 'tags.update', 'uses' => 'TagController@update']);
@@ -180,7 +188,8 @@ Route::group(['prefix' => 'api'], function (){
     });
 
     Route::group(['prefix' => 'bloco-tecidos'], function () {
-        Route::get('/', ['as' => 'bloco-tecidos', 'uses' => 'BlocoTecidoController@index']);
+        Route::get('/', ['as' => 'bloco-tecidos', 'uses' => 'BlocoTecidoController@all']);
+        Route::get('index', ['as' => 'bloco-tecidos.index', 'uses' => 'BlocoTecidoController@index']);
         Route::get('{id}', ['as' => 'bloco-tecidos.show', 'uses' => 'BlocoTecidoController@show']);
         Route::post('/', ['as' => 'bloco-tecidos.create', 'uses' => 'BlocoTecidoController@create']);
         Route::put('{id}', ['as' => 'bloco-tecidos.update', 'uses' => 'BlocoTecidoController@update']);
@@ -189,7 +198,8 @@ Route::group(['prefix' => 'api'], function (){
     });
 
     Route::group(['prefix' => 'bloco-tecido-destaques'], function () {
-        Route::get('/', ['as' => 'bloco-tecido-destaques', 'uses' => 'BlocoTecidoDestaqueController@index']);
+        Route::get('/', ['as' => 'bloco-tecido-destaques', 'uses' => 'BlocoTecidoDestaqueController@all']);
+        Route::get('index', ['as' => 'bloco-tecido-destaques.index', 'uses' => 'BlocoTecidoDestaqueController@index']);
         Route::get('{id}', ['as' => 'bloco-tecido-destaques.show', 'uses' => 'BlocoTecidoDestaqueController@show']);
         Route::post('/', ['as' => 'bloco-tecido-destaques.create', 'uses' => 'BlocoTecidoDestaqueController@create']);
         Route::put('{id}', ['as' => 'bloco-tecido-destaques.update', 'uses' => 'BlocoTecidoDestaqueController@update']);
@@ -198,7 +208,8 @@ Route::group(['prefix' => 'api'], function (){
     });
 
     Route::group(['prefix' => 'users'], function () {
-        Route::get('/', ['as' => 'users', 'uses' => 'UserController@index']);
+        Route::get('/', ['as' => 'users', 'uses' => 'UserController@all']);
+        Route::get('index', ['as' => 'users.index', 'uses' => 'UserController@index']);
         Route::get('paginate', ['as' => 'users', 'uses' => 'UserController@paginate']);
         Route::get('{id}', ['as' => 'users.show', 'uses' => 'UserController@show']);
         Route::post('/', ['as' => 'users.create', 'uses' => 'UserController@create']);
@@ -207,8 +218,8 @@ Route::group(['prefix' => 'api'], function (){
     });
 
     Route::group(['prefix' => 'categorias'], function () {
-        Route::get('/', ['as' => 'categorias', 'uses' => 'CategoriaController@all']);
-        Route::get('index', ['as' => 'categorias', 'uses' => 'CategoriaController@index']);
+        Route::get('/', ['as' => 'categorias', 'uses' => 'CategoriaController@index']);
+        Route::get('all', ['as' => 'categorias.all', 'uses' => 'CategoriaController@all']);
         Route::get('{id}', ['as' => 'categorias.show', 'uses' => 'CategoriaController@show']);
         Route::post('/', ['as' => 'categorias.create', 'uses' => 'CategoriaController@create']);
         Route::put('{id}', ['as' => 'categorias.update', 'uses' => 'CategoriaController@update']);
@@ -262,6 +273,7 @@ Route::group(['prefix' => 'api'], function (){
 
     Route::group(['prefix' => 'categoria-tecidos'], function () {
         Route::get('/', ['as' => 'categoria-tecidos', 'uses' => 'CategoriaTecidoController@index']);
+        Route::get('todos', ['as' => 'categoria-tecidos.getAll', 'uses' => 'CategoriaTecidoController@getAll']);
         Route::get('paginate', ['as' => 'categoria-tecidos', 'uses' => 'CategoriaTecidoController@paginate']);
         Route::get('{id}', ['as' => 'categoria-tecidos.show', 'uses' => 'CategoriaTecidoController@show']);
         Route::post('/', ['as' => 'categoria-tecidos.create', 'uses' => 'CategoriaTecidoController@create']);

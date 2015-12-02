@@ -7,6 +7,7 @@ use League\Fractal\Manager;
 use League\Fractal\Pagination\IlluminatePaginatorAdapter;
 use League\Fractal\Resource\Collection;
 use League\Fractal\Resource\Item;
+use League\Fractal\Serializer\JsonSerializer;
 use Rossina\CategoriaBlog;
 use Illuminate\Http\Request;
 use Rossina\Http\Requests;
@@ -68,13 +69,17 @@ class CategoriaBlogController extends ApiController
      */
     public function index(Manager $fractal)
     {
+        $fractal->setSerializer(new JsonSerializer());
+
         $faq = $this->repository->with(['posts'])->all();
 
         $collection = new Collection($faq, $this->categoriaBlogTransformer);
 
         $data = $fractal->createData($collection)->toArray();
 
-        return $this->respondWithCORS($data);
+//        return $this->respondWithCORS($data);
+
+        return response()->json(($data));
     }
 
     /**

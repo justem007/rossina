@@ -20,15 +20,20 @@ use Rossina\Camisetas;
             'tags',
         ];
 
-    public function transform(Camisetas $model)
+        /**
+         * @param Camisetas $model
+         * @return array
+         */
+        public function transform(Camisetas $model)
     {
         return [
             'id'          => (int) $model->id,
             'name'        => $model->name,
-            'price_com'   => (double) $model->price,
+            'price'       => (double) $model->price,
             'price_sem'   => (double) $model->price_sem,
             'description' => $model->description,
             'info'        => $model->info,
+            'active'      => (boolean) $model->active,
             'quantidade'  => (int) $model->quantidade,
             'quant_p'     => (int) $model->quantidade_tamanho_p,
             'quant_m'     => (int) $model->quantidade_tamanho_m,

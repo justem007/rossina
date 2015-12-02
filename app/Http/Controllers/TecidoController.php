@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Response;
 use League\Fractal\Manager;
 use League\Fractal\Resource\Collection;
 use League\Fractal\Resource\Item;
+use League\Fractal\Serializer\JsonSerializer;
 use Rossina\Http\Requests;
 use Rossina\Repositories\Repository\TecidoRepositoryEloquent;
 use Rossina\Repositories\Transformers\TecidoTransformer;
@@ -36,6 +37,7 @@ class TecidoController extends ApiController
      */
     public function index(Manager $fractal, TecidoTransformer $projectTransformer)
     {
+        $fractal->setSerializer(new JsonSerializer());
 
         $projects = $this->repository->with(['tecimages'])->all();
 
@@ -55,6 +57,8 @@ class TecidoController extends ApiController
      */
     public function show($id, Manager $fractal, TecidoTransformer $tecidoTransformer)
     {
+        $fractal->setSerializer(new JsonSerializer());
+
         $project = $this->tecido->find($id);
 
         if(!$project){

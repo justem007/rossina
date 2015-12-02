@@ -8,6 +8,7 @@ use League\Fractal\Manager;
 use League\Fractal\Pagination\IlluminatePaginatorAdapter;
 use League\Fractal\Resource\Collection;
 use League\Fractal\Resource\Item;
+use League\Fractal\Serializer\JsonSerializer;
 use Rossina\Categoria;
 use Rossina\Http\Requests;
 use Rossina\Repositories\Repository\CategoriaRepositoryEloquent;
@@ -53,6 +54,8 @@ class CategoriaController extends ApiController
      */
     public function index(Manager $fractal)
     {
+        $fractal->setSerializer(new JsonSerializer());
+
         $categoria = $this->repository->with(['posts'])->all();
 
         $collection = new Collection($categoria, $this->categoriaTransformer);
@@ -86,6 +89,8 @@ class CategoriaController extends ApiController
      */
     public function show($id, Manager $fractal, CategoriaTransformer $categoriaTransformer)
     {
+        $fractal->setSerializer(new JsonSerializer());
+
         $project = $this->categoria->find($id);
 
         if(!$project){

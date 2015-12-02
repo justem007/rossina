@@ -12,6 +12,20 @@ class Post extends Model implements Presentable
 
     protected $fillable = ['title','text', 'active', 'user_id'];
 
+    protected $hidden = ['tags', 'comments'];
+
+    protected $appends = ['tag', 'comment'];
+
+    public  function getTagAttribute()
+    {
+        return $this->tags->modelKeys();
+    }
+
+    public  function getCommentAttribute()
+    {
+        return $this->comments->modelKeys();
+    }
+
     public function images()
     {
         return $this->belongsToMany(Image::class);
@@ -24,7 +38,7 @@ class Post extends Model implements Presentable
 
     public function tags()
     {
-        return $this->belongsToMany(Tag::class);
+        return $this->belongsToMany(Tag::class, 'post_tag');
     }
 
     public function users()

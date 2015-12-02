@@ -8,11 +8,13 @@ use League\Fractal\Manager;
 use League\Fractal\Resource\Collection;
 use League\Fractal\Resource\Item;
 use League\Fractal\Serializer\ArraySerializer;
+use League\Fractal\Serializer\JsonSerializer;
 use Rossina\Http\Requests;
 use Rossina\Post;
 use Rossina\Repositories\Repository\PostRepositoryEloquent as PostRE;
 use Rossina\Repositories\Transformers\PostTransformer;
 use League\Fractal\TransformerAbstract;
+use Rossina\Repositories\Transformers\TagTransformer;
 
 class PostsController extends ApiController
 {
@@ -37,36 +39,6 @@ class PostsController extends ApiController
     }
 
     /**
-     * @param Manager $fractal
-     * @param PostTransformer $postTransformer
-     * @return mixed
-     */
-    public function index(Manager $fractal)
-    {
-        $projects = $this->repository->with(['comments'])->all();
-
-        return $this->respond($projects);
-    }
-
-
-    /**
-     * @return mixed
-     */
-    public  function all()
-    {
-        $post = array();
-
-        $data = $this->repository->with(['comments'])->all();
-
-        foreach ($data as $posts) {
-            $post[] = $this->transform($posts);
-        }
-
-    return $post;
-
-    }
-
-    /**
      * @param Post $post
      * @return array
      */
@@ -78,9 +50,60 @@ class PostsController extends ApiController
             'text'       => $post->text,
             'active'     => (boolean) $post->active,
             'user_id'    => (int) $post->user_id,
+//            'tag'        => $post->tags,
+//            'image'      => $post->images,
             'created_at' => $post->created_at,
             'updated_at' => $post->updated_at,
         ];
+    }
+
+    /**
+     * @param Manager $fractal
+     * @param PostTransformer $postTransformer
+     * @return mixed
+     */
+    public function index(Manager $fractal)
+    {
+        $fractal->setSerializer(new JsonSerializer());
+
+        $post = $this->post->with(['comments'])->get();
+
+        $collection = new Collection($post, new PostTransformer);
+
+        $data = $fractal->createData($collection)->toArray();
+
+        return $this->respondWithCORS($data);
+    }
+
+    /**
+     * @return mixed
+     */
+    public function comment()
+    {
+        $projects = $this->repository->with(['tags'])->all();
+
+        return $this->respond($projects);
+    }
+
+    public function tag()
+    {
+        return Response::json(Post::all());
+    }
+
+    /**
+     * @return mixed
+     */
+    public  function getPosts()
+    {
+//        $post = array();
+
+        $data = $this->repository->with(['tags'])->all();
+
+        foreach ($data as $posts) {
+            $post[] = $this->respond($posts);
+        }
+        return $data;
+
     }
 
     /**
@@ -103,11 +126,13 @@ class PostsController extends ApiController
             ], 404);
         }
 
-//        $item = new Item($project, $postTransformer);
+        $item = new Item($project, $postTransformer);
 
-//        $data = $fractal->createData($item)->toArray();
+        $data = $fractal->createData($item)->toArray();
 
         return $this->respond($project);
+
+//        return $this->apiController->respondWithItem($data, new PostTransformer);
     }
 
     /**

@@ -10,6 +10,7 @@ use League\Fractal\Resource\Item;
 use Rossina\BlocoCamiseta;
 use Rossina\Repositories\Repository\BlocoCamisetaRepositoryEloquent as BlocoCamisetaRE;
 use Rossina\Repositories\Transformers\BlocoCamisetaTransformer;
+use Serializers\JsonSerializer;
 
 class BlocoCamisetaController extends ApiController
 {
@@ -62,7 +63,7 @@ class BlocoCamisetaController extends ApiController
             'id'         => (int) $model->id,
             'title'      => $model->title,
             'sub_title'  => $model->sub_title,
-            'alt'        => $model->alt,
+            'user_id'    => (int) $model->user_id,
             'created_at' => $model->created_at,
             'updated_at' => $model->updated_at
         ];
@@ -89,7 +90,6 @@ class BlocoCamisetaController extends ApiController
      */
     public function index()
     {
-//        throw new \Exception("Esta é uma exceção de teste");
 
         $blocoCamiseta = $this->repository->all();
 
@@ -114,11 +114,11 @@ class BlocoCamisetaController extends ApiController
             ], 404);
         }
 
-        $item = new Item($project, $blocoCamisetaTransformer);
+//        $item = new Item($project, $blocoCamisetaTransformer);
 
-        $data = $fractal->createData($item)->toArray();
+//        $data = $fractal->createData($item)->toArray();
 
-        return $this->respond($data);
+        return $this->transform($project);
     }
 
     /**

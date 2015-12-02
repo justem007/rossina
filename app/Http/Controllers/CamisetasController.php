@@ -3,6 +3,7 @@
 namespace Rossina\Http\Controllers;
 
 use Illuminate\Http\Request;
+use League\Fractal\Serializer\JsonSerializer;
 use League\Fractal\Serializer\ArraySerializer;
 use Rossina\BlocoCamiseta;
 use Rossina\Http\Requests;
@@ -38,8 +39,35 @@ class CamisetasController extends ApiController
         // Aplique o middleware jwt.auth a todos os métodos neste controlador
         // exceto para o método de autenticação. Nós não queremos para evitar
         // o usuário recupera o token se não tiver já
-        $this->middleware('jwt.auth', ['except' => ['index', 'paginate', 'show']]);
+//        $this->middleware('jwt.auth', ['except' => ['index', 'paginate', 'show']]);
         $this->camisetas = $camisetas;
+    }
+
+    /**
+     * @param Camisetas $model
+     * @return array
+     */
+    public function transform(Camisetas $model)
+    {
+        return [
+            'id'          => (int) $model->id,
+            'name'        => $model->name,
+            'price'       => (double) $model->price,
+            'price_sem'   => (double) $model->price_sem,
+            'description' => $model->description,
+            'info'        => $model->info,
+            'user_id'     => (int) $model->user_id,
+            'active'      => (boolean) $model->active,
+            'quantidade'  => (int) $model->quantidade,
+            'quant_p'     => (int) $model->quantidade_tamanho_p,
+            'quant_m'     => (int) $model->quantidade_tamanho_m,
+            'quant_g'     => (int) $model->quantidade_tamanho_g,
+            'quant_gg'    => (int) $model->quantidade_tamanho_gg,
+            'quant_2gg'   => (int) $model->quantidade_tamanho_2gg,
+            'quant_3gg'   => (int) $model->quantidade_tamanho_3gg,
+            'created_at'  => (string) $model->created_at,
+            'updated_at'  => (string) $model->updated_at
+        ];
     }
 
     /**
@@ -49,7 +77,7 @@ class CamisetasController extends ApiController
      */
     public function index(Manager $fractal, CamisetasTransformer $camisetasTransformer)
     {
-        $fractal->setSerializer(new ArraySerializer());
+        $fractal->setSerializer(new JsonSerializer());
 
         $projects = $this->repository->with(['generos'])->all();
 
@@ -84,6 +112,8 @@ class CamisetasController extends ApiController
      */
     public function show($id, Manager $fractal, CamisetasTransformer $camisetasTransformer)
     {
+        $fractal->setSerializer(new JsonSerializer());
+
         $project = $this->camisetas->find($id);
 
         if(!$project){

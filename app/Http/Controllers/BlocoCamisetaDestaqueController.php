@@ -55,6 +55,7 @@ class BlocoCamisetaDestaqueController extends ApiController
             'title'      => $model->title,
             'sub_title'  => $model->sub_title,
             'alt'        => $model->alt,
+            'user_id'    => $model->user_id,
             'created_at' => $model->created_at,
             'updated_at' => $model->updated_at
         ];
@@ -136,7 +137,7 @@ class BlocoCamisetaDestaqueController extends ApiController
      */
     public function update(Request $request,$id)
     {
-        $repository = $this->repository->update( $request->all(), $id );
+        $repository = $this->blocoCamisetaDestaque->update( $request->all(), $id );
 
         return Response::json([
             'sucesso' => [
