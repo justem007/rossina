@@ -3,7 +3,7 @@
             $scope.comments = [];
 
         $scope.$on('$viewContentLoaded', function(){
-        $http.get("/api/comments/").then(function(response){
+        $http.get("admin/api/comments/").then(function(response){
             console.log(response);
         //Atribui o response.data a variável posts
         $scope.comments = response.data;

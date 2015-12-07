@@ -51,6 +51,7 @@ Route::group(['prefix' => 'api'], function()
     Route::get('authenticate/user', 'AuthenticateController@getAuthenticatedUser');
 });
 
+Route::group(['prefix' => 'admin'], function (){
 Route::group(['prefix' => 'api'], function (){
 
     Route::group(['prefix' => 'posts'], function () {
@@ -169,7 +170,7 @@ Route::group(['prefix' => 'api'], function (){
     });
 
     Route::group(['prefix' => 'bloco-camisetas'], function () {
-        Route::get('/', ['as' => 'bloco-camisetas', 'uses' => 'BlocoCamisetaController@all']);
+        Route::get('/', ['as' => 'bloco-camisetas', 'uses' => 'BlocoCamisetaController@index']);
         Route::get('index', ['as' => 'bloco-camisetas.index', 'uses' => 'BlocoCamisetaController@index']);
         Route::get('{id}', ['as' => 'bloco-camisetas.show', 'uses' => 'BlocoCamisetaController@show']);
         Route::post('/', ['as' => 'bloco-camisetas.create', 'uses' => 'BlocoCamisetaController@create']);
@@ -351,6 +352,7 @@ Route::group(['prefix' => 'api'], function (){
         Route::post('/', ['as' => 'sobre-nos.create', 'uses' => 'SobreNosController@create']);
         Route::put('{id}', ['as' => 'sobre-nos.update', 'uses' => 'SobreNosController@update']);
         Route::delete('{id}', ['as' => 'sobre-nos.delete', 'uses' => 'SobreNosController@delete']);
+    });
     });
 });
 

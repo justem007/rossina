@@ -3,7 +3,7 @@ app.controller('camisetasDetalhesController',function ($scope,$http) {
     $scope.tags = [];
 
 $scope.$on('$viewContentLoaded', function(){
-$http.get("/api/tags").then(function(response){
+$http.get("admin/api/tags").then(function(response){
     console.log(response);
 //Atribui o response.data a variável posts
 $scope.tags = response.data;

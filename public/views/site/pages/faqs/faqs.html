@@ -9,7 +9,7 @@
     </div>
     <section class="b-infoblock--small">
         <div class="container">
-            <div class="row b-col-default-indent" ng-controller="faqController">
+            <div class="row b-col-default-indent" ng-controller="faqsCategoriaController">
                 <div class="col-md-9">
                     <p class="f-primary-b f-uppercase f-title-small c-primary">Perguntas frequentes</p>
 
@@ -38,8 +38,8 @@
 
                       <!--<div  ng-repeat="faq in faqs.data">-->
                       <uib-accordion close-others="oneAtATime">
-                          <div ng-repeat="faqCategoria in categoria_faqs.data">
-                          <uib-accordion-group heading="{{faq.title}}" ng-repeat="faq in faqCategoria.faqs.data">
+                          <div ng-repeat="faqsCategoriaController in categoria_faqs">
+                          <uib-accordion-group heading="{{faq.title}}" ng-repeat="faq in faqsCategoriaController.faqs">
                               <h5>{{faq.description}}</h5>
                           </uib-accordion-group>
                           </div>
@@ -60,7 +60,7 @@
                     <div class="b-categories-filter b-default-top-indent">
                         <h4 class="f-primary-b b-h4-special f-h4-special c-primary">Perguntas frequentes</h4>
                         <ul>
-                            <li ng-repeat="categoria in categoria_faqs.data">
+                            <li ng-repeat="categoria in categoria_faqs">
                                 <a class="f-categories-filter_name" href="#"><i class="fa fa-plus"></i> {{ categoria.title }}</a>
                                 <span class="b-categories-filter_count f-categories-filter_count">12</span>
                             </li>

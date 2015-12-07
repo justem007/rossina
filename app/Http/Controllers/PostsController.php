@@ -8,6 +8,7 @@ use League\Fractal\Manager;
 use League\Fractal\Resource\Collection;
 use League\Fractal\Resource\Item;
 use League\Fractal\Serializer\ArraySerializer;
+use League\Fractal\Serializer\JsonApiSerializer;
 use League\Fractal\Serializer\JsonSerializer;
 use Rossina\Http\Requests;
 use Rossina\Post;
@@ -16,7 +17,7 @@ use Rossina\Repositories\Transformers\PostTransformer;
 use League\Fractal\TransformerAbstract;
 use Rossina\Repositories\Transformers\TagTransformer;
 
-class PostsController extends ApiController
+class PostsController extends Controller
 {
     protected $repository;
 
@@ -64,7 +65,7 @@ class PostsController extends ApiController
      */
     public function index(Manager $fractal)
     {
-        $fractal->setSerializer(new JsonSerializer());
+        $fractal->setSerializer(new JsonApiSerializer());
 
         $post = $this->post->with(['comments'])->get();
 
@@ -72,7 +73,7 @@ class PostsController extends ApiController
 
         $data = $fractal->createData($collection)->toArray();
 
-        return $this->respondWithCORS($data);
+        return $data;
     }
 
     /**
@@ -100,7 +101,7 @@ class PostsController extends ApiController
         $data = $this->repository->with(['tags'])->all();
 
         foreach ($data as $posts) {
-            $post[] = $this->respond($posts);
+            $post[] = $this->transform($posts);
         }
         return $data;
 
@@ -130,7 +131,7 @@ class PostsController extends ApiController
 
         $data = $fractal->createData($item)->toArray();
 
-        return $this->respond($project);
+        return $project;
 
 //        return $this->apiController->respondWithItem($data, new PostTransformer);
     }

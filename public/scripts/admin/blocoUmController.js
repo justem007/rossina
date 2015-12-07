@@ -18,7 +18,7 @@
 
             // Este pedido vai bater o método do índice no AuthenticateController
             // no lado do Laravel e irá retornar a lista de usuários
-            $http.get('api/bloco-um').success(function(bloco_ums) {
+            $http.get('admin/api/bloco-um').success(function(bloco_ums) {
                 vm.bloco_ums = bloco_ums;
             }).error(function(error) {
                 vm.error = error;

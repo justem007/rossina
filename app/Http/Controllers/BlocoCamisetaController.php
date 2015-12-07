@@ -82,7 +82,7 @@ class BlocoCamisetaController extends ApiController
             $blocoCamiseta[] = $this->transform($blocoCamisetas);
         }
 
-        return $blocoCamiseta;
+        return $this->transform($blocoCamiseta);
     }
 
     /**
@@ -90,10 +90,9 @@ class BlocoCamisetaController extends ApiController
      */
     public function index()
     {
-
         $blocoCamiseta = $this->repository->all();
 
-        return $this->apiController->respondWithCollection($blocoCamiseta, $this->blocoCamisetaTransformer);
+        return $blocoCamiseta;
     }
 
     /**

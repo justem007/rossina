@@ -2,7 +2,7 @@ app.controller('tamanhosController',function ($scope,$http) {
 
     $scope.tamanhos = [];
 
-    $http.get("/api/camisetas/tamanhos").then(function(response){
+    $http.get("admin/api/camisetas/tamanhos").then(function(response){
         console.log(response);
         $scope.tamanhos = response.data;
     },function(response){

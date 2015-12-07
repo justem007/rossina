@@ -9,7 +9,7 @@
 
         $scope.menus = [];
 
-        $http.get("/api/menus").then(function(response){
+        $http.get("admin/api/menus").then(function(response){
             console.log(response);
             $scope.menus = response.data;
         },function(response){

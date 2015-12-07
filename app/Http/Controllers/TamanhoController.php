@@ -8,6 +8,7 @@ use League\Fractal\Manager;
 use League\Fractal\Pagination\IlluminatePaginatorAdapter;
 use League\Fractal\Resource\Collection;
 use League\Fractal\Resource\Item;
+use League\Fractal\Serializer\JsonApiSerializer;
 use League\Fractal\Serializer\JsonSerializer;
 use Rossina\Http\Requests;
 use Rossina\Repositories\Repository\TamanhoRepositoryEloquent;
@@ -62,7 +63,7 @@ class TamanhoController extends ApiController
      */
     public function index(Manager $fractal, TamanhoTransformer $tamanhoTransformer)
     {
-        $fractal->setSerializer(new JsonSerializer());
+        $fractal->setSerializer(new JsonApiSerializer());
 
         $projects = $this->repository->with(['camisetas'])->all();
 

@@ -9,6 +9,7 @@ use League\Fractal\Manager;
 use League\Fractal\Pagination\IlluminatePaginatorAdapter;
 use League\Fractal\Resource\Collection;
 use League\Fractal\Resource\Item;
+use League\Fractal\Serializer\JsonApiSerializer;
 use League\Fractal\Serializer\JsonSerializer;
 use Rossina\Genero;
 use Rossina\Http\Requests;
@@ -58,7 +59,7 @@ class GeneroController extends ApiController
      */
     public function index(Manager $fractal, GeneroTransformer $generoTransformer)
     {
-        $fractal->setSerializer(new JsonSerializer());
+        $fractal->setSerializer(new JsonApiSerializer());
 
         $projects = $this->repository->with(['camisetas'])->get();
 

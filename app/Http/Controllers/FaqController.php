@@ -3,6 +3,7 @@
 namespace Rossina\Http\Controllers;
 
 use Illuminate\Http\Request;
+use League\Fractal\Serializer\JsonApiSerializer;
 use League\Fractal\Serializer\JsonSerializer;
 use Rossina\Faq;
 use Rossina\Http\Requests;
@@ -50,7 +51,7 @@ class FaqController extends ApiController
      */
     public function index(Manager $fractal)
     {
-        $fractal->setSerializer(new JsonSerializer());
+        $fractal->setSerializer(new JsonApiSerializer());
 
         $faq = $this->repository->all();
 
@@ -85,7 +86,7 @@ class FaqController extends ApiController
      */
     public function show($id, Manager $fractal, FaqTransformer $faqTransformer)
     {
-        $fractal->setSerializer(new JsonSerializer());
+        $fractal->setSerializer(new JsonApiSerializer());
 
         $project = $this->faq->find($id);
 

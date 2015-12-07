@@ -18,7 +18,7 @@
 
             // Este pedido vai bater o método do índice no AuthenticateController
             // no lado do Laravel e irá retornar a lista de usuários
-            $http.get('api/menus').success(function(menus) {
+            $http.get('admin/api/menus').success(function(menus) {
                 vm.menus = menus;
             }).error(function(error) {
                 vm.error = error;

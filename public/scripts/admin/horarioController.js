@@ -18,7 +18,7 @@
 
             // Este pedido vai bater o método do índice no AuthenticateController
             // no lado do Laravel e irá retornar a lista de usuários
-            $http.get('api/horarios').success(function(horarios) {
+            $http.get('admin/api/horarios').success(function(horarios) {
                 vm.horarios = horarios;
             }).error(function(error) {
                 vm.error = error;

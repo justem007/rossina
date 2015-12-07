@@ -3,16 +3,15 @@
 namespace Rossina\Http\Controllers;
 
 use Illuminate\Http\Request;
-use League\Fractal\Serializer\JsonSerializer;
-use League\Fractal\Serializer\ArraySerializer;
-use Rossina\BlocoCamiseta;
-use Rossina\Http\Requests;
 use Illuminate\Support\Facades\Response;
+use League\Fracta;
 use League\Fractal\Manager;
 use League\Fractal\Pagination\IlluminatePaginatorAdapter;
 use League\Fractal\Resource\Collection;
-use League\Fractal\Resource\Item;
+use League\Fractal\Serializer\JsonApiSerializer;
+use League\Fractal\Serializer\JsonSerializer;
 use Rossina\Camisetas;
+use Rossina\Http\Requests;
 use Rossina\Repositories\Repository\CamisetasRepositoryEloquent as CamisetasRE;
 use Rossina\Repositories\Transformers\CamisetasTransformer;
 
@@ -77,7 +76,7 @@ class CamisetasController extends ApiController
      */
     public function index(Manager $fractal, CamisetasTransformer $camisetasTransformer)
     {
-        $fractal->setSerializer(new JsonSerializer());
+        $fractal->setSerializer(new JsonApiSerializer());
 
         $projects = $this->repository->with(['generos'])->all();
 
@@ -112,7 +111,7 @@ class CamisetasController extends ApiController
      */
     public function show($id, Manager $fractal, CamisetasTransformer $camisetasTransformer)
     {
-        $fractal->setSerializer(new JsonSerializer());
+        $fractal->setSerializer(new JsonApiSerializer());
 
         $project = $this->camisetas->find($id);
 

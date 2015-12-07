@@ -22,11 +22,20 @@ class ApiController extends Controller {
     const CODE_INTERNAL_ERROR = 'GEN-AAAGGH';
     const CODE_UNAUTHORIZED = 'GEN-MAYBGTFO';
     const CODE_FORBIDDEN = 'GEN-GTFO';
+
+    /**
+     * @param Manager $fractal
+     */
     public function __construct(Manager $fractal)
     {
         $this->fractal = $fractal;
 
         $this->fractal->setRequestedScopes(explode(',', Input::get('embed')));
+
+        if(isset($_GET['include']))
+        {
+            $fractal->parseIncludes($_GET['include']);
+        }
     }
     /**
      * Getter for statusCode
